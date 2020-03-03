@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/nadinejuraschek/APIA_Project#readme",
   "dependencies": {
-    "bulma": "^0.8.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.3"
   }
