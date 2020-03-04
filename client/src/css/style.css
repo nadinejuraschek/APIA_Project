@@ -30,8 +30,10 @@
 }
 
 .notebook-card {
-    height: 20rem;
-    margin: 2rem auto;
+    height: 15rem;
+    margin: 1rem auto;
     padding: 3rem;
-    width: 30rem;
+}
+.columns .is-multiline {
+    flex-wrap: wrap;
 }
