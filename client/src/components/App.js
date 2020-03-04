@@ -6,6 +6,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
+import Callback from './Callback';
+
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
@@ -30,6 +32,9 @@ const App = () => {
             <BrowserRouter>
                 <div>
                     <Navbar />
+
+                    {/* Testing Auth */}
+                    <Route path='/callback' exact component={ Callback } />
 
                     {/* Landing Page */}
                     <Route path='/' exact component={ Landing } />
