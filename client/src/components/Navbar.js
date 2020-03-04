@@ -1,11 +1,13 @@
 import React from 'react';
+import logo from '../images/embrace.svg';
+import defaultProfilePic from '../images/profile-blank.svg';
 
 const Navbar = () => {
     return (
         <nav className="navbar is-fixed-top">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">
-                    <img alt="App Logo" src="embrace.svg" width="112" height="28" />
+                    <img alt="App Logo" src={logo} width="112" height="28" />
                     Au Pair App
                 </a>
             
@@ -20,7 +22,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className="navbar-item has-dropdown is-hoverable">
                         <a className="navbar-link">
-                        <img alt="Profile Placeholder" className="profile-dropdown" src="profile-blank.svg" alt="profile dropdown" />
+                        <img alt="Profile Placeholder" className="profile-dropdown" src={defaultProfilePic} alt="profile dropdown" />
                         </a>
                         <div className="navbar-dropdown is-right">
                         <a className="navbar-item" href="/profile">

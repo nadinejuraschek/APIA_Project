@@ -1,4 +1,7 @@
 import React from 'react';
+import notebookIcon from '../../images/book.svg';
+import hostFamilyIcon from '../../images/family.svg';
+import clusterIcon from '../../images/cluster.svg';
 
 const Home = () => {
     return (
@@ -17,7 +20,7 @@ const Home = () => {
                                 <a href="/notebook">
                                     <div className="card-content">
                                         <p>My Notebook</p>
-                                        <img src="book.svg" className="section-icon" />
+                                        <img src={notebookIcon} className="section-icon" />
                                     </div>
                                 </a>
                             </div>
@@ -27,7 +30,7 @@ const Home = () => {
                                 <a href="/hostfamily">
                                     <div className="card-content">
                                         <p>My Host Family</p>
-                                        <img src="family.svg" className="section-icon" />
+                                        <img src={hostFamilyIcon} className="section-icon" />
                                     </div>
                                 </a>
                             </div>
@@ -37,7 +40,7 @@ const Home = () => {
                                 <a href="/cluster">
                                     <div className="card-content">
                                         <p>My Cluster</p>
-                                        <img src="chat.svg" className="section-icon" />
+                                        <img src={clusterIcon} className="section-icon" />
                                     </div>
                                 </a>
                             </div>
