@@ -1,0 +1,37 @@
+.hero {
+    /* background: #DE6262;
+    background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);
+    background: linear-gradient(to right, #FFB88C, #DE6262); */
+}
+.navbar a:hover {
+    color: #FFB88C;
+}
+.card {
+    border-radius: 20px;
+}
+.card:hover {
+    background-color: #FFB88C80;
+    border: 2px solid #DE6262;
+}
+.section-icon {
+    margin-top: 1rem;
+    height: 8rem;
+}
+.profile-dropdown {
+    border-radius: 50%;
+}
+
+.signup-div {
+    margin: auto;
+    width: 50%; /* media-query: on tablet and mobile 100%!! */
+}
+.icon-color {
+    color: #FFB88C80;
+}
+
+.notebook-card {
+    height: 20rem;
+    margin: 2rem auto;
+    padding: 3rem;
+    width: 30rem;
+}
