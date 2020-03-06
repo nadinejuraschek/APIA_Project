@@ -15,9 +15,9 @@ const Navbar = () => {
                     <i class="user large circle icon"></i>
                     <i className="dropdown icon"></i>
                     <div className="menu">
-                        <a className="item">Profile</a>
-                        <a className="item">Emergency Numbers</a>
-                        <a className="item">Log Out</a>
+                        <a className="item" href="/profile">Profile</a>
+                        <a className="item" href="/emergencynumbers">Emergency Numbers</a>
+                        <a className="item" href="/login">Log Out</a>
                     </div>
                 </div>
             </div>

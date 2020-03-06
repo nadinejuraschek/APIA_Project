@@ -3,6 +3,18 @@
     background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);
     background: linear-gradient(to right, #FFB88C, #DE6262); */
 }
+nav {
+    height: 4rem;
+}
+.wrapper {
+    height: 85vh;
+    display: flex;
+    align-items: center; 
+    margin-top: 4rem;
+}
+.block {
+    margin: auto;
+}
 .navbar a:hover {
     color: #FFB88C;
 }
@@ -43,5 +55,5 @@
 }
 
 /****************************************************************************
- ACCORDION
+ WORK HOURS
 ****************************************************************************/
