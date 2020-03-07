@@ -6,6 +6,10 @@ const   mongoose                = require('mongoose'),
 const userSchema = new mongoose.Schema({
     username: String,
     password: String
+    //,
+    // {    type: mongoose.Schema.Types.ObjectId,
+    //      ref: ''
+    // }
 });
 
 userSchema.plugin(passportLocalMongoose);

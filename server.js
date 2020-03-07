@@ -2,16 +2,25 @@
 require('dotenv').config();
 
 const   express         = require('express'),
-        app             = express(),
         mongoose        = require('mongoose'),
+        morgan          = require('morgan'),
+        path            = require('path'),
         passport        = require('passport'),
         LocalStrategy   = require('passport-local'),
         User            = require('./models/user');
+
+const   app             = express();
+
+// MORGAN - HTTP REQUEST LOGGER
+app.use(morgan('tiny'));
 
 // DATABASE
 mongoose.connect(process.env.MONGO_URI, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
+});
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected.');
 });
 
 app.use(express.urlencoded({ extended: true }));
@@ -30,6 +39,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // SERVER
+app.get('/api', (req, res) => {
+    res.json(data);
+});
+
 app.listen(process.env.PORT, function() {
     console.log('Server is listening on PORT ' + process.env.PORT + '.');
 });
