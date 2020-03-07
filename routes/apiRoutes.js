@@ -26,6 +26,12 @@ router.get('/user/:id/workHours', async (req, res) => {
     }
 });
 
+// SIGNOUT ROUTE
+app.post('/api/user/signout', function(req, res) {
+  res.clearCookie('token');
+  res.json('Signed out.');
+});
+
 router.get('/user/:id/payment', async (req, res) => {
     try {
     res.status(200).json(data);

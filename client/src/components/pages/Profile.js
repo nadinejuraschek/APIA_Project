@@ -12,7 +12,7 @@ const Profile = () => {
                         <div className="six wide column">
                             <div className="ui fluid card">
                                 <div className="image">
-                                    <img src={userPic} alt="profile picture" />
+                                    <img src={userPic} alt="au pair" />
                                 </div>
                             </div>
                         </div>
@@ -36,20 +36,20 @@ const Profile = () => {
                                     <div>
                                         Host Parents: 
                                         <div className="ui tiny images hostparents">
-                                            <img className="ui image" src={blankPic} alt="hostparent picture" />
-                                            <img className="ui image" src={blankPic} alt="hostparent picture" />
+                                            <img className="ui image" src={blankPic} alt="hostparent" />
+                                            <img className="ui image" src={blankPic} alt="hostparent" />
                                         </div>
                                     </div>
                                     <div>
                                         Host Children:
                                         <div className="ui tiny images hostkids">
-                                            <img className="ui image" src={blankPic} alt="hostparent picture" />
-                                            <img className="ui image" src={blankPic} alt="hostparent picture" />
-                                            <img className="ui image" src={blankPic} alt="hostparent picture" />
+                                            <img className="ui image" src={blankPic} alt="hostchild" />
+                                            <img className="ui image" src={blankPic} alt="hostchild" />
+                                            <img className="ui image" src={blankPic} alt="hostchild" />
                                         </div>
                                     </div>
                                 </div>
-                                <h4 className="ui dividing header"></h4>
+                                <h4 className="ui dividing header"> </h4>
                                 <button className="ui button">Edit</button>
                             </div>
                         </div>
