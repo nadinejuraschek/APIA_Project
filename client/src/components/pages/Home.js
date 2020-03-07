@@ -22,7 +22,7 @@ const Home = () => {
                                     <a href="/notebook">
                                             <div className="card-content">
                                                 <p>My Notebook</p>
-                                                <img src={notebookIcon} className="section-icon" />
+                                                <img src={notebookIcon} className="section-icon" alt="notebook" />
                                             </div>
                                         </a>
                                 </div>
@@ -32,7 +32,7 @@ const Home = () => {
                                     <a href="/hostfamily">
                                         <div className="card-content">
                                             <p>My Host Family</p>
-                                            <img src={hostFamilyIcon} className="section-icon" />
+                                            <img src={hostFamilyIcon} className="section-icon" alt="hostfamily" />
                                         </div>
                                     </a>
                                 </div>
@@ -43,7 +43,7 @@ const Home = () => {
                                     <a href="/cluster">
                                         <div className="card-content">
                                             <p>My Cluster</p>
-                                            <img src={clusterIcon} className="section-icon" />
+                                            <img src={clusterIcon} className="section-icon" alt="cluster" />
                                         </div>
                                     </a>
                                 </div>

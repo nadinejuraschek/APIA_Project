@@ -14,7 +14,7 @@ const Landing = () => {
                             <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
                             </div>
                             <div className="six wide right floated column">
-                            <img src="assets/images/wireframe/white-image.png" className="ui large bordered rounded image" />
+                            <img src="assets/images/wireframe/white-image.png" className="ui large bordered rounded image" alt="landing" />
                             </div>
                         </div>
                         <div className="row">

@@ -5,8 +5,6 @@ const   express         = require('express'),
         mongoose        = require('mongoose'),
         morgan          = require('morgan'),
         path            = require('path'),
-        passport        = require('passport'),
-        LocalStrategy   = require('passport-local'),
         User            = require('./models/user');
 
 const   app             = express();
@@ -28,18 +26,6 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// PASSPORT CONFIG
-app.use(require('express-session')({
-    secret: process.env.APP_SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 // SERVER
 app.get('/api', (req, res) => {

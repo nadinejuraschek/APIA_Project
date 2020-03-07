@@ -9,17 +9,23 @@ const Login = () => {
 
                     <div className="field">
                         <label>E-Mail</label>
-                        <input type="text" name="email" />
+                        <div className="ui left icon input">
+                            <i className="mail icon"></i>
+                            <input type="text" name="username" />
+                        </div>
                     </div>
 
                     <div className="field">
                         <label>Password</label>
-                        <input type="password" name="password" />
+                        <div className="ui left icon input">
+                            <i className="lock icon"></i>
+                            <input type="password" name="password" />
+                        </div>
                     </div>
 
                     <button className="ui button" type="submit">Log In</button>
 
-                    <div className="field">
+                    <div className="ui message">
                         <p>Don't have an account, yet?</p>
                         <a href="/register" className="ui button">
                             Register
@@ -27,7 +33,7 @@ const Login = () => {
                     </div>
                 
                 </form>
-                
+
             </div>
         </section>
     );

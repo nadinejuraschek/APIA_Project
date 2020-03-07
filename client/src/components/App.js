@@ -6,7 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import Callback from './Callback';
+// import WrongTurn from './WrongTurn';
 
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
@@ -33,9 +33,6 @@ const App = () => {
                 <div>
                     <Navbar />
 
-                    {/* Testing Auth */}
-                    <Route path='/callback' exact component={ Callback } />
-
                     {/* Landing Page */}
                     <Route path='/' exact component={ Landing } />
                     
@@ -60,6 +57,9 @@ const App = () => {
                     <Route path='/notebook/payments' exact component={ Payments } />
                     <Route path='/notebook/goals' exact component={ Goals } />
                     <Route path='/notebook/notes' exact component={ Notes } />
+
+                    {/* Error Page */}
+                    {/* <Route path='*' exact component={ WrongTurn } /> */}
 
                     <Footer />
                 </div>
