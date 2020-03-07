@@ -33,10 +33,6 @@ nav {
     border-radius: 50%;
 }
 
-.signup-div {
-    margin: auto;
-    width: 50%; /* media-query: on tablet and mobile 100%!! */
-}
 .icon-color {
     color: #FFB88C80;
 }

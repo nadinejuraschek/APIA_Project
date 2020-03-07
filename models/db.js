@@ -9,7 +9,7 @@ const db = {
     User,
     WorkHours,
     Payment,
-    Goals, 
+    Goals,
     Notes,
     Diary
 };

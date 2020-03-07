@@ -11,6 +11,9 @@ const   express         = require('express'),
 
 const   app             = express();
 
+// IMPORT MODELS
+const   db              = require('./models/db');
+
 // MORGAN - HTTP REQUEST LOGGER
 app.use(morgan('tiny'));
 
@@ -40,7 +43,8 @@ passport.deserializeUser(User.deserializeUser());
 
 // SERVER
 app.get('/api', (req, res) => {
-    res.json(data);
+    res.send('API route works');
+    // res.json(data);
 });
 
 app.listen(process.env.PORT, function() {

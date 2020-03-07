@@ -9,6 +9,7 @@
 ## Technologies
 * React
 * JavaScript
+* Semantic UI
 
 ## Future Development Goals
 #### Multiple User Options

@@ -2,45 +2,32 @@ import React from 'react';
 
 const Login = () => {
     return (
-        <section className="hero is-fullheight-with-navbar is-bold">
-            <div className="hero-body">
-                <div className="signup-div">
+        <section className="wrapper">
+            <div className="block">
+
+                <form className="ui form">
 
                     <div className="field">
-                        <label className="label is-medium">E-Mail</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="text" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-envelope icon-color"></i>
-                            </span>
-                        </div>
+                        <label>E-Mail</label>
+                        <input type="text" name="email" />
                     </div>
 
                     <div className="field">
-                        <label className="label is-medium">Password</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="password" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-lock icon-color"></i>
-                            </span>
-                        </div>
+                        <label>Password</label>
+                        <input type="password" name="password" />
                     </div>
+
+                    <button className="ui button" type="submit">Log In</button>
 
                     <div className="field">
-                        <p className="control has-text-centered">
-                            <a className="button is-danger">
-                            Log In
-                            </a>
-                        </p>
-                    </div>
-
-                    <div className="field is-horizontal">
                         <p>Don't have an account, yet?</p>
-                        <a href="/register" className="button is-danger">
+                        <a href="/register" className="ui button">
                             Register
                         </a>
                     </div>
-                </div>
+                
+                </form>
+                
             </div>
         </section>
     );

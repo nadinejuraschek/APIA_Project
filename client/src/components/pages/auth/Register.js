@@ -2,82 +2,74 @@ import React from 'react';
 
 const Register = () => {
     return (
-        <section className="hero is-fullheight-with-navbar is-bold">
-            <div className="hero-body">
-                <div className="signup-div">
-                    
+        <section className="wrapper">
+            <div className="block">
+
+                <form className="ui form">
+
                     <div className="field">
-                        <label className="label is-medium">I am a</label>
-                        <div className="control has-icons-left">
-                            <span className="select is-medium">
-                            <select>
-                                <option>Au Pair</option>
-                                <option>Host Family Member</option>
-                                <option>Community Counselor</option>
-                            </select>
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-child icon-color"></i>
-                            </span>
-                            </span>
+                        <label>I am a</label>
+                        <select className="ui fluid dropdown">
+                            <option value=""></option>
+                            <option value="aupair">Au Pair</option>
+                            <option value="family">Host Family Member</option>
+                            <option value="lcc">Community Counselor</option>
+                        </select>
+                    </div>
+
+                    <div className="field">
+                        <label>Your Host Family's ID</label>
+                        <div className="ui left icon input">
+                            <i class="users icon"></i>
+                            <input type="text" name="register[familyID]" placeholder="Host Family ID" />
                         </div>
                     </div>
 
                     <div className="field">
-                        <label className="label is-medium">Your Host Family's ID</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="text" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-fingerprint icon-color"></i>
-                            </span>
+                        <label>Your Name</label>
+                        <div className="two fields">
+                            <div className="field">
+                                <div className="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="register[firstname]" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div className="field">
+                                <div className="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="register[lastname]" placeholder="Last Name" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div className="field">
-                        <label className="label is-medium">Your Name</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="text" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-user icon-color"></i>
-                            </span>
+                        <label>E-Mail</label>
+                        <div className="ui left icon input">
+                            <i class="envelope icon"></i>
+                            <input type="text" name="register[email]" placeholder="E-Mail" />
                         </div>
                     </div>
 
                     <div className="field">
-                        <label className="label is-medium">Your E-Mail</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="text" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-envelope icon-color"></i>
-                            </span>
+                        <label>Password</label>
+                        <div className="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="register[password]" placeholder="Password" />
                         </div>
                     </div>
 
-                    <div className="field">
-                        <label className="label is-medium">Your Password</label>
-                        <div className="control has-icons-left has-icons-right">
-                            <input className="input is-medium" type="password" />
-                            <span className="icon is-small is-left">
-                                <i className="fas fa-lock icon-color"></i>
-                            </span>
-                        </div>
-                    </div>
+                    <button className="ui button" type="submit">Register</button>
+                
+                </form>
 
-                    <div className="field is-grouped">
-                        <p className="control has-text-centered">
-                        <a className="button is-danger">
-                            Register
-                        </a>
-                        </p>
-                    </div>
-
-                    <div className="field is-horizontal">
-                        <p>Already have an account?</p>
-                        <a className="button is-danger">
-                            Log In
-                        </a>
-                    </div>
-
+                <div className="ui message">
+                    <p>Already have an account?</p>
+                    <a href="/register" className="ui button">
+                        Log In
+                    </a>
                 </div>
+                
             </div>
         </section>
     );
