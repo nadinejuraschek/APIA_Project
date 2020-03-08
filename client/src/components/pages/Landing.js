@@ -19,7 +19,7 @@ const Landing = () => {
                         </div>
                         <div className="row">
                             <div className="center aligned column">
-                            <a className="ui huge button">Check Them Out</a>
+                            <a className="ui huge button" href="/">Check Them Out</a>
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ const Cluster = () => {
                         <div className="column">
                             <div className="ui card">
                                 <div className="content">
-                                    <img className="right floated mini ui avatar image" src={blankPic} />
+                                    <img className="right floated mini ui avatar image" src={blankPic}  alt="counselor" />
                                     <div className="header">
                                         Counselor Name
                                     </div>
@@ -43,7 +43,7 @@ const Cluster = () => {
                                     <div className="ui relaxed list">
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic} alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -55,7 +55,7 @@ const Cluster = () => {
                                         </div>
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic}  alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -67,7 +67,7 @@ const Cluster = () => {
                                         </div>
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic}  alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -79,7 +79,7 @@ const Cluster = () => {
                                         </div>
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic}  alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -91,7 +91,7 @@ const Cluster = () => {
                                         </div>
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic}  alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -103,7 +103,7 @@ const Cluster = () => {
                                         </div>
 
                                         <div className="item">
-                                            <img className="ui avatar image" src={blankPic} />
+                                            <img className="ui avatar image" src={blankPic}  alt="aupair" />
                                             <div className="content">
                                                 <p className="header">Friend Name</p>
                                                 <p className="description">
@@ -128,7 +128,7 @@ const Cluster = () => {
                             <div className="ui card">
                                 <div className="content">
                                     <div className="ui medium header">
-                                        <a>My Area</a>
+                                        <a href="/cluster">My Area</a>
                                     </div>
                                     <div className="meta">
                                         Coming Soon
@@ -141,7 +141,7 @@ const Cluster = () => {
                             <div className="ui card">
                                 <div className="content">
                                     <div className="ui medium header">
-                                        <a>Education</a>
+                                        <a href="/cluster">Education</a>
                                     </div>
                                     <div className="meta">
                                         Coming Soon
@@ -154,7 +154,7 @@ const Cluster = () => {
                             <div className="ui card">
                                 <div className="content">
                                     <div className="ui medium header">
-                                        <a>Travel</a>
+                                        <a href="/cluster">Travel</a>
                                     </div>
                                     <div className="meta">
                                         Coming Soon
@@ -167,7 +167,7 @@ const Cluster = () => {
                             <div className="ui card">
                                 <div className="content">
                                     <div className="ui medium header">
-                                        <a>Resources</a>
+                                        <a href="/cluster">Resources</a>
                                     </div>
                                     <div className="meta">
                                         Coming Soon
