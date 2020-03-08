@@ -61,7 +61,6 @@ const Notebook = () => {
                 </div>
             </div>
         </section>
-
     );
 };
 

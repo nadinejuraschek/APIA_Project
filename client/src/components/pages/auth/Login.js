@@ -30,6 +30,23 @@ const Login = () => {
                         <a href="/register" className="ui button">
                             Register
                         </a>
+                        <p>Or Log In with</p>
+                        <div className="ui buttons">
+                            <button className="ui google plus button">
+                                <i className="google icon"></i>
+                                Google
+                            </button>
+                            <div className="or"></div>
+                            <button className="ui facebook button">
+                                <i className="facebook icon"></i>
+                                Facebook
+                            </button>
+                            <div className="or"></div>
+                            <button className="ui instagram button">
+                                <i className="instagram icon"></i>
+                                Instagram
+                            </button>
+                        </div>
                     </div>
                 
                 </form>

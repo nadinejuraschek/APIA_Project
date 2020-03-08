@@ -34,32 +34,32 @@ const App = () => {
                     <Navbar />
 
                     {/* Landing Page */}
-                    <Route path='/' exact component={ Landing } />
+                    <Route exact path='/' component={ Landing } />
                     
                     {/* Authentication */}
-                    <Route path='/login' exact component={ Login} />
-                    <Route path='/register' exact component={ Register } />
+                    <Route exact path='/login' component={ Login} />
+                    <Route exact path='/register' component={ Register } />
 
                     {/* Navbar Links */}
-                    <Route path='/profile' exact component={ Profile } />
-                    <Route path='/emergency' exact component={ EmergencyNumbers } />
+                    <Route exact path='/profile' component={ Profile } />
+                    <Route exact path='/emergency' component={ EmergencyNumbers } />
 
                     {/* Home */}
-                    <Route path='/home' exact component={ Home } />
+                    <Route exact path='/home' component={ Home } />
 
                     {/* Home Sections */}
-                    <Route path='/notebook' exact component={ Notebook } />
-                    <Route path='/hostfamily' exact component={ HostFamily } />
-                    <Route path='/cluster' exact component={ Cluster } />
+                    <Route exact path='/notebook' component={ Notebook } />
+                    <Route exact path='/hostfamily' component={ HostFamily } />
+                    <Route exact path='/cluster' component={ Cluster } />
 
                     {/* Notebook Sections */}
-                    <Route path='/notebook/workhours' exact component={ WorkHours } />
-                    <Route path='/notebook/payments' exact component={ Payments } />
-                    <Route path='/notebook/goals' exact component={ Goals } />
-                    <Route path='/notebook/notes' exact component={ Notes } />
+                    <Route exact path='/notebook/workhours' component={ WorkHours } />
+                    <Route exact path='/notebook/payments' component={ Payments } />
+                    <Route exact path='/notebook/goals' component={ Goals } />
+                    <Route exact path='/notebook/notes' component={ Notes } />
 
                     {/* Error Page */}
-                    {/* <Route path='*' exact component={ WrongTurn } /> */}
+                    {/* <Route path='*' component={ WrongTurn } /> */}
 
                     <Footer />
                 </div>

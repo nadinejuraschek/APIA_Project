@@ -4,7 +4,7 @@ const   mongoose                = require('mongoose'),
 
 // SCHEMA SETUP
 const userSchema = new mongoose.Schema({
-    username: String,
+    email: String,
     password: String,
 
     firstname: String,
@@ -35,48 +35,6 @@ const userSchema = new mongoose.Schema({
                 ref: 'Notes'
             }
         ]
-    },
-
-    hostfamily: {
-        info: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Info'
-        },
-        diary: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Diary'
-        },
-        tips: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Tips'
-        }
-    },
-
-    cluster: {
-        counselor: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Counselor'
-        },
-        aupairs: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'AuPairs'
-        },
-        area: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Area'
-        },
-        education: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Education'
-        },
-        travel: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Travel'
-        }
-        resources: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Resources'
-        }
     }
 });
 
