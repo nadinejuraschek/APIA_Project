@@ -14,19 +14,12 @@ class Register extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const { role, familyID, firstname, lastname, country, email, password } = this.state;
+        console.log(this.state);
+        const newUser = this.state;
         axios({
-            url: '/register',
+            url: '/api/user/register',
             method: 'POST',
-            data: {
-                role,
-                familyID,
-                firstname,
-                lastname,
-                country,
-                email,
-                password
-            }
+            data: newUser
         })
         .then(response => {
             console.log('Data: ' + response.data);
@@ -37,9 +30,14 @@ class Register extends Component {
     };
 
     handleChange = event => {
-        const { name, value } = event.target;
         this.setState({
-            [name]: value
+            role: event.target.value,
+            familyID: event.target.value,
+            firstname: event.target.value,
+            lastname: event.target.value,
+            country: event.target.value,
+            email: event.target.value,
+            password: event.target.value
         });
     };
 

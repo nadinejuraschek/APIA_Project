@@ -1,6 +1,5 @@
 // NPM PACKAGES
-const   mongoose                = require('mongoose'),
-        passportLocalMongoose   = require('passport-local-mongoose');
+const   mongoose = require('mongoose');
 
 // SCHEMA SETUP
 const userSchema = new mongoose.Schema({
@@ -37,7 +36,5 @@ const userSchema = new mongoose.Schema({
         ]
     }
 });
-
-userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', userSchema);

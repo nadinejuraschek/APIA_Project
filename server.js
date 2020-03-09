@@ -6,9 +6,7 @@ const   express         = require('express'),
         morgan          = require('morgan'),
         path            = require('path'),
         jwt             = require('jsonwebtoken'),
-        cookieParser    = require('cookie-parser'),
-        cookieSession   = require('cookie-session'),
-        passport        = require('./passport');
+        cookieParser    = require('cookie-parser');
 
 const   app             = express();
 
@@ -19,7 +17,7 @@ const   db              = require('./models/db');
 app.use(morgan('tiny'));
 
 // DATABASE
-mongoose.connect(process.env.MONGO_URI, { 
+mongoose.connect('mongodb://localhost:27017/apia', { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
@@ -33,7 +31,24 @@ app.use(express.json());
 app.use(cookieParser());
 
 // AUTHENTICATION
-app.use(passport.initialize());
+//decode the jwt token
+app.use((req, res, next) => {
+    //destructure the token
+    const { token } = req.cookies;
+    //if the token exists
+  
+    console.log('token', token);
+  
+    if (token) {
+      //get the verified userID from jwt
+      const { id } = jwt.verify(token, process.env.APP_SECRET);
+      //set that  userId on the request object 
+  
+      req.user = id;
+    }
+    //carry on the request after the middleware
+    next();
+  })
 
 // ROUTES
 

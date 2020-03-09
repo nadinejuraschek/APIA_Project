@@ -11,7 +11,7 @@ class Login extends Component {
         event.preventDefault();
         const { email, password } = this.state;
         axios({
-            url: '/login',
+            url: '/api/user/login',
             method: 'POST',
             data: {
                 email,
@@ -19,7 +19,7 @@ class Login extends Component {
             }
         })
         .then(response => {
-            console.log('Data: ' + response.data);
+            this.props.history.push('/profile');
         })
         .catch(error => {
             console.log('Error: ' + error.response);
@@ -65,14 +65,14 @@ class Login extends Component {
                             </a>
                             <p>Or Log In with</p>
                             <div className="ui buttons">
-                                <button className="ui google plus button">
-                                    <i className="google icon"></i>
-                                    Google
-                                </button>
-                                <div className="or"></div>
                                 <button className="ui facebook button">
                                     <i className="facebook icon"></i>
                                     Facebook
+                                </button>
+                                <div className="or"></div>
+                                <button className="ui google plus button">
+                                    <i className="google icon"></i>
+                                    Google
                                 </button>
                                 <div className="or"></div>
                                 <button className="ui instagram button">
