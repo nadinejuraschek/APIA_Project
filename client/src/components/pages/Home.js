@@ -1,6 +1,9 @@
 import React from 'react';
+
+import FeatureCard from './FeatureCard';
+
 import notebookIcon from '../../images/book.svg';
-import hostFamilyIcon from '../../images/family.svg';
+import hostfamilyIcon from '../../images/family.svg';
 import clusterIcon from '../../images/cluster.svg';
 
 const Home = () => {
@@ -15,38 +18,35 @@ const Home = () => {
                         <h3 className="ui header">
                             What Can I Help You With?
                         </h3>
+                    </div>
 
-                        <div className="ui three column grid">
+                    <div className="ui container">
+                        <div className="ui three column stackable grid">
                             <div className="column">
-                                <div className="card">
-                                    <a href="/notebook">
-                                            <div className="card-content">
-                                                <p className="ui medium header">My Notebook</p>
-                                                <img src={notebookIcon} className="section-icon" alt="notebook" />
-                                            </div>
-                                        </a>
-                                </div>
+                                <FeatureCard 
+                                    title="notebook" 
+                                    header="My Notebook" 
+                                    icon={notebookIcon} 
+                                    link="/notebook"  
+                                />
                             </div>
+                            
                             <div className="column">
-                                <div className="card">
-                                    <a href="/hostfamily">
-                                        <div className="card-content">
-                                            <p className="ui medium header">My Host Family</p>
-                                            <img src={hostFamilyIcon} className="section-icon" alt="hostfamily" />
-                                        </div>
-                                    </a>
-                                </div>
+                                <FeatureCard 
+                                    title="hostfamily" 
+                                    header="My Host Family" 
+                                    icon={hostfamilyIcon} 
+                                    link="/hostfamily" 
+                                />
                             </div>
 
                             <div className="column">
-                                <div className="card">
-                                    <a href="/cluster">
-                                        <div className="card-content">
-                                            <p className="ui medium header">My Cluster</p>
-                                            <img src={clusterIcon} className="section-icon" alt="cluster" />
-                                        </div>
-                                    </a>
-                                </div>
+                                <FeatureCard 
+                                    title="cluster" 
+                                    header="My Cluster" 
+                                    icon={clusterIcon} 
+                                    link="/cluster" 
+                                />
                             </div>
 
                         </div>

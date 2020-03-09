@@ -7,21 +7,21 @@ nav {
     height: 4rem;
 }
 .wrapper {
-    height: 85vh;
     display: flex;
     align-items: center; 
-    margin-top: 4rem;
+    margin: 6rem 2rem;
 }
 .block {
     margin: auto;
+    padding: 1rem;
 }
 .navbar a:hover {
     color: #FFB88C;
 }
-.card {
+.feature-card {
     border-radius: 20px;
 }
-.card:hover {
+.feature-card:hover {
     background-color: #FFB88C80;
     border: 2px solid #DE6262;
 }
@@ -48,6 +48,10 @@ nav {
 
 .copyright {
     font-size: 0.75rem;
+}
+
+.ui .container {
+    margin: 1rem 0 3rem;
 }
 
 /****************************************************************************
