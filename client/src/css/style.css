@@ -1,10 +1,24 @@
+/****************************************************************************
+ COLORS
+****************************************************************************/
 .hero {
     /* background: #DE6262;
     background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);
     background: linear-gradient(to right, #FFB88C, #DE6262); */
 }
+
+.copyright {
+    font-size: 0.75rem;
+}
+
+/****************************************************************************
+ PAGE LAYOUT
+****************************************************************************/
 nav {
     height: 4rem;
+}
+footer.ui .vertical .segment {
+    padding: 1rem;
 }
 .wrapper {
     display: flex;
@@ -15,45 +29,6 @@ nav {
     margin: auto;
     width: 90%;
 }
-.feature-card {
-    border-radius: 20px;
-}
-.feature-card:hover {
-    background-color: #FFB88C80;
-    border: 2px solid #DE6262;
-}
-.section-icon {
-    margin-top: 1rem;
-    height: 8rem;
-}
-.profile-dropdown {
-    border-radius: 50%;
-}
-
-.icon-color {
-    color: #FFB88C80;
-}
-
-.notebook-card {
-    height: 15rem;
-    margin: 1rem auto;
-    padding: 3rem;
-}
-.columns .is-multiline {
-    flex-wrap: wrap;
-}
-
-.copyright {
-    font-size: 0.75rem;
-}
-
-.ui .container {
-    margin: 1rem 0 3rem;
-}
-
-/****************************************************************************
- WORK HOURS
-****************************************************************************/
 .pageheader {
     font-size: 2.5rem;
     font-weight: 800;
@@ -70,4 +45,20 @@ nav {
 .auth-container {
     margin: auto;
     width: 70%;
+}
+.ui .card.feature-card,
+    .ui .card.note-card {
+        border-radius: 2rem;
+        padding: 1rem;
+}
+.ui .card.feature-card:hover {
+    background-color: #75c0fa;
+    background-image: linear-gradient(to right bottom, #75c0fa, #4caaf5);
+}
+.ui .card.note-card {
+    padding: 2rem;
+}
+.feature-icon {
+    margin-top: 1rem;
+    height: 8rem;
 }

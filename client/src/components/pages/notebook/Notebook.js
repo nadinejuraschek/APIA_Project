@@ -14,9 +14,9 @@ const Notebook = () => {
             <div className="block">
                 <Header header="My Notebook" />
 
-                        <div className="ui two column stackable grid">
+                        <div className="ui stackable grid">
                             
-                            <div className="column centered">
+                            <div className="four wide column centered">
                                 <FeatureCard 
                                     title="workhours" 
                                     header="Work Hours" 
@@ -25,7 +25,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column centered">
+                            <div className="four wide column centered">
                                 <FeatureCard 
                                     title="payment" 
                                     header="Payments" 
@@ -34,7 +34,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column centered">
+                            <div className="four wide column centered">
                                 <FeatureCard 
                                     title="goals" 
                                     header="Goals" 
@@ -43,7 +43,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column centered">
+                            <div className="four wide column centered">
                                 <FeatureCard 
                                     title="notes" 
                                     header="Notes" 

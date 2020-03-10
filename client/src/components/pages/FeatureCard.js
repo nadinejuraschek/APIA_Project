@@ -3,13 +3,13 @@ import React from 'react';
 const FeatureCard = (props) => {
     console.log(props);
     return (
-        <div className="card">
+        <div className="ui fluid card feature-card">
             <a href={props.link}>
                 <div className="card-content">
+                    <img src={props.icon} className="feature-icon" alt={props.title} />
                     <p className="ui medium header">
                         {props.header}
                     </p>
-                    <img src={props.icon} className="section-icon" alt={props.title} />
                 </div>
             </a>
         </div>

@@ -8,8 +8,7 @@ const Footer = () => {
                 <img alt="App Logo" src={logo} />
                 Au Pair App
             </h2> */}
-            <div className="ui center aligned container">
-                <div>
+                <div className="centered">
                     <p className="copyright"><i className="copyright outline icon"></i> 2020</p>
                     {/* <p className="copyright">Nadine Juraschek</p> */}
                     {/* <p className="copyright">
@@ -17,7 +16,6 @@ const Footer = () => {
                         <a href="#">Ziv Pesso</a>
                     </p> */}
                 </div>
-            </div>
         </footer>
     );
 };

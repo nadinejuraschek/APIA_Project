@@ -20,7 +20,7 @@ const Home = () => {
                         </h3>
                 </div>
 
-                <div className="ui three column stackable grid">
+                <div className="ui three column stackable grid container">
                     <div className="column centered">
                         <FeatureCard 
                             title="notebook" 
