@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Header from '../Header';
+
 import userPic from '../../images/user.jpg';
 import blankPic from '../../images/blankProfile.svg';
 
@@ -6,7 +9,7 @@ const Profile = () => {
     return (
         <section className="wrapper">
             <div className="block">
-        
+                <Header header="Your Profile" />
                 <div className="ui stackable grid">
                     <div className="row">
                         <div className="six wide column">

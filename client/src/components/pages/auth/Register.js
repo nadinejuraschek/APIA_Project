@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Header from '../../Header';
+
 class Register extends Component {
     state = {
         role: '',
@@ -46,127 +48,128 @@ class Register extends Component {
             <section className="wrapper">
                 <div className="block">
 
-                    <form className="ui form" onSubmit={this.handleSubmit}>
+                    <Header header="Register" />
 
-                        <div className="field">
-                            <label>I am a</label>
-                            <select className="ui fluid dropdown">
-                                <option className="default text" value="">Choose One</option>
-                                <option value="aupair" name="register[role]">Au Pair</option>
-                                <option value="family" name="register[role]">Host Family Member</option>
-                                <option value="lcc" name="register[role]">Community Counselor</option>
-                            </select>
-                        </div>
+                    <div className="custom-container auth-container">
+                        <form className="ui form" onSubmit={this.handleSubmit}>
 
-                        <div className="field">
-                            <label>Your Host Family's ID</label>
-                            <div className="ui left icon input">
-                                <i className="users icon"></i>
-                                <input type="text" name="register[familyID]" placeholder="Host Family ID" onChange={this.handleChange} />
+                            <div className="field">
+                                <label>I am a</label>
+                                <select className="ui fluid dropdown">
+                                    <option className="default text" value="">Choose One</option>
+                                    <option value="aupair" name="register[role]">Au Pair</option>
+                                    <option value="family" name="register[role]">Host Family Member</option>
+                                    <option value="lcc" name="register[role]">Community Counselor</option>
+                                </select>
                             </div>
-                        </div>
 
-                        <div className="field">
-                            <label>Your Name</label>
-                            <div className="two fields">
-                                <div className="field">
-                                    <div className="ui left icon input">
-                                        <i className="user icon"></i>
-                                        <input type="text" name="register[firstname]" placeholder="First Name" onChange={this.handleChange} />
+                            <div className="field">
+                                <label>Your Host Family's ID</label>
+                                <div className="ui left icon input">
+                                    <i className="users icon"></i>
+                                    <input type="text" name="register[familyID]" placeholder="Host Family ID" onChange={this.handleChange} />
+                                </div>
+                            </div>
+
+                            <div className="field">
+                                <label>Your Name</label>
+                                <div className="two fields">
+                                    <div className="field">
+                                        <div className="ui left icon input">
+                                            <i className="user icon"></i>
+                                            <input type="text" name="register[firstname]" placeholder="First Name" onChange={this.handleChange} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="ui left icon input">
+                                            <i className="user icon"></i>
+                                            <input type="text" name="register[lastname]" placeholder="Last Name" onChange={this.handleChange} />
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="field">
-                                    <div className="ui left icon input">
-                                        <i className="user icon"></i>
-                                        <input type="text" name="register[lastname]" placeholder="Last Name" onChange={this.handleChange} />
-                                    </div>
+                            </div>
+
+                            <div className="field">
+                                <label>Home Country</label>
+                                <select className="ui fluid dropdown">
+                                    <option className="default text">Select Country</option>
+                                    <option className="item" value="ar">Argentina</option>
+                                    <option className="item" value="au">Australia</option>
+                                    <option className="item" value="at">Austria</option>
+                                    <option className="item" value="bo">Bolivia</option>
+                                    <option className="item" value="ba">Bosnia</option>
+                                    <option className="item" value="br">Brazil</option>
+                                    <option className="item" value="ca">Canada</option>
+                                    <option className="item" value="cl">Chile</option>
+                                    <option className="item" value="cn">China</option>
+                                    <option className="item" value="co">Colombia</option>
+                                    <option className="item" value="cr">Costa Rica</option>
+                                    <option className="item" value="hr">Croatia</option>
+                                    <option className="item" value="cz">Czech Republic</option>
+                                    <option className="item" value="dk">Denmark</option>
+                                    <option className="item" value="ec">Ecuador</option>
+                                    <option className="item" value="sv">El Salvador</option>
+                                    <option className="item" value="ee">Estonia</option>
+                                    <option className="item" value="fi">Finland</option>
+                                    <option className="item" value="fr">France</option>
+                                    <option className="item" value="de">Germany</option>
+                                    <option className="item" value="gt">Guatemala</option>
+                                    <option className="item" value="hu">Hungary</option>
+                                    <option className="item" value="ie">Ireland</option>
+                                    <option className="item" value="il">Israel</option>
+                                    <option className="item" value="it">Italy</option>
+                                    <option className="item" value="lv">Latvia</option>
+                                    <option className="item" value="mx">Mexico</option>
+                                    <option className="item" value="nl">Netherlands</option>
+                                    <option className="item" value="nz">New Zealand</option>
+                                    <option className="item" value="pa">Panama</option>
+                                    <option className="item" value="pe">Peru</option>
+                                    <option className="item" value="pl">Poland</option>
+                                    <option className="item" value="pt">Portugal</option>
+                                    <option className="item" value="ru">Russia</option>
+                                    <option className="item" value="cs">Serbia</option>
+                                    <option className="item" value="rs">Serbia</option>
+                                    <option className="item" value="sk">Slovakia</option>
+                                    <option className="item" value="za">South Africa</option>
+                                    <option className="item" value="kr">South Korea</option>
+                                    <option className="item" value="es">Spain</option>
+                                    <option className="item" value="se">Sweden</option>
+                                    <option className="item" value="ch">Switzerland</option>
+                                    <option className="item" value="th">Thailand</option>
+                                    <option className="item" value="tr">Turkey</option>
+                                    <option className="item" value="ua">Ukraine</option>
+                                    <option className="item" value="gb">United Kingdom</option>
+                                </select>
+                            </div>
+
+                            <div className="field">
+                                <label>E-Mail</label>
+                                <div className="ui left icon input">
+                                    <i className="envelope icon"></i>
+                                    <input type="text" name="register[username]" placeholder="E-Mail" onChange={this.handleChange} />
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="field">
-                            <label>Home Country</label>
-                            <div className="ui fluid search selection dropdown">
-                                <input type="hidden" name="register[country]" onChange={this.handleChange} />
-                                <i className="dropdown icon"></i>
-                                <div className="default text">Select Country</div>
-                                <div className="menu">
-                                    <div className="item" data-value="ar"><i className="ar flag"></i>Argentina</div>
-                                    <div className="item" data-value="au"><i className="au flag"></i>Australia</div>
-                                    <div className="item" data-value="at"><i className="at flag"></i>Austria</div>
-                                    <div className="item" data-value="bo"><i className="bo flag"></i>Bolivia</div>
-                                    <div className="item" data-value="ba"><i className="ba flag"></i>Bosnia</div>
-                                    <div className="item" data-value="br"><i className="br flag"></i>Brazil</div>
-                                    <div className="item" data-value="tc"><i className="tc flag"></i>Caicos Islands</div>
-                                    <div className="item" data-value="ca"><i className="ca flag"></i>Canada</div>
-                                    <div className="item" data-value="cl"><i className="cl flag"></i>Chile</div>
-                                    <div className="item" data-value="cn"><i className="cn flag"></i>China</div>
-                                    <div className="item" data-value="co"><i className="co flag"></i>Colombia</div>
-                                    <div className="item" data-value="cr"><i className="cr flag"></i>Costa Rica</div>
-                                    <div className="item" data-value="hr"><i className="hr flag"></i>Croatia</div>
-                                    <div className="item" data-value="cz"><i className="cz flag"></i>Czech Republic</div>
-                                    <div className="item" data-value="dk"><i className="dk flag"></i>Denmark</div>
-                                    <div className="item" data-value="ec"><i className="ec flag"></i>Ecuador</div>
-                                    <div className="item" data-value="sv"><i className="sv flag"></i>El Salvador</div>
-                                    <div className="item" data-value="ee"><i className="ee flag"></i>Estonia</div>
-                                    <div className="item" data-value="fi"><i className="fi flag"></i>Finland</div>
-                                    <div className="item" data-value="fr"><i className="fr flag"></i>France</div>
-                                    <div className="item" data-value="de"><i className="de flag"></i>Germany</div>
-                                    <div className="item" data-value="gt"><i className="gt flag"></i>Guatemala</div>
-                                    <div className="item" data-value="hu"><i className="hu flag"></i>Hungary</div>
-                                    <div className="item" data-value="ie"><i className="ie flag"></i>Ireland</div>
-                                    <div className="item" data-value="il"><i className="il flag"></i>Israel</div>
-                                    <div className="item" data-value="it"><i className="it flag"></i>Italy</div>
-                                    <div className="item" data-value="lv"><i classv="lv flag"></i>Latvia</div>
-                                    <div className="item" data-value="mx"><i className="mx flag"></i>Mexico</div>
-                                    <div className="item" data-value="nl"><i className="nl flag"></i>Netherlands</div>
-                                    <div className="item" data-value="nz"><i className="nz flag"></i>New Zealand</div>
-                                    <div className="item" data-value="pa"><i className="pa flag"></i>Panama</div>
-                                    <div className="item" data-value="pe"><i className="pe flag"></i>Peru</div>
-                                    <div className="item" data-value="pl"><i className="pl flag"></i>Poland</div>
-                                    <div className="item" data-value="pt"><i className="pt flag"></i>Portugal</div>
-                                    <div className="item" data-value="ru"><i className="ru flag"></i>Russia</div>
-                                    <div className="item" data-value="cs"><i className="cs flag"></i>Serbia</div>
-                                    <div className="item" data-value="rs"><i className="rs flag"></i>Serbia</div>
-                                    <div className="item" data-value="sk"><i className="sk flag"></i>Slovakia</div>
-                                    <div className="item" data-value="za"><i className="za flag"></i>South Africa</div>
-                                    <div className="item" data-value="kr"><i className="kr flag"></i>South Korea</div>
-                                    <div className="item" data-value="es"><i className="es flag"></i>Spain</div>
-                                    <div className="item" data-value="se"><i className="se flag"></i>Sweden</div>
-                                    <div className="item" data-value="ch"><i className="ch flag"></i>Switzerland</div>
-                                    <div className="item" data-value="th"><i className="th flag"></i>Thailand</div>
-                                    <div className="item" data-value="tr"><i className="tr flag"></i>Turkey</div>
-                                    <div className="item" data-value="ua"><i className="ua flag"></i>Ukraine</div>
-                                    <div className="item" data-value="gb"><i className="gb flag"></i>United Kingdom</div>
+                            <div className="field">
+                                <label>Password</label>
+                                <div className="ui left icon input">
+                                    <i className="lock icon"></i>
+                                    <input type="password" name="register[password]" placeholder="Password" onChange={this.handleChange} />
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="field">
-                            <label>E-Mail</label>
-                            <div className="ui left icon input">
-                                <i className="envelope icon"></i>
-                                <input type="text" name="register[username]" placeholder="E-Mail" onChange={this.handleChange} />
+                            <div className="centered">
+                                <button className="ui button" type="submit">Register</button>
                             </div>
-                        </div>
 
-                        <div className="field">
-                            <label>Password</label>
-                            <div className="ui left icon input">
-                                <i className="lock icon"></i>
-                                <input type="password" name="register[password]" placeholder="Password" onChange={this.handleChange} />
+                            <div className="ui message centered">
+                                <p>Already have an account?</p>
+                                <a href="/login" className="ui button">
+                                    Log In
+                                </a>
                             </div>
-                        </div>
-
-                        <button className="ui button" type="submit">Register</button>
-                    
-                    </form>
-
-                    <div className="ui message">
-                        <p>Already have an account?</p>
-                        <a href="/login" className="ui button">
-                            Log In
-                        </a>
+                        
+                        </form>
                     </div>
                     
                 </div>

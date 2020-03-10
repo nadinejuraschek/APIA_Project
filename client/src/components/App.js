@@ -42,7 +42,7 @@ const App = () => {
 
                     {/* Navbar Links */}
                     <Route exact path='/profile' component={ Profile } />
-                    <Route exact path='/emergency' component={ EmergencyNumbers } />
+                    <Route exact path='/emergencynumbers' component={ EmergencyNumbers } />
 
                     {/* Home */}
                     <Route exact path='/home' component={ Home } />

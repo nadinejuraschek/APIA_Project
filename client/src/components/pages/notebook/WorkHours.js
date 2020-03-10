@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
+import Header from '../../Header';
+
 class WorkHours extends Component {
     state = { activeIndex: 0 }
 
@@ -18,6 +20,8 @@ class WorkHours extends Component {
         return (
             <section className="wrapper">
                 <div className="block">
+                    
+                    <Header header="Your Work Hour Log" />
                     <Accordion className="accordion ui styled">
 
                         <Accordion.Title

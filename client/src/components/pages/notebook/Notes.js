@@ -1,15 +1,14 @@
 import React from 'react';
 
+import Header from '../../Header';
+
 const Notes = () => {
     return (
         <section className="wrapper">
             <div className="block">
-                <div className="ui vertical center aligned segment nav-push middle-aligned">
-                    <div className="ui container">
-                        <h2 className="ui header">
-                            My Notes
-                        </h2>
-                        <h4>
+                <Header header="My Notes" />
+                <div className="costum-container">
+                <h4>
                             A Space for You to Write Down Your Thoughts
                         </h4>
                         <h6>
@@ -26,10 +25,9 @@ const Notes = () => {
                                 </div>
                             </div>
                         </h6>
-                    </div>
-                    <div className="ui container">
+                </div>
+                <div className="costum-container">
 
-                    </div>
                 </div>
             </div>
         </section>

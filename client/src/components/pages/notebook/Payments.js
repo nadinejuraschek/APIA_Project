@@ -1,18 +1,14 @@
 import React from 'react';
 
+import Header from '../../Header';
+
 const Payments = () => {
     return (
         <section className="wrapper">
             <div className="block">
-                <div className="ui vertical center aligned segment nav-push middle-aligned">
-                    <div className="ui container">
-                        <h2 className="ui header">
-                            Payments
-                        </h2>
-                    </div>
-                    <div className="ui container">
-
-                    </div>
+                <Header header="Payments" />
+                <div className="custom-container">
+                    
                 </div>
             </div>
         </section>

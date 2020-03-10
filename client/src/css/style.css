@@ -9,14 +9,11 @@ nav {
 .wrapper {
     display: flex;
     align-items: center; 
-    margin: 6rem 2rem;
+    margin-top: 4rem;
 }
 .block {
     margin: auto;
-    padding: 1rem;
-}
-.navbar a:hover {
-    color: #FFB88C;
+    width: 90%;
 }
 .feature-card {
     border-radius: 20px;
@@ -57,3 +54,20 @@ nav {
 /****************************************************************************
  WORK HOURS
 ****************************************************************************/
+.pageheader {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 3rem 2rem;
+    text-align: center;
+}
+.custom-container {
+    margin: 2rem;
+    padding: 1rem;
+}
+.centered {
+    text-align: center;
+}
+.auth-container {
+    margin: auto;
+    width: 70%;
+}

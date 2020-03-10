@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from '../../Header';
 import FeatureCard from '../FeatureCard';
 
 import hoursIcon from '../../../images/hours.svg';
@@ -11,15 +12,11 @@ const Notebook = () => {
     return (
         <section className="wrapper">
             <div className="block">
-                <div className="ui vertical center aligned segment nav-push middle-aligned">
-                    <div className="ui container">
-                        <h2 className="ui header">
-                            My Notebook
-                        </h2>
+                <Header header="My Notebook" />
 
                         <div className="ui two column stackable grid">
                             
-                            <div className="column">
+                            <div className="column centered">
                                 <FeatureCard 
                                     title="workhours" 
                                     header="Work Hours" 
@@ -28,7 +25,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column">
+                            <div className="column centered">
                                 <FeatureCard 
                                     title="payment" 
                                     header="Payments" 
@@ -37,7 +34,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column">
+                            <div className="column centered">
                                 <FeatureCard 
                                     title="goals" 
                                     header="Goals" 
@@ -46,7 +43,7 @@ const Notebook = () => {
                                 />
                             </div>
 
-                            <div className="column">
+                            <div className="column centered">
                                 <FeatureCard 
                                     title="notes" 
                                     header="Notes" 
@@ -55,8 +52,6 @@ const Notebook = () => {
                                 />
                             </div>
 
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

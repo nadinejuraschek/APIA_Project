@@ -2,17 +2,14 @@ import React from 'react';
 
 import GoalList from './GoalList';
 
+import Header from '../../Header';
+
 const Goals = () => {
     return (
         <section className="wrapper">
             <div className="block">
-                <div className="ui vertical center aligned segment nav-push middle-aligned">
-                    <div className="ui container">
-                        <h2 className="ui header">
-                            My Goals
-                        </h2>
-                    </div>
-                    <div className="ui container">
+                <Header header="My Goals" />
+
                         <div className="ui stackable grid">
                             <div className="four column row">
                                 <div className="column">
@@ -58,8 +55,6 @@ const Goals = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

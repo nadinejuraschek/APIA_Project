@@ -10,47 +10,44 @@ const Home = () => {
     return (
         <section className="wrapper">
             <div className="block">
-                <div className="ui vertical center aligned segment nav-push middle-aligned">
-                    <div className="ui container">
-                        <h2 className="ui header">
+
+                <div className="pageheader">
+                        <h2>
                             Good morning, Name!
                         </h2>
-                        <h3 className="ui header">
+                        <h3>
                             What Can I Help You With?
                         </h3>
-                    </div>
+                </div>
 
-                    <div className="ui container">
-                        <div className="ui three column stackable grid">
-                            <div className="column">
-                                <FeatureCard 
-                                    title="notebook" 
-                                    header="My Notebook" 
-                                    icon={notebookIcon} 
-                                    link="/notebook"  
-                                />
-                            </div>
+                <div className="ui three column stackable grid">
+                    <div className="column centered">
+                        <FeatureCard 
+                            title="notebook" 
+                            header="My Notebook" 
+                            icon={notebookIcon} 
+                            link="/notebook"  
+                        />
+                    </div>
                             
-                            <div className="column">
-                                <FeatureCard 
-                                    title="hostfamily" 
-                                    header="My Host Family" 
-                                    icon={hostfamilyIcon} 
-                                    link="/hostfamily" 
-                                />
-                            </div>
-
-                            <div className="column">
-                                <FeatureCard 
-                                    title="cluster" 
-                                    header="My Cluster" 
-                                    icon={clusterIcon} 
-                                    link="/cluster" 
-                                />
-                            </div>
-
-                        </div>
+                    <div className="column centered">
+                        <FeatureCard 
+                            title="hostfamily" 
+                            header="My Host Family" 
+                            icon={hostfamilyIcon} 
+                            link="/hostfamily" 
+                        />
                     </div>
+
+                    <div className="column centered">
+                        <FeatureCard 
+                            title="cluster" 
+                            header="My Cluster" 
+                            icon={clusterIcon} 
+                            link="/cluster" 
+                        />
+                    </div>
+
                 </div>
             </div>
         </section>
