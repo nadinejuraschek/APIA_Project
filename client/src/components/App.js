@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // COMPONENT IMPORTS
 import Navbar from './Navbar';
 import Footer from './Footer';
+import GatedComponent from './GatedComponent';
 
 // import WrongTurn from './WrongTurn';
 
@@ -35,28 +36,68 @@ const App = () => {
 
                     {/* Landing Page */}
                     <Route exact path='/' component={ Landing } />
-                    
+
                     {/* Authentication */}
-                    <Route exact path='/login' component={ Login} />
+                    <Route exact path='/login' component={ Login } />
                     <Route exact path='/register' component={ Register } />
 
                     {/* Navbar Links */}
-                    <Route exact path='/profile' component={ Profile } />
-                    <Route exact path='/emergencynumbers' component={ EmergencyNumbers } />
+                    <Route exact path='/profile' >
+                        <GatedComponent>
+                            <Profile />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/emergencynumbers' >
+                        <GatedComponent>
+                            <EmergencyNumbers />
+                        </GatedComponent>
+                    </Route>
 
                     {/* Home */}
-                    <Route exact path='/home' component={ Home } />
+                    <Route exact path='/home' >
+                        <GatedComponent>
+                            <Home />
+                        </GatedComponent>
+                    </Route>
 
                     {/* Home Sections */}
-                    <Route exact path='/notebook' component={ Notebook } />
-                    <Route exact path='/hostfamily' component={ HostFamily } />
-                    <Route exact path='/cluster' component={ Cluster } />
+                    <Route exact path='/notebook' >
+                        <GatedComponent>
+                            <Notebook />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/hostfamily' >
+                        <GatedComponent>
+                            <HostFamily />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/cluster' >
+                        <GatedComponent>
+                            <Cluster />
+                        </GatedComponent>
+                    </Route>
 
                     {/* Notebook Sections */}
-                    <Route exact path='/notebook/workhours' component={ WorkHours } />
-                    <Route exact path='/notebook/payments' component={ Payments } />
-                    <Route exact path='/notebook/goals' component={ Goals } />
-                    <Route exact path='/notebook/notes' component={ Notes } />
+                    <Route exact path='/notebook/workhours' >
+                        <GatedComponent>
+                            <WorkHours />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/notebook/payments' >
+                        <GatedComponent>
+                            <Payments />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/notebook/goals' >
+                        <GatedComponent>
+                            <Goals />
+                        </GatedComponent>
+                    </Route>
+                    <Route exact path='/notebook/notes' >
+                        <GatedComponent>
+                            <Notes />
+                        </GatedComponent>
+                    </Route>
 
                     {/* Error Page */}
                     {/* <Route path='*' component={ WrongTurn } /> */}

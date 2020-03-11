@@ -16,7 +16,7 @@ const Navbar = () => {
                     <div className="menu">
                         <a className="item" href="/profile">Profile</a>
                         <a className="item" href="/emergencynumbers">Emergency Numbers</a>
-                        <a className="item" href="/login">Log Out</a>
+                        <a className="item" href="/api/user/signout">Log Out</a>
                     </div>
                 </div>
             </div>

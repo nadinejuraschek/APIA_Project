@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
 import axios from 'axios';
 
 import Header from '../../Header';
@@ -11,28 +12,19 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const { email, password } = this.state;
-        axios({
-            url: '/api/user/login',
-            method: 'POST',
-            data: {
-                email,
-                password
-            }
-        })
-        .then(response => {
-            this.props.history.push('/profile');
-        })
-        .catch(error => {
-            console.log('Error: ' + error.response);
+        axios.get('/api/user').then(response => {
+            this.setState({ user: response.data });
+            this.state.user ? this.props.history.push('/home') : this.props.history.push('/register');
+        }).catch(error => {
+            console.log('Error: ' + error.message);
         });
     };
 
     handleChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
+        const name = event.target.name;
+        const value = event.target.value;
+        
+        this.setState({ [name]: value });
     };
 
     render() {
@@ -49,7 +41,7 @@ class Login extends Component {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="mail icon"></i>
-                                    <input type="text" name="username" onChange={this.handleChange} />
+                                    <input type="text" name="username" placeholder="E-Mail" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -57,7 +49,7 @@ class Login extends Component {
                                 <label>Password</label>
                                 <div className="ui left icon input">
                                     <i className="lock icon"></i>
-                                    <input type="password" name="password" onChange={this.handleChange} />
+                                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -93,4 +85,4 @@ class Login extends Component {
     };
 };
 
-export default Login;
+export default withRouter(Login);

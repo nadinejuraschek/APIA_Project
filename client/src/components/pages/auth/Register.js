@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
 import axios from 'axios';
 
 import Header from '../../Header';
@@ -25,6 +26,7 @@ class Register extends Component {
         })
         .then(response => {
             console.log('Data: ' + response.data);
+            this.props.history.push('/home');
         })
         .catch(error => {
             console.log('Error: ' + error.response);
@@ -32,8 +34,8 @@ class Register extends Component {
     };
 
     handleChange = event => {
-       const name = event.target.name;
-       const value = event.target.value;
+        const name = event.target.name;
+        const value = event.target.value;
         
         this.setState({[name]: value });
     };
@@ -154,7 +156,7 @@ class Register extends Component {
                             </div>
 
                             <div className="centered">
-                                <button className="ui button" type="submit">Register</button>
+                                <button className="ui button" type="submit" >Register</button>
                             </div>
 
                             <div className="ui message centered">
@@ -173,4 +175,4 @@ class Register extends Component {
     }
 };
 
-export default Register;
+export default withRouter(Register);
