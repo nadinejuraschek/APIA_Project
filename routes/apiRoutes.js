@@ -13,12 +13,14 @@ router.post("/api/users", function (req, res) {
     res.json(apia);
   });
 });
+
 router.get('/api/user', function (req, res) {
   // console.log(req.user);
   res.json(req.user);
 });
   
 router.post('/api/user/register', async function (req, res) {
+  console.log(req.body);
   req.body.email = req.body.email.toLowerCase();
   //has the password
   const password = await bcrypt.hash(req.body.password, 10);

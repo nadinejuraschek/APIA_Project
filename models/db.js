@@ -1,16 +1,16 @@
 const   User        = require('./user'),
-        WorkHours   = require('./workHours'),
+        WorkHour    = require('./workHour'),
         Payment     = require('./payment'),
-        Goals       = require('./goals'),
-        Notes       = require('./notes'),
+        Goal        = require('./goal'),
+        Note        = require('./note'),
         Diary       = require('./diary');
 
 const db = {
     User,
-    WorkHours,
+    WorkHour,
     Payment,
-    Goals,
-    Notes,
+    Goal,
+    Note,
     Diary
 };
 

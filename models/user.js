@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     notebook: {
         workHours: [
             {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'WorkHours'
+                ref: 'WorkHour'
             }
         ],
         payment: [
@@ -26,12 +26,12 @@ const userSchema = new mongoose.Schema({
         ],
         goals: [
             {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'Goals'
+                ref: 'Goal'
             }
         ],
         notes: [
             {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'Notes'
+                ref: 'Note'
             }
         ]
     }

@@ -17,4 +17,4 @@ const workSchema = new mongoose.Schema({
     dayOff: Boolean
 });
 
-module.exports = mongoose.model('WorkHours', workSchema);
+module.exports = mongoose.model('WorkHour', workSchema);

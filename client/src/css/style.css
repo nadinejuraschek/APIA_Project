@@ -1,15 +1,9 @@
 /****************************************************************************
  COLORS
+ #75c0fa
+ #4caaf5
+ #e6f4ff
 ****************************************************************************/
-.hero {
-    /* background: #DE6262;
-    background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);
-    background: linear-gradient(to right, #FFB88C, #DE6262); */
-}
-
-.copyright {
-    font-size: 0.75rem;
-}
 
 /****************************************************************************
  PAGE LAYOUT
@@ -17,8 +11,14 @@
 nav {
     height: 4rem;
 }
+nav.ui.menu {
+    background-color: #e6f4ff;
+}
 footer.ui .vertical .segment {
     padding: 1rem;
+}
+.copyright {
+    font-size: 0.75rem;
 }
 .wrapper {
     display: flex;
@@ -46,8 +46,17 @@ footer.ui .vertical .segment {
     margin: auto;
     width: 70%;
 }
+.ui .button {
+    background-color: #e6f4ff;
+}
+.ui .button:hover {
+    background-color: #75c0fa;
+    background-image: linear-gradient(to right bottom, #75c0fa, #4caaf5);
+    color: #ffffff;
+}
 .ui .card.feature-card,
     .ui .card.note-card {
+        background-color: #e6f4ff;
         border-radius: 2rem;
         padding: 1rem;
 }

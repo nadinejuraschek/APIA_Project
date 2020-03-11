@@ -32,15 +32,10 @@ class Register extends Component {
     };
 
     handleChange = event => {
-        this.setState({
-            role: event.target.value,
-            familyID: event.target.value,
-            firstname: event.target.value,
-            lastname: event.target.value,
-            country: event.target.value,
-            email: event.target.value,
-            password: event.target.value
-        });
+       const name = event.target.name;
+       const value = event.target.value;
+        
+        this.setState({[name]: value });
     };
 
     render() {
@@ -57,9 +52,9 @@ class Register extends Component {
                                 <label>I am a</label>
                                 <select className="ui fluid dropdown">
                                     <option className="default text" value="">Choose One</option>
-                                    <option value="aupair" name="register[role]">Au Pair</option>
-                                    <option value="family" name="register[role]">Host Family Member</option>
-                                    <option value="lcc" name="register[role]">Community Counselor</option>
+                                    <option value="aupair" name="role">Au Pair</option>
+                                    <option value="family" name="role">Host Family Member</option>
+                                    <option value="lcc" name="role">Community Counselor</option>
                                 </select>
                             </div>
 
@@ -67,7 +62,7 @@ class Register extends Component {
                                 <label>Your Host Family's ID</label>
                                 <div className="ui left icon input">
                                     <i className="users icon"></i>
-                                    <input type="text" name="register[familyID]" placeholder="Host Family ID" onChange={this.handleChange} />
+                                    <input type="text" name="familyID" placeholder="Host Family ID" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -77,13 +72,13 @@ class Register extends Component {
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="register[firstname]" placeholder="First Name" onChange={this.handleChange} />
+                                            <input type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="register[lastname]" placeholder="Last Name" onChange={this.handleChange} />
+                                            <input type="text" name="lastname" placeholder="Last Name" onChange={this.handleChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +141,7 @@ class Register extends Component {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="envelope icon"></i>
-                                    <input type="text" name="register[username]" placeholder="E-Mail" onChange={this.handleChange} />
+                                    <input type="text" name="email" placeholder="E-Mail" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -154,7 +149,7 @@ class Register extends Component {
                                 <label>Password</label>
                                 <div className="ui left icon input">
                                     <i className="lock icon"></i>
-                                    <input type="password" name="register[password]" placeholder="Password" onChange={this.handleChange} />
+                                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
                                 </div>
                             </div>
 

@@ -28,7 +28,7 @@ const Landing = () => {
                         </div>
                         <div className="row">
                             <div className="center aligned column">
-                            <a className="ui huge button" href="/home">Check Them Out</a>
+                            <a className="ui huge button" href="/home">Home</a>
                             </div>
                         </div>
                 </div>

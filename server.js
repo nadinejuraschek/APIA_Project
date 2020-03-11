@@ -51,6 +51,8 @@ app.use((req, res, next) => {
   })
 
 // ROUTES
+const apiRoutes = require('./routes/apiRoutes');
+app.use(apiRoutes);
 
 // SERVER
 app.get('/api', (req, res) => {
