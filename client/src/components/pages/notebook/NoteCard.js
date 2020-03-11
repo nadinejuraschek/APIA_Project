@@ -1,13 +1,13 @@
 import React from 'react';
 
-const NoteCard = (props) => {
+const NoteCard = ({ date, text }) => {
     return (
         <div className="ui fluid card note-card">
             <div className="ui dividing header">
-                {props.date}
+                {date}
             </div>
             <div>
-                {props.text}
+                {text}
             </div>
         </div>
     );

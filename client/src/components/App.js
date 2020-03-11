@@ -27,6 +27,8 @@ import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 
+import { NoteProvider } from '../contexts/NoteContext';
+
 const App = () => {
     return (
         <div>
@@ -91,7 +93,9 @@ const App = () => {
                     </Route>
                     <Route exact path='/notebook/notes' >
                         <GatedComponent>
-                            <Notes />
+                            <NoteProvider>
+                                <Notes />
+                            </NoteProvider>
                         </GatedComponent>
                     </Route>
 
