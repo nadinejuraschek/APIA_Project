@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from '../../Header';
 import NoteCard from './NoteCard';
 
 const Notes = () => {
+    const [ notes, setNotes ] = useState([
+        {
+            date: 'March 3, 2020',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
+        {
+            date: 'March 5, 2020',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
+        {
+            date: 'March 10, 2020',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        }
+    ]);
+
     return (
+
         <section className="wrapper">
             <div className="block">
                 <Header header="My Notes" />
@@ -28,9 +44,9 @@ const Notes = () => {
                         </h6>
                 </div>
                 <div className="ui stackable grid">
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
+                    {notes.map((note, index) => (
+                        <NoteCard key={index} date={note.date} text={note.text} />
+                    ))}
                 </div>
             </div>
         </section>

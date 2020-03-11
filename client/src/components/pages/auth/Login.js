@@ -12,6 +12,12 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        // check if email exists
+
+        // check if password matches password
+
+        // if yes: log in and redirect to /home
+        // if no: redirect to /register
         axios({
             url: '/api/user/login',
             method: 'POST',
