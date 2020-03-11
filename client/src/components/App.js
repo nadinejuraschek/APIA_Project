@@ -47,11 +47,7 @@ const App = () => {
                             <Profile />
                         </GatedComponent>
                     </Route>
-                    <Route exact path='/emergencynumbers' >
-                        <GatedComponent>
-                            <EmergencyNumbers />
-                        </GatedComponent>
-                    </Route>
+                    <Route exact path='/emergencynumbers' component={ EmergencyNumbers } />
 
                     {/* Home */}
                     <Route exact path='/home' >

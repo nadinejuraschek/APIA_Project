@@ -156,7 +156,7 @@ class Register extends Component {
                             </div>
 
                             <div className="centered">
-                                <button className="ui button" type="submit" >Register</button>
+                                <button className="ui button" type="submit">Register</button>
                             </div>
 
                             <div className="ui message centered">

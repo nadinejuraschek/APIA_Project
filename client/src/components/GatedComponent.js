@@ -10,7 +10,7 @@ class GatedComponent extends Component {
     componentDidMount() {
         // check if user is signed in
         axios.get('/api/user').then(response => {
-             this.setState({ user: response.data })
+            this.setState({ user: response.data })
         }).catch(error => {
             console.log('Error: ' + error.message)
         });

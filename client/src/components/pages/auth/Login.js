@@ -12,11 +12,17 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        axios.get('/api/user').then(response => {
-            this.setState({ user: response.data });
-            this.state.user ? this.props.history.push('/home') : this.props.history.push('/register');
-        }).catch(error => {
-            console.log('Error: ' + error.message);
+        axios({
+            url: '/api/user/login',
+            method: 'POST',
+            data: { email: this.state.email, password: this.state.password }
+        })
+        .then(response => {
+            console.log('Data: ' + response.data);
+            this.props.history.push('/home');
+        })
+        .catch(error => {
+            console.log('Error: ' + error.response);
         });
     };
 
@@ -62,7 +68,7 @@ class Login extends Component {
                                 <a href="/register" className="ui button">
                                     Register
                                 </a>
-                                <p>Or Log In with</p>
+                                {/* <p>Or Log In with</p>
                                 <div className="ui small buttons">
                                     <button className="ui facebook button">
                                         <i className="facebook icon"></i>
@@ -73,7 +79,7 @@ class Login extends Component {
                                         <i className="google icon"></i>
                                         Google
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         
                         </form>
