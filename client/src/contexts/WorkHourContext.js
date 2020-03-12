@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const WorkHourContext = createContext();
 
@@ -9,7 +9,7 @@ export const WorkHourProvider = props => {
                 number: 1,
                 day: [
                     {
-                        date: 02/03/2020,
+                        date: '02/03/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -21,7 +21,7 @@ export const WorkHourProvider = props => {
                         dayOff: false
                     },
                     {
-                        date: 02/04/2020,
+                        date: '02/04/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -32,7 +32,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 8,
                         dayOff: false
                     },{
-                        date: 02/05/2020,
+                        date: '02/05/2020',
                         time: [
                             {
                                 start: '9:00 AM',
@@ -48,7 +48,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 7,
                         dayOff: false
                     },{
-                        date: 02/06/2020,
+                        date: '02/06/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -59,7 +59,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 8,
                         dayOff: false
                     },{
-                        date: 02/07/2020,
+                        date: '02/07/2020',
                         time: [
                             {
                                 start: '9:00 AM',
@@ -71,7 +71,7 @@ export const WorkHourProvider = props => {
                         dayOff: false
                     },
                     {
-                        date: 02/08/2020,
+                        date: '02/08/2020',
                         time: [
                             {
                                 start: '',
@@ -83,7 +83,7 @@ export const WorkHourProvider = props => {
                         dayOff: true
                     },
                     {
-                        date: 02/09/2020,
+                        date: '02/09/2020',
                         time: [
                             {
                                 start: '',
@@ -101,7 +101,7 @@ export const WorkHourProvider = props => {
                 number: 2,
                 day: [
                     {
-                        date: 02/10/2020,
+                        date: '02/10/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -113,7 +113,7 @@ export const WorkHourProvider = props => {
                         dayOff: false
                     },
                     {
-                        date: 02/11/2020,
+                        date: '02/11/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -124,7 +124,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 8,
                         dayOff: false
                     },{
-                        date: 02/12/2020,
+                        date: '02/12/2020',
                         time: [
                             {
                                 start: '9:00 AM',
@@ -140,7 +140,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 11,
                         dayOff: false
                     },{
-                        date: 02/13/2020,
+                        date: '02/13/2020',
                         time: [
                             {
                                 start: '6:00 AM',
@@ -151,7 +151,7 @@ export const WorkHourProvider = props => {
                         dailyHours: 8,
                         dayOff: false
                     },{
-                        date: 02/14/2020,
+                        date: '02/14/2020',
                         time: [
                             {
                                 start: '9:00 AM',
@@ -163,7 +163,7 @@ export const WorkHourProvider = props => {
                         dayOff: false
                     },
                     {
-                        date: 02/15/2020,
+                        date: '02/15/2020',
                         time: [
                             {
                                 start: '8:00 PM',
@@ -175,7 +175,7 @@ export const WorkHourProvider = props => {
                         dayOff: false
                     },
                     {
-                        date: 02/16/2020,
+                        date: '02/16/2020',
                         time: [
                             {
                                 start: '',
@@ -193,7 +193,7 @@ export const WorkHourProvider = props => {
     ]);
 
     return (
-        <WorkHourContext.Provider value={workhours}>
+        <WorkHourContext.Provider value={[workhours]}>
             {this.children}
         </WorkHourContext.Provider>
     )

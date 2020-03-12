@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const PaymentContext = createContext();
 
@@ -7,7 +7,7 @@ export const PaymentProvider = props => {
         {
             week: 1,
             paid: true,
-            date: 'February 7, 2020,
+            date: 'February 7, 2020',
             late: false
         },
         {

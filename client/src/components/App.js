@@ -27,6 +27,10 @@ import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 
+import { UserProvider } from '../contexts/UserContext';
+import { WorkHourProvider } from '../contexts/WorkHourContext';
+import { PaymentProvider } from '../contexts/PaymentContext';
+import { GoalProvider } from '../contexts/GoalContext';
 import { NoteProvider } from '../contexts/NoteContext';
 
 const App = () => {
@@ -46,7 +50,9 @@ const App = () => {
                     {/* Navbar Links */}
                     <Route exact path='/profile' >
                         <GatedComponent>
-                            <Profile />
+                            <UserProvider>
+                                <Profile />
+                            </UserProvider>
                         </GatedComponent>
                     </Route>
                     <Route exact path='/emergencynumbers' component={ EmergencyNumbers } />
@@ -54,7 +60,9 @@ const App = () => {
                     {/* Home */}
                     <Route exact path='/home' >
                         <GatedComponent>
-                            <Home />
+                            <UserProvider>
+                                <Home />
+                            </UserProvider>
                         </GatedComponent>
                     </Route>
 
@@ -78,17 +86,23 @@ const App = () => {
                     {/* Notebook Sections */}
                     <Route exact path='/notebook/workhours' >
                         <GatedComponent>
-                            <WorkHours />
+                            <WorkHourProvider>
+                                <WorkHours />
+                            </WorkHourProvider>
                         </GatedComponent>
                     </Route>
                     <Route exact path='/notebook/payments' >
                         <GatedComponent>
-                            <Payments />
+                            <PaymentProvider>
+                                <Payments />
+                            </PaymentProvider>
                         </GatedComponent>
                     </Route>
                     <Route exact path='/notebook/goals' >
                         <GatedComponent>
-                            <Goals />
+                            <GoalProvider>
+                                <Goals />
+                            </GoalProvider>
                         </GatedComponent>
                     </Route>
                     <Route exact path='/notebook/notes' >

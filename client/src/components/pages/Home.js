@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import FeatureCard from './FeatureCard';
+
+import { UserContext } from '../../contexts/UserContext';
 
 import notebookIcon from '../../images/book.svg';
 import hostfamilyIcon from '../../images/family.svg';
 import clusterIcon from '../../images/cluster.svg';
 
 const Home = () => {
+    const [ user, setUser ] = useContext(UserContext);
+
     return (
         <section className="wrapper">
             <div className="block">
 
                 <div className="pageheader">
                         <h2>
-                            Good morning, Name!
+                            Good morning, { user.firstname }!
                         </h2>
                         <h3>
                             What Can I Help You With?

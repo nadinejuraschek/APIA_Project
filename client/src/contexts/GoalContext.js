@@ -4,30 +4,32 @@ export const GoalContext = createContext();
 
 export const GoalProvider = props => {
     const [ goals, setGoals ] = useState({
-        three: {
-            personal: [],
-            travel: [],
-            education: []
-        },
-        six: {
-            personal: [],
-            travel: [],
-            education: []
-        },
-        nine: {
-            personal: [],
-            travel: [],
-            education: []
-        },
-        twelve: {
-            personal: [],
-            travel: [],
-            education: []
-        }
+        personal: [
+            {
+                month: 3,
+                text: 'This is my goal!'
+            },
+            {
+                month: 6,
+                text: 'This is my goal!'
+            }
+        ],
+        travel: [
+            {
+                month: 6,
+                text: 'This is my goal!'
+            }
+        ],
+        education: [
+            {
+                month: 12,
+                text: 'This is my goal!'
+            }
+        ]
     });
 
     return (
-        <GoalContext.Provider value={goals}>
+        <GoalContext.Provider value={[goals]}>
             {props.children}
         </GoalContext.Provider>
     );

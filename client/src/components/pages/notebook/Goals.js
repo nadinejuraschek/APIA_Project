@@ -1,6 +1,7 @@
 import React from 'react';
-
 import GoalList from './GoalList';
+
+import { GoalContext } from '../../../contexts/GoalContext';
 
 import Header from '../../Header';
 

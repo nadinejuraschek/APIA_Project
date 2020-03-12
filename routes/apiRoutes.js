@@ -15,8 +15,10 @@ router.post("/api/users", function (req, res) {
 });
 
 router.get('/api/user', function (req, res) {
-  // console.log(req.user);
-  res.json(req.user);
+  // console.log('User ID: ' + req.user);
+  db.User.findById({ _id: req.user }, function(err, user) {
+    res.json(user);
+  });
 });
   
 router.post('/api/user/register', async function (req, res) {
@@ -68,71 +70,40 @@ router.post('/api/user/signout', function(req, res) {
   res.json('User is signed out.');
 });
 
+router.get('/api/user/:id', (req, res) => {
+  db.User.findById({ _id: req.params.id })
+    .then((user) => {
+      console.log('User data: ' + user);
+      res.json(user);
+    })
+    .catch((err) => {
+      console.log('User error: ' + err);
+    });
+});
 
+router.get('/api/user/:id/workhours', (req, res) => {
+  db.User.findById(req.params.id).populated('workhours').then(function(data) {
+    res.json(data);
+  });
+});
 
+router.get('/user/:id/payment', (req, res) => {
+  db.User.findById(req.params.id).populated('payments').then(function(data) {
+    res.json(data);
+  });
+});
 
-// router.get('/user/:id', (req, res) => {
-    
-//   User.find({ id: req.params.id })
-//     .then((data) => {
-//       console.log('User data: ' + data);
-//       res.json(data);
-//     })
-//     .catch((err) => {
-//       console.log('User error: ' + err);
-//     });
+router.get('/user/:id/notes', (req, res) => {
+  db.User.findById(req.params.id).populated('goals').then(function(data) {
+    res.json(data);
+  })
+});
 
-// });
-
-// router.get('/user/:id/workHours', async (req, res) => {
-//     try {
-//     res.status(200).json(data);
-//     } catch (err) {
-//       res.status(400).json({
-//         message: "Some error occured",
-//         err
-//       });
-//     }
-// });
-
-// // SIGNOUT ROUTE
-// app.post('/api/user/signout', function(req, res) {
-//   res.clearCookie('token');
-//   res.json('Signed out.');
-// });
-
-// router.get('/user/:id/payment', async (req, res) => {
-//     try {
-//     res.status(200).json(data);
-//     } catch (err) {
-//       res.status(400).json({
-//         message: "Some error occured",
-//         err
-//       });
-//     }
-// });
-
-// router.get('/user/:id/goals', async (req, res) => {
-//     try {
-//     res.status(200).json(data);
-//     } catch (err) {
-//       res.status(400).json({
-//         message: "Some error occured",
-//         err
-//       });
-//     }
-// });
-
-// router.get('/user/:id/notes', async (req, res) => {
-//     try {
-//     res.status(200).json(data);
-//     } catch (err) {
-//       res.status(400).json({
-//         message: "Some error occured",
-//         err
-//       });
-//     }
-// });
+router.get('/user/:id/notes', (req, res) => {
+  db.User.findById(req.params.id).populated('notes').then(function(data) {
+    res.json(data);
+  })
+});
 
 // router.get('/user/:id/diary', async (req, res) => {
 //     try {

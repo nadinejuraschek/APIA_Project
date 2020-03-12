@@ -13,28 +13,26 @@ const userSchema = new mongoose.Schema({
 
     familyID: String,
 
-    notebook: {
-        workHours: [
-            {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'WorkHour'
-            }
+    workhours: [
+        {   type: mongoose.Schema.Types.ObjectId,
+            ref: 'WorkHour'
+        }
+    ],
+    payments: [
+        {   type: mongoose.Schema.Types.ObjectId,
+            ref: 'Payment'
+        }
+    ],
+    goals: [
+        {   type: mongoose.Schema.Types.ObjectId,
+            ref: 'Goal'
+        }
         ],
-        payment: [
-            {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'Payment'
-            }
-        ],
-        goals: [
-            {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'Goal'
-            }
-        ],
-        notes: [
-            {   type: mongoose.Schema.Types.ObjectId,
-                ref: 'Note'
-            }
-        ]
-    }
+    notes: [
+        {   type: mongoose.Schema.Types.ObjectId,
+            ref: 'Note'
+        }
+    ]
 });
 
 module.exports = mongoose.model('User', userSchema);

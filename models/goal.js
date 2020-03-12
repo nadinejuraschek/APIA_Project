@@ -3,26 +3,18 @@ const   mongoose = require('mongoose');
 
 // SCHEMA SETUP
 const goalSchema = new mongoose.Schema({
-    three: {
-        personal: [],
-        travel: [],
-        education: []
-    },
-    six: {
-        personal: [],
-        travel: [],
-        education: []
-    },
-    nine: {
-        personal: [],
-        travel: [],
-        education: []
-    },
-    twelve: {
-        personal: [],
-        travel: [],
-        education: []
-    }
+    personal: [{
+        month: Number,
+        text: String
+    }],
+    travel: [{
+        month: Number,
+        text: String
+    }],
+    education: [{
+        month: Number,
+        text: String
+    }]
 });
 
 module.exports = mongoose.model('Goal', goalSchema);
