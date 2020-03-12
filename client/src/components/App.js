@@ -2,6 +2,10 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
+// NPM PACKAGES
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // COMPONENT IMPORTS
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -15,6 +19,7 @@ import Register from './pages/auth/Register';
 import Cluster from './pages/cluster/Cluster';
 
 import HostFamily from './pages/hostFamily/HostFamily';
+import CalendarView from './pages/hostFamily/Calendar';
 
 import Goals from './pages/notebook/Goals';
 import Notebook from './pages/notebook/Notebook';
@@ -33,12 +38,21 @@ import { PaymentProvider } from '../contexts/PaymentContext';
 import { GoalProvider } from '../contexts/GoalContext';
 import { NoteProvider } from '../contexts/NoteContext';
 
+// TOASTIFY CONFIG
+toast.configure({
+    autoClose: 8000,
+    draggable: false
+});
+
 const App = () => {
+    const notify = () => toast("Wow so easy !");
     return (
         <div>
             <BrowserRouter>
                 <div>
                     <Navbar />
+
+                    <ToastContainer transition={Slide} />
 
                     {/* Landing Page */}
                     <Route exact path='/' component={ Landing } />
@@ -110,6 +124,13 @@ const App = () => {
                             <NoteProvider>
                                 <Notes />
                             </NoteProvider>
+                        </GatedComponent>
+                    </Route>
+
+                    {/* HostFamily Sections */}
+                    <Route exact path='/hostfamily/calendar' >
+                        <GatedComponent>
+                                <CalendarView />
                         </GatedComponent>
                     </Route>
 

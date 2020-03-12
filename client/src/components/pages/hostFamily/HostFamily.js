@@ -16,7 +16,7 @@ const HostFamily = () => {
                                 <div className="ui card notebook-card">
                                     <div className="content">
                                         <div className="ui medium header">
-                                            <a href="/notebook/workhours">Info</a>
+                                            <a href="/hostfamily/info">Info</a>
                                         </div>
                                         <div className="meta">
                                             Coming Soon
@@ -29,7 +29,7 @@ const HostFamily = () => {
                                 <div className="ui card notebook-card">
                                     <div className="content">
                                         <div className="ui medium header">
-                                            <a href="/notebook/payment">Diary</a>
+                                            <a href="/hostfamily/calendar">Calendar</a>
                                         </div>
                                         <div className="meta">
                                             Coming Soon
@@ -42,7 +42,20 @@ const HostFamily = () => {
                                 <div className="ui card notebook-card">
                                     <div className="content">
                                         <div className="ui medium header">
-                                            <a href="/notebook/goals">Tips</a>
+                                            <a href="/hostfamily/diary">Diary</a>
+                                        </div>
+                                        <div className="meta">
+                                            Coming Soon
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="column">
+                                <div className="ui card notebook-card">
+                                    <div className="content">
+                                        <div className="ui medium header">
+                                            <a href="/hostfamily/tips">Tips</a>
                                         </div>
                                         <div className="meta">
                                             Coming Soon

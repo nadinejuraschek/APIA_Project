@@ -8,8 +8,21 @@
 
 ## Technologies
 * React
+    * Content APIA
+    * Hooks
 * JavaScript
+* Node.js
+    * express
+    * axios
+    * bcryptjs
+    * concurrently
+    * cookie-parser
+    * dotenv
+    * jsonwebtoken
+    * morgan
+    * react-toastify
 * Semantic UI
+* MongoDB + mongoose
 
 ## Future Development Goals
 #### Multiple User Options
