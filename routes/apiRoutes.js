@@ -82,27 +82,46 @@ router.get('/api/user/:id', (req, res) => {
 });
 
 router.get('/api/user/:id/workhours', (req, res) => {
-  db.User.findById(req.params.id).populated('workhours').then(function(data) {
+  db.User.findById(req.params.id).populate('workhours').then(function(data) {
     res.json(data);
   });
 });
 
 router.get('/user/:id/payment', (req, res) => {
-  db.User.findById(req.params.id).populated('payments').then(function(data) {
+  db.User.findById(req.params.id).populate('payments').then(function(data) {
     res.json(data);
   });
 });
 
-router.get('/user/:id/notes', (req, res) => {
-  db.User.findById(req.params.id).populated('goals').then(function(data) {
+router.get('/user/:id/goals', (req, res) => {
+  db.User.findById(req.params.id).populate('goals').then(function(data) {
     res.json(data);
   })
 });
 
+// GET NOTES
 router.get('/user/:id/notes', (req, res) => {
-  db.User.findById(req.params.id).populated('notes').then(function(data) {
+  db.User.findById(req.params.id).populate('notes').then(function(data) {
     res.json(data);
   })
+});
+// GET NOTE
+router.get('/user/:id/notes/:noteid', (req, res) => {
+  db.Note.findById(req.params.noteid).then(function(data) {
+    res.json(data);
+  });
+});
+// EDIT NOTE
+router.put('/user/:id/notes/:noteid', (req, res) => {
+  db.Note.findById(req.params.noteid).then(function(data) {
+    res.json(data);
+  });
+});
+// DELETE NOTE
+router.delete('/user/:id/notes/:noteid', (req, res) => {
+  db.Note.findById(req.params.noteid).then(function(data) {
+    res.json(data);
+  });
 });
 
 // router.get('/user/:id/diary', async (req, res) => {

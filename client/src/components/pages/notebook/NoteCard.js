@@ -9,6 +9,14 @@ const NoteCard = ({ date, text }) => {
             <div>
                 {text}
             </div>
+            <div className="ui dividing header">
+            </div>
+            <div>
+                <form className="ui form">
+                    <button className="ui yellow button">Edit</button>
+                    <button className="ui red button">Delete</button>
+                </form>
+            </div>
         </div>
     );
 };
