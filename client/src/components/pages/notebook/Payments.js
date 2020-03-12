@@ -67,6 +67,10 @@ const Payments = () => {
                         </tbody>
 
                     </table>
+
+                    <div className="centered">
+                        <button className="circular ui icon button"><i class="plus icon"></i></button>
+                    </div>
                 </div>
             </div>
         </section>

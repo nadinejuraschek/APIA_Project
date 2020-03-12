@@ -36,6 +36,7 @@ const Notes = () => {
                         <NoteCard key={index} date={note.date} text={note.text} />
                     ))}
                 </div>
+                <button className="circular ui icon button"><i class="plus icon"></i></button>
             </div>
         </section>
     );

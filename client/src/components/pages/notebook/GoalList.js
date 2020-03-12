@@ -1,17 +1,17 @@
 import React from 'react';
 
-const GoalList = () => {
+const GoalList = ({ text }) => {
     return (
         <div className="ui list">
             <button className="circular ui icon button"><i class="plus icon"></i></button>
             <div className="item">
-                Goal #1
+                {text}
             </div>
             <div className="item">
-                Goal #2
+                {text}
             </div>
             <div className="item">
-                Goal #3
+                {text}
             </div>
         </div>
     );
