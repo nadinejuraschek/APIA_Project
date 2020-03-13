@@ -114,7 +114,7 @@ router.get('/user/:id/notes/:noteid', (req, res) => {
   });
 });
 // POST NOTE
-router.post('/notes', (req, res) => {
+router.post('/api/notes', (req, res) => {
   db.Note.create(req.body).then(function(data) {
     res.json(data);
   });

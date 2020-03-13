@@ -10,19 +10,40 @@ import { NoteContext } from '../../../contexts/NoteContext';
 // import useAddForm from '../../../hooks/useAddForm';
 
 const Notes = () => {
-    const [notes, setNotes] = useContext(NoteContext);
-    const [newNote, setNewNote] = useState({ date: '', text: '' });
+    const [ notes, setNotes ] = useContext(NoteContext);
+    const [ newNote, setNewNote ] = useState({ date: '', text: '' });
     // const {inputs, handleChange, handleSubmit} = useAddForm(inputs);
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log(newNote);
+
+        axios({
+            url: '/api/notes',
+            method: 'POST',
+            data: newNote
+        }).then(response => {
+            console.log('Data: ' + response.data);
+        }).catch(error => {
+            console.log('Error: ' + error.response);
+        });
+    };
+ 
     const handleChange = event => {
-        event.persist();
         const name = event.target.name;
         const value = event.target.value;
-        
-        // console.log(event.target.value);
-        setNewNote(newNote => ({ ...newNote, [name]: value }));
-        return newNote;
+        setNewNote(newNote => ({...newNote, [name]: value }));
     };
+        
+    // const handleChange = event => {
+    //     event.persist();
+    //     const name = event.target.name;
+    //     const value = event.target.value;
+        
+    //     // console.log(event.target.value);
+    //     setNewNote(newNote => ({ ...newNote, [name]: value }));
+    //     return newNote;
+    // };
 
     // const addNote = (callback) => {
     //     const [inputs, setInputs] = useState({});
@@ -43,19 +64,19 @@ const Notes = () => {
     //     };
     // }
     
-    console.log(newNote);
-    const handleSubmit = event => {
-        event.preventDefault();
+    // console.log(newNote);
+    // const handleSubmit = event => {
+    //     event.preventDefault();
         
-        axios({
-            url: '/notes',
-            method: 'POST',
-            data: newNote
-        }).then(response => {
-            console.log('axios called');
-        });
+    //     axios({
+    //         url: '/notes',
+    //         method: 'POST',
+    //         data: newNote
+    //     }).then(response => {
+    //         console.log('axios called');
+    //     });
  
-    };
+    // };
 
     const handleEdit = event => {
         event.preventDefault();
@@ -112,13 +133,14 @@ const Notes = () => {
                             <h4>New Note</h4>
                             <form 
                                 className="ui form" 
+                                onSubmit={handleSubmit}
                                 // onSubmit={useAddForm}
                             >
                                 <div className="field">
                                     <input 
                                         name="date" 
                                         type="text" 
-                                        onChange={handleChange} 
+                                        onChange={handleChange}
                                         // value={inputs.date} 
                                         placeholder="Date" />
                                 </div>
@@ -133,7 +155,10 @@ const Notes = () => {
                                     />
                                 </div>
                                 <div className="field centered">
-                                    <button className="circular ui icon button" onSubmit={handleSubmit}>
+                                    <button 
+                                        className="circular ui icon button" 
+                                        // onSubmit={handleSubmit}
+                                    >
                                         <i className="plus icon"></i>
                                     </button>
                                 </div>
