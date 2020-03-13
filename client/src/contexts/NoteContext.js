@@ -19,14 +19,17 @@ export const NoteProvider = props => {
     //     }
     // ]);
     const [ notes, setNotes ] = useState([]); 
-    
-    const fetchNotes = async () => {
-    const response = await axios.get('/user/:id/notes');
-            console.log('Error: ' + error);
-    };
 
-    useEffect( () => { fetchNotes(notes) }, [ notes ] );
-
+    useEffect( () => { 
+        axios({
+            method: 'GET',
+            url: '/user/5e6a5c0ea6a19e0bbb5d554f/notes'
+        }).then(res => {
+            console.log(res.data.notes);
+            setNotes(res.data.notes);
+        })
+    }, []);
+      
     return (
         <NoteContext.Provider value={[notes]}>
             {props.children}
