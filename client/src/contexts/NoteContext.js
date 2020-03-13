@@ -23,7 +23,7 @@ export const NoteProvider = props => {
     useEffect( () => { 
         axios({
             method: 'GET',
-            url: '/user/5e6a5c0ea6a19e0bbb5d554f/notes'
+            url: '/user/:id/notes'
         }).then(res => {
             console.log(res.data.notes);
             setNotes(res.data.notes);
