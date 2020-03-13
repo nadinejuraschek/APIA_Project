@@ -101,7 +101,7 @@ router.get('/user/:id/goals', (req, res) => {
 
 // GET NOTES
 router.get('/user/:id/notes', (req, res) => {
-  db.User.findById(req.params.id).populate('notes').then(function(data) {
+  db.User.findById(req.user).populate('notes').then(function(data) {
     res.json(data);
   })
 });

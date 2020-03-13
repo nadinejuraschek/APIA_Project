@@ -25,7 +25,7 @@ export const NoteProvider = props => {
             method: 'GET',
             url: '/user/:id/notes'
         }).then(res => {
-            console.log(res.data.notes);
+            // console.log(res.data.notes);
             setNotes(res.data.notes);
         })
     }, []);
