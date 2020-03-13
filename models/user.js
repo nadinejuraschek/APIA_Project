@@ -3,7 +3,10 @@ const   mongoose = require('mongoose');
 
 // SCHEMA SETUP
 const userSchema = new mongoose.Schema({
-    email: String,
+    email: { 
+        type: String,
+        unique: true
+    },
     password: String,
 
     firstname: String,

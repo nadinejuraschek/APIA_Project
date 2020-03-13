@@ -17,7 +17,7 @@ class Register extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
         const newUser = this.state;
         axios({
             url: '/api/user/register',
@@ -52,11 +52,11 @@ class Register extends Component {
 
                             <div className="field">
                                 <label>I am a</label>
-                                <select className="ui fluid dropdown">
+                                <select name="role" onChange={this.handleChange} className="ui fluid dropdown">
                                     <option className="default text" value="">Choose One</option>
-                                    <option value="aupair" name="role">Au Pair</option>
-                                    <option value="family" name="role">Host Family Member</option>
-                                    <option value="lcc" name="role">Community Counselor</option>
+                                    <option value="Au Pair">Au Pair</option>
+                                    <option value="Host Family">Host Family Member</option>
+                                    <option value="Community Counselor">Community Counselor</option>
                                 </select>
                             </div>
 
@@ -88,7 +88,7 @@ class Register extends Component {
 
                             <div className="field">
                                 <label>Home Country</label>
-                                <select className="ui fluid dropdown">
+                                <select name="country" onChange={this.handleChange} className="ui fluid dropdown">
                                     <option className="default text">Select Country</option>
                                     <option className="item" value="ar">Argentina</option>
                                     <option className="item" value="au">Australia</option>

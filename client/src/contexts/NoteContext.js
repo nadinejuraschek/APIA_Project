@@ -16,18 +16,6 @@ export const NoteProvider = props => {
             setNotes(res.data.notes);
         })
     }, []);
-
-    // const addNote = event => {
-    //     event.preventDefault();
-    //     axios({
-    //         url: '/user/:id/notes',
-    //         method: 'POST',
-    //         data: req.body
-    //     }).then((response) => {
-    //         console.log(response);
-    //         this.props.history.push('/notebook/notes');
-    //     });
-    // };
       
     return (
         <NoteContext.Provider value={[notes]}>

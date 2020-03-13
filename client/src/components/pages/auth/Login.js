@@ -12,12 +12,6 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        // check if email exists
-
-        // check if password matches password
-
-        // if yes: log in and redirect to /home
-        // if no: redirect to /register
         axios({
             url: '/api/user/login',
             method: 'POST',
@@ -53,7 +47,7 @@ class Login extends Component {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="mail icon"></i>
-                                    <input type="text" name="username" placeholder="E-Mail" onChange={this.handleChange} />
+                                    <input type="text" name="email" placeholder="E-Mail" onChange={this.handleChange} />
                                 </div>
                             </div>
 

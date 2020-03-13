@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../images/embrace.svg';
 
 const Navbar = () => {
+
     return (
         <nav className="ui huge top fixed menu">
             <a className="header item" href="/">

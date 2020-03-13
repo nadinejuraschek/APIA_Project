@@ -47,11 +47,13 @@ router.post('/api/user/register', async function (req, res) {
 });
 
 router.post('/api/user/login', async function (req, res) {
-  const user = await db.User.find({ email: req.body.email });
+  console.log(req.body);
+  const user = await db.User.findOne({ email: req.body.email });
   if (!user) {
     res.json({message: 'No User found.'});
     return;
   };
+  console.log(user);
   const valid = await bcrypt.compare(req.body.password, user.password);
   if (!valid) {
     res.json({message: 'Entered e-mail and password do not match!'});
@@ -112,7 +114,7 @@ router.get('/user/:id/notes/:noteid', (req, res) => {
   });
 });
 // POST NOTE
-router.post('/user/:id/notes', (req, res) => {
+router.post('/notes', (req, res) => {
   db.Note.create(req.body).then(function(data) {
     res.json(data);
   });
