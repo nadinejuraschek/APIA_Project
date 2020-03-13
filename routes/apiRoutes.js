@@ -122,7 +122,7 @@ router.post('/api/notes', (req, res) => {
           console.log('Error: ' + error);
       } else {
           // TEST
-          console.log('Success: ' + success);
+          // console.log('Success: ' + success);
       };
     });
     // res.json(data);

@@ -12,7 +12,6 @@ import { NoteContext } from '../../../contexts/NoteContext';
 const Notes = () => {
     const [ notes, setNotes ] = useContext(NoteContext);
     const [ newNote, setNewNote ] = useState({ date: '', text: '' });
-    // const {inputs, handleChange, handleSubmit} = useAddForm(inputs);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -35,50 +34,7 @@ const Notes = () => {
         const value = event.target.value;
         setNewNote(newNote => ({...newNote, [name]: value }));
     };
-        
-    // const handleChange = event => {
-    //     event.persist();
-    //     const name = event.target.name;
-    //     const value = event.target.value;
-        
-    //     // console.log(event.target.value);
-    //     setNewNote(newNote => ({ ...newNote, [name]: value }));
-    //     return newNote;
-    // };
-
-    // const addNote = (callback) => {
-    //     const [inputs, setInputs] = useState({});
-
-    //     const handleSubmit = event => {
-    //         if (event) {
-    //             event.preventDefault();
-    //         }
-    //     }
-    //     const handleChange = event => {
-    //         event.persist();
-    //         setInputs(inputs => ({ ...inputs, [event.target.name]: event.target.value }));
-    //     }
-    //     return {
-    //         handleSubmit,
-    //         handleChange,
-    //         inputs
-    //     };
-    // }
     
-    // console.log(newNote);
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-        
-    //     axios({
-    //         url: '/notes',
-    //         method: 'POST',
-    //         data: newNote
-    //     }).then(response => {
-    //         console.log('axios called');
-    //     });
- 
-    // };
-
     const handleEdit = event => {
         event.preventDefault();
     };
@@ -86,25 +42,6 @@ const Notes = () => {
     const handleDelete = event => {
         event.preventDefault();
     };
-
-    // const addNote = event => {
-    //     axios({
-    //         url: '/user/:id/notes',
-    //         method: 'POST',
-    //         data: {
-                
-    //         }
-    //     }).then((response) => {
-    //         console.log(response);
-    //         this.props.history.push('/notebook/notes');
-    //     });
-    // };
-
-    // const saveNote = () => {
-    //     alert(`Note Created!
-    //            Date: ${inputs.date}
-    //            Text: ${inputs.text}`);
-    // };
 
     return (
         <section className="wrapper">
