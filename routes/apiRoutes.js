@@ -115,8 +115,17 @@ router.get('/user/:id/notes/:noteid', (req, res) => {
 });
 // POST NOTE
 router.post('/api/notes', (req, res) => {
-  db.Note.create(req.body).then(function(data) {
-    res.json(data);
+  db.Note.create(req.body).then(function(insertedNote) {
+    // console.log('User is: ' + req.user);
+    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { notes: insertedNote._id } }, function (error, success) {
+      if (error) {
+          console.log('Error: ' + error);
+      } else {
+          // TEST
+          console.log('Success: ' + success);
+      };
+    });
+    // res.json(data);
   });
 });
 // EDIT NOTE

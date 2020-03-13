@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { withRouter } from "react-router";
 import axios from 'axios';
 
@@ -16,14 +16,15 @@ const Notes = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(newNote);
+        // console.log('Note to send to DB: ' + newNote);
 
         axios({
             url: '/api/notes',
             method: 'POST',
             data: newNote
         }).then(response => {
-            console.log('Data: ' + response.data);
+            console.log('Note in DB: ' + response.data);
+            // this.props.history.push('/notebook/notes');
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
