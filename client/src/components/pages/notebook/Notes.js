@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { withRouter } from "react-router";
 import axios from 'axios';
 
@@ -7,29 +7,54 @@ import NoteCard from './NoteCard';
 
 import { NoteContext } from '../../../contexts/NoteContext';
 
+// import useAddForm from '../../../hooks/useAddForm';
+
 const Notes = () => {
     const [notes, setNotes] = useContext(NoteContext);
     const [newNote, setNewNote] = useState({ date: '', text: '' });
+    // const {inputs, handleChange, handleSubmit} = useAddForm(inputs);
 
     const handleChange = event => {
-        event.preventDefault();
+        event.persist();
         const name = event.target.name;
         const value = event.target.value;
         
         // console.log(event.target.value);
-        setNewNote({ [name]: value });
+        setNewNote(newNote => ({ ...newNote, [name]: value }));
+        return newNote;
     };
 
+    // const addNote = (callback) => {
+    //     const [inputs, setInputs] = useState({});
+
+    //     const handleSubmit = event => {
+    //         if (event) {
+    //             event.preventDefault();
+    //         }
+    //     }
+    //     const handleChange = event => {
+    //         event.persist();
+    //         setInputs(inputs => ({ ...inputs, [event.target.name]: event.target.value }));
+    //     }
+    //     return {
+    //         handleSubmit,
+    //         handleChange,
+    //         inputs
+    //     };
+    // }
+    
+    console.log(newNote);
     const handleSubmit = event => {
         event.preventDefault();
+        
         axios({
             url: '/notes',
             method: 'POST',
             data: newNote
-        }).then((response) => {
-            console.log(response);
-            this.props.history.push('/notebook/notes');
+        }).then(response => {
+            console.log('axios called');
         });
+ 
     };
 
     const handleEdit = event => {
@@ -51,6 +76,12 @@ const Notes = () => {
     //         console.log(response);
     //         this.props.history.push('/notebook/notes');
     //     });
+    // };
+
+    // const saveNote = () => {
+    //     alert(`Note Created!
+    //            Date: ${inputs.date}
+    //            Text: ${inputs.text}`);
     // };
 
     return (
@@ -79,12 +110,27 @@ const Notes = () => {
                         <div className="ui divider"></div>
                         <div className="add-container">
                             <h4>New Note</h4>
-                            <form className="ui form">
+                            <form 
+                                className="ui form" 
+                                // onSubmit={useAddForm}
+                            >
                                 <div className="field">
-                                    <input name="date" type="text" onChange={handleChange} placeholder="Date" />
+                                    <input 
+                                        name="date" 
+                                        type="text" 
+                                        onChange={handleChange} 
+                                        // value={inputs.date} 
+                                        placeholder="Date" />
                                 </div>
                                 <div className="field">
-                                    <textarea name="text" onChange={handleChange} rows="3" type="textarea" placeholder="Note" />
+                                    <textarea 
+                                        name="text" 
+                                        onChange={handleChange} 
+                                        // value={inputs.text}
+                                        rows="3" 
+                                        type="textarea" 
+                                        placeholder="Note" 
+                                    />
                                 </div>
                                 <div className="field centered">
                                     <button className="circular ui icon button" onSubmit={handleSubmit}>
