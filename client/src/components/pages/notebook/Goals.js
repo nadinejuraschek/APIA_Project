@@ -24,6 +24,7 @@ const Goals = () => {
                                     <div className="header">
                                         Personal
                                     </div>
+                                    <GoalList value={goals}/>
                                         {/* {goals.map((goal, index) => (
                                             if (goal.month === 3) {
                                                 <GoalList key={index} text={goal.text} />

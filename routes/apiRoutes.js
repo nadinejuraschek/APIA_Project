@@ -16,7 +16,7 @@ router.post("/api/users", function (req, res) {
 
 router.get('/api/user', function (req, res) {
   // console.log('User ID: ' + req.user);
-  db.User.findById({ _id: req.user }, function(err, user) {
+  db.User.findById((req.user), function(err, user) {
     res.json(user);
   });
 });
@@ -111,6 +111,12 @@ router.get('/user/:id/notes/:noteid', (req, res) => {
     res.json(data);
   });
 });
+// POST NOTE
+router.post('/user/:id/notes', (req, res) => {
+  db.Note.create(req.body).then(function(data) {
+    res.json(data);
+  });
+});
 // EDIT NOTE
 router.put('/user/:id/notes/:noteid', (req, res) => {
   db.Note.findById(req.params.noteid).then(function(data) {
@@ -123,16 +129,5 @@ router.delete('/user/:id/notes/:noteid', (req, res) => {
     res.json(data);
   });
 });
-
-// router.get('/user/:id/diary', async (req, res) => {
-//     try {
-//     res.status(200).json(data);
-//     } catch (err) {
-//       res.status(400).json({
-//         message: "Some error occured",
-//         err
-//       });
-//     }
-// });
 
 module.exports = router;

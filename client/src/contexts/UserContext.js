@@ -1,17 +1,20 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
+import axios from 'axios';
 
 export const UserContext = createContext();
 
 export const UserProvider = props => {
-    const [ user, setUser ] = useState({
-        role: 'aupair',
-        familyID: '12345',
-        firstname: 'Alexas',
-        lastname: 'Texas',
-        country: 'Argentina',
-        email: 'at@mail.com',
-        password: 'abc123'
-    });
+
+    const [ user, setUser ] = useState([]); 
+
+    useEffect( () => { 
+        axios({
+            method: 'GET',
+            url: '/api/user'
+        }).then(res => {
+            setUser(res.data);
+        })
+    }, []);
 
     return (
         <UserContext.Provider value={[user]}>

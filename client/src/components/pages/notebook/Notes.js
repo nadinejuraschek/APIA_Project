@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { withRouter } from "react-router";
 
 import Header from '../../Header';
 import NoteCard from './NoteCard';
@@ -12,11 +13,12 @@ const Notes = () => {
         <section className="wrapper">
             <div className="block">
                 <Header header="My Notes" />
-                <div className="costum-container">
-                <h4>
+                <div className="ui stackable grid">
+                    <div className="four wide column">
+                        <h4>
                             A Space for You to Write Down Your Thoughts
                         </h4>
-                        <h6>
+                        <div>
                             Ideas:
                             <div className="ui list">
                                 <div className="item">
@@ -29,17 +31,36 @@ const Notes = () => {
                                     Things my host kids said to me today:
                                 </div>
                             </div>
-                        </h6>
+                        </div>
+                        <div className="ui divider"></div>
+                        <div className="add-container">
+                            <h4>New Note</h4>
+                            <form className="ui form">
+                                <div className="field">
+                                    <input type="text" placeholder="Date" />
+                                </div>
+                                <div className="field">
+                                    <textarea rows="3" type="textarea" placeholder="Note" />
+                                </div>
+                                <div className="field centered">
+                                    <button 
+                                        className="circular ui icon button"
+                                    >
+                                        <i className="plus icon"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="twelve wide column">
+                        {notes.map((note, index) => (
+                            <NoteCard key={index} date={note.date} text={note.text} />
+                        ))}
+                    </div>
                 </div>
-                <div className="ui stackable grid">
-                    {notes.map((note, index) => (
-                        <NoteCard key={index} date={note.date} text={note.text} />
-                    ))}
-                </div>
-                <button className="circular ui icon button"><i className="plus icon"></i></button>
             </div>
         </section>
     );
 };
 
-export default Notes;
+export default withRouter(Notes);
