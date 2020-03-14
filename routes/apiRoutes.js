@@ -7,20 +7,30 @@ const   express     = require('express'),
 // ==================================================
 // USER
 // ==================================================
-// Create a new user
+// CREATE USER
 router.post("/api/users", function (req, res) {
   db.User.create(req.body).then(function (apia) {
     res.json(apia);
   });
 });
-
+// GET USER
 router.get('/api/user', function (req, res) {
   // console.log('User ID: ' + req.user);
   db.User.findById((req.user), function(err, user) {
     res.json(user);
   });
 });
-  
+router.get('/api/user/:id', (req, res) => {
+  db.User.findById({ _id: req.params.id })
+    .then((user) => {
+      console.log('User data: ' + user);
+      res.json(user);
+    })
+    .catch((err) => {
+      console.log('User error: ' + err);
+    });
+});
+// REGISTER USER
 router.post('/api/user/register', async function (req, res) {
   console.log(req.body);
   req.body.email = req.body.email.toLowerCase();
@@ -45,7 +55,7 @@ router.post('/api/user/register', async function (req, res) {
   console.log("\n\n\n\n\n\n\n\n\n", user);
   res.json(user);
 });
-
+// LOGIN USER
 router.post('/api/user/login', async function (req, res) {
   console.log(req.body);
   const user = await db.User.findOne({ email: req.body.email });
@@ -66,41 +76,117 @@ router.post('/api/user/login', async function (req, res) {
   });
   res.json(user);
 });
-
+// SIGNOUT USER
 router.post('/api/user/signout', function(req, res) {
   res.clearCookie('token');
   res.json('User is signed out.');
 });
 
-router.get('/api/user/:id', (req, res) => {
-  db.User.findById({ _id: req.params.id })
-    .then((user) => {
-      console.log('User data: ' + user);
-      res.json(user);
-    })
-    .catch((err) => {
-      console.log('User error: ' + err);
-    });
-});
-
-router.get('/api/user/:id/workhours', (req, res) => {
+// ==================================================
+// WORKHOURS
+// ==================================================
+// GET WORKHOURS
+router.get('/api/workhours', (req, res) => {
   db.User.findById(req.params.id).populate('workhours').then(function(data) {
     res.json(data);
+  })
+});
+// POST WORKHOURS
+router.post('/api/workhours', (req, res) => {
+  db.Workhour.create(req.body).then(function(insertedWorkhours) {
+    // console.log('User is: ' + req.user);
+    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { workhours: insertedWorkhours._id } }, function (error, success) {
+      if (error) {
+          console.log('Error: ' + error);
+      } else {
+          // TEST
+          // console.log('Success: ' + success);
+          res.json('Success!');
+      };
+    });
+    // res.json(data);
   });
 });
+// EDIT WORKHOURS
 
-router.get('/user/:id/payment', (req, res) => {
-  db.User.findById(req.params.id).populate('payments').then(function(data) {
+// DELETE WORKHOURS
+router.delete('/api/workhours/:workhourid', (req, res) => {
+  db.Payment.findByIdAndRemove(req.params.workhourid).then(function(data) {
     res.json(data);
   });
 });
 
-router.get('/user/:id/goals', (req, res) => {
+// ==================================================
+// PAYMENTS
+// ==================================================
+// GET PAYMENTS
+router.get('/api/payments', (req, res) => {
+  db.User.findById(req.params.id).populate('payments').then(function(data) {
+    res.json(data);
+  })
+});
+// POST PAYMENT
+router.post('/api/payments', (req, res) => {
+  db.Payment.create(req.body).then(function(insertedPayment) {
+    // console.log('User is: ' + req.user);
+    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { payments: insertedPayment._id } }, function (error, success) {
+      if (error) {
+          console.log('Error: ' + error);
+      } else {
+          // TEST
+          // console.log('Success: ' + success);
+          res.json('Success!');
+      };
+    });
+    // res.json(data);
+  });
+});
+// EDIT PAYMENT
+
+// DELETE PAYMENT
+router.delete('/api/payments/:paymentid', (req, res) => {
+  db.Payment.findByIdAndRemove(req.params.paymentid).then(function(data) {
+    res.json(data);
+  });
+});
+
+// ==================================================
+// GOALS
+// ==================================================
+// GET GOALS
+router.get('/api/goals', (req, res) => {
   db.User.findById(req.params.id).populate('goals').then(function(data) {
     res.json(data);
   })
 });
+// POST GOAL
+router.post('/api/goals', (req, res) => {
+  db.Goal.create(req.body).then(function(insertedGoal) {
+    // console.log('User is: ' + req.user);
+    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { goals: insertedGoal._id } }, function (error, success) {
+      if (error) {
+          console.log('Error: ' + error);
+      } else {
+          // TEST
+          // console.log('Success: ' + success);
+          res.json('Success!');
+      };
+    });
+    // res.json(data);
+  });
+});
+// EDIT GOAL
 
+// DELETE GOAL
+router.delete('/api/goals/:goalid', (req, res) => {
+  db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
+    res.json(data);
+  });
+});
+
+// ==================================================
+// NOTES
+// ==================================================
 // GET NOTES
 router.get('/user/:id/notes', (req, res) => {
   db.User.findById(req.user).populate('notes').then(function(data) {
@@ -123,7 +209,7 @@ router.post('/api/notes', (req, res) => {
       } else {
           // TEST
           // console.log('Success: ' + success);
-          res.json('Worked');
+          res.json('Success!');
       };
     });
     // res.json(data);
@@ -137,7 +223,6 @@ router.put('/api/notes/:noteid', (req, res) => {
 });
 // DELETE NOTE
 router.delete('/api/notes/:noteid', (req, res) => {
-  // console.log(req.params.id);
   db.Note.findByIdAndRemove(req.params.noteid).then(function(data) {
     res.json(data);
   });

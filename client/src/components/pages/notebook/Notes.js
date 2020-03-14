@@ -1,6 +1,5 @@
 // REACT
 import React, { useState, useContext } from 'react';
-import { withRouter } from "react-router";
 
 // NPM PACKAGES
 import axios from 'axios';
@@ -110,4 +109,4 @@ const Notes = (props) => {
     );
 };
 
-export default withRouter(Notes);
+export default Notes;
