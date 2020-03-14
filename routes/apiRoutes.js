@@ -123,6 +123,7 @@ router.post('/api/notes', (req, res) => {
       } else {
           // TEST
           // console.log('Success: ' + success);
+          res.json('Worked');
       };
     });
     // res.json(data);

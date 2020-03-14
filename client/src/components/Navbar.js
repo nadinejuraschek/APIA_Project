@@ -1,7 +1,17 @@
 import React from 'react';
 import logo from '../images/embrace.svg';
+import { withRouter } from "react-router";
+import axios from 'axios';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const handleLogout = () => {
+        axios({
+            url: '/api/user/signout',
+            method: 'POST'
+        }).then(response => {
+            props.history.push('/login');
+        });
+    };
 
     return (
         <nav className="ui huge top fixed menu">
@@ -17,7 +27,7 @@ const Navbar = () => {
                     <div className="menu">
                         <a className="item" href="/profile">Profile</a>
                         <a className="item" href="/emergencynumbers">Emergency Numbers</a>
-                        <a className="item" href="/api/user/signout">Log Out</a>
+                        <button className="ui button" onClick={handleLogout}>Log Out</button>
                     </div>
                 </div>
             </div>
@@ -25,4 +35,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

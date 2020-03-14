@@ -1,29 +1,34 @@
+// REACT
 import React, { useState, useContext } from 'react';
 import { withRouter } from "react-router";
+
+// NPM PACKAGES
 import axios from 'axios';
 
+// COMPONENTS
 import Header from '../../Header';
 import NoteCard from './NoteCard';
 
+// CONTEXTS
 import { NoteContext } from '../../../contexts/NoteContext';
 
-// import useAddForm from '../../../hooks/useAddForm';
-
-const Notes = () => {
-    const [ notes, setNotes ] = useContext(NoteContext);
+const Notes = (props) => {
+    // const [ notes, setNotes ] = useContext(NoteContext);
+    const { getNotes, notes } = useContext(NoteContext);
     const [ newNote, setNewNote ] = useState({ date: '', text: '' });
 
     const handleSubmit = event => {
         event.preventDefault();
         // console.log('Note to send to DB: ' + newNote);
-
+        console.log('handleSubmit');
         axios({
             url: '/api/notes',
             method: 'POST',
             data: newNote
         }).then(response => {
             console.log('Note in DB: ' + response.data);
-            // this.props.history.push('/notebook/notes');
+            // re-render component??
+            getNotes();
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -72,21 +77,18 @@ const Notes = () => {
                             <form 
                                 className="ui form" 
                                 onSubmit={handleSubmit}
-                                // onSubmit={useAddForm}
                             >
                                 <div className="field">
                                     <input 
                                         name="date" 
                                         type="text" 
                                         onChange={handleChange}
-                                        // value={inputs.date} 
                                         placeholder="Date" />
                                 </div>
                                 <div className="field">
                                     <textarea 
                                         name="text" 
                                         onChange={handleChange} 
-                                        // value={inputs.text}
                                         rows="3" 
                                         type="textarea" 
                                         placeholder="Note" 
@@ -95,7 +97,6 @@ const Notes = () => {
                                 <div className="field centered">
                                     <button 
                                         className="circular ui icon button" 
-                                        // onSubmit={handleSubmit}
                                     >
                                         <i className="plus icon"></i>
                                     </button>
@@ -104,8 +105,8 @@ const Notes = () => {
                         </div>
                     </div>
                     <div className="twelve wide column">
-                        {notes.map((note, index) => (
-                            <NoteCard key={index} id={note._id} date={note.date} text={note.text} />
+                        {notes.map((note) => (
+                            <NoteCard key={note._id} date={note.date} text={note.text} />
                         ))}
                     </div>
                 </div>
