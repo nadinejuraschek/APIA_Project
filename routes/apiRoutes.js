@@ -130,14 +130,15 @@ router.post('/api/notes', (req, res) => {
   });
 });
 // EDIT NOTE
-router.put('/user/:id/notes/:noteid', (req, res) => {
-  db.Note.findById(req.params.noteid).then(function(data) {
+router.put('/api/notes/:noteid', (req, res) => {
+  db.Note.findByIdAndUpdate(req.params.noteid).then(function(data) {
     res.json(data);
   });
 });
 // DELETE NOTE
-router.delete('/user/:id/notes/:noteid', (req, res) => {
-  db.Note.findById(req.params.noteid).then(function(data) {
+router.delete('/api/notes/:noteid', (req, res) => {
+  // console.log(req.params.id);
+  db.Note.findByIdAndRemove(req.params.noteid).then(function(data) {
     res.json(data);
   });
 });

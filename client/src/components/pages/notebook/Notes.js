@@ -13,21 +13,19 @@ import NoteCard from './NoteCard';
 import { NoteContext } from '../../../contexts/NoteContext';
 
 const Notes = (props) => {
-    // const [ notes, setNotes ] = useContext(NoteContext);
-    const { getNotes, notes } = useContext(NoteContext);
+    const { getNotes, editNote, deleteNote, notes } = useContext(NoteContext);
     const [ newNote, setNewNote ] = useState({ date: '', text: '' });
 
     const handleSubmit = event => {
         event.preventDefault();
         // console.log('Note to send to DB: ' + newNote);
-        console.log('handleSubmit');
         axios({
             url: '/api/notes',
             method: 'POST',
             data: newNote
         }).then(response => {
-            console.log('Note in DB: ' + response.data);
-            // re-render component??
+            // console.log('Note in DB: ' + response.data);
+            // re-render component
             getNotes();
         }).catch(error => {
             console.log('Error: ' + error.response);
@@ -42,10 +40,7 @@ const Notes = (props) => {
     
     const handleEdit = event => {
         event.preventDefault();
-    };
-
-    const handleDelete = event => {
-        event.preventDefault();
+        editNote();
     };
 
     return (
@@ -106,7 +101,7 @@ const Notes = (props) => {
                     </div>
                     <div className="twelve wide column">
                         {notes.map((note) => (
-                            <NoteCard key={note._id} date={note.date} text={note.text} />
+                            <NoteCard key={note._id} noteid={note._id} date={note.date} text={note.text} deleteNote={deleteNote} />
                         ))}
                     </div>
                 </div>

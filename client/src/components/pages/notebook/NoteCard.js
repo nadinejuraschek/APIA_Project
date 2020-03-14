@@ -1,7 +1,6 @@
 import React from 'react';
-import Moment from 'react-moment';
 
-const NoteCard = ({ date, text }) => {
+const NoteCard = ({ noteid, date, text, deleteNote }) => {
     return (
         <div className="ui fluid card note-card">
             <div className="ui dividing header">
@@ -15,7 +14,7 @@ const NoteCard = ({ date, text }) => {
             <div>
                 <form className="ui form">
                     <button className="ui yellow button">Edit</button>
-                    <button className="ui red button">Delete</button>
+                    <button type="button" className="ui red button" onClick={() => deleteNote(noteid)} >Delete</button>
                 </form>
             </div>
         </div>
