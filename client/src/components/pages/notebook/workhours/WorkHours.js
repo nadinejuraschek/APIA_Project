@@ -1,76 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 // import { Accordion, Icon } from 'semantic-ui-react';
 
 import Header from '../../../Header';
 // import WorkAccordion from './WorkAccordion';
 import WorkCard from './WorkCard';
+import WeekView from './WeekView';
 
 import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
 const WorkHours = () => {
     const [ workhours, setWorkhours ] = useContext(WorkHourContext);
-    // state = { activeIndex: 0 }
+    const [ activeCard, setActiveCard ] = useState({});
 
-    // handleClick = (e, titleProps) => {
-    //     const { index } = titleProps
-    //     const { activeIndex } = this.state
-    //     const newIndex = activeIndex === index ? -1 : index
-
-    //     this.setState({ activeIndex: newIndex })
-    // }
-    // render() {
-    //     const { activeIndex } = this.state;
-
-        
-        return (
-            <section className="wrapper">
-                <div className="block">
+    return (
+        <section className="wrapper">
+            <div className="block">
                     
-                    <Header header="Your Work Hour Log" />
+                <Header header="Your Work Hours" />
 
-                    <div className="ui stackable grid">
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
-                        <div className="five column row">
-                            <WorkCard value={workhours} />
-                            <WorkCard value={workhours} />
-                        </div>
+                <WeekView value={workhours} />
+
+                <div className="ui stackable grid">
+                    <div className="five column row">
+                        <WorkCard workhourid={workhours._id} value={workhours} />
+                        <WorkCard workhourid={workhours._id} value={workhours} />
                     </div>
                 </div>
-            </section>
+
+                <div className="centered">
+                    <button className="circular ui icon button"><i class="plus icon"></i></button>
+                </div>
+            </div>
+        </section>
         );
     // }
 };
