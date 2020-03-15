@@ -5,11 +5,11 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
 // COMPONENTS
-import Header from '../../Header';
+import Header from '../../../Header';
 import NoteCard from './NoteCard';
 
 // CONTEXTS
-import { NoteContext } from '../../../contexts/NoteContext';
+import { NoteContext } from '../../../../contexts/NoteContext';
 
 const Notes = (props) => {
     const { getNotes, editNote, deleteNote, notes } = useContext(NoteContext);

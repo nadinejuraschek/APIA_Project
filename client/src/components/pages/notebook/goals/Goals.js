@@ -1,7 +1,7 @@
 import React from 'react';
 import GoalList from './GoalList';
 
-import Header from '../../Header';
+import Header from '../../../Header';
 
 const Goals = () => {
     return (
@@ -14,7 +14,8 @@ const Goals = () => {
                     <GoalList />
 
                     <div className="wide row centered">
-                        <div className="ui form">
+                        <div className="ui divider"></div>
+                        <form className="ui form">
                             <div className="ui action input">
                                 <input 
                                 type="text"
@@ -26,7 +27,7 @@ const Goals = () => {
                                     <i className="plus icon"></i>
                                 </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

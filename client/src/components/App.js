@@ -21,11 +21,11 @@ import Cluster from './pages/cluster/Cluster';
 import HostFamily from './pages/hostFamily/HostFamily';
 import CalendarView from './pages/hostFamily/Calendar';
 
-import Goals from './pages/notebook/Goals';
 import Notebook from './pages/notebook/Notebook';
-import Notes from './pages/notebook/Notes';
-import Payments from './pages/notebook/Payments';
-import WorkHours from './pages/notebook/WorkHours';
+import Goals from './pages/notebook/goals/Goals';
+import Notes from './pages/notebook/notes/Notes';
+import Payments from './pages/notebook/payments/Payments';
+import WorkHours from './pages/notebook/workhours/WorkHours';
 
 import EmergencyNumbers from './pages/EmergencyNumbers';
 import Home from './pages/Home';

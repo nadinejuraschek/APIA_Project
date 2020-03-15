@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import GoalItem from './GoalItem';
 
-import { GoalContext } from '../../../contexts/GoalContext';
+import { GoalContext } from '../../../../contexts/GoalContext';
 
 const GoalList = () => {
     const [ goals, useGoals ] = useContext(GoalContext);

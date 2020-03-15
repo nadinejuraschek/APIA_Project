@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
-import Header from '../../Header';
+import Header from '../../../Header';
 
 class WorkHours extends Component {
     state = { activeIndex: 0 }

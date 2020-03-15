@@ -119,7 +119,7 @@ const Profile = () => {
                         </div>
                         <div className="ten wide column">
                             <div className="ui segment">
-                                <h2>{ user.firstname} {user.lastname}</h2>
+                                <h2>{ user.firstname } { user.lastname }</h2>
                                 <p className="meta">
                                     <i class="globe icon"></i>
                                     <strong>Home Country: </strong> { user.country }

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../images/embrace.svg';
 import { withRouter } from "react-router";
+
 import axios from 'axios';
 
 const Navbar = (props) => {
@@ -27,7 +28,7 @@ const Navbar = (props) => {
                     <div className="menu">
                         <a className="item" href="/profile">Profile</a>
                         <a className="item" href="/emergencynumbers">Emergency Numbers</a>
-                        <button className="ui button" onClick={handleLogout}>Log Out</button>
+                        <button className="item" onClick={handleLogout}>Log Out</button>
                     </div>
                 </div>
             </div>
