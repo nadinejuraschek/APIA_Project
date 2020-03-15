@@ -8,10 +8,10 @@ const Landing = () => {
             <div className="block">
 
                 <div className="pageheader">
-                    <h2 className="ui large center aligned icon header">
+                    <div className="ui large center aligned icon header">
                         <img alt="App Logo" src={logo} />
-                        Au Pair App
-                    </h2>
+                        Au Pair
+                    </div>
                 </div>
 
                 <div className="ui stackable grid">

@@ -18,7 +18,7 @@ const Navbar = (props) => {
         <nav className="ui huge top fixed menu">
             <a className="header item" href="/">
                 <img alt="App Logo" src={logo} width="112" height="28" />
-                Au Pair App
+                Au Pair
             </a>
 
             <div className="right menu">

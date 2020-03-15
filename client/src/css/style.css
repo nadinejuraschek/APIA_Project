@@ -14,6 +14,10 @@ nav {
 nav.ui.menu {
     background-color: #e6f4ff;
 }
+nav a.header.item {
+    font-family: 'grand_hotelregular';
+    font-size: 2rem;
+}
 footer.ui .vertical .segment {
     padding: 1rem;
 }

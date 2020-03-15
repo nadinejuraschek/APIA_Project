@@ -194,7 +194,7 @@ export const WorkHourProvider = props => {
 
     return (
         <WorkHourContext.Provider value={[workhours]}>
-            {this.children}
+            {props.children}
         </WorkHourContext.Provider>
     )
 };
