@@ -11,6 +11,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import GatedComponent from './GatedComponent';
 
+import Dev from './Dev';
 // import WrongTurn from './WrongTurn';
 
 import Login from './pages/auth/Login';
@@ -88,12 +89,14 @@ const App = () => {
                     </Route>
                     <Route exact path='/hostfamily' >
                         <GatedComponent>
-                            <HostFamily />
+                            <Dev />
+                            {/* <HostFamily /> */}
                         </GatedComponent>
                     </Route>
                     <Route exact path='/cluster' >
                         <GatedComponent>
-                            <Cluster />
+                            <Dev />
+                            {/* <Cluster /> */}
                         </GatedComponent>
                     </Route>
 
@@ -130,7 +133,8 @@ const App = () => {
                     {/* HostFamily Sections */}
                     <Route exact path='/hostfamily/calendar' >
                         <GatedComponent>
-                                <CalendarView />
+                            <Dev />
+                            {/* <CalendarView /> */}
                         </GatedComponent>
                     </Route>
 

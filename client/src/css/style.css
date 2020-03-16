@@ -3,11 +3,23 @@
  #75c0fa
  #4caaf5
  #e6f4ff
+ #ff9290
+
+ #eca400
+ #474559
+ #54c6eb
+ #26547c
+ #ef476f
+ #d6fff6
+ #f7f7ff
 ****************************************************************************/
 
 /****************************************************************************
  PAGE LAYOUT
 ****************************************************************************/
+body {
+    background-color: #ffe0a8;
+}
 nav {
     height: 4rem;
 }
@@ -60,8 +72,11 @@ footer.ui .vertical .segment {
 }
 .ui .card.feature-card,
     .ui .card.note-card {
-        background-color: #e6f4ff;
+        background-color: #ffffff;
         border-radius: 2rem;
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(201,153,102,0.5);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(201,153,102,0.5);
+        box-shadow: 0px 4px 8px 0px rgba(201,153,102,0.5);
         padding: 1rem;
 }
 .ui .card.feature-card:hover {
@@ -77,4 +92,19 @@ footer.ui .vertical .segment {
 }
 .add-container {
     margin: 3rem auto;
+}
+
+/****************************************************************************
+ MEDIA QUERIES
+****************************************************************************/
+/* @media screen and (min-width: 980px) {
+} */
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        height: 85vh;
+    }
+}
+
+@media screen and (max-width: 640px) {
 }

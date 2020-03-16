@@ -1,14 +1,12 @@
-<svg width="99px" height="101px" viewBox="0 0 99 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="101px" height="103px" viewBox="0 0 101 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-580.000000, -239.000000)" stroke="#555555">
-            <g id="payments" transform="translate(578.000000, 236.000000)">
-                <g id="Group-14" transform="translate(51.500000, 39.500000) rotate(-14.000000) translate(-51.500000, -39.500000) translate(6.000000, 11.000000)">
-                    <rect id="Rectangle" stroke-width="4" fill="#FF9290" x="2.02597363" y="2.78468674" width="86.0215054" height="52" rx="8"></rect>
-                    <line x1="4.41089173" y1="17.3197745" x2="87.6565849" y2="17.3197745" id="Line-7" stroke-width="4" stroke-linecap="square"></line>
-                    <rect id="Rectangle" stroke-width="5" fill="#FFFFFF" x="58.0393914" y="27.4762014" width="18" height="18" rx="8"></rect>
-                </g>
-                <rect id="Rectangle" stroke-width="4" fill="#FFFFFF" x="4" y="46" width="95" height="56" rx="8"></rect>
-                <path d="M99,82 L99,66 L78,66 C73.581722,66 70,69.581722 70,74 C70,78.418278 73.581722,82 78,82 L99,82 Z" id="Rectangle" stroke-width="4" fill="#FFFFFF"></path>
+        <g id="Artboard" transform="translate(-570.000000, -415.000000)">
+            <g id="payments-copy-3" transform="translate(570.000000, 415.000000)">
+                <path d="M89.5088088,7.01463321 L98.9410412,44.8484129 C97.7301852,43.3639588 95.9970161,42.3223658 94.0218174,42.0039174 L85.5447429,8.00298585 C85.0046476,5.83678175 82.792041,4.52322691 80.6027479,5.06907899 L7.24621623,23.3589165 C5.05692307,23.9047686 3.71998409,26.1033246 4.26007944,28.2695287 L7.65841075,41.9006767 L7.62449082,41.9015573 C6.19987886,41.9015573 4.86223943,42.273931 3.70359614,42.9266547 L0.296013518,29.2578813 C-0.784177167,24.9254731 1.88970079,20.5283612 6.2682871,19.436657 L79.6248187,1.1468195 C84.0034051,0.055115324 88.4286181,2.68222501 89.5088088,7.01463321 Z M84.0185011,33.5794949 L85.729877,40.443449 C85.851244,40.9302252 85.9252192,41.4178181 85.9547096,41.9014478 L81.8539068,41.9014996 C81.8340943,41.745189 81.8048582,41.5884108 81.7658111,41.4318017 L80.0544352,34.5678476 C79.5143398,32.4016435 77.3017333,31.0880886 75.1124401,31.6339407 L68.1753248,33.3635578 C65.9860316,33.9094099 64.6490926,36.1079659 65.189188,38.27417 L66.0934108,41.9006767 L61.8824108,41.9006767 L61.225122,39.2625226 C60.1449314,34.9301144 62.8188093,30.5330025 67.1973956,29.4412983 L74.134511,27.7116812 C78.5130973,26.619977 82.9383104,29.2470867 84.0185011,33.5794949 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="2" y="44" width="97" height="57" rx="8"></rect>
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="2" y="44" width="97" height="57" rx="8"></rect>
+                <path d="M99,80 L99,64 L77,64 C72.581722,64 69,67.581722 69,72 C69,76.418278 72.581722,80 77,80 L99,80 Z" id="Rectangle" stroke="#FFFFFF" stroke-width="4"></path>
+                <line x1="6.4637328" y1="34.5" x2="87.6241036" y2="15.1413247" id="Line-7" stroke="#FFFFFF" stroke-width="4" stroke-linecap="square"></line>
             </g>
         </g>
     </g>

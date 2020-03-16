@@ -91,7 +91,7 @@ router.get('/api/workhours', (req, res) => {
     res.json(data);
   })
 });
-// POST WORKHOURS
+// POST WEEK
 router.post('/api/workhours', (req, res) => {
   db.Workhour.create(req.body).then(function(insertedWorkhours) {
     // console.log('User is: ' + req.user);
