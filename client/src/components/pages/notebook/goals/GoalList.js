@@ -64,11 +64,34 @@ const GoalList = props => {
                             {goals.map((goal) => (
                                 <GoalItem key={goal._id} goalid={goal._id} text={goal.text} />
                             ))}
-                            {/* { goals.map(goal => {
-                                if (goal.month === 3 && goal.type === 'personal')
-                                    return <GoalItem key={goal._id} text={goal.text} />
-                            })}; */}
-                            {/* <GoalItem value={goals} /> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="custom-container">
+                <div className="ui dividing header">
+                    Travel
+                </div>
+                <div className="custom-container">
+                    <div className="ui card">
+                        <div className="ui list">
+                            {goals.map((goal) => (
+                                <GoalItem key={goal._id} goalid={goal._id} text={goal.text} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="custom-container">
+                <div className="ui dividing header">
+                    Education
+                </div>
+                <div className="custom-container">
+                    <div className="ui card">
+                        <div className="ui list">
+                            {goals.map((goal) => (
+                                <GoalItem key={goal._id} goalid={goal._id} text={goal.text} />
+                            ))}
                         </div>
                     </div>
                 </div>
