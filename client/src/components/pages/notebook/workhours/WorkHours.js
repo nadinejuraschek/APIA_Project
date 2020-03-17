@@ -13,7 +13,7 @@ const WorkHours = () => {
     const [ activeCard, setActiveCard ] = useState({});
 
     return (
-        <section className="wrapper">
+        <section className="wrapper-scroll">
             <div className="block">
                     
                 <Header header="Your Work Hours" />

@@ -120,8 +120,8 @@ router.delete('/api/workhours/:workhourid', (req, res) => {
 // PAYMENTS
 // ==================================================
 // GET PAYMENTS
-router.get('/api/payments', (req, res) => {
-  db.User.findById(req.params.id).populate('payments').then(function(data) {
+router.get('/user/:id/payments', (req, res) => {
+  db.User.findById(req.user).populate('payments').then(function(data) {
     res.json(data);
   })
 });

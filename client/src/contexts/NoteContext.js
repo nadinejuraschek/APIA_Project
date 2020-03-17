@@ -6,7 +6,7 @@ export const NoteContext = createContext();
 export const NoteProvider = props => {
     
     const [ notes, setNotes ] = useState([]); 
-    const [ newNote, setNewNote ] = useState({ date: '', text: '' });
+    // const [ newNote, setNewNote ] = useState({ date: '', text: '' });
 
     useEffect( () => { 
         getNotes();
@@ -14,28 +14,28 @@ export const NoteProvider = props => {
 
     const getNotes = () => {
         axios({
-            method: 'GET',
-            url: '/user/:id/notes'
+            url: '/user/:id/notes',
+            method: 'GET'
         }).then(res => {
             // console.log(res.data.notes);
             setNotes(res.data.notes);
         });
     };
 
-    const postNote = () => {
-        // console.log('Note to send to DB: ' + newNote);
-        axios({
-            url: '/api/notes',
-            method: 'POST',
-            data: newNote
-        }).then(response => {
-            // console.log('Note in DB: ' + response.data);
-            // re-render component
-            getNotes();
-        }).catch(error => {
-            console.log('Error: ' + error.response);
-        });
-    };
+    // const postNote = () => {
+    //     // console.log('Note to send to DB: ' + newNote);
+    //     axios({
+    //         url: '/api/notes',
+    //         method: 'POST',
+    //         data: newNote
+    //     }).then(response => {
+    //         // console.log('Note in DB: ' + response.data);
+    //         // re-render component
+    //         getNotes();
+    //     }).catch(error => {
+    //         console.log('Error: ' + error.response);
+    //     });
+    // };
 
     const editNote = () => {
         // axios('/api/notes', { _id: id }).then(response => {
@@ -57,7 +57,7 @@ export const NoteProvider = props => {
     };
       
     return (
-        <NoteContext.Provider value={ { notes, getNotes, postNote, deleteNote } }>
+        <NoteContext.Provider value={ { notes, getNotes, deleteNote } }>
             {props.children}
         </NoteContext.Provider>
     );

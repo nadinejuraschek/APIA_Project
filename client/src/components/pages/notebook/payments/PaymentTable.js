@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import PaymentEntry from './PaymentEntry';
+
+import { PaymentContext } from '../../../../contexts/PaymentContext';
 
 const PaymentTable = () => {
+    const { getPayments, payments } = useContext(PaymentContext);
+    console.log(payments);
+
     return (
         <table className="ui celled table">
             <thead>
@@ -11,53 +18,15 @@ const PaymentTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <i className="green checkmark icon"></i>
-                    </td>
-                    <td>February 7, 2020</td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <i className="green checkmark icon"></i>
-                    </td>
-                    <td>February 14, 2020</td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>
-                        <i className="green checkmark icon"></i>
-                    </td>
-                    <td>February 21, 2020</td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>
-                        <i className="green checkmark icon"></i>
-                    </td>
-                    <td>February 28, 2020</td>
-                </tr>
-
-                <tr>
-                    <td>5</td>
-                    <td>
-                        <i className="red close icon"></i>
-                    </td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td>6</td>
-                    <td>
-                        <i className="green checkmark icon"></i>
-                    </td>
-                    <td>March 13, 2020</td>
-                </tr>
+                {/* {payments.map((payment) => (
+                    <PaymentEntry 
+                        key={payment._id} 
+                        paymentid={payment._id} 
+                        date={payment.date} 
+                        text={payment.text} 
+                        // deletePayment={deletePayment} 
+                    />
+                ))} */}
             </tbody>
 
         </table>

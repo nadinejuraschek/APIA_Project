@@ -27,7 +27,7 @@ const Notes = (props) => {
             // re-render component
             getNotes();
         }).catch(error => {
-            console.log('Error: ' + error.response);
+            console.log('Error: ' + error);
         });
     };
  
@@ -43,7 +43,7 @@ const Notes = (props) => {
     };
 
     return (
-        <section className="wrapper">
+        <section className="wrapper-scroll">
             <div className="block">
                 <Header header="My Notes" />
                 <div className="ui stackable grid">
