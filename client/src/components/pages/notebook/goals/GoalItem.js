@@ -1,9 +1,11 @@
 import React from 'react';
 
-const GoalItem = ({ month, text }) => {
+const GoalItem = ({ month, type, text }) => {
     return (
         <div className="item">
-            {text}
+            <div className="ui checkbox">
+                {text}
+            </div>
         </div>
     );
 };
