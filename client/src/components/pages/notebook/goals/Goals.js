@@ -1,14 +1,18 @@
+// REACT
 import React, { useState, useContext } from 'react';
-import GoalList from './GoalList';
 
+// NPM PACKAGES
 import axios from 'axios';
 
+// COMPONENTS
 import Header from '../../../Header';
+import GoalList from './GoalList';
 
+// CONTEXTS
 import { GoalContext } from '../../../../contexts/GoalContext';
 
 const Goals = (props) => {
-    const { goals } = useContext(GoalContext);
+    const { goals, getGoals } = useContext(GoalContext);
     const [ newGoal, setNewGoal ] = useState({ month: 0, type: '', text: '' });
 
     const handleSubmit = event => {
@@ -21,6 +25,7 @@ const Goals = (props) => {
             data: newGoal
         }).then(response => {
             console.log('Goal in DB: ' + response.data);
+            getGoals();
         }).catch(error => {
             console.log('Error: ' + error);
         });

@@ -155,7 +155,7 @@ router.delete('/api/payments/:paymentid', (req, res) => {
 // ==================================================
 // GET GOALS
 router.get('/user/:id/goals', (req, res) => {
-  db.User.findById(req.params.id).populate('goals').then(function(data) {
+  db.User.findById(req.user).populate('goals').then(function(data) {
     res.json(data);
   })
 });
