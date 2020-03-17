@@ -16,11 +16,11 @@ export const GoalProvider = props => {
 
     const getGoals = () => {
         axios({
-            method: 'GET',
-            url: '/user/:id/goals'
+            url: '/user/:id/goals',
+            method: 'GET'
         }).then(res => {
+            // console.log(res.data.goals);
             setGoals(res.data.goals);
-            console.log(res.data.goals);
         });
     };
 

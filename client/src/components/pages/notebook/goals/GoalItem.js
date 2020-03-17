@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GoalItem = ({ month, type, text }) => {
+const GoalItem = ({ text }) => {
     return (
         <div className="item">
             <div className="ui checkbox">

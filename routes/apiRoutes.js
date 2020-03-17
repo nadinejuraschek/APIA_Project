@@ -159,6 +159,12 @@ router.get('/user/:id/goals', (req, res) => {
     res.json(data);
   })
 });
+// GET GOAL
+router.get('/user/:id/goals/:goalid', (req, res) => {
+  db.Goal.findById(req.params.goalId).then(function(data) {
+    res.json(data);
+  })
+});
 // POST GOAL
 router.post('/api/goals', (req, res) => {
   db.Goal.create(req.body).then(function(insertedGoal) {

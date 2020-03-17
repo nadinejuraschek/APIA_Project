@@ -1,10 +1,17 @@
+// REACT
 import React, { useContext } from 'react';
+
+// COMPONENTS
 import GoalItem from './GoalItem';
 
 import { GoalContext } from '../../../../contexts/GoalContext';
 
-const GoalList = () => {
-    const [ goals, useGoals ] = useContext(GoalContext);
+const GoalList = props => {
+    const { goals, getGoals } = useContext(GoalContext);
+
+    const threeList = () => {
+        console.log('Goals in GoalList: ' + props.goals);
+    };
 
     return (
         <>  
@@ -15,22 +22,18 @@ const GoalList = () => {
                 <div className="custom-container">
                     <div className="ui card">
                         <div className="ui list">
-                            <GoalItem value={goals} />
+                            {goals.map((goal) => (
+                                <GoalItem key={goal._id} goalid={goal._id} text={goal.text} />
+                            ))}
+                            {/* { goals.map(goal => {
+                                if (goal.month === 3 && goal.type === 'personal')
+                                    return <GoalItem key={goal._id} text={goal.text} />
+                            })}; */}
+                            {/* <GoalItem value={goals} /> */}
                         </div>
                     </div>
                 </div>
             </div>
-                {/* {goals.map((goal, index) => (
-                    (goal.month === 3) ?
-                    <GoalList key={index} text={goal.text} />
-                    } else if (goal.month === 6) {
-                    <GoalList key={index} text={goal.text} />
-                    } else if (goal.month === 9) {
-                    <GoalList key={index} text={goal.text} />
-                    } else if (goal.month === 12) {
-                    <GoalList key={index} text={goal.text} />
-                    }; */}
-                {/* )} */}
         </>   
     );
 };

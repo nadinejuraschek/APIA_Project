@@ -17,14 +17,14 @@ const Goals = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('Goal send to DB: ' + newGoal);
+        // console.log('Goal send to DB: ' + newGoal);
 
         axios({
             url: '/api/goals',
             method: 'POST',
             data: newGoal
         }).then(response => {
-            console.log('Goal in DB: ' + response.data);
+            // console.log('Goal in DB: ' + response.data);
             getGoals();
         }).catch(error => {
             console.log('Error: ' + error);
@@ -36,6 +36,8 @@ const Goals = (props) => {
         const value = event.target.value;
         setNewGoal(newGoal => ({...newGoal, [name]: value}));
     };
+
+    // console.log('Goals in Goals Component: ' + goals);
 
     return (
         <section className="wrapper">
