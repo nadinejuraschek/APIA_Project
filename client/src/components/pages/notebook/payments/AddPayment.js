@@ -36,8 +36,12 @@ const AddPayment = () => {
           <div className="field">
             <label>Week</label>
             <input 
-              // value="" 
-              name="week" type="number" min="1" max="52" placeholder="Week #" onChange={handleChange} />
+              name="week" 
+              type="number" 
+              min="1" max="52" 
+              placeholder="Week #" 
+              onChange={handleChange} 
+            />
           </div>
           <div className="field">
             <label>Paid?</label>
@@ -50,7 +54,6 @@ const AddPayment = () => {
           <div className="field">
             <label>Date</label>
             <input 
-              // value="date" 
               name="date" type="text" placeholder="Date Paid" onChange={handleChange} />
           </div>
           <div className="field">

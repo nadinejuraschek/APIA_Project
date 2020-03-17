@@ -9,7 +9,7 @@ const AddDay = () => {
   const [ weeklyHours, setWeeklyHours ] = useState(0);
   // const [ dayOff, setDayOff ] = useState(false);
 
-  const onSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     let newDay = {
@@ -27,7 +27,7 @@ const AddDay = () => {
   return (
     <>
       <div className="ui dividing header">Add A Day</div>
-      <form className="ui form" onSubmit={onSubmit}>
+      <form className="ui form" onSubmit={handleSubmit}>
         <div className="two fields">
             <div className="field">
                 <label>Date</label>
@@ -39,7 +39,7 @@ const AddDay = () => {
             </div>
         </div>
         <div className="centered">
-          <button className="circular ui icon button"><i class="plus icon"></i></button>
+          <button className="circular ui icon button"><i className="plus icon"></i></button>
         </div>
       </form> 
     </>

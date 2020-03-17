@@ -86,16 +86,16 @@ router.post('/api/user/signout', function(req, res) {
 // WORKHOURS
 // ==================================================
 // GET WORKHOURS
-router.get('/api/workhours', (req, res) => {
-  db.User.findById(req.params.id).populate('workhours').then(function(data) {
+router.get('/user/:id/workhours', (req, res) => {
+  db.User.findById(req.user).populate('workhours').then(function(data) {
     res.json(data);
   })
 });
 // POST WEEK
 router.post('/api/workhours', (req, res) => {
-  db.Workhour.create(req.body).then(function(insertedWorkhours) {
+  db.Workhour.create(req.body).then(function(insertedHours) {
     // console.log('User is: ' + req.user);
-    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { workhours: insertedWorkhours._id } }, function (error, success) {
+    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { workhours: insertedHours._id } }, function (error, success) {
       if (error) {
           console.log('Error: ' + error);
       } else {
@@ -154,7 +154,7 @@ router.delete('/api/payments/:paymentid', (req, res) => {
 // GOALS
 // ==================================================
 // GET GOALS
-router.get('/api/goals', (req, res) => {
+router.get('/user/:id/goals', (req, res) => {
   db.User.findById(req.params.id).populate('goals').then(function(data) {
     res.json(data);
   })
