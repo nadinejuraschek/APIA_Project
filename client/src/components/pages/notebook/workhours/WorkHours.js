@@ -15,13 +15,13 @@ const WorkHours = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('WorkHours sent to DB: ' + newHours);
+        console.log('WorkHours sent to DB: ' + JSON.parse(newHours));
         axios({
             url: '/api/workhours',
             method: 'POST',
             data: newHours
         }).then(response => {
-            console.log('WorkHours in DB: ' + response.data);
+            console.log('WorkHours in DB: ' + JSON.parse(response.data));
         }).catch(error => {
             console.log('Error: ' + error)
         });
@@ -39,16 +39,16 @@ const WorkHours = () => {
                     
                 <Header header="Your Work Hours" />
 
-                <WeekView />
+                {/* <WeekView /> */}
 
                 <div className="ui stackable grid">
                     <div className="five column row">
-                        {/* <WorkCard workhourid={workhours._id} value={workhours} /> */}
-                        {/* <WorkCard workhourid={workhours._id} value={workhours} /> */}
+                        {/* { workhours.map(workhour => (
+                            <WorkCard key={workhours._id} workhourid={workhours._id} value={workhours} />
+                        ))}; */}
                     </div>
                 </div>
 
-                <div className="ui dividing header">Add A Week</div>
                 <div className="centered">
                     <form className="ui form" onSubmit={handleSubmit}>
                         <div className="ui action input">
@@ -56,10 +56,10 @@ const WorkHours = () => {
                                 name="number" 
                                 type="number" 
                                 min="1" max="52" 
-                                placeholer="Week #"
+                                placeholder="Week #"
                                 onChange={handleChange}
                             />
-                            <button className="ui icon button"><i class="plus icon"></i></button>
+                            <button className="ui icon button"><i className="plus icon"></i></button>
                         </div>
                     </form>
                 </div>

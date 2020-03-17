@@ -31,11 +31,11 @@ const AddDay = () => {
         <div className="two fields">
             <div className="field">
                 <label>Date</label>
-                <input value={date} name={date} type="text" placeholder="Date" />
+                <input name="date" type="text" placeholder="Date" />
             </div>
             <div className="field">
                 <label>Total Hours</label>
-                <input value={dailyHours} name={dailyHours} type="number" />
+                <input name="dailyHours" type="number" />
             </div>
         </div>
         <div className="centered">

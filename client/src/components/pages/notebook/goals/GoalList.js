@@ -7,62 +7,31 @@ const GoalList = () => {
     const [ goals, useGoals ] = useContext(GoalContext);
 
     return (
-        <div className="wide row">
-            <div className="ui medium header">
-                3 Months
-            </div>
-            
-            <div className="ui stackable grid">
-                <div className="three column row">
-                    
-                    <div className="column">
-                        <div className="header">
-                            Personal
-                        </div>
-
+        <>  
+            <div className="custom-container">
+                <div className="ui dividing header">
+                    Personal
+                </div>
+                <div className="custom-container">
+                    <div className="ui card">
                         <div className="ui list">
-                            <div className="item">
-                                <GoalItem value={goals}/>
-                                                    {/* {goals.map((goal, index) => (
-                                                        if (goal.month === 3) {
-                                                            <GoalList key={index} text={goal.text} />
-                                                        } else if (goal.month === 6) {
-                                                            <GoalList key={index} text={goal.text} />
-                                                        } else if (goal.month === 9) {
-                                                            <GoalList key={index} text={goal.text} />
-                                                        } else if (goal.month === 12) {
-                                                            <GoalList key={index} text={goal.text} />
-                                                        };
-                                                    S)} */}
-                            </div>
+                            <GoalItem value={goals} />
                         </div>
                     </div>
-
-                    <div className="column">
-                        <div className="header">
-                            Travel
-                        </div>
-                        <div className="ui list">
-                            <div className="item">
-                                <GoalItem value={goals}/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="column">
-                        <div className="header">
-                            Education
-                        </div>
-                        <div className="ui list">
-                            <div className="item">
-                                    <GoalItem value={goals}/>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>                                               
+                {/* {goals.map((goal, index) => (
+                    (goal.month === 3) ?
+                    <GoalList key={index} text={goal.text} />
+                    } else if (goal.month === 6) {
+                    <GoalList key={index} text={goal.text} />
+                    } else if (goal.month === 9) {
+                    <GoalList key={index} text={goal.text} />
+                    } else if (goal.month === 12) {
+                    <GoalList key={index} text={goal.text} />
+                    }; */}
+                {/* )} */}
+        </>   
     );
 };
 

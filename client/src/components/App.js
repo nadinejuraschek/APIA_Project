@@ -140,7 +140,6 @@ const App = () => {
 
                     {/* Error Page */}
                     {/* <Route path='*' component={ WrongTurn } /> */}
-
                     <Footer />
                 </div>
             </BrowserRouter>
