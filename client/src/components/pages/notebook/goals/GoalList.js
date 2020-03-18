@@ -1,30 +1,14 @@
 // REACT
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 // COMPONENTS
 import GoalItem from './GoalItem';
 
+// CONTEXT
 import { GoalContext } from '../../../../contexts/GoalContext';
 
 const GoalList = () => {
     const { goals, getGoals, deleteGoal } = useContext(GoalContext);
-
-    var three = [];
-    var six = [];
-    var nine = [];
-    var twelve = [];
-
-    for (let i=0; i < goals.length; i++) {
-        if (goals[i].month === 3) {
-            three.push(goals[i]);
-        } else if (goals[i].month === 6) {
-            six.push(goals[i]);
-        } else if (goals[i].month === 9) {
-            nine.push(goals[i]);
-        } else if (goals[i].month === 12) {
-            twelve.push(goals[i]);
-        }
-    };
 
     return (
         <>  
@@ -35,7 +19,7 @@ const GoalList = () => {
                 <div className="custom-container"> */}
                 <div className="ui list">
                     {goals.map((goal) => (
-                        <GoalItem key={goal._id} goalid={goal._id} text={goal.text} deleteGoal={deleteGoal} />
+                        <GoalItem key={goal._id} goalid={goal._id} goal={goal} deleteGoal={deleteGoal} />
                     ))}
                 </div>
                 {/* </div> */}

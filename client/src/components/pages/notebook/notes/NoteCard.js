@@ -1,8 +1,8 @@
+// REACT
 import React, { useState } from 'react';
 
+// NPM PACKAGES
 import axios from 'axios';
-
-// import HideComponentContext from '../../../../contexts/HideComponentContext';
 
 const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
     const [ updatedNote, setUpdatedNote ] = useState({});
@@ -41,7 +41,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
                 </div>
             </div>
 
-            <div id='editNoteInputs' className={show == true ? '' : 'hide'} >
+            <div className={show == true ? '' : 'hide'} >
                 <form 
                     className="ui form" 
                     // onSubmit={handleEdit}

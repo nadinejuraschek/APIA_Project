@@ -20,7 +20,7 @@
  PAGE LAYOUT
 ****************************************************************************/
 body {
-    background-color: #f4f4f4;
+    background-color: #f6f6f6;
     color: #313131;
 }
 nav {
@@ -140,6 +140,15 @@ footer.ui .vertical .segment {
 }
 .hide {
     display: none;
+}
+.light {
+    color: #FF9897;
+}
+.dark {
+    color: #86ABFA;
+}
+.light-bg {
+    background-color: #FF989725;
 }
 
 /****************************************************************************

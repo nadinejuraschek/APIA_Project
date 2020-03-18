@@ -5,13 +5,14 @@ import PaymentEntry from './PaymentEntry';
 import { PaymentContext } from '../../../../contexts/PaymentContext';
 
 const PaymentTable = (props) => {
-    const { getPayments, payments } = useContext(PaymentContext);
+    const { getPayments, deletePayment, payments } = useContext(PaymentContext);
     console.log(payments);
 
     return (
         <table className="ui celled table">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Week #</th>
                     <th>Paid?</th>
                     <th>Date</th>
@@ -22,11 +23,8 @@ const PaymentTable = (props) => {
                     <PaymentEntry 
                         key={payment._id} 
                         paymentid={payment._id} 
-                        paid={payment.paid}
-                        date={payment.date} 
-                        text={payment.text} 
-                        late={payment.late}
-                        // deletePayment={deletePayment} 
+                        payment={payment}
+                        deletePayment={deletePayment} 
                     />
                 ))}
             </tbody>
