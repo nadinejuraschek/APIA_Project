@@ -18,7 +18,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     <th>End</th>
                     <th></th> */}
                     <th>Daily Hours</th>
-                    <th>Weekly Hours</th>
                     {/* <th>Day Off?</th> */}
                 </tr>
             </thead>
@@ -47,7 +46,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     <td>2:00 PM</td>
                     <td>8</td> */}
                     <td></td>
-                    <td></td>
                     {/* <td></td> */}
 
                 </tr>
@@ -72,7 +70,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     </td>
                     <td></td>
                     <td></td>
-                    <td></td>
                 </tr>
 
                 {/* Wednesday */}
@@ -93,7 +90,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -118,7 +114,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     </td>
                     <td></td>
                     <td></td>
-                    <td></td>
                 </tr>
 
                 {/* Friday */}
@@ -139,7 +134,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -164,7 +158,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     </td>
                     <td></td>
                     <td></td>
-                    <td></td>
                 </tr>
 
                 {/* Sunday */}
@@ -185,7 +178,6 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>

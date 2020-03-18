@@ -1,15 +1,19 @@
-import React from 'react';
+// REACT
+import React, { useState, useEffect } from 'react';
 
+// COMPONENTS
 import WeeklyTable from './WeeklyTable';
 import AddDay from './AddDay';
 
-const WeekView = ({ workhours, deleteWorkhours }) => {
+const WeekView = ({ workhour, deleteWorkhours }) => {
+
     return (
-        <div>
-            <div className="custom-container">
-                <WeeklyTable workhours={workhours} deleteWorkhours={deleteWorkhours} />
-            </div>
-                <AddDay />
+        <div className="custom-container">
+            <WeeklyTable 
+                workhour={workhour} 
+                // deleteWorkhours={deleteWorkhours} 
+            />
+            <AddDay workhour={workhour} />
             <div className="ui divider"></div>
         </div>
     );

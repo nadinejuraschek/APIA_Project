@@ -91,6 +91,12 @@ router.get('/user/:id/workhours', (req, res) => {
     res.json(data);
   })
 });
+// GET WEEK
+router.get('/api/workhours/:workhourid', (req, res) => {
+  db.WorkHour.findById(req.params.workhourid).then(function(data) {
+    res.json(data);
+  })
+});
 // POST WEEK
 router.post('/api/workhours', (req, res) => {
   db.WorkHour.create(req.body).then(function(insertedHours) {

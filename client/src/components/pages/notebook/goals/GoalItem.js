@@ -23,7 +23,7 @@ const GoalItem = ({ goal, deleteGoal }) => {
         <div className="item">
             <div>
                 <span>
-                    <Checkbox className={checked === true ? 'active' : '' } />
+                    <Checkbox className={checked === true ? 'checked' : '' } />
                     <span>
                         <span className='list-check'>{goal.text}</span>
                     </span>

@@ -1,12 +1,16 @@
+// REACT
 import React, { useState, useContext } from 'react';
+
+// NPM PACKAGES
 import axios from 'axios';
 // import { Accordion, Icon } from 'semantic-ui-react';
 
+// COMPONENTS
 import Header from '../../../Header';
 // import WorkAccordion from './WorkAccordion';
 import WorkCard from './WorkCard';
-import WeekView from './WeekView';
 
+// CONTEXT
 import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
 const WorkHours = (props) => {
@@ -40,8 +44,6 @@ const WorkHours = (props) => {
                     
                 <Header header="Your Work Hours" />
 
-                <WeekView workhours={workhours} deleteWorkhours={deleteWorkhours} />
-
                 <div className="custom-container">
                     <div className="ui stackable grid">
                         <div className="five column row">
@@ -49,8 +51,7 @@ const WorkHours = (props) => {
                                 <WorkCard 
                                     key={workhour._id} 
                                     workhourid={workhour._id} 
-                                    week={workhour.number} 
-                                    weeklyHours={workhour.weeklyHours} 
+                                    workhour={workhour} 
                                 />
                             ))}
                         </div>
@@ -74,8 +75,7 @@ const WorkHours = (props) => {
                 
             </div>
         </section>
-        );
-    // }
+    );
 };
 
 export default WorkHours;
