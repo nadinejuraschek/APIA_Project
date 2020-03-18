@@ -12,7 +12,7 @@ import GoalList from './GoalList';
 import { GoalContext } from '../../../../contexts/GoalContext';
 
 const Goals = (props) => {
-    const { goals, getGoals } = useContext(GoalContext);
+    const { goals, getGoals, deleteGoal } = useContext(GoalContext);
     const [ newGoal, setNewGoal ] = useState({ month: 0, type: '', text: '' });
 
     const handleSubmit = event => {
@@ -37,8 +37,6 @@ const Goals = (props) => {
         setNewGoal(newGoal => ({...newGoal, [name]: value}));
     };
 
-    // console.log('Goals in Goals Component: ' + goals);
-
     return (
         <section className="wrapper">
             <div className="block">
@@ -48,19 +46,19 @@ const Goals = (props) => {
                 <div className="row">
                     <div className="eight wide column">
                         <div className="ui large header">3 Months</div>
-                            <GoalList value={goals} />
+                            <GoalList value={ goals, deleteGoal } />
                     </div>
                     <div className="eight wide column">
                         <div className="ui large header">6 Months</div>
-                            <GoalList value={goals} />
+                            <GoalList value={ goals, deleteGoal } />
                     </div>
                     <div className="eight wide column">
                         <div className="ui large header">9 Months</div>
-                            <GoalList value={goals} />
+                            <GoalList value={ goals, deleteGoal } />
                     </div>
                     <div className="eight wide column">
                         <div className="ui large header">12 Months</div>
-                            <GoalList value={goals} />
+                            <GoalList value={ goals, deleteGoal } />
                     </div>
                 </div>
             </div>

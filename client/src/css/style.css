@@ -70,6 +70,9 @@ footer.ui .vertical .segment {
 .centered {
     text-align: center;
 }
+.list-check {
+    width: 25rem;
+}
 .auth-container {
     margin: auto;
     width: 70%;
@@ -97,12 +100,12 @@ footer.ui .vertical .segment {
 .ui .card.feature-card:hover {
     background-color: #FF9897;
     background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-
 }
-.ui .card.note-card {
+.ui .card.note-card,
+    .ui .card.goal-card {
     padding: 2rem;
 }
-.ui .header {
+.ui .header.feature-header {
     color: #ffffff;
 }
 .feature-icon {
@@ -111,6 +114,9 @@ footer.ui .vertical .segment {
 }
 .add-container {
     margin: 3rem auto;
+}
+.no-style-button {
+    border: none;
 }
 
 /****************************************************************************

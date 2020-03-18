@@ -48,7 +48,7 @@ export const NoteProvider = props => {
     };
 
     const deleteNote = (noteid) => {
-        // console.log(id);
+        // console.log(noteid);
         axios.delete('/api/notes/' + noteid)
         .then(res => {
             console.log(res);

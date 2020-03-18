@@ -6,69 +6,41 @@ import GoalItem from './GoalItem';
 
 import { GoalContext } from '../../../../contexts/GoalContext';
 
-const GoalList = props => {
-    const { goals, getGoals } = useContext(GoalContext);
+const GoalList = () => {
+    const { goals, getGoals, deleteGoal } = useContext(GoalContext);
 
-    const threePers = [];
-    const sixPers = [];
-    const ninePers = [];
-    const twelvePers = [];
-
-    const threeTrav = [];
-    const sixTrav = [];
-    const nineTrav = [];
-    const twelveTrav = [];
-
-    const threeEdu = [];
-    const sixEdu = [];
-    const nineEdu = [];
-    const twelveEdu = [];
+    var three = [];
+    var six = [];
+    var nine = [];
+    var twelve = [];
 
     for (let i=0; i < goals.length; i++) {
-        if (goals[i].month === 3 && goals[i].type === 'personal') {
-            threePers.push(goals[i]);
-        } else if (goals[i].month === 6 && goals[i].type === 'personal') {
-            sixPers.push(goals[i]);
-        } else if (goals[i].month === 9 && goals[i].type === 'personal') {
-            ninePers.push(goals[i]);
-        } else if (goals[i].month === 12 && goals[i].type === 'personal') {
-            twelvePers.push(goals[i]);
-        } else if (goals[i].month === 3 && goals[i].type === 'travel') {
-            threeTrav.push(goals[i]);
-        } else if (goals[i].month === 6 && goals[i].type === 'travel') {
-            sixTrav.push(goals[i]);
-        } else if (goals[i].month === 9 && goals[i].type === 'travel') {
-            nineTrav.push(goals[i]);
-        } else if (goals[i].month === 12 && goals[i].type === 'travel') {
-            twelveTrav.push(goals[i]);
-        } else if (goals[i].month === 3 && goals[i].type === 'education') {
-            threeEdu.push(goals[i]);
-        } else if (goals[i].month === 6 && goals[i].type === 'education') {
-            sixEdu.push(goals[i]);
-        } else if (goals[i].month === 9 && goals[i].type === 'education') {
-            nineEdu.push(goals[i]);
-        } else if (goals[i].month === 12 && goals[i].type === 'education') {
-            twelveEdu.push(goals[i]);
-        };
+        if (goals[i].month === 3) {
+            three.push(goals[i]);
+        } else if (goals[i].month === 6) {
+            six.push(goals[i]);
+        } else if (goals[i].month === 9) {
+            nine.push(goals[i]);
+        } else if (goals[i].month === 12) {
+            twelve.push(goals[i]);
+        }
     };
 
     return (
         <>  
             <div className="custom-container">
-                <div className="ui dividing header">
+                {/* <div className="ui dividing header">
                     Personal
                 </div>
-                <div className="custom-container">
-                    <div className="ui card">
-                        <div className="ui list">
-                            {goals.map((goal) => (
-                                <GoalItem key={goal._id} goalid={goal._id} text={goal.text} />
-                            ))}
-                        </div>
-                    </div>
+                <div className="custom-container"> */}
+                <div className="ui list">
+                    {goals.map((goal) => (
+                        <GoalItem key={goal._id} goalid={goal._id} text={goal.text} deleteGoal={deleteGoal} />
+                    ))}
                 </div>
+                {/* </div> */}
             </div>
-            <div className="custom-container">
+            {/* <div className="custom-container">
                 <div className="ui dividing header">
                     Travel
                 </div>
@@ -95,7 +67,7 @@ const GoalList = props => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>   
     );
 };

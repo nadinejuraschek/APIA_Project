@@ -7,7 +7,7 @@ const FeatureCard = (props) => {
             <a href={props.link}>
                 <div className="card-content">
                     <img src={props.icon} className="feature-icon" alt={props.title} />
-                    <p className="ui medium header">
+                    <p className="ui medium header feature-header">
                         {props.header}
                     </p>
                 </div>
