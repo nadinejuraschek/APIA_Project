@@ -4,7 +4,6 @@ const WorkCard = ({ workhourid, week, weeklyHours }) => {
     
     return (
         <div className="column">
-            <a>
                 <div className="ui fluid card centered">
                     <div className="content">
                         <div className="header">
@@ -15,7 +14,6 @@ const WorkCard = ({ workhourid, week, weeklyHours }) => {
                         {weeklyHours} hours
                     </div>
                 </div>
-            </a>
         </div>
     );
 };

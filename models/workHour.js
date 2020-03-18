@@ -3,7 +3,10 @@ const   mongoose = require('mongoose');
 
 // SCHEMA SETUP
 const workSchema = new mongoose.Schema({
-    number: Number,
+    number: { 
+        type: Number,
+        unique: true
+    },
     day: [
         {
             date: String,

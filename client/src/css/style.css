@@ -89,13 +89,15 @@ footer.ui .vertical .segment {
 }
 .ui .card.feature-card,
     .ui .card.note-card {
-        background-color: #86ABFA;
-        background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
         border-radius: 2rem;
         -webkit-box-shadow: 0px 4px 8px 0px #46637350;
         -moz-box-shadow: 0px 4px 8px 0px #46637350;
         box-shadow: 0px 4px 8px 0px #46637350;
         padding: 1rem;
+}
+.ui .card.feature-card {
+    background-color: #86ABFA;
+    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
 }
 .ui .card.feature-card:hover {
     background-color: #FF9897;
@@ -122,6 +124,9 @@ footer.ui .vertical .segment {
 }
 .no-style-button:hover {
     color: #FF9897;
+}
+.card-button {
+    display: inline-block;
 }
 
 /****************************************************************************

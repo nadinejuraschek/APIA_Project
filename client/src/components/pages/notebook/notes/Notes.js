@@ -100,7 +100,7 @@ const Notes = (props) => {
                     </div>
                     <div className="twelve wide column">
                         {notes.map((note) => (
-                            <NoteCard key={note._id} noteid={note._id} date={note.date} text={note.text} deleteNote={deleteNote} />
+                            <NoteCard key={note._id} noteid={note._id} date={note.date} text={note.text} deleteNote={deleteNote} editNote={editNote} getNotes={getNotes} />
                         ))}
                     </div>
                 </div>

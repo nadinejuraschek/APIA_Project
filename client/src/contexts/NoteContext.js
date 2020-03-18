@@ -36,10 +36,10 @@ export const NoteProvider = props => {
     //     });
     // };
 
-    const editNote = () => {
-        // axios('/api/notes', { _id: id }).then(response => {
+    const editNote = (noteid) => {
+        // axios('/api/notes' + noteid, updatedNote)
+        // .then(res => {
         //     // console.log('Note in DB: ' + response.data);
-        //     // re-render component
         //     getNotes();
         // }).catch(error => {
         //     console.log('Error: ' + error.response);
@@ -52,11 +52,13 @@ export const NoteProvider = props => {
         .then(res => {
             console.log(res);
             getNotes();
+        }).catch(error => {
+            console.log('Error: ' + error.response);
         });
     };
       
     return (
-        <NoteContext.Provider value={ { notes, getNotes, deleteNote } }>
+        <NoteContext.Provider value={ { notes, getNotes, deleteNote, editNote } }>
             {props.children}
         </NoteContext.Provider>
     );
