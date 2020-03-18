@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const WeeklyTable = ({ workhours, deleteWorkhours }) => {
+const WeeklyTable = ({ workhour, deleteWorkhours }) => {
     const [ show, setShow ] = useState(false);
 
     const showEdit = () => {
@@ -18,7 +18,7 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                     <th>End</th>
                     <th></th> */}
                     <th>Daily Hours</th>
-                    {/* <th>Day Off?</th> */}
+                    <th>Day Off?</th>
                 </tr>
             </thead>
                                     
@@ -36,17 +36,22 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
+                    <td>{workhour.day[0].date}</td>
                     {/* <td>6:00 AM</td>
                     <td>2:00 PM</td>
                     <td>8</td> */}
-                    <td></td>
-                    {/* <td></td> */}
+                    <td>{workhour.day[0].dailyHours}</td>
+                    <td>
+                        { (workhour.day[0].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
 
                 </tr>
 
@@ -63,13 +68,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[1].date}</td>
+                    <td>{workhour.day[1].dailyHours}</td>
+                    <td>
+                        { (workhour.day[1].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
 
                 {/* Wednesday */}
@@ -85,13 +96,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[2].date}</td>
+                    <td>{workhour.day[2].dailyHours}</td>
+                    <td>
+                        { (workhour.day[2].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
                                     
                 {/* Thursday */}
@@ -107,13 +124,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[3].date}</td>
+                    <td>{workhour.day[3].dailyHours}</td>
+                    <td>
+                        { (workhour.day[3].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
 
                 {/* Friday */}
@@ -129,13 +152,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[4].date}</td>
+                    <td>{workhour.day[4].dailyHours}</td>
+                    <td>
+                        { (workhour.day[4].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
 
                 {/* Saturday */}
@@ -151,13 +180,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[5].date}</td>
+                    <td>{workhour.day[5].dailyHours}</td>
+                    <td>
+                        { (workhour.day[5].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
 
                 {/* Sunday */}
@@ -173,13 +208,19 @@ const WeeklyTable = ({ workhours, deleteWorkhours }) => {
                         <button 
                             type="button" 
                             className="no-style-button"
-                            onClick={() => deleteWorkhours(workhours.id)} 
+                            onClick={() => deleteWorkhours(workhour.id)} 
                         >
                             <i className="close icon"></i>
                         </button>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>{workhour.day[6].date}</td>
+                    <td>{workhour.day[6].dailyHours}</td>
+                    <td>
+                        { (workhour.day[6].dayOff) 
+                            ? <i className="icon light checkmark"></i> 
+                            : <i className="icon dark close"></i> 
+                        }
+                    </td>
                 </tr>
             </tbody>
         </table>
