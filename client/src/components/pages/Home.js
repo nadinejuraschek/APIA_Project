@@ -1,17 +1,22 @@
+// REACT
 import React, { useContext } from 'react';
 
+// NPM PACKAGES
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// COMPONENTS
 import FeatureCard from './FeatureCard';
 
+// CONTEXTS
 import { UserContext } from '../../contexts/UserContext';
 
+// ICONS
 import notebookIcon from '../../images/book.svg';
 import hostfamilyIcon from '../../images/family.svg';
 import clusterIcon from '../../images/cluster.svg';
 
-// TOASTIFY CONFIG
+// TOASTIFY CONFIG & STYLE
 toast.configure({
     autoClose: 8000,
     draggable: false

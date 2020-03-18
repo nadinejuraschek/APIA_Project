@@ -71,7 +71,7 @@ footer.ui .vertical .segment {
     text-align: center;
 }
 .list-check {
-    width: 25rem;
+    margin-left: 1rem;
 }
 .auth-container {
     margin: auto;
@@ -149,6 +149,9 @@ footer.ui .vertical .segment {
 }
 .light-bg {
     background-color: #FF989725;
+}
+.edit-goal {
+    margin: 1rem 0 1rem 2rem;
 }
 
 /****************************************************************************
