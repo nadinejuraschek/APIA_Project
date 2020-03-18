@@ -4,6 +4,7 @@ import React, { useState, createContext, useEffect } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
+// CONTEXT
 export const GoalContext = createContext();
 
 export const GoalProvider = props => {
@@ -11,7 +12,6 @@ export const GoalProvider = props => {
 
     useEffect( () => { 
         getGoals();
-        
     }, []);
 
     const getGoals = () => {
@@ -68,23 +68,22 @@ export const GoalProvider = props => {
 
             // console.log(allGoals);
 
-            var three = [];
-            var six = [];
-            var nine = [];
-            var twelve = [];
+            // var three = [];
+            // var six = [];
+            // var nine = [];
+            // var twelve = [];
 
-            for (let i=0; i < goals.length; i++) {
-                if (goals[i].month === 3) {
-                    three.push(goals[i]);
-                } else if (goals[i].month === 6) {
-                    six.push(goals[i]);
-                } else if (goals[i].month === 9) {
-                    nine.push(goals[i]);
-                } else if (goals[i].month === 12) {
-                    twelve.push(goals[i]);
-                }
-            };
-
+            // for (let i=0; i < goals.length; i++) {
+            //     if (goals[i].month === 3) {
+            //         three.push(goals[i]);
+            //     } else if (goals[i].month === 6) {
+            //         six.push(goals[i]);
+            //     } else if (goals[i].month === 9) {
+            //         nine.push(goals[i]);
+            //     } else if (goals[i].month === 12) {
+            //         twelve.push(goals[i]);
+            //     }
+            // };
             setGoals(res.data.goals);
         });
     };

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
-const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
+const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
     const [ updatedNote, setUpdatedNote ] = useState({});
     const [ show, setShow ] = useState(false);
 
@@ -14,11 +14,12 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
 
     const handleEdit = event => {
         event.preventDefault();
-        // console.log('Note to send to DB: ' + newNote);
-        axios('/api/notes' + noteid, updatedNote)
+        console.log('Updated note to send to DB: ' + updatedNote);
+        axios.put('/api/notes/' + noteid, updatedNote)
         .then(res => {
-            // console.log('Note in DB: ' + response.data);
+            console.log('Updated note in DB: ' + res.data);
             getNotes();
+            show == true ? setShow(false) : setShow(true);
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -28,6 +29,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
         const name = event.target.name;
         const value = event.target.value;
         setUpdatedNote(updatedNote => ({...updatedNote, [name]: value }));
+        console.log('updated Note: ' + updatedNote);
     };
 
     return (
@@ -44,20 +46,20 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
             <div className={show == true ? '' : 'hide'} >
                 <form 
                     className="ui form" 
-                    // onSubmit={handleEdit}
+                    onSubmit={handleEdit}
                 >
                     <div className="field">
                         <input 
                             name="date" 
                             type="text" 
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             placeholder={date} 
                         />
                     </div>
                     <div className="field">
                         <textarea 
                             name="text" 
-                            // onChange={handleChange} 
+                            onChange={handleChange} 
                             rows="3" 
                             type="textarea" 
                             placeholder={text} 

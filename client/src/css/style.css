@@ -70,8 +70,11 @@ footer.ui .vertical .segment {
 .centered {
     text-align: center;
 }
+.list-space {
+    display: inline-block;
+}
 .list-check {
-    margin-left: 1rem;
+    margin: 0 1rem;
 }
 .auth-container {
     margin: auto;

@@ -1,6 +1,10 @@
+// REACT
 import React, { useState, createContext, useEffect } from 'react';
+
+// NPM PACKAGES
 import axios from 'axios';
 
+// CONTEXTS
 export const NoteContext = createContext();
 
 export const NoteProvider = props => {
@@ -36,15 +40,15 @@ export const NoteProvider = props => {
     //     });
     // };
 
-    const editNote = (noteid) => {
-        // axios('/api/notes' + noteid, updatedNote)
-        // .then(res => {
-        //     // console.log('Note in DB: ' + response.data);
-        //     getNotes();
-        // }).catch(error => {
-        //     console.log('Error: ' + error.response);
-        // });
-    };
+    // const editNote = (noteid) => {
+    //     axios.put('/api/notes' + noteid, updatedNote)
+    //     .then(res => {
+    //         console.log('Updated Note in DB: ' + response.data);
+    //         getNotes();
+    //     }).catch(error => {
+    //         console.log('Error: ' + error.response);
+    //     });
+    // };
 
     const deleteNote = (noteid) => {
         // console.log(noteid);
@@ -58,7 +62,7 @@ export const NoteProvider = props => {
     };
       
     return (
-        <NoteContext.Provider value={ { notes, getNotes, deleteNote, editNote } }>
+        <NoteContext.Provider value={ { notes, getNotes, deleteNote } }>
             {props.children}
         </NoteContext.Provider>
     );

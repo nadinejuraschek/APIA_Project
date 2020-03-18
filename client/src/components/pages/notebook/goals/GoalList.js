@@ -19,7 +19,7 @@ const GoalList = () => {
                 <div className="custom-container"> */}
                 <div className="ui list">
                     {goals.map((goal) => (
-                        <GoalItem key={goal._id} goalid={goal._id} goal={goal} deleteGoal={deleteGoal} />
+                        <GoalItem key={goal._id} goalid={goal._id} goal={goal} deleteGoal={deleteGoal} getGoals={getGoals} />
                     ))}
                 </div>
                 {/* </div> */}

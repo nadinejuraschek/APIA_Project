@@ -189,7 +189,11 @@ router.post('/api/goals', (req, res) => {
   });
 });
 // EDIT GOAL
-
+router.put('/api/notes/:noteid', (req, res) => {
+  db.Note.findByIdAndUpdate(req.params.noteid, req.body).then(function(data) {
+    res.json(data);
+  })
+});
 // DELETE GOAL
 router.delete('/api/goals/:goalid', (req, res) => {
   db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
@@ -230,9 +234,9 @@ router.post('/api/notes', (req, res) => {
 });
 // EDIT NOTE
 router.put('/api/notes/:noteid', (req, res) => {
-  db.Note.findByIdAndUpdate(req.params.noteid).then(function(data) {
+  db.Note.findByIdAndUpdate(req.params.noteid, req.body).then(function(data) {
     res.json(data);
-  });
+  })
 });
 // DELETE NOTE
 router.delete('/api/notes/:noteid', (req, res) => {
