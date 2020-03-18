@@ -93,8 +93,9 @@ router.get('/user/:id/workhours', (req, res) => {
 });
 // POST WEEK
 router.post('/api/workhours', (req, res) => {
-  db.Workhour.create(req.body).then(function(insertedHours) {
+  db.WorkHour.create(req.body).then(function(insertedHours) {
     // console.log('User is: ' + req.user);
+    console.log('Workhour body: ' + req.body);
     db.User.findByIdAndUpdate({ _id: req.user }, { $push: { workhours: insertedHours._id } }, function (error, success) {
       if (error) {
           console.log('Error: ' + error);
@@ -111,7 +112,7 @@ router.post('/api/workhours', (req, res) => {
 
 // DELETE WORKHOURS
 router.delete('/api/workhours/:workhourid', (req, res) => {
-  db.Payment.findByIdAndRemove(req.params.workhourid).then(function(data) {
+  db.WorkHour.findByIdAndRemove(req.params.workhourid).then(function(data) {
     res.json(data);
   });
 });

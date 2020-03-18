@@ -7,7 +7,6 @@ import axios from 'axios';
 export const GoalContext = createContext();
 
 export const GoalProvider = props => {
-
     const [ goals, setGoals ] = useState([]); 
 
     useEffect( () => { 

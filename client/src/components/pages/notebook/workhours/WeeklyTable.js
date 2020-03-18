@@ -18,72 +18,58 @@ const WeeklyTable = () => {
                                     
             <tbody>
                 {/* Monday */}
-                    <tr>
-                        <td>03/02/2020</td>
-                        {/* <td>6:00 AM</td>
-                        <td>2:00 PM</td>
-                        <td>8</td> */}
-                        <td>8</td>
-                        <td>41</td>
-                        {/* <td></td> */}
-                    </tr>
+                <tr>
+                    <td></td>
+                    {/* <td>6:00 AM</td>
+                    <td>2:00 PM</td>
+                    <td>8</td> */}
+                    <td></td>
+                    <td></td>
+                    {/* <td></td> */}
+                </tr>
 
-                                        {/* Tuesday */}
-                                        <tr>
-                                            <td>03/03/2020</td>
-                                            
-                                            <td>8</td>
-                                            <td></td>
-                                      
-                                        </tr>
+                {/* Tuesday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                                        {/* Wednesday */}
-                                        <tr>
-                                            <td>03/04/2020</td>
-                                            
-                                            <td>7</td>
-                                            <td></td>
-                                          
-                                        </tr>
+                {/* Wednesday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                                     
+                {/* Thursday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                                        {/* Thursday */}
-                                        <tr>
-                                            <td>03/05/2020</td>
-                                            
-                                            <td>8</td>
-                                            <td></td>
-                                        
-                                        </tr>
+                {/* Friday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                                        {/* Friday */}
-                                        <tr>
-                                            <td>03/06/2020</td>
-                                            
-                                            <td>8</td>
-                                            <td></td>
-                                        
-                                        </tr>
+                {/* Saturday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                                        {/* Saturday */}
-                                        <tr>
-                                            <td>03/07/2020</td>
-                                            
-                                            <td></td>
-                                            <td></td>
-                                  
-                                        </tr>
-
-                                        {/* Sunday */}
-                                        <tr>
-                                            <td>03/08/2020</td>
-                                            
-                                            <td></td>
-                                            <td></td>
-                                
-                                        </tr>
-                                    </tbody>
-
+                {/* Sunday */}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
         </table>
     );
 };

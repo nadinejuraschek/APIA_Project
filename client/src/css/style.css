@@ -7,7 +7,7 @@
 
  #eca400    #FF9897     #a546e0
  #474559    #86ABFA     #8a58db
- #54c6eb                #6f8de1
+ #54c6eb    #5d7bbd     #6f8de1
  #26547c                #47b5f3
  #ef476f
  #d6fff6
@@ -20,7 +20,7 @@
  PAGE LAYOUT
 ****************************************************************************/
 body {
-    background-color: #ffffff;
+    background-color: #f4f4f4;
     color: #313131;
 }
 nav {
@@ -116,7 +116,12 @@ footer.ui .vertical .segment {
     margin: 3rem auto;
 }
 .no-style-button {
+    background: transparent;
     border: none;
+    color: #86ABFA;
+}
+.no-style-button:hover {
+    color: #FF9897;
 }
 
 /****************************************************************************

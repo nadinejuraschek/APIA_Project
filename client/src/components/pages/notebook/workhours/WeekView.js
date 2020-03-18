@@ -9,7 +9,7 @@ const WeekView = () => {
             <div className="custom-container">
                 <WeeklyTable />
             </div>
-            <AddDay />
+                <AddDay />
             <div className="ui divider"></div>
         </div>
     );

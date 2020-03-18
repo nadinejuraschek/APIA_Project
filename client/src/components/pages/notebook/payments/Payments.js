@@ -5,7 +5,6 @@ import AddPayment from './AddPayment';
 import PaymentTable from './PaymentTable';
 
 const Payments = () => {
-
     return (
         <section className="wrapper-scroll">
             <div className="block">

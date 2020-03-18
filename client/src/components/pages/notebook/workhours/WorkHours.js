@@ -9,19 +9,20 @@ import WeekView from './WeekView';
 
 import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
-const WorkHours = () => {
-    const { workhours } = useContext(WorkHourContext);
-    const [ newHours, setNewHours ] =  useState({ number: 0 });
+const WorkHours = (props) => {
+    const { workhours, getWorkhours } = useContext(WorkHourContext);
+    const [ newHours, setNewHours ] =  useState({ number: 0, day: { date: '', dailyHours: 0, dayOff: false }, weeklyHours: 0 });
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('WorkHours sent to DB: ' + JSON.parse(newHours));
+        // console.log('WorkHours sent to DB: ' + newHours);
         axios({
             url: '/api/workhours',
             method: 'POST',
             data: newHours
         }).then(response => {
-            console.log('WorkHours in DB: ' + JSON.parse(response.data));
+            console.log('WorkHours in DB: ' + response.data);
+            getWorkhours();
         }).catch(error => {
             console.log('Error: ' + error)
         });
@@ -43,24 +44,26 @@ const WorkHours = () => {
 
                 <div className="ui stackable grid">
                     <div className="five column row">
-                        {/* { workhours.map(workhour => (
-                            <WorkCard key={workhours._id} workhourid={workhours._id} value={workhours} />
-                        ))}; */}
+                        {workhours.map((workhour) => (
+                            <WorkCard key={workhour._id} workhourid={workhour._id} week={workhour.number} weeklyHours={workhour.weeklyHours} />
+                        ))}
                     </div>
                 </div>
 
                 <div className="centered">
                     <form className="ui form" onSubmit={handleSubmit}>
-                        <div className="ui action input">
+                        <div className="field">
+                            <label>Week #</label>
                             <input 
                                 name="number" 
                                 type="number" 
                                 min="1" max="52" 
-                                placeholder="Week #"
+                                placeholder="Enter a number between 1 and 52"
                                 onChange={handleChange}
                             />
-                            <button className="ui icon button"><i className="plus icon"></i></button>
                         </div>
+                        {/* <button className="ui icon button"><i className="plus icon"></i></button> */}
+                        <button className="circular ui icon button"><i className="plus icon"></i></button>
                     </form>
                 </div>
                 

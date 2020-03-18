@@ -1,24 +1,21 @@
 import React from 'react';
 
 const PaymentEntry = ({ week, paid, date, late }) => {
+    const isPaid = () => {
+        if (paid) {
+            return <i className="icon green checkmark"></i>
+        } else {
+            return <i className="icon red close"></i>
+        };
+    };
 
     return (
-        // <tr 
-        // // {if (payment.late) ? }
-        // >
-        //     <td>{payment.week}</td>
-        //     <td>
-        //         {/* {if (payment.paid) ? 'Yes' : 'No' } */}
-        //         {/* <i className="green checkmark icon"></i>
-        //         <i className="red close icon"></i> */}
-        //     </td>
-        //     <td>{payment.date}</td>
-        // </tr>
-        
         <tr>
             <td>{week}</td>
-            <td>{paid}</td>
-            <td>{date}}</td>
+            <td>
+                {isPaid()}
+            </td>
+            <td>{date}</td>
         </tr>
     );
 

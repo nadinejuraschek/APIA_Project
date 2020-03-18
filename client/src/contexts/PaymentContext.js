@@ -16,12 +16,20 @@ export const PaymentProvider = props => {
             method: 'GET'
         }).then(res => {
             // console.log(res.data.payments);
-            setPayments(res);
+            setPayments(res.data.payments);
+        });
+    };
+
+    const deletePayments = (paymentid) => {
+        axios.delete('/api/payments/' + paymentid)
+        .then(res => {
+            console.log(res);
+            getPayments();
         });
     };
 
     return (
-        <PaymentContext.Provider value={payments} >
+        <PaymentContext.Provider value={ { payments, getPayments } } >
             {props.children}
         </PaymentContext.Provider>
     );

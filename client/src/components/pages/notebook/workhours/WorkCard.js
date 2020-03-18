@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WorkCard = () => {
+const WorkCard = ({ workhourid, week, weeklyHours }) => {
     
     return (
         <div className="column">
@@ -8,11 +8,11 @@ const WorkCard = () => {
                 <div className="ui fluid card centered">
                     <div className="content">
                         <div className="header">
-                            Week #
+                            Week {week}
                         </div>
                     </div>
                     <div className="content">
-                        42 hours
+                        {weeklyHours} hours
                     </div>
                 </div>
             </a>

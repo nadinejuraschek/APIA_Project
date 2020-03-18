@@ -4,7 +4,7 @@ import PaymentEntry from './PaymentEntry';
 
 import { PaymentContext } from '../../../../contexts/PaymentContext';
 
-const PaymentTable = () => {
+const PaymentTable = (props) => {
     const { getPayments, payments } = useContext(PaymentContext);
     console.log(payments);
 
@@ -18,7 +18,7 @@ const PaymentTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {/* {payments.map((payment) => (
+                {payments.map((payment) => (
                     <PaymentEntry 
                         key={payment._id} 
                         paymentid={payment._id} 
@@ -26,7 +26,7 @@ const PaymentTable = () => {
                         text={payment.text} 
                         // deletePayment={deletePayment} 
                     />
-                ))} */}
+                ))}
             </tbody>
 
         </table>

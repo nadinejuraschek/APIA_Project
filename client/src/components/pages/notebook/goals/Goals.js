@@ -42,7 +42,11 @@ const Goals = (props) => {
             <div className="block">
                 <Header header="My Goals" />
 
-            <div className="ui stackable grid">
+            {/* <div className="ui fluid card"> */}
+                <GoalList value={goals} />
+            {/* </div> */}
+
+            {/* <div className="ui stackable grid">
                 <div className="row">
                     <div className="eight wide column">
                         <div className="ui large header">3 Months</div>
@@ -61,46 +65,46 @@ const Goals = (props) => {
                             <GoalList value={ goals, deleteGoal } />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-                    <div className="ui divider"></div>
-                    <form className="ui form" onSubmit={handleSubmit}>
-                        <div className="three fields">
-                            <div className="field">
-                                <label>Month</label>
-                                <select name="month" onChange={handleChange} className="ui dropdown">
-                                    <option className="default text" value="">Choose One</option>
-                                    <option value="3">3</option>
-                                    <option value="6">6</option>
-                                    <option value="9">9</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </div>
-                            <div className="field">
-                                <label>List</label>
-                                <select name="type" onChange={handleChange} className="ui dropdown">
-                                    <option className="default text" value="">Choose One</option>
-                                    <option value="personal">Personal</option>
-                                    <option value="travel">Travel</option>
-                                    <option value="education">Education</option>
-                                </select>
-                            </div>
-                            <div className="field">
-                                <label>Goal</label>
-                                <input 
-                                    type="text"
-                                    name="text"
-                                    onChange={handleChange} 
-                                    placeholder="New Goal" 
-                                />
-                            </div>
+            <div className="ui divider"></div>
+                <form className="ui form" onSubmit={handleSubmit}>
+                    <div className="three fields">
+                        <div className="field">
+                            <label>Month</label>
+                            <select name="month" onChange={handleChange} className="ui dropdown">
+                                <option className="default text" value="">Choose One</option>
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="9">9</option>
+                                <option value="12">12</option>
+                            </select>
                         </div>
-                        <div className="centered">
-                            <button className="circular ui icon button">
-                                <i className="plus icon"></i>
-                            </button>
+                        <div className="field">
+                            <label>List</label>
+                            <select name="type" onChange={handleChange} className="ui dropdown">
+                                <option className="default text" value="">Choose One</option>
+                                <option value="personal">Personal</option>
+                                <option value="travel">Travel</option>
+                                <option value="education">Education</option>
+                            </select>
                         </div>
-                    </form>
+                        <div className="field">
+                            <label>Goal</label>
+                            <input 
+                                type="text"
+                                name="text"
+                                onChange={handleChange} 
+                                placeholder="New Goal" 
+                            />
+                        </div>
+                    </div>
+                    <div className="centered">
+                        <button className="circular ui icon button">
+                            <i className="plus icon"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
     );

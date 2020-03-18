@@ -4,7 +4,6 @@ import axios from 'axios';
 export const NoteContext = createContext();
 
 export const NoteProvider = props => {
-    
     const [ notes, setNotes ] = useState([]); 
     // const [ newNote, setNewNote ] = useState({ date: '', text: '' });
 

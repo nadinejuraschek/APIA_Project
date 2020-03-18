@@ -46,7 +46,6 @@ toast.configure({
 });
 
 const App = () => {
-    const notify = () => toast("Wow so easy !");
     return (
         <div>
             <BrowserRouter>
@@ -140,6 +139,7 @@ const App = () => {
 
                     {/* Error Page */}
                     {/* <Route path='*' component={ WrongTurn } /> */}
+
                     <Footer />
                 </div>
             </BrowserRouter>
