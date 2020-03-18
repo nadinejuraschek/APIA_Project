@@ -17,6 +17,7 @@ const AddPayment = () => {
       data: newPayment
     }).then(response => {
       console.log('Payment in DB: ' + response.data);
+      getPayments();
     }).catch(error => {
       console.log('Error: ' + error);
     });
