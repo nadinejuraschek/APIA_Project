@@ -22,8 +22,10 @@ const PaymentTable = (props) => {
                     <PaymentEntry 
                         key={payment._id} 
                         paymentid={payment._id} 
+                        paid={payment.paid}
                         date={payment.date} 
                         text={payment.text} 
+                        late={payment.late}
                         // deletePayment={deletePayment} 
                     />
                 ))}

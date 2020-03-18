@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 
 import axios from 'axios';
 
+// import HideComponentContext from '../../../../contexts/HideComponentContext';
+
 const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
     const [ updatedNote, setUpdatedNote ] = useState({});
+    const [ show, setShow ] = useState(false);
+
+    const showEdit = () => {
+        show == true ? setShow(false) : setShow(true);
+    };
 
     const handleEdit = event => {
         event.preventDefault();
@@ -25,20 +32,54 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes, editNote }) => {
 
     return (
         <div className="ui fluid card note-card">
-            <div className="ui dividing header">
-                {date}
+            <div className={show == true ? 'hide' : ''}>
+                <div className="ui dividing header">
+                    {date}
+                </div>
+                <div>
+                    {text}
+                </div>
             </div>
-            <div>
-                {text}
+
+            <div id='editNoteInputs' className={show == true ? '' : 'hide'} >
+                <form 
+                    className="ui form" 
+                    // onSubmit={handleEdit}
+                >
+                    <div className="field">
+                        <input 
+                            name="date" 
+                            type="text" 
+                            // onChange={handleChange}
+                            placeholder={date} 
+                        />
+                    </div>
+                    <div className="field">
+                        <textarea 
+                            name="text" 
+                            // onChange={handleChange} 
+                            rows="3" 
+                            type="textarea" 
+                            placeholder={text} 
+                        />
+                    </div>
+                    <div className="field centered">
+                        <button 
+                            className="ui button" 
+                        >
+                            Edit
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div className="ui dividing header">
-            </div>
+
+            <div className="ui dividing header"></div>
             <div>
                 <form className="ui form">
                     <button 
                         type="button"
                         className="no-style-button"
-                        // onClick={() => editNote(noteid)}
+                        onClick={() => showEdit()}
                     >
                         <i className="edit outline icon"></i>
                     </button>

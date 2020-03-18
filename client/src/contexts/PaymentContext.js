@@ -1,11 +1,16 @@
+// REACT
 import React, { useState, createContext, useEffect } from 'react';
+
+// NPM PACKAGES
 import axios from 'axios';
 
+// CONTEXT
 export const PaymentContext = createContext();
 
 export const PaymentProvider = props => {
     const [ payments, setPayments ] = useState([]); 
 
+    // GET
     useEffect( () => {
         getPayments();
     }, []);

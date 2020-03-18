@@ -125,8 +125,21 @@ footer.ui .vertical .segment {
 .no-style-button:hover {
     color: #FF9897;
 }
+.ui.button.activity-button {
+    background-color: #FF9897;
+    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+    color: #ffffff;
+}
+.ui.button.activity-button:hover {
+    background-color: #86ABFA;
+    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
+    color: #ffffff;
+}
 .card-button {
     display: inline-block;
+}
+.hide {
+    display: none;
 }
 
 /****************************************************************************
