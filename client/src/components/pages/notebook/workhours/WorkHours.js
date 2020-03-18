@@ -10,7 +10,7 @@ import WeekView from './WeekView';
 import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
 const WorkHours = (props) => {
-    const { workhours, getWorkhours } = useContext(WorkHourContext);
+    const { workhours, getWorkhours, deleteWorkhours } = useContext(WorkHourContext);
     const [ newHours, setNewHours ] =  useState({ number: 0, day: { date: '', dailyHours: 0, dayOff: false }, weeklyHours: 0 });
 
     const handleSubmit = event => {
@@ -40,29 +40,34 @@ const WorkHours = (props) => {
                     
                 <Header header="Your Work Hours" />
 
-                {/* <WeekView /> */}
+                <WeekView workhours={workhours} deleteWorkhours={deleteWorkhours} />
 
-                <div className="ui stackable grid">
-                    <div className="five column row">
-                        {workhours.map((workhour) => (
-                            <WorkCard key={workhour._id} workhourid={workhour._id} week={workhour.number} weeklyHours={workhour.weeklyHours} />
-                        ))}
+                <div className="custom-container">
+                    <div className="ui stackable grid">
+                        <div className="five column row">
+                            {workhours.map((workhour) => (
+                                <WorkCard 
+                                    key={workhour._id} 
+                                    workhourid={workhour._id} 
+                                    week={workhour.number} 
+                                    weeklyHours={workhour.weeklyHours} 
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 <div className="centered">
                     <form className="ui form" onSubmit={handleSubmit}>
                         <div className="field">
-                            <label>Week #</label>
                             <input 
                                 name="number" 
                                 type="number" 
                                 min="1" max="52" 
-                                placeholder="Enter a number between 1 and 52"
+                                placeholder="Week #"
                                 onChange={handleChange}
                             />
                         </div>
-                        {/* <button className="ui icon button"><i className="plus icon"></i></button> */}
                         <button className="circular ui icon button"><i className="plus icon"></i></button>
                     </form>
                 </div>

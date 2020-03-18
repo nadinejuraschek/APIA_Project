@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const WeeklyTable = () => {
+const WeeklyTable = ({ workhours, deleteWorkhours }) => {
+    const [ show, setShow ] = useState(false);
+
+    const showEdit = () => {
+        show == true ? setShow(false) : setShow(true);
+    };
+
     return (
         <table className="ui celled table">
             {/* Header */}
             <thead>
                 <tr className="work-hour-tr">
+                    <th></th>
                     <th>Date</th>
                     {/* <th>Start</th>
                     <th>End</th>
@@ -19,6 +26,22 @@ const WeeklyTable = () => {
             <tbody>
                 {/* Monday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     {/* <td>6:00 AM</td>
                     <td>2:00 PM</td>
@@ -26,10 +49,27 @@ const WeeklyTable = () => {
                     <td></td>
                     <td></td>
                     {/* <td></td> */}
+
                 </tr>
 
                 {/* Tuesday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -37,6 +77,22 @@ const WeeklyTable = () => {
 
                 {/* Wednesday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -44,6 +100,22 @@ const WeeklyTable = () => {
                                     
                 {/* Thursday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -51,6 +123,22 @@ const WeeklyTable = () => {
 
                 {/* Friday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -58,6 +146,22 @@ const WeeklyTable = () => {
 
                 {/* Saturday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -65,6 +169,22 @@ const WeeklyTable = () => {
 
                 {/* Sunday */}
                 <tr>
+                    <td>
+                        <button 
+                            type="button"
+                            className="no-style-button"
+                            onClick={() => showEdit()}
+                        >
+                            <i className="edit outline icon"></i>
+                        </button>
+                        <button 
+                            type="button" 
+                            className="no-style-button"
+                            onClick={() => deleteWorkhours(workhours.id)} 
+                        >
+                            <i className="close icon"></i>
+                        </button>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
