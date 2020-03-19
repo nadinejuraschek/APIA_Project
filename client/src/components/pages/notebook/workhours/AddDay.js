@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
-const AddDay = ({ workhour, workhourid, getWorkhours, deleteWorkhours}) => {
+const AddDay = ({ workhour, workhourid, getWorkhours }) => {
   const [ updatedHours, setUpdatedHours ] = useState({});
   const [ show, setShow ] = useState(false);
 
@@ -15,7 +15,7 @@ const AddDay = ({ workhour, workhourid, getWorkhours, deleteWorkhours}) => {
     .then(res => {
       console.log('Updated workhours in DB: ' + res.data);
       getWorkhours();
-      show == true ? setShow(false) : setShow(true);
+      show === true ? setShow(false) : setShow(true);
     }).catch(error => {
       console.log('Error: ' + error.response);
     });

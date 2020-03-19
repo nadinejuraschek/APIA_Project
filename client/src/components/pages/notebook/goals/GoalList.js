@@ -1,5 +1,5 @@
 // REACT
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 // COMPONENTS
 import GoalItem from './GoalItem';

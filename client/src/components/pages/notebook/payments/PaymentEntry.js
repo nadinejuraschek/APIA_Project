@@ -9,7 +9,7 @@ const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
     const [ updatedPayment, setUpdatedPayment ] = useState({});
 
     const showEdit = () => {
-        show == true ? setShow(false) : setShow(true);
+        show === true ? setShow(false) : setShow(true);
     };
 
     const handleEdit = event => {
@@ -19,7 +19,7 @@ const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
         .then(res => {
             console.log('Updated payment in DB: ' + res.data);
             getPayments();
-            show == true ? setShow(false) : setShow(true);
+            show === true ? setShow(false) : setShow(true);
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -62,7 +62,7 @@ const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
             <td className={ (payment.late) ? 'light-bg' : '' }>{payment.date}</td>
         </tr>
 
-        <tr className={show == true ? '' : 'hide'}>
+        <tr className={show === true ? '' : 'hide'}>
             <td colSpan="4">
                 <form className="ui mini form" onSubmit={handleEdit}>
                     {/* <div className="field">

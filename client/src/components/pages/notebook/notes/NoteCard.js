@@ -9,7 +9,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
     const [ show, setShow ] = useState(false);
 
     const showEdit = () => {
-        show == true ? setShow(false) : setShow(true);
+        show === true ? setShow(false) : setShow(true);
     };
 
     const handleEdit = event => {
@@ -19,7 +19,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
         .then(res => {
             // console.log('Updated note in DB: ' + res.data);
             getNotes();
-            show == true ? setShow(false) : setShow(true);
+            show === true ? setShow(false) : setShow(true);
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -34,7 +34,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
 
     return (
         <div className="ui fluid card note-card">
-            <div className={show == true ? 'hide' : ''}>
+            <div className={show === true ? 'hide' : ''}>
                 <div className="ui dividing header">
                     {date}
                 </div>
@@ -43,7 +43,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
                 </div>
             </div>
 
-            <div className={show == true ? '' : 'hide'} >
+            <div className={show === true ? '' : 'hide'} >
                 <form 
                     className="ui form" 
                     onSubmit={handleEdit}

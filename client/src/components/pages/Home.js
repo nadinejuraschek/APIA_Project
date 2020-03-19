@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 
 // NPM PACKAGES
-import { ToastContainer, toast, Slide } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENTS

@@ -13,7 +13,48 @@ import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
 const WorkHours = (props) => {
     const { workhours, getWorkhours, deleteWorkhours } = useContext(WorkHourContext);
-    const [ newHours, setNewHours ] =  useState({ number: 0, day: { date: '', dailyHours: 0, dayOff: false }, weeklyHours: 0 });
+    const emptyDays = [
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        },
+        {
+            date: '', 
+            dailyHours: 0, 
+            dayOff: false 
+        }
+    ];
+    const [ newHours, setNewHours ] = useState({ 
+        number: 0, 
+        day: emptyDays, 
+        weeklyHours: 0 
+    });
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,7 +64,7 @@ const WorkHours = (props) => {
             method: 'POST',
             data: newHours
         }).then(response => {
-            console.log('WorkHours in DB: ' + response.data);
+            // console.log('WorkHours in DB: ' + response.data);
             getWorkhours();
         }).catch(error => {
             console.log('Error: ' + error)

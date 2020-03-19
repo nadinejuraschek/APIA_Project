@@ -1,6 +1,9 @@
 // REACT
 import React, { useState } from 'react';
 
+// NPM PACKAGES
+import axios from 'axios';
+
 // COMPONENTS
 import WeekView from './WeekView';
 
@@ -9,7 +12,7 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
     let weekly = 0;
 
     const showWeek = () => {
-        selected == true ? setSelected(false) : setSelected(true);
+        selected === true ? setSelected(false) : setSelected(true);
     };
 
     const calcWeek = () => {
@@ -25,10 +28,18 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
             weekly = weekly + totalHours[n];
         };
         
-        console.log('Calculated Hours: ' + weekly);
+        // console.log('Calculated Hours: ' + weekly);
         
         // push to database
         // axios update
+        axios.put('/api/workhours/' + workhourid, { weeklyHours: weekly })
+        .then(res => {
+            console.log(res.data);
+            console.log('Updated workhours in DB: ' + res.data);
+        }).catch(error => {
+            console.log('Error: ' + error.response);
+        });
+
         // change output to database output
         return weekly
     };
@@ -39,11 +50,16 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
         <div className="ui fluid card centered">
             <div className="content">
                 <div className="header">
+                    <div className="right floated meta">
+                        <button className="no-style-button">
+                            <i className="trash light small icon" onClick={() => deleteWorkhours(workhourid)}></i>
+                        </button>
+                    </div>
                     Week {workhour.number}
                 </div>
             </div>
             <div className="content">
-                <strong>{weekly} hours</strong>
+                <strong>{workhour.weeklyHours} hours</strong>
                 <div className="button-container">
                     <button
                         className="ui button activity-button"
@@ -57,7 +73,6 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
                 <WeekView 
                     workhourid={workhourid} 
                     workhour={workhour} 
-                    deleteWorkhours={deleteWorkhours} 
                     getWorkhours={getWorkhours} 
                 />
             </div>

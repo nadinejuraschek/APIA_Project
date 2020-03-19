@@ -10,10 +10,10 @@ import { Checkbox } from 'semantic-ui-react'
 const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
     const [ updatedGoal, setUpdatedGoal ] = useState({});
     const [ show, setShow ] = useState(false);
-    const [ checked, setChecked ] = useState(false);
+    // const [ checked, setChecked ] = useState(false);
 
     const showEdit = () => {
-        show == true ? setShow(false) : setShow(true);
+        show === true ? setShow(false) : setShow(true);
     };
 
     const handleChange = event => {
@@ -28,7 +28,7 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
         axios.put('/api/goals/' + goalid, updatedGoal)
         .then(res => {
             // console.log('Updated goal in DB: ' + res.data);
-            show == true ? setShow(false) : setShow(true);
+            show === true ? setShow(false) : setShow(true);
             getGoals();
         }).catch(error => {
             console.log('Error: ' + error.response);
@@ -38,7 +38,9 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
     return (
         <div className="item">
             <div>
-                <Checkbox className={checked === true ? 'checked' : '' } />
+                <Checkbox 
+                    // className={checked === true ? 'checked' : '' } 
+                />
                     <div className="list-space">
                         <span className='list-check'>{goal.text}</span>
                         <span>
@@ -58,7 +60,7 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
                             </button>
                         </span>
                     </div>
-                    <div className={show == true ? '' : 'hide'}>
+                    <div className={show === true ? '' : 'hide'}>
                         <form className="ui form edit-goal" onSubmit={handleEdit} >
                             <input 
                                 type="text"

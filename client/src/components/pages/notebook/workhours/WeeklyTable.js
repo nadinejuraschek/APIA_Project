@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const WeeklyTable = ({ workhour, deleteWorkhours }) => {
+const WeeklyTable = ({ workhour }) => {
     const [ show, setShow ] = useState(false);
 
     const showEdit = () => {
-        show == true ? setShow(false) : setShow(true);
+        show === true ? setShow(false) : setShow(true);
     };
 
     return (
@@ -12,7 +12,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
             {/* Header */}
             <thead>
                 <tr className="work-hour-tr">
-                    <th></th>
+                    {/* <th></th> */}
                     <th>Date</th>
                     {/* <th>Start</th>
                     <th>End</th>
@@ -25,7 +25,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
             <tbody>
                 {/* Monday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -40,12 +40,17 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[0].date}</td>
                     {/* <td>6:00 AM</td>
                     <td>2:00 PM</td>
                     <td>8</td> */}
-                    <td>{workhour.day[0].dailyHours}</td>
+                    <td className={
+                        (workhour.day[0].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[0].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[0].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -57,7 +62,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
 
                 {/* Tuesday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -72,9 +77,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[1].date}</td>
-                    <td>{workhour.day[1].dailyHours}</td>
+                    <td className={
+                        (workhour.day[1].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[1].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[1].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -85,7 +95,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
 
                 {/* Wednesday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -100,9 +110,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[2].date}</td>
-                    <td>{workhour.day[2].dailyHours}</td>
+                    <td className={
+                        (workhour.day[2].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[2].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[2].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -113,7 +128,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                                     
                 {/* Thursday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -128,9 +143,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[3].date}</td>
-                    <td>{workhour.day[3].dailyHours}</td>
+                    <td className={
+                        (workhour.day[3].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[3].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[3].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -141,7 +161,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
 
                 {/* Friday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -156,9 +176,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[4].date}</td>
-                    <td>{workhour.day[4].dailyHours}</td>
+                    <td className={
+                        (workhour.day[4].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[4].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[4].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -169,7 +194,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
 
                 {/* Saturday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -184,9 +209,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[5].date}</td>
-                    <td>{workhour.day[5].dailyHours}</td>
+                    <td className={
+                        (workhour.day[5].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[5].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[5].dayOff) 
                             ? <i className="icon light checkmark"></i> 
@@ -197,7 +227,7 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
 
                 {/* Sunday */}
                 <tr>
-                    <td>
+                    {/* <td>
                         <button 
                             type="button"
                             className="no-style-button"
@@ -212,9 +242,14 @@ const WeeklyTable = ({ workhour, deleteWorkhours }) => {
                         >
                             <i className="close icon"></i>
                         </button>
-                    </td>
+                    </td> */}
                     <td>{workhour.day[6].date}</td>
-                    <td>{workhour.day[6].dailyHours}</td>
+                    <td className={
+                        (workhour.day[6].dailyHours > 10) ? 'negative' : 'positive'
+                    }
+                    >
+                        {workhour.day[6].dailyHours}
+                    </td>
                     <td>
                         { (workhour.day[6].dayOff) 
                             ? <i className="icon light checkmark"></i> 
