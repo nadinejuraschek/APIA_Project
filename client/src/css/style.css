@@ -94,12 +94,13 @@ footer.ui .vertical .segment {
     color: #ffffff;
 }
 .ui .card.feature-card,
-    .ui .card.note-card {
-        border-radius: 2rem;
-        -webkit-box-shadow: 0px 4px 8px 0px #46637350;
-        -moz-box-shadow: 0px 4px 8px 0px #46637350;
-        box-shadow: 0px 4px 8px 0px #46637350;
-        padding: 1rem;
+    .ui .card.note-card,
+        .ui .card.landing-card {
+            border-radius: 2rem;
+            -webkit-box-shadow: 0px 4px 8px 0px #46637350;
+            -moz-box-shadow: 0px 4px 8px 0px #46637350;
+            box-shadow: 0px 4px 8px 0px #46637350;
+            padding: 1rem;
 }
 .ui .card.feature-card {
     background-color: #86ABFA;
@@ -168,6 +169,61 @@ footer.ui .vertical .segment {
 .ui .message {
     background-color: #ffffff;
 }
+.nav-logo {
+    height: 3rem;
+}
+.start-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    color: #313131;
+    font-size: 1.25rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 4px 8px 0px #46637350;
+    -moz-box-shadow: 0px 4px 8px 0px #46637350;
+    box-shadow: 0px 4px 8px 0px #46637350;
+    margin: 2rem;
+}
+.start-button:hover {
+    background-color: #FF9897;
+    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+    color: #ffffff;
+}
+.tagline {
+    color: #ffffff;
+}
+
+/****************************************************************************
+ LANDING
+****************************************************************************/
+.ui.masthead {
+    height: 85vh;
+}
+.ui.vertical.masthead.segment {
+    background-image: linear-gradient(to right bottom, rgb(196, 215, 255, 0.9), #86ABFA);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.landing-header {
+    font-family: 'grand_hotelregular';
+    font-size: 10rem;
+}
+.landing-col-header {
+    font-size: 2rem;
+}
+.ui .card.landing-card {
+    height: 40vh;
+    padding: 2rem;
+}
+.ui .card.landing-card:hover {
+    background-color: #FF9897;
+    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+    color: #313131;
+}
+.icon-padding {
+    margin-bottom: 2rem;
+}
 
 /****************************************************************************
  CALENDAR
@@ -200,15 +256,14 @@ footer.ui .vertical .segment {
 }
 
 .react-calendar__tile--active {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+    background-color: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
     color: white;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
     background-color: #86ABFA;
-    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
+    background-color: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
 }
 
 .react-calendar__tile,

@@ -1,7 +1,11 @@
-import React, { useContext } from 'react';
-import logo from '../images/embrace.svg';
+// REACT
+import React from 'react';
 import { withRouter } from "react-router";
 
+// IMAGES
+import logo from '../images/logo.svg';
+
+// NPM PACKAGES
 import axios from 'axios';
 
 const Navbar = (props) => {
@@ -16,9 +20,9 @@ const Navbar = (props) => {
 
     return (
         <nav className="ui huge top fixed menu">
-            <a className="header item" href="/">
-                <img alt="App Logo" src={logo} width="112" height="28" />
-                Au Pair
+            <a className="header item" href="/home">
+                <img className="nav-logo" alt="App Logo" src={logo} />
+                On Par
             </a>
 
             <div className="right menu">
