@@ -115,7 +115,11 @@ router.post('/api/workhours', (req, res) => {
   });
 });
 // EDIT WORKHOURS
-
+router.put('/api/workhours/:workhourid', (req, res) => {
+  db.WorkHour.findByIdAndUpdate(req.params.workhourid, req.body).then(function(data) {
+    res.json(data);
+  })
+});
 // DELETE WORKHOURS
 router.delete('/api/workhours/:workhourid', (req, res) => {
   db.WorkHour.findByIdAndRemove(req.params.workhourid).then(function(data) {

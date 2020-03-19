@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // COMPONENTS
 import WeekView from './WeekView';
 
-const WorkCard = ({ workhour }) => {
+const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
     const [ selected, setSelected] = useState(false);
     let weekly = 0;
 
@@ -28,7 +28,7 @@ const WorkCard = ({ workhour }) => {
         console.log('Calculated Hours: ' + weekly);
         
         // push to database
-        // axiso update
+        // axios update
         // change output to database output
         return weekly
     };
@@ -49,12 +49,17 @@ const WorkCard = ({ workhour }) => {
                         className="ui button activity-button"
                         onClick={() => showWeek()}
                     >
-                        Show Details
+                        {selected == true ? 'Hide Details' : 'Show Details' }
                     </button>
                 </div>
             </div>
             <div className={selected ? '' : 'hide'}>
-                <WeekView workhour={workhour} />
+                <WeekView 
+                    workhourid={workhourid} 
+                    workhour={workhour} 
+                    deleteWorkhours={deleteWorkhours} 
+                    getWorkhours={getWorkhours} 
+                />
             </div>
         </div>
     );

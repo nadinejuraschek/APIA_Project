@@ -3,11 +3,9 @@ import React, { useState, useContext } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';
-// import { Accordion, Icon } from 'semantic-ui-react';
 
 // COMPONENTS
 import Header from '../../../Header';
-// import WorkAccordion from './WorkAccordion';
 import WorkCard from './WorkCard';
 
 // CONTEXT
@@ -52,6 +50,8 @@ const WorkHours = (props) => {
                                     key={workhour._id} 
                                     workhourid={workhour._id} 
                                     workhour={workhour} 
+                                    deleteWorkhours={deleteWorkhours}
+                                    getWorkhours={getWorkhours}
                                 />
                             ))}
                         </div>

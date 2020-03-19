@@ -1,41 +1,45 @@
+// REACT
 import React, { useState } from 'react';
 
-const AddDay = () => {
-  const [ date, setDate ] = useState('');
-  // const [ start, setStart ] = useState('');
-  // const [ end, setEnd ] = useState('');
-  // const [ totalHours, setTotalHours ] = useState(0);
-  const [ dailyHours, setDailyHours ] = useState(0);
-  const [ weeklyHours, setWeeklyHours ] = useState(0);
-  // const [ dayOff, setDayOff ] = useState(false);
+// NPM PACKAGES
+import axios from 'axios';
 
-  const handleSubmit = event => {
+const AddDay = ({ workhour, workhourid, getWorkhours, deleteWorkhours}) => {
+  const [ updatedHours, setUpdatedHours ] = useState({});
+  const [ show, setShow ] = useState(false);
+
+  const handleEdit = event => {
     event.preventDefault();
+    // console.log('Updated workhours to send to DB: ' + updatedHours);
+    axios.put('/api/workhours/' + workhourid, updatedHours)
+    .then(res => {
+      console.log('Updated workhours in DB: ' + res.data);
+      getWorkhours();
+      show == true ? setShow(false) : setShow(true);
+    }).catch(error => {
+      console.log('Error: ' + error.response);
+    });
+  };
 
-    let newDay = {
-      date,
-      // start,
-      // end,
-      // totalHours,
-      dailyHours,
-      weeklyHours
-      // dayOff
-    }
-
+  const handleChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setUpdatedHours(updatedHours => ({...updatedHours, [name]: value }));
+    // console.log(updatedHours);
   };
 
   return (
     <>
       <div className="ui dividing header">Add A Day</div>
-      <form className="ui form" onSubmit={handleSubmit}>
+      <form className="ui form" onSubmit={handleEdit}>
         <div className="two fields">
             <div className="field">
                 <label>Date</label>
-                <input name="date" type="text" placeholder="Date" />
+                <input name="date" type="text" placeholder="Date" onChange={handleChange} />
             </div>
             <div className="field">
                 <label>Total Hours</label>
-                <input name="dailyHours" type="number" />
+                <input name="dailyHours" type="number" placeholder="Daily Hours" onChange={handleChange} />
             </div>
         </div>
         <div className="centered">

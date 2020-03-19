@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import WeeklyTable from './WeeklyTable';
 import AddDay from './AddDay';
 
-const WeekView = ({ workhour, deleteWorkhours }) => {
+const WeekView = ({ workhour, workhourid, deleteWorkhours }) => {
 
     return (
         <div className="custom-container">
@@ -13,8 +13,7 @@ const WeekView = ({ workhour, deleteWorkhours }) => {
                 workhour={workhour} 
                 // deleteWorkhours={deleteWorkhours} 
             />
-            <AddDay workhour={workhour} />
-            <div className="ui divider"></div>
+            <AddDay workhour={workhour} workhourid={workhourid} deleteWorkhours={deleteWorkhours} />
         </div>
     );
 };
