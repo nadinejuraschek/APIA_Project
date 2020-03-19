@@ -29,7 +29,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
         const name = event.target.name;
         const value = event.target.value;
         setUpdatedNote(updatedNote => ({...updatedNote, [name]: value }));
-        console.log('updated Note: ' + updatedNote);
+        // console.log('updated Note: ' + updatedNote);
     };
 
     return (

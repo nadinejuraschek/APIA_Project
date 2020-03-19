@@ -189,8 +189,8 @@ router.post('/api/goals', (req, res) => {
   });
 });
 // EDIT GOAL
-router.put('/api/notes/:noteid', (req, res) => {
-  db.Note.findByIdAndUpdate(req.params.noteid, req.body).then(function(data) {
+router.put('/api/goals/:goalid', (req, res) => {
+  db.Goal.findByIdAndUpdate(req.params.goalid, req.body).then(function(data) {
     res.json(data);
   })
 });

@@ -17,19 +17,19 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
     };
 
     const handleChange = event => {
-        const goal = event.target.goal;
+        const name = event.target.name;
         const value = event.target.value;
-        setUpdatedGoal(updatedGoal => ({...updatedGoal, { goal: value }));
+        setUpdatedGoal(updatedGoal => ({...updatedGoal, [name]: value }));
     };
 
     const handleEdit = event => {
         event.preventDefault();
-        console.log('Updated goal to send to DB: ' + { goal: value });
+        // console.log('Updated goal to send to DB: ' + updatedGoal);
         axios.put('/api/goals/' + goalid, updatedGoal)
         .then(res => {
-            console.log('Updated goal in DB: ' + res.data);
-            getGoals();
+            // console.log('Updated goal in DB: ' + res.data);
             show == true ? setShow(false) : setShow(true);
+            getGoals();
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -58,18 +58,21 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
                             </button>
                         </span>
                     </div>
-                    <form className={show == true ? '' : 'hide'}>
+                    <div className={show == true ? '' : 'hide'}>
                         <form className="ui form edit-goal" onSubmit={handleEdit} >
                             <input 
                                 type="text"
+                                name="text"
                                 placeholder={goal.text}
                                 onChange={handleChange}
                             />
-                            <button className="{handleEdit}">Edit</button>
+                            <div className="button-container">
+                                <button className="ui button">Edit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-        </div>
+            </div>
     );
 };
 
