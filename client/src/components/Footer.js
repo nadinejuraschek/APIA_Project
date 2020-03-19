@@ -9,8 +9,11 @@ const Footer = () => {
                 Au Pair App
             </h2> */}
                 <div className="centered">
-                    <p className="copyright"><i className="copyright outline icon"></i> 2020</p>
-                    {/* <p className="copyright">Nadine Juraschek</p> */}
+                    <p className="copyright">
+                        <i className="copyright outline icon"></i>
+                         2020
+                        <a href="https://github.com/nadinejuraschek" className="footer-link"> Nadine Juraschek</a>
+                    </p>
                     {/* <p className="copyright">
                         Illustrations and Icons by 
                         <a href="#">Ziv Pesso</a>

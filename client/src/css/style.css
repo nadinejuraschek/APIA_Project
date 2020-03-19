@@ -40,7 +40,7 @@ footer.ui .vertical .segment {
     padding: 1rem;
 }
 .copyright {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
 }
 .wrapper {
     display: flex;
@@ -158,6 +158,15 @@ footer.ui .vertical .segment {
 }
 .edit-goal {
     margin: 1rem 0 1rem 2rem;
+}
+.footer-link{
+    color: #313131;
+}
+.footer-link:hover{
+    color: #FF9897;
+}
+.ui .message {
+    background-color: #ffffff;
 }
 
 /****************************************************************************
