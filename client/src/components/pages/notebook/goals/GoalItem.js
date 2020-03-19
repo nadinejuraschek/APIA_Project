@@ -66,7 +66,7 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
                                 placeholder={goal.text}
                                 onChange={handleChange}
                             />
-                            <div className="button-container">
+                            <div className="button-container centered">
                                 <button className="ui button">Edit</button>
                             </div>
                         </form>

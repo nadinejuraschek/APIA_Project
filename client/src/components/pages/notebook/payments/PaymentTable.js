@@ -1,12 +1,14 @@
+// REACT
 import React, { useContext } from 'react';
 
+// COMPONENTS
 import PaymentEntry from './PaymentEntry';
 
+// CONTEXT
 import { PaymentContext } from '../../../../contexts/PaymentContext';
 
 const PaymentTable = (props) => {
     const { getPayments, deletePayment, payments } = useContext(PaymentContext);
-    console.log(payments);
 
     return (
         <table className="ui celled table">
@@ -25,10 +27,10 @@ const PaymentTable = (props) => {
                         paymentid={payment._id} 
                         payment={payment}
                         deletePayment={deletePayment} 
+                        getPayments={getPayments}
                     />
                 ))}
             </tbody>
-
         </table>
     );
 };

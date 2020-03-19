@@ -25,16 +25,17 @@ export const PaymentProvider = props => {
         });
     };
 
-    const deletePayments = (paymentid) => {
+    const deletePayment = (paymentid) => {
+        // console.log(paymentid);
         axios.delete('/api/payments/' + paymentid)
         .then(res => {
-            console.log(res);
+            // console.log(res);
             getPayments();
         });
     };
 
     return (
-        <PaymentContext.Provider value={ { payments, getPayments } } >
+        <PaymentContext.Provider value={ { payments, getPayments, deletePayment } } >
             {props.children}
         </PaymentContext.Provider>
     );

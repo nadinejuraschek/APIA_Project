@@ -149,7 +149,12 @@ router.post('/api/payments', (req, res) => {
   });
 });
 // EDIT PAYMENT
-
+router.put('/api/payments/:paymentid', (req, res) => {
+  db.Payment.findByIdAndUpdate(req.params.paymentid, req.body).then(function(data) {
+    res.json(data);
+    console.log(data);
+  })
+});
 // DELETE PAYMENT
 router.delete('/api/payments/:paymentid', (req, res) => {
   db.Payment.findByIdAndRemove(req.params.paymentid).then(function(data) {
