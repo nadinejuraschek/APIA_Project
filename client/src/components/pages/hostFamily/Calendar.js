@@ -1,4 +1,7 @@
+// REACT
 import React, { Component } from 'react';
+
+// NPM PACKAGES
 import Calendar from 'react-calendar';
  
 class CalendarView extends Component {

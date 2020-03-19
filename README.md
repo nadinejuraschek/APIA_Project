@@ -21,6 +21,7 @@
     * jsonwebtoken
     * morgan
     * react-toastify
+    * react-calendar
 * Semantic UI
 * MongoDB + mongoose
 

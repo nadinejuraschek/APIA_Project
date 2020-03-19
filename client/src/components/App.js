@@ -132,8 +132,8 @@ const App = () => {
                     {/* HostFamily Sections */}
                     <Route exact path='/hostfamily/calendar' >
                         <GatedComponent>
-                            <Dev />
-                            {/* <CalendarView /> */}
+                            {/* <Dev /> */}
+                            <CalendarView />
                         </GatedComponent>
                     </Route>
 

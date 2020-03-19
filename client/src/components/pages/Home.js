@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENTS
 import FeatureCard from './FeatureCard';
+// import Calendar from './hostFamily/Calendar';
 
 // CONTEXTS
 import { UserContext } from '../../contexts/UserContext';
@@ -15,6 +16,7 @@ import { UserContext } from '../../contexts/UserContext';
 import notebookIcon from '../../images/book.svg';
 import hostfamilyIcon from '../../images/family.svg';
 import clusterIcon from '../../images/cluster.svg';
+import calendarIcon from '../../images/calendar.svg';
 
 // TOASTIFY CONFIG & STYLE
 toast.configure({
@@ -63,6 +65,7 @@ const Home = () => {
                 </div>
 
                 <div className="ui three column stackable grid container">
+
                     <div className="column centered">
                         <FeatureCard 
                             title="notebook" 
@@ -71,7 +74,7 @@ const Home = () => {
                             link="/notebook"  
                         />
                     </div>
-                            
+                                
                     <div className="column centered">
                         <FeatureCard 
                             title="hostfamily" 
@@ -90,7 +93,17 @@ const Home = () => {
                         />
                     </div>
 
+                    <div className="column centered">
+                        <FeatureCard 
+                            title="calendar" 
+                            header="Calendar" 
+                            icon={calendarIcon} 
+                            link="/hostfamily/calendar" 
+                        />
+                    </div>
+
                 </div>
+
             </div>
         </section>
     );

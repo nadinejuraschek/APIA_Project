@@ -161,6 +161,53 @@ footer.ui .vertical .segment {
 }
 
 /****************************************************************************
+ CALENDAR
+****************************************************************************/
+.react-calendar__navigation {
+    display: none;
+
+}
+.react-calendar__navigation__arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+}
+
+.react-calendar__navigation__label {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.react-calendar__tile {
+    height: 6rem;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.react-calendar__tile--active {
+    background-color: #FF9897;
+    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+    color: white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+    background-color: #86ABFA;
+    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
+}
+
+.react-calendar__tile,
+.react-calendar__month-view__days__day {
+    font-size: 1.2rem;
+}
+
+/****************************************************************************
  MEDIA QUERIES
 ****************************************************************************/
 /* @media screen and (min-width: 980px) {
