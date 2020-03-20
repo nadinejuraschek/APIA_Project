@@ -1,8 +1,11 @@
+// REACT
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 
+// NPM PACKAGES
 import axios from 'axios';
 
+// COMPONENTS
 import Header from '../../Header';
 
 class Register extends Component {

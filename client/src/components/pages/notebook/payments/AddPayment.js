@@ -61,8 +61,8 @@ const AddPayment = () => {
             <label>Late?</label>
             <select name="late" className="ui fluid dropdown" onChange={handleChange}>
               <option value=""></option>
-              <option value="false">No</option>
               <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           </div>
         </div>

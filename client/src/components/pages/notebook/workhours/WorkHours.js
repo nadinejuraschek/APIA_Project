@@ -12,7 +12,7 @@ import WorkCard from './WorkCard';
 import { WorkHourContext } from '../../../../contexts/WorkHourContext';
 
 const WorkHours = (props) => {
-    const { workhours, getWorkhours, deleteWorkhours } = useContext(WorkHourContext);
+    const { workhours, getWorkhours, getWeek, deleteWorkhours } = useContext(WorkHourContext);
     const emptyDays = [
         {
             date: '', 
@@ -64,7 +64,7 @@ const WorkHours = (props) => {
             method: 'POST',
             data: newHours
         }).then(response => {
-            // console.log('WorkHours in DB: ' + response.data);
+            console.log('WorkHours in DB: ' + response.data);
             getWorkhours();
         }).catch(error => {
             console.log('Error: ' + error)
@@ -93,6 +93,7 @@ const WorkHours = (props) => {
                                     workhour={workhour} 
                                     deleteWorkhours={deleteWorkhours}
                                     getWorkhours={getWorkhours}
+                                    getWeek={getWeek}
                                 />
                             ))}
                         </div>

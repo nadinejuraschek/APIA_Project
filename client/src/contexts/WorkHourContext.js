@@ -1,7 +1,10 @@
+// REACT
 import React, { useState, useEffect, createContext } from 'react';
 
+// NPM PACKAGES
 import axios from 'axios';
 
+// CONTEXT
 export const WorkHourContext = createContext();
 
 export const WorkHourProvider = (props) => {

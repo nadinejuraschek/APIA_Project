@@ -7,12 +7,17 @@ import axios from 'axios';
 // COMPONENTS
 import WeekView from './WeekView';
 
-const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
+const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWeek, getWorkhours }) => {
     const [ selected, setSelected] = useState(false);
+    const [ show, setShow ] = useState(false);
     let weekly = 0;
 
     const showWeek = () => {
         selected === true ? setSelected(false) : setSelected(true);
+    };
+
+    const showEdit = () => {
+        show === true ? setShow(false) : setShow(true);
     };
 
     const calcWeek = () => {
@@ -34,8 +39,8 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
         // axios update
         axios.put('/api/workhours/' + workhourid, { weeklyHours: weekly })
         .then(res => {
-            console.log(res.data);
-            console.log('Updated workhours in DB: ' + res.data);
+            // console.log(res.data);
+            console.log('Calculated Weekly Hours in DB: ' + res.data);
         }).catch(error => {
             console.log('Error: ' + error.response);
         });
@@ -73,7 +78,8 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWorkhours }) => {
                 <WeekView 
                     workhourid={workhourid} 
                     workhour={workhour} 
-                    getWorkhours={getWorkhours} 
+                    getWorkhours={getWorkhours}
+                    getWeek={getWeek} 
                 />
             </div>
         </div>

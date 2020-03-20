@@ -17,9 +17,10 @@ const   db              = require('./models/db');
 app.use(morgan('tiny'));
 
 // DATABASE
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_LOCAL, {
     useNewUrlParser: true, 
-    useUnifiedTopology: true 
+    useUnifiedTopology: true ,
+    findOneAndModify: true
 });
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected.');

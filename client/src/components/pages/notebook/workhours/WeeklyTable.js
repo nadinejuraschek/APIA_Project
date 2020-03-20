@@ -1,12 +1,7 @@
+// REACT
 import React, { useState } from 'react';
 
 const WeeklyTable = ({ workhour }) => {
-    const [ show, setShow ] = useState(false);
-
-    const showEdit = () => {
-        show === true ? setShow(false) : setShow(true);
-    };
-
     return (
         <table className="ui celled table">
             {/* Header */}
