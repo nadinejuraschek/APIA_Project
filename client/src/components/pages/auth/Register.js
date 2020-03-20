@@ -43,7 +43,7 @@ class Register extends Component {
 
     render() {
         return (
-            <section className="wrapper">
+            <section className="wrapper-two">
                 <div className="block">
 
                     <Header header="Register" />

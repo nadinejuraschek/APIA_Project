@@ -47,6 +47,11 @@ footer.ui .vertical .segment {
     align-items: center; 
     margin-top: 4rem;
 }
+.wrapper-two {
+    display: flex;
+    align-items: center; 
+    margin-top: 4rem; 
+}
 .wrapper-scroll {
     display: flex;
     align-items: center; 
@@ -192,6 +197,9 @@ footer.ui .vertical .segment {
 .tagline {
     color: #ffffff;
 }
+.more-padding {
+    margin-top: 4rem;
+}
 
 /****************************************************************************
  LANDING
@@ -210,7 +218,7 @@ footer.ui .vertical .segment {
     font-size: 10rem;
 }
 .landing-col-header {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .ui .card.landing-card {
     height: 40vh;

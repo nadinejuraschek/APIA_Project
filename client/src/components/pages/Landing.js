@@ -21,10 +21,12 @@ const Landing = () => {
                             The Au Pair's Assistant
                         </h1>
                         <h2 className="tagline">Because taking care of kids is hard enough.</h2>
-                        <button className="start-button">
-                            Get Started  
-                            <i className="right arrow icon"></i>
-                        </button>
+                        <div className="more-padding">
+                            <a href='/home' className="start-button">
+                                Get Started  
+                                <i className="right arrow icon"></i>
+                            </a>
+                        </div>
 
                     </div>
                 </div>
