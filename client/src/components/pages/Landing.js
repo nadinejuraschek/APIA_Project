@@ -1,6 +1,12 @@
 // REACT
 import React from 'react';
 
+// ICONS
+import note from '../../images/edit.svg';
+import find from '../../images/find.svg';
+import friends from '../../images/trust.svg';
+import connect from '../../images/team.svg';
+
 const Landing = () => {
     return (
         <>
@@ -32,7 +38,7 @@ const Landing = () => {
                             <div className="ui fluid card landing-card">
                                 <div className="card-content">
                                     <div className="icon-padding centered">
-                                        <i className="massive sticky note outline icon"></i>
+                                        <img className="feature-icon" alt="Note" src={note} />
                                     </div>
                                     <p className="landing-col-header centered">
                                         Save
@@ -47,7 +53,7 @@ const Landing = () => {
                             <div className="ui fluid card landing-card">
                                 <div className="card-content">
                                     <div className="icon-padding centered">
-                                        <i className="massive sticky note outline icon"></i>
+                                        <img className="feature-icon" alt="Find" src={find} />
                                     </div>
                                     <p className="landing-col-header centered">
                                         Find
@@ -62,7 +68,7 @@ const Landing = () => {
                             <div className="ui fluid card landing-card">
                                 <div className="card-content">
                                     <div className="icon-padding centered">
-                                        <i className="massive sticky note outline icon"></i>
+                                        <img className="feature-icon" alt="Share" src={connect} />
                                     </div>
                                     <p className="landing-col-header centered">
                                         Share
@@ -77,7 +83,7 @@ const Landing = () => {
                             <div className="ui fluid card landing-card">
                                 <div className="card-content">
                                     <div className="icon-padding centered">
-                                        <i className="massive sticky note outline icon"></i>
+                                        <img className="feature-icon" alt="Cluster" src={friends} />
                                     </div>
                                     <p className="landing-col-header centered">
                                         Get to Know 
