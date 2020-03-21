@@ -15,6 +15,9 @@
   },
   "author": "Nadine Juraschek",
   "license": "ISC",
+  "engines": {
+    "node": "12.13.0"
+  },
   "bugs": {
     "url": "https://github.com/nadinejuraschek/APIA_Project/issues"
   },
