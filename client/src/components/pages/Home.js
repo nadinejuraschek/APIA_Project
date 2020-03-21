@@ -48,13 +48,30 @@ const Home = () => {
 
     const notify = () => toast(activities[Math.floor((Math.random() * 18) + 1)]);
 
+    const time = new Date().getHours();
+    let greeting;
+    let symbol = '!';
+
+    if (time > 6 && time < 11) {
+        greeting = 'Good morning, ';
+    } else if (time >= 11 && time < 15) {
+        greeting = 'It\'s lunchtime, ';
+    } else if (time >= 15 && time < 18) {
+        greeting = 'Good afternoon, ';
+    } else if (time >= 18 && time < 23) {
+        greeting = 'Good evening, ';
+    } else {
+        greeting = 'Up so late, ';
+        symbol = '?';
+    };
+
     return (
         <section className="wrapper">
             <div className="block">
 
                 <div className="pageheader">
                         <h2>
-                            Good morning, { user.firstname }!
+                            {greeting + user.firstname + symbol}
                         </h2>
                         <h3>
                             What Can I Help You With?
