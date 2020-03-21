@@ -7,9 +7,10 @@
 ## How It Works
 
 ## Technologies
-* React
-    * Content APIA
+* React.js
+    * Context API
     * Hooks
+* Semantic UI
 * JavaScript
 * Node.js
     * express
@@ -22,7 +23,6 @@
     * morgan
     * react-toastify
     * react-calendar
-* Semantic UI
 * MongoDB + mongoose
 
 ## Future Development Goals
@@ -32,7 +32,7 @@
 * Local Community Counselor
 
 #### Tips, Resources, and Recommendations
-* activity suggestions
+* more activity suggestions
 * tips for different host kid age groups
 * communication starters for family-au pair communication
 * goal suggestions for a successful au pair year
