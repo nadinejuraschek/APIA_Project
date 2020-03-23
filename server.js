@@ -64,10 +64,10 @@ if (process.env.NODE_ENV === 'production') {
 app.use((req, res) => res.sendFile(path.join(__dirname, './client/build/index.html')));
 
 // SERVER
-app.get('/api', (req, res) => {
-    res.send('API route works');
-    // res.json(data);
-});
+// app.get('/api', (req, res) => {
+//     res.send('API route works');
+//     // res.json(data);
+// });
 
 app.listen(process.env.PORT, function() {
     console.log('Server is listening on PORT ' + process.env.PORT + '.');
