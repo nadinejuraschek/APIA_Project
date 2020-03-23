@@ -55,6 +55,11 @@ app.use((req, res, next) => {
 const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
 
+// DEPLOYMENT
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+};
+
 // SERVER
 app.get('/api', (req, res) => {
     res.send('API route works');
