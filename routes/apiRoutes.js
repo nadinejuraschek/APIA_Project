@@ -39,7 +39,7 @@ router.post('/api/user/register', async function (req, res) {
   //create user in database
   const user = await db.User.create({
     role: req.body.role,
-    familID: req.body.familyID,
+    familyID: req.body.familyID,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     country: req.body.country,
