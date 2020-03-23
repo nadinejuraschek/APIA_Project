@@ -17,7 +17,7 @@ const   db              = require('./models/db');
 app.use(morgan('tiny'));
 
 // DATABASE
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true, 
     useUnifiedTopology: true ,
     findOneAndModify: true
@@ -59,6 +59,9 @@ app.use(apiRoutes);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 };
+
+// If no API routes are hit, send the React app
+app.use((req, res) => res.sendFile(path.join(__dirname, './client/build/index.html')));
 
 // SERVER
 app.get('/api', (req, res) => {
