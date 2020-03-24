@@ -1,5 +1,7 @@
-# APIA_Project
-#### https://au-pair-application.herokuapp.com/
+# On Par
+## Au Pair Application
+### UC Davis Coding Bootcamp - Project 3
+#### [Live Link:] (https://au-pair-application.herokuapp.com/)
 
 ## Motivation
 
