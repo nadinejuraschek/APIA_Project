@@ -42,20 +42,15 @@ footer.ui .vertical .segment {
 .copyright {
     font-size: 0.9rem;
 }
-.wrapper {
+.wrapper,
+    .wrapper-two,
+        .wrapper-scroll {
     display: flex;
     align-items: center; 
     margin-top: 4rem;
-}
-.wrapper-two {
-    display: flex;
-    align-items: center; 
-    margin-top: 4rem; 
+    margin-bottom: 2rem; 
 }
 .wrapper-scroll {
-    display: flex;
-    align-items: center; 
-    margin-top: 4rem;
     /* overflow: scroll; */
 }
 .block {

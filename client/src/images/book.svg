@@ -1,2 +1,17 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 59.864 59.864" style="enable-background:new 0 0 59.864 59.864;" xml:space="preserve" width="512px" height="512px" class=""><g><path d="M47.436,0h-2.004h-7h-30v17.007v20v16.989h4v5.868l4-2.666l4,2.666v-5.868h18h7h2.004c2.203,0,3.996-1.793,3.996-3.996  V37.007v-20V3.996C51.432,1.793,49.639,0,47.436,0z M10.432,2h28v15.007h-28V2z M38.432,35.007h-28v-16h28V35.007z M18.432,56.128  l-2-1.334l-2,1.334v-2.132h4V56.128z M20.432,51.996h-8h-2V37.007h28v14.989H20.432z M40.432,51.996V37.007v-20V2h3v15.007v20  v14.989H40.432z M45.432,19.007h4v16h-4V19.007z M49.432,50c0,1.101-0.896,1.996-1.996,1.996h-2.004V37.007h4V50z M45.432,17.007V2  h2.004c1.101,0,1.996,0.896,1.996,1.996v13.011H45.432z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g> </svg>
+<svg width="90px" height="101px" viewBox="0 0 90 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-663.000000, -474.000000)" stroke="#FFFFFF" stroke-width="4">
+            <g id="Group-15" transform="translate(665.000000, 474.000000)">
+                <g id="goals" transform="translate(7.000000, 0.000000)">
+                    <rect id="Rectangle" x="2" y="2" width="77" height="97" rx="8"></rect>
+                </g>
+                <path d="M86,59 L86,43 L75,43 C70.581722,43 67,46.581722 67,51 C67,55.418278 70.581722,59 75,59 L86,59 Z" id="Rectangle"></path>
+                <path d="M50,2 L50,25.7169 C50,25.8334525 50.0203756,25.9491078 50.0602066,26.0586431 C50.2489461,26.5776767 50.8227095,26.8454329 51.3417431,26.6566934 L57.9747708,24.2446834 C58.6370432,24.0038571 59.3629568,24.0038571 60.0252292,24.2446834 L66.6582569,26.6566934 C66.7677922,26.6965245 66.8834475,26.7169 67,26.7169 C67.5522847,26.7169 68,26.2691848 68,25.7169 L68,2 L50,2 Z" id="Rectangle"></path>
+                <line x1="0.5" y1="51" x2="18.5" y2="51" id="Line-8-Copy-2" stroke-linecap="round"></line>
+                <line x1="0.5" y1="79" x2="18.5" y2="79" id="Line-8-Copy" stroke-linecap="round"></line>
+                <line x1="0.5" y1="23" x2="18.5" y2="23" id="Line-8" stroke-linecap="round"></line>
+                <line x1="31" y1="2" x2="31" y2="98" id="Line-8-Copy-3" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

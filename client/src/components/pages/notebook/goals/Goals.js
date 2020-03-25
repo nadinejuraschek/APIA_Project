@@ -38,7 +38,7 @@ const Goals = (props) => {
     };
 
     return (
-        <section className="wrapper">
+        <section className="wrapper-two">
             <div className="block">
                 <Header header="My Goals" />
 

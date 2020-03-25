@@ -16,10 +16,10 @@ const Footer = () => {
                          {currentYear}
                         <a href="https://github.com/nadinejuraschek" className="footer-link"> Nadine Juraschek</a>
                     </p>
-                    {/* <p className="copyright">
+                    <p className="copyright">
                         Illustrations and Icons by 
-                        <a href="#">Ziv Pesso</a>
-                    </p> */}
+                        <a href="https://www.linkedin.com/in/ziv-pesso-79618532/" className="footer-link"> Ziv Pesso</a>
+                    </p>
                 </div>
         </footer>
     );
