@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 // COMPONENTS
 import WeeklyTable from './WeeklyTable';
-import EditWeek from './EditWeek';
+// import EditWeek from './EditWeek';
 
 const WeekView = ({ workhour, getWorkhours, getWeek, workhourid }) => {
     const [ show, setShow ] = useState(false);
@@ -14,7 +14,7 @@ const WeekView = ({ workhour, getWorkhours, getWeek, workhourid }) => {
 
     return (
         <div className="custom-container">
-            <div className="right floated meta">
+            {/* <div className="right floated meta">
                 <button 
                     type="button"
                     className="no-style-button"
@@ -22,11 +22,11 @@ const WeekView = ({ workhour, getWorkhours, getWeek, workhourid }) => {
                 >
                     <i className="edit outline light icon"></i>
                 </button>
-            </div>
+            </div> */}
             <WeeklyTable workhour={workhour} />
-            <div className={show === true ? '' : 'hide'}>
+            {/* <div className={show === true ? '' : 'hide'}>
                 <EditWeek workhour={workhour} workhourid={workhourid} getWorkhours={getWorkhours} getWeek={getWeek} />
-            </div>
+            </div> */}
         </div>
     );
 

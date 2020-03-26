@@ -21,7 +21,7 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWeek, getWorkhours
     };
 
     const calcWeek = () => {
-        const days = workhour.day;
+        const days = [workhour.mon, workhour.tue, workhour.wed, workhour.thu, workhour.fri, workhour.sat, workhour.sun];
         let totalHours = [];
         // let weekly = 0;
         // push all daily hours to array

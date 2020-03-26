@@ -36,18 +36,18 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[0].date}</td>
+                    <td>{workhour.mon.date}</td>
                     {/* <td>6:00 AM</td>
                     <td>2:00 PM</td>
                     <td>8</td> */}
                     <td className={
-                        (workhour.day[0].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.mon.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[0].dailyHours}
+                        {workhour.mon.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[0].dayOff) 
+                        { (workhour.mon.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -73,15 +73,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[1].date}</td>
+                    <td>{workhour.tue.date}</td>
                     <td className={
-                        (workhour.day[1].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.tue.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[1].dailyHours}
+                        {workhour.tue.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[1].dayOff) 
+                        { (workhour.tue.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -106,15 +106,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[2].date}</td>
+                    <td>{workhour.wed.date}</td>
                     <td className={
-                        (workhour.day[2].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.wed.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[2].dailyHours}
+                        {workhour.wed.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[2].dayOff) 
+                        { (workhour.wed.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -139,15 +139,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[3].date}</td>
+                    <td>{workhour.thu.date}</td>
                     <td className={
-                        (workhour.day[3].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.thu.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[3].dailyHours}
+                        {workhour.thu.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[3].dayOff) 
+                        { (workhour.thu.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -172,15 +172,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[4].date}</td>
+                    <td>{workhour.fri.date}</td>
                     <td className={
-                        (workhour.day[4].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.fri.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[4].dailyHours}
+                        {workhour.fri.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[4].dayOff) 
+                        { (workhour.fri.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -205,15 +205,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[5].date}</td>
+                    <td>{workhour.sat.date}</td>
                     <td className={
-                        (workhour.day[5].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.sat.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[5].dailyHours}
+                        {workhour.sat.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[5].dayOff) 
+                        { (workhour.sat.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }
@@ -238,15 +238,15 @@ const WeeklyTable = ({ workhour }) => {
                             <i className="close icon"></i>
                         </button>
                     </td> */}
-                    <td>{workhour.day[6].date}</td>
+                    <td>{workhour.sun.date}</td>
                     <td className={
-                        (workhour.day[6].dailyHours > 10) ? 'negative' : 'positive'
+                        (workhour.sun.dailyHours > 10) ? 'negative' : 'positive'
                     }
                     >
-                        {workhour.day[6].dailyHours}
+                        {workhour.sun.dailyHours}
                     </td>
                     <td>
-                        { (workhour.day[6].dayOff) 
+                        { (workhour.sun.dayOff) 
                             ? <i className="icon light checkmark"></i> 
                             : <i className="icon dark close"></i> 
                         }

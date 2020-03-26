@@ -7,20 +7,90 @@ const workSchema = new mongoose.Schema({
         type: Number,
         unique: true
     },
-    day: [
-        {
-            date: String,
-            // time: [
-            //     {
-            //         start: String,
-            //         end: String,
-            //         totalHours: Number
-            //     }
-            // ],
-            dailyHours: Number,
-            dayOff: Boolean
-        }
-    ],
+    mon: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
+    tue: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
+    wed: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
+    thu: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
+    fri: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    }, 
+    sat: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
+    sun: {
+        date: String,
+        // time: [
+        //     {
+        //         start: String,
+        //         end: String,
+        //         totalHours: Number
+        //     }
+        // ],
+        dailyHours: Number,
+        dayOff: Boolean
+    },
     weeklyHours: Number
 });
 

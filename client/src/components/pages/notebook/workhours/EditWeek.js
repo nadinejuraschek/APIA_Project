@@ -6,7 +6,6 @@ import axios from 'axios';
 
 const EditWeek = ({ workhour, workhourid, getWeek, getWorkhours }) => {
   const [ updatedHours, setUpdatedHours ] = useState({ number: workhour.number, day: [], weeklyHours: workhour.weeklyHours });
-  const [ show, setShow ] = useState(false);
 
   const handleEdit = event => {
     event.preventDefault();
