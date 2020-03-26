@@ -64,7 +64,7 @@ const WorkCard = ({ workhour, workhourid, deleteWorkhours, getWeek, getWorkhours
                 </div>
             </div>
             <div className="content">
-                <strong>{workhour.weeklyHours} hours</strong>
+                <strong className={workhour.weeklyHours > 45 ? 'negativeText' : 'positiveText' }>{workhour.weeklyHours} hours</strong>
                 <div className="button-container">
                     <button
                         className="ui button activity-button"

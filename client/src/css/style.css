@@ -195,6 +195,12 @@ footer.ui .vertical .segment {
 .more-padding {
     margin-top: 4rem;
 }
+.negativeText {
+    color: #9F3A38;
+}
+.positiveText {
+    color: #2C662D;
+}
 
 /****************************************************************************
  LANDING
@@ -216,7 +222,7 @@ footer.ui .vertical .segment {
     font-size: 1.8rem;
 }
 .ui .card.landing-card {
-    height: 40vh;
+    height: 42vh;
     padding: 2rem;
 }
 .ui .card.landing-card:hover {
