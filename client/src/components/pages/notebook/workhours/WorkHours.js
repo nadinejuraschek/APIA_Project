@@ -212,7 +212,7 @@ const WorkHours = (props) => {
                         </div>
 
                         <div className="centered">
-                        <button className="ui button">Add</button>
+                        <button className="ui button button-container">Add</button>
                         </div>
                     </form>
                 </div>
