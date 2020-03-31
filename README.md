@@ -9,41 +9,43 @@
 
 As a former Au Pair in America myself, I personally experienced the need for an au pair management application. To organize childcare schedules and activities, find emergency contact information, track workhours and payments, set personal goals, communicate with community counselors, host parents, etc. one needs to either use a variety of different apps or log everything in multiple notebooks. Having everything in one place would save a lot of time and might even eliminate miscommunication caused by language skills or cultural differences.
 
+## What Is An Au Pair?
+[Click here](https://www.aupairinamerica.com/aupairs/index.asp) to read about the Au Pair Program.
+
 ## What It Does
 
-##### Authentication
+#### Authentication
 Users can Register and Log In as an Au Pair. (Host Family and Community Counselor Log In coming soon!)
 
 ![Login Preview](readme-gifs/login.gif)
 
-##### Chilcare Activity Suggestion
+#### Chilcare Activity Suggestion
 A quick suggestion for a fun activity to do with the kids.
 
 ![Activity Button Preview](readme-gifs/activity.gif)
 
-#### My Notebook
+### My Notebook
 A personal tracker. Logs and saves...
 
-##### Workhours 
+#### Workhours 
 These can be added weekly. A daily total needs to be entered and the app will then calculate a weekly total. If the hours exceed the 10 hours daily or 45 hours weekly maximum, the text or table cell will turn red.
 
 ![Workhour Preview](readme-gifs/workhours.gif)
 
-##### Payments
+#### Payments
 Late or unpaid payments will be displayed in red.
 
 ![Payment Preview](readme-gifs/payments.gif)
 
-##### Goals
+#### Goals
 Personal goals can be set for 3, 6, 9 or 12 months and can be categorized in personal, travel or educational goals.
 
 ![Goal Preview](readme-gifs/goals.gif)
 
-##### Notes
+#### Notes
 A note section for reminders or comments.
 
 ![Note Preview](readme-gifs/notes.gif)
-
 
 ## Technologies
 
