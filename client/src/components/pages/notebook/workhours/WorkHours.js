@@ -229,7 +229,12 @@ const WorkHours = (props) => {
                                 onChange={handleChange}
                             />
                         </div> */}
-                        <button className="circular ui icon button" onClick={() => showAdd()}><i className="plus icon"></i></button>
+                        <button 
+                            className="circular ui icon button" 
+                            onClick={() => showAdd()}
+                        >
+                            <i className="plus icon"></i>
+                        </button>
                     {/* </form> */}
                 </div>
                 
