@@ -1,5 +1,5 @@
 // REACT
-import React from 'react';
+import React, { useContext } from 'react';
 import { withRouter } from "react-router";
 
 // IMAGES
@@ -8,7 +8,12 @@ import logo from '../images/logo.svg';
 // NPM PACKAGES
 import axios from 'axios';
 
+// CONTEXT
+import { UserContext } from '../contexts/UserContext';
+
 const Navbar = (props) => {
+    const [ user, setUser ] = useContext(UserContext);
+
     const handleLogout = () => {
         axios({
             url: '/api/user/signout',
@@ -26,15 +31,19 @@ const Navbar = (props) => {
             </a>
 
             <div className="right menu">
-                <div className="ui simple dropdown item">
-                    <i className="user large circle icon"></i>
-                    <i className="dropdown icon"></i>
-                    <div className="menu">
-                        <a className="item" href="/profile">Profile</a>
-                        <a className="item" href="/emergencynumbers">Emergency Numbers</a>
-                        <button className="item" onClick={handleLogout}>Log Out</button>
+                { (user) ?
+                    <div className="ui simple dropdown item">
+                        <i className="user large circle icon"></i>
+                        <i className="dropdown icon"></i>
+                        <div className="menu">
+                            <a className="item" href="/profile">Profile</a>
+                            <a className="item" href="/emergencynumbers">Emergency Numbers</a>
+                            <button className="item" onClick={handleLogout}>Log Out</button>
+                        </div>
                     </div>
-                </div>
+                    :
+                    <a className="item" href="/login">Log In</a>
+                }
             </div>
         </nav>
     );

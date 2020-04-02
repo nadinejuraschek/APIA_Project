@@ -50,7 +50,9 @@ const App = () => {
         <div>
             <BrowserRouter>
                 <div>
-                    <Navbar />
+                    <UserProvider>
+                        <Navbar />
+                    </UserProvider>
 
                     <ToastContainer transition={Slide} />
 
