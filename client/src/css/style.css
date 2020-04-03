@@ -206,7 +206,7 @@ footer.ui .vertical .segment {
  LANDING
 ****************************************************************************/
 .ui.masthead {
-    height: 85vh;
+    height: 90vh;
 }
 .ui.vertical.masthead.segment {
     background-image: linear-gradient(to right bottom, rgb(196, 215, 255, 0.9), #86ABFA);

@@ -32,7 +32,7 @@ const Landing = () => {
                 </div>
             </div>
 
-            <div className="custom-container landing-container">
+            {/* <div className="custom-container landing-container">
                 <div className="ui stackable grid">
                     <div className="four column row">
 
@@ -98,7 +98,7 @@ const Landing = () => {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 };

@@ -76,7 +76,7 @@ const Home = () => {
                         <h3>
                             What Can I Help You With?
                         </h3>
-                        <button className="ui button activity-button" onClick={notify}>Activity, please!</button>
+                        <button className="ui button activity-button" onClick={notify}>Childcare activity, please!</button>
                 </div>
 
                 <div className="ui three column stackable grid container">
