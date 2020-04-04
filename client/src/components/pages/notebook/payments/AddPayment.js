@@ -18,6 +18,7 @@ const AddPayment = () => {
     }).then(response => {
       console.log('Payment in DB: ' + response.data);
       getPayments();
+      setNewPayment({ week: 0, paid: false, date: '', late: false });
     }).catch(error => {
       console.log('Error: ' + error);
     });
@@ -42,11 +43,17 @@ const AddPayment = () => {
               min="1" max="52" 
               placeholder="Week #" 
               onChange={handleChange} 
+              value={newPayment.week}
             />
           </div>
           <div className="field">
             <label>Paid?</label>
-            <select name="paid" className="ui fluid dropdown" onChange={handleChange}>
+            <select 
+              name="paid" 
+              className="ui fluid dropdown" 
+              onChange={handleChange}
+              value={newPayment.paid}
+            >
               <option value=""></option>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -55,11 +62,21 @@ const AddPayment = () => {
           <div className="field">
             <label>Date</label>
             <input 
-              name="date" type="text" placeholder="Date Paid" onChange={handleChange} />
+              name="date" 
+              type="text" 
+              placeholder="Date Paid" 
+              onChange={handleChange}
+              value={newPayment.date}
+            />
           </div>
           <div className="field">
             <label>Late?</label>
-            <select name="late" className="ui fluid dropdown" onChange={handleChange}>
+            <select 
+              name="late" 
+              className="ui fluid dropdown" 
+              onChange={handleChange}
+              value={newPayment.late}
+            >
               <option value=""></option>
               <option value="true">Yes</option>
               <option value="false">No</option>
