@@ -13,7 +13,7 @@ import { GoalContext } from '../../../../contexts/GoalContext';
 
 const Goals = (props) => {
     const { goals, getGoals, deleteGoal } = useContext(GoalContext);
-    const [ newGoal, setNewGoal ] = useState({ month: 0, type: '', text: '' });
+    const [ newGoal, setNewGoal ] = useState({ month: 0, type: '', text: '', checked: false });
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -25,6 +25,7 @@ const Goals = (props) => {
             data: newGoal
         }).then(response => {
             // console.log('Goal in DB: ' + response.data);
+            setNewGoal({ month: 0, type: '', text: '', checked: false });
             getGoals();
         }).catch(error => {
             console.log('Error: ' + error);
@@ -72,8 +73,17 @@ const Goals = (props) => {
                     <div className="three fields">
                         <div className="field">
                             <label>Month</label>
-                            <select name="month" onChange={handleChange} className="ui dropdown">
-                                <option className="default text" value="">Choose One</option>
+                            <select 
+                                name="month" 
+                                onChange={handleChange} 
+                                className="ui dropdown"
+                                value={newGoal.month}
+                            >
+                                <option 
+                                    className="default text" 
+                                >
+                                        Choose One
+                                </option>
                                 <option value="3">3</option>
                                 <option value="6">6</option>
                                 <option value="9">9</option>
@@ -82,7 +92,12 @@ const Goals = (props) => {
                         </div>
                         <div className="field">
                             <label>List</label>
-                            <select name="type" onChange={handleChange} className="ui dropdown">
+                            <select 
+                                name="type" 
+                                onChange={handleChange} 
+                                className="ui dropdown"
+                                value={newGoal.type}
+                            >
                                 <option className="default text" value="">Choose One</option>
                                 <option value="personal">Personal</option>
                                 <option value="travel">Travel</option>
@@ -96,6 +111,7 @@ const Goals = (props) => {
                                 name="text"
                                 onChange={handleChange} 
                                 placeholder="New Goal" 
+                                value={newGoal.text}
                             />
                         </div>
                     </div>
