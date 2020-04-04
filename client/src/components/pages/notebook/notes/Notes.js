@@ -25,6 +25,7 @@ const Notes = (props) => {
         }).then(response => {
             // console.log('Note in DB: ' + response.data);
             // re-render component
+            setNewNote({ date: '', text: '' });
             getNotes();
         }).catch(error => {
             console.log('Error: ' + error);
@@ -77,7 +78,9 @@ const Notes = (props) => {
                                         name="date" 
                                         type="text" 
                                         onChange={handleChange}
-                                        placeholder="Date" />
+                                        placeholder="Date" 
+                                        value={newNote.date}
+                                    />
                                 </div>
                                 <div className="field">
                                     <textarea 
@@ -86,6 +89,7 @@ const Notes = (props) => {
                                         rows="3" 
                                         type="textarea" 
                                         placeholder="Note" 
+                                        value={newNote.text}
                                     />
                                 </div>
                                 <div className="field centered">
@@ -100,7 +104,15 @@ const Notes = (props) => {
                     </div>
                     <div className="twelve wide column">
                         {notes.map((note) => (
-                            <NoteCard key={note._id} noteid={note._id} date={note.date} text={note.text} deleteNote={deleteNote} editNote={editNote} getNotes={getNotes} />
+                            <NoteCard 
+                                key={note._id} 
+                                noteid={note._id} 
+                                date={note.date} 
+                                text={note.text} 
+                                deleteNote={deleteNote} 
+                                editNote={editNote} 
+                                getNotes={getNotes} 
+                            />
                         ))}
                     </div>
                 </div>
