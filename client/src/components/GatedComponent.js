@@ -1,7 +1,10 @@
+// REACT
 import React, { Component } from 'react';
 
+// NPM PACKAGES
 import axios from 'axios';
 
+// COMPONENTS
 import Register from './pages/auth/Register';
 
 class GatedComponent extends Component {
