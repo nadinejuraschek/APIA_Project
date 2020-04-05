@@ -1,5 +1,5 @@
 // REACT
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from "react-router";
 
 // NPM PACKAGES
@@ -8,8 +8,8 @@ import axios from 'axios';
 // COMPONENTS
 import Header from '../../Header';
 
-class Register extends Component {
-    state = {
+const Register = () => {
+    const [ regUser, setRegUser] = useState({
         role: '',
         familyID: '',
         firstname: '',
@@ -17,12 +17,12 @@ class Register extends Component {
         country: '',
         email: '',
         password: ''
-    };
+    });
 
-    handleSubmit = event => {
+    const handleSubmit = event => {
         event.preventDefault();
-        // console.log(this.state);
-        const newUser = this.state;
+        // console.log(regUser);
+        const newUser = regUser;
         axios({
             url: '/api/user/register',
             method: 'POST',
@@ -37,26 +37,25 @@ class Register extends Component {
         });
     };
 
-    handleChange = event => {
+    const handleChange = event => {
         const name = event.target.name;
         const value = event.target.value;
         
-        this.setState({[name]: value });
+        setRegUser({...regUser, [name]: value });
     };
 
-    render() {
-        return (
+    return (
             <section className="wrapper-two">
                 <div className="block">
 
                     <Header header="Register" />
 
                     <div className="custom-container auth-container">
-                        <form className="ui form" onSubmit={this.handleSubmit}>
+                        <form className="ui form" onSubmit={handleSubmit}>
 
                             <div className="field">
                                 <label>I am a</label>
-                                <select name="role" onChange={this.handleChange} className="ui fluid dropdown">
+                                <select name="role" onChange={handleChange} className="ui fluid dropdown">
                                     <option className="default text" value="">Choose One</option>
                                     <option value="Au Pair">Au Pair</option>
                                     <option value="Host Family">Host Family Member</option>
@@ -68,7 +67,7 @@ class Register extends Component {
                                 <label>Your Host Family's ID</label>
                                 <div className="ui left icon input">
                                     <i className="users icon"></i>
-                                    <input type="text" name="familyID" placeholder="Host Family ID" onChange={this.handleChange} />
+                                    <input type="text" name="familyID" placeholder="Host Family ID" onChange={handleChange} />
                                 </div>
                             </div>
 
@@ -78,13 +77,13 @@ class Register extends Component {
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
+                                            <input type="text" name="firstname" placeholder="First Name" onChange={handleChange} />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="lastname" placeholder="Last Name" onChange={this.handleChange} />
+                                            <input type="text" name="lastname" placeholder="Last Name" onChange={handleChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +91,7 @@ class Register extends Component {
 
                             <div className="field">
                                 <label>Home Country</label>
-                                <select name="country" onChange={this.handleChange} className="ui fluid dropdown">
+                                <select name="country" onChange={handleChange} className="ui fluid dropdown">
                                     <option className="default text">Select Country</option>
                                     <option className="item" value="ar">Argentina</option>
                                     <option className="item" value="au">Australia</option>
@@ -147,7 +146,7 @@ class Register extends Component {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="envelope icon"></i>
-                                    <input type="text" name="email" placeholder="E-Mail" onChange={this.handleChange} />
+                                    <input type="text" name="email" placeholder="E-Mail" onChange={handleChange} />
                                 </div>
                             </div>
 
@@ -155,7 +154,7 @@ class Register extends Component {
                                 <label>Password</label>
                                 <div className="ui left icon input">
                                     <i className="lock icon"></i>
-                                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+                                    <input type="password" name="password" placeholder="Password" onChange={handleChange} />
                                 </div>
                             </div>
 
@@ -175,8 +174,7 @@ class Register extends Component {
                     
                 </div>
             </section>
-        );
-    }
+    );
 };
 
 export default withRouter(Register);

@@ -240,6 +240,12 @@ router.put('/api/goals/:goalid', (req, res) => {
     res.json(data);
   })
 });
+// CHECK GOAL
+// router.put('api/goals/:goalid/check', (req, res) => {
+//   db.Goal.findByIdAndUpdate(req.params.goalid, { $set: { 'checked' : req.body} }).then(function(data) {
+//     res.json(data);
+//   })
+// });
 // DELETE GOAL
 router.delete('/api/goals/:goalid', (req, res) => {
   db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
