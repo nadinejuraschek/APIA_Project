@@ -18,6 +18,7 @@ const Register = () => {
         email: '',
         password: ''
     });
+    const [emailValid, setEmailValid] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -43,6 +44,11 @@ const Register = () => {
         
         setRegUser({...regUser, [name]: value });
     };
+
+    const validateEmail = email => {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
     return (
             <section className="wrapper-two">
@@ -146,7 +152,12 @@ const Register = () => {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="envelope icon"></i>
-                                    <input type="text" name="email" placeholder="E-Mail" onChange={handleChange} />
+                                    <input 
+                                        type="text" 
+                                        name="email" 
+                                        placeholder="E-Mail" 
+                                        onChange={handleChange} 
+                                    />
                                 </div>
                             </div>
 
