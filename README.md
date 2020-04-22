@@ -4,6 +4,9 @@
 #### https://au-pair-application.herokuapp.com/
 
 ## -- Currently in Development --
+To run locally:
+`git clone`
+`npm run dev`
 
 ## Motivation
 
