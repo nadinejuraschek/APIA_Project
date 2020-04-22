@@ -44,7 +44,7 @@ const Goals = (props) => {
                 <Header header="My Goals" />
 
             {/* <div className="ui fluid card"> */}
-                <GoalList goals={goals} getGoals={getGoals} deleteGoal={deleteGoal}/>
+                <GoalList value={goals} />
             {/* </div> */}
 
             {/* <div className="ui stackable grid">

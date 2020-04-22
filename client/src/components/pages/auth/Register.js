@@ -1,5 +1,5 @@
 // REACT
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from "react-router";
 
 // NPM PACKAGES
@@ -8,8 +8,8 @@ import axios from 'axios';
 // COMPONENTS
 import Header from '../../Header';
 
-const Register = () => {
-    const [ regUser, setRegUser] = useState({
+class Register extends Component {
+    state = {
         role: '',
         familyID: '',
         firstname: '',
@@ -17,13 +17,12 @@ const Register = () => {
         country: '',
         email: '',
         password: ''
-    });
-    const [emailValid, setEmailValid] = useState(false);
+    };
 
-    const handleSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault();
-        // console.log(regUser);
-        const newUser = regUser;
+        // console.log(this.state);
+        const newUser = this.state;
         axios({
             url: '/api/user/register',
             method: 'POST',
@@ -38,30 +37,26 @@ const Register = () => {
         });
     };
 
-    const handleChange = event => {
+    handleChange = event => {
         const name = event.target.name;
         const value = event.target.value;
         
-        setRegUser({...regUser, [name]: value });
+        this.setState({[name]: value });
     };
 
-    const validateEmail = email => {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
-
-    return (
+    render() {
+        return (
             <section className="wrapper-two">
                 <div className="block">
 
                     <Header header="Register" />
 
                     <div className="custom-container auth-container">
-                        <form className="ui form" onSubmit={handleSubmit}>
+                        <form className="ui form" onSubmit={this.handleSubmit}>
 
                             <div className="field">
                                 <label>I am a</label>
-                                <select name="role" onChange={handleChange} className="ui fluid dropdown">
+                                <select name="role" onChange={this.handleChange} className="ui fluid dropdown">
                                     <option className="default text" value="">Choose One</option>
                                     <option value="Au Pair">Au Pair</option>
                                     <option value="Host Family">Host Family Member</option>
@@ -73,7 +68,7 @@ const Register = () => {
                                 <label>Your Host Family's ID</label>
                                 <div className="ui left icon input">
                                     <i className="users icon"></i>
-                                    <input type="text" name="familyID" placeholder="Host Family ID" onChange={handleChange} />
+                                    <input type="text" name="familyID" placeholder="Host Family ID" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -83,13 +78,13 @@ const Register = () => {
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="firstname" placeholder="First Name" onChange={handleChange} />
+                                            <input type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <div className="ui left icon input">
                                             <i className="user icon"></i>
-                                            <input type="text" name="lastname" placeholder="Last Name" onChange={handleChange} />
+                                            <input type="text" name="lastname" placeholder="Last Name" onChange={this.handleChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +92,7 @@ const Register = () => {
 
                             <div className="field">
                                 <label>Home Country</label>
-                                <select name="country" onChange={handleChange} className="ui fluid dropdown">
+                                <select name="country" onChange={this.handleChange} className="ui fluid dropdown">
                                     <option className="default text">Select Country</option>
                                     <option className="item" value="ar">Argentina</option>
                                     <option className="item" value="au">Australia</option>
@@ -152,12 +147,7 @@ const Register = () => {
                                 <label>E-Mail</label>
                                 <div className="ui left icon input">
                                     <i className="envelope icon"></i>
-                                    <input 
-                                        type="text" 
-                                        name="email" 
-                                        placeholder="E-Mail" 
-                                        onChange={handleChange} 
-                                    />
+                                    <input type="text" name="email" placeholder="E-Mail" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -165,7 +155,7 @@ const Register = () => {
                                 <label>Password</label>
                                 <div className="ui left icon input">
                                     <i className="lock icon"></i>
-                                    <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+                                    <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
                                 </div>
                             </div>
 
@@ -185,7 +175,8 @@ const Register = () => {
                     
                 </div>
             </section>
-    );
+        );
+    }
 };
 
 export default withRouter(Register);

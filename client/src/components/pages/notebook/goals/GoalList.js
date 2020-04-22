@@ -5,10 +5,10 @@ import React, { useContext } from 'react';
 import GoalItem from './GoalItem';
 
 // CONTEXT
-// import { GoalContext } from '../../../../contexts/GoalContext';
+import { GoalContext } from '../../../../contexts/GoalContext';
 
-const GoalList = ({goals, getGoals, deleteGoal}) => {
-    // const { goals, getGoals, deleteGoal } = useContext(GoalContext);
+const GoalList = () => {
+    const { goals, getGoals, deleteGoal } = useContext(GoalContext);
 
     return (
         <>  
@@ -19,12 +19,7 @@ const GoalList = ({goals, getGoals, deleteGoal}) => {
                 <div className="custom-container"> */}
                 <div className="ui list">
                     {goals.map((goal) => (
-                        <GoalItem 
-                            key={goal._id} 
-                            goalid={goal._id} 
-                            goal={goal} 
-                            deleteGoal={deleteGoal} 
-                            getGoals={getGoals} />
+                        <GoalItem key={goal._id} goalid={goal._id} goal={goal} deleteGoal={deleteGoal} getGoals={getGoals} />
                     ))}
                 </div>
                 {/* </div> */}
