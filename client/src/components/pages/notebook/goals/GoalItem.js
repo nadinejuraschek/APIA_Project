@@ -10,7 +10,7 @@ import { Checkbox } from 'semantic-ui-react'
 const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
     const [ updatedGoal, setUpdatedGoal ] = useState({});
     const [ show, setShow ] = useState(false);
-    // const [ checked, setChecked ] = useState(false);
+    const [ checked, setChecked ] = useState(goal.checked);
 
     const showEdit = () => {
         show === true ? setShow(false) : setShow(true);
@@ -34,12 +34,32 @@ const GoalItem = ({ goal, goalid, getGoals, deleteGoal }) => {
             console.log('Error: ' + error.response);
         });
     };
+
+    const handleCheck = event => {
+        event.preventDefault();
+        if (!checked) {
+            setChecked(true);
+            console.log(checked);
+        } else {
+            setChecked(false);
+            console.log(checked);
+        }
+        // console.log('Updated goal to send to DB: ' + updatedGoal);
+        // axios.put('/api/goals/' + goalid + '/check', checked)
+        // .then(res => {
+        //     console.log(res.data);
+        //     console.log('Goal checked!');
+        // }).catch(error => {
+        //     console.log('Error: ' + error.response);
+        // });
+    };
     
     return (
         <div className="item">
             <div>
                 <Checkbox 
-                    // className={checked === true ? 'checked' : '' } 
+                    checked={!!checked}
+                    onClick={handleCheck}
                 />
                     <div className="list-space">
                         <span className='list-check'>{goal.text}</span>
