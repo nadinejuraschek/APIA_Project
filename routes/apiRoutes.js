@@ -1,19 +1,86 @@
-const   express         = require('express'),
-        router          = express.Router(),
-        userController  = require('../controllers/userController');
-        db              = require('../models/db');
-        // bcrypt          = require('bcryptjs'),
-        // jwt             = require('jsonwebtoken');
+const   express     = require('express'),
+        router      = express.Router(),
+        db          = require('../models/db'),
+        bcrypt      = require('bcryptjs'),
+        jwt         = require('jsonwebtoken');
 
 // ==================================================
 // USER
 // ==================================================
+// CREATE USER
+router.post("/api/users", function (req, res) {
+  db.User.create(req.body).then(function (apia) {
+    res.json(apia);
+  });
+});
+// GET USER
+router.get('/api/user', function (req, res) {
+  // console.log('User ID: ' + req.user);
+  db.User.findById((req.user), function(err, user) {
+    res.json(user);
+  });
+});
+router.get('/api/user/:id', (req, res) => {
+  db.User.findById({ _id: req.params.id })
+    .then((user) => {
+      console.log('User data: ' + user);
+      res.json(user);
+    })
+    .catch((err) => {
+      console.log('User error: ' + err);
+    });
+});
 // REGISTER USER
-router.post('/api/user/register', userController.register);
+router.post('/api/user/register', async function (req, res) {
+  console.log(req.body);
+  req.body.email = req.body.email.toLowerCase();
+  //has the password
+  const password = await bcrypt.hash(req.body.password, 10);
+  //create user in database
+  const user = await db.User.create({
+    role: req.body.role,
+    familyID: req.body.familyID,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    country: req.body.country,
+    email: req.body.email,
+    password: password
+  });
+  //create cookie for user 
+  const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+  res.cookie("token", token, {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
+  });
+  console.log("\n\n\n\n\n\n\n\n\n", user);
+  res.json(user);
+});
 // LOGIN USER
-router.post('/api/user/login', userController.login);
+router.post('/api/user/login', async function (req, res) {
+  console.log(req.body);
+  const user = await db.User.findOne({ email: req.body.email });
+  if (!user) {
+    res.json({message: 'No User found.'});
+    return;
+  };
+  console.log(user);
+  const valid = await bcrypt.compare(req.body.password, user.password);
+  if (!valid) {
+    res.json({message: 'Entered e-mail and password do not match!'});
+    return;
+  };
+  const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
+  res.cookie('token', token, {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 365
+  });
+  res.json(user);
+});
 // SIGNOUT USER
-router.post('/api/user/signout', userController.signout);
+router.post('/api/user/signout', function(req, res) {
+  res.clearCookie('token');
+  res.json('User is signed out.');
+});
 
 // ==================================================
 // WORKHOURS
@@ -173,12 +240,6 @@ router.put('/api/goals/:goalid', (req, res) => {
     res.json(data);
   })
 });
-// CHECK GOAL
-// router.put('api/goals/:goalid/check', (req, res) => {
-//   db.Goal.findByIdAndUpdate(req.params.goalid, { $set: { 'checked' : req.body} }).then(function(data) {
-//     res.json(data);
-//   })
-// });
 // DELETE GOAL
 router.delete('/api/goals/:goalid', (req, res) => {
   db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
