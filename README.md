@@ -3,6 +3,10 @@
 ### UC Davis Coding Bootcamp - Project 3
 #### https://au-pair-application.herokuapp.com/
 
+#### Test Login
+E-Mail: tester@mail.com
+Password: testing123
+
 ## -- Currently in Development --
 
 ## Motivation
