@@ -1,5 +1,6 @@
 .container {
   background-color: #ffffff;
+  border-radius: .28571429rem;
   width: 300px;
 
   position: absolute;
@@ -9,7 +10,7 @@
 
 .month,
 .year {
-  background-color: rgba(109, 192, 236, 1);
+  background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #ff9897);
   border-bottom: 1px solid lightgray;
   color: #ffffff;
   font-weight: bold;
@@ -48,6 +49,7 @@
 .calendar {
   background: #ffffff;
   border: 1px solid lightgray;
+  border-radius: .28571429rem;
 }
 
 .cell {
@@ -64,18 +66,18 @@
 }
 
 .cell:hover {
-  background-color: rgba(191, 241, 236, 0.3);
+  background-color: rgb(196, 215, 255, 0.5);
   color: gray;
 }
 
 .disabled {
-  background-color: #f8f8f8;
+  background-color: #f6f6f6;
   color: transparent;
   pointer-events: none;
 }
 
 .selected {
-  background-color: rgba(191, 241, 236, 1);
+  background-color: rgb(253, 184, 183, 0.3);
 }
 
 .row {
