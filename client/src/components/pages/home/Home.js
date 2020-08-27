@@ -6,16 +6,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENTS
-import FeatureCard from './FeatureCard';
-import Countdown from '../Countdown';
+import FeatureCard from '../FeatureCard';
+import Countdown from '../../Countdown';
 
 // CONTEXTS
-import { UserContext } from '../../contexts/UserContext';
+import { UserContext } from '../../../contexts/UserContext';
 
 // ICONS
-import notebookIcon from '../../images/book.svg';
-import hostfamilyIcon from '../../images/family.svg';
-import clusterIcon from '../../images/cluster.svg';
+import notebookIcon from '../../../images/book.svg';
+import hostfamilyIcon from '../../../images/family.svg';
+import clusterIcon from '../../../images/cluster.svg';
+
+// STYLES
+import styles from './home.module.css';
 
 // TOASTIFY CONFIG & STYLE
 toast.configure({
@@ -51,32 +54,32 @@ const Home = () => {
 
   const time = new Date().getHours();
   let greeting;
-  let symbol = '!';
 
   if (time > 6 && time < 11) {
-    greeting = 'Good morning, ';
+    greeting = `Good morning, ${user.firstname}!`;
   } else if (time >= 11 && time < 15) {
-    greeting = "It's lunchtime, ";
+    greeting = `It's lunchtime, ${user.firstname}!`;
   } else if (time >= 15 && time < 18) {
-    greeting = 'Good afternoon, ';
+    greeting = `Good afternoon, ${user.firstname}!`;
   } else if (time >= 18 && time < 23) {
-    greeting = 'Good evening, ';
+    greeting = `Good evening, ${user.firstname}!`;
   } else {
-    greeting = 'Up so late, ';
-    symbol = '?';
+    greeting = `Up so late, ${user.firstname}?`;
   }
 
   return (
-    <section className='wrapper'>
-      <div className='block'>
-        <div className='pageheader'>
-          <h2>{greeting + user.firstname + symbol}</h2>
-          <h3>What Can I Help You With?</h3>
-          <button className='ui button activity-button' onClick={notify}>
-            Childcare activity, please!
-          </button>
+    <main className='wrapper'>
+      <div className={styles.page}>
+        <div className={styles.header}>
+          <div className={styles.greeting}>
+            <h2>{greeting}</h2>
+            <h3>What Can I Help You With?</h3>
+            <button className='ui button activity-button' onClick={notify}>
+              Childcare activity, please!
+            </button>
+          </div>
+          <Countdown startDate={user.startDate} endDate={user.endDate} />
         </div>
-        <Countdown startDate={user.startDate} endDate={user.endDate} />
 
         <div className='ui three column stackable grid container'>
           <div className='column centered'>
@@ -107,7 +110,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

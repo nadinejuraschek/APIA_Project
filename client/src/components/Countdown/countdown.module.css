@@ -1,3 +1,9 @@
+@import '../../css/base.css';
+
+.container {
+
+}
+
 .tabs {
   display: flex;
   align-items: center;
@@ -6,14 +12,23 @@
 
 .tab {
   border: none;
-  border-radius: 4px 4px 0 0;
-  background-color: var(--pink__light);
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 2rem;
+  width: 80%;
 }
 
 .active {
-  background-color: var(--pink__medium);
+  background-color: rgb(253, 184, 183);
+  border-radius: 4px;
 }
 
 .body {
-    
+    padding: 1rem;
 }

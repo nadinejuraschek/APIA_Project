@@ -15,27 +15,31 @@ const Countdown = ({ startDate, endDate }) => {
     <div className={styles.container}>
       <div className={styles.tabs}>
         <div
-          className={styles.tab}
+          className={`${styles.tab} ${tab === 'days' ? styles.active : null}`}
           onClick={() => setTab('days')}
         >
           Days
         </div>
         <div
-          className={styles.tab}
+          className={`${styles.tab} ${tab === 'weeks' ? styles.active : null}`}
           onClick={() => setTab('weeks')}
         >
           Weeks
         </div>
         <div
-          className={styles.tab}
+          className={`${styles.tab} ${tab === 'months' ? styles.active : null}`}
           onClick={() => setTab('months')}
         >
           Months
         </div>
       </div>
       <div className={styles.body}>
-        Passed: {moment(currentDate).diff(startDate, `${tab}`)}
-        Left: {moment(endDate).diff(currentDate, `${tab}`)}
+        <p>
+          {tab.charAt(0).toUpperCase() + tab.slice(1) + " since arrival: " + moment(currentDate).diff(startDate, `${tab}`)}
+        </p>
+        <p>
+          {tab.charAt(0).toUpperCase() + tab.slice(1) + " left: " + moment(endDate).diff(currentDate, `${tab}`)}
+        </p>
       </div>
     </div>
   );
