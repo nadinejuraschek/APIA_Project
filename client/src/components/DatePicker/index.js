@@ -9,12 +9,8 @@ import Cells from './Cells';
 import Month from './Month';
 import Year from './Year';
 
-const DatePicker = ({ handleDate, startDate, setStartDate }) => {
+const DatePicker = ({ startDate, setStartDate }) => {
   const [ selectedDate, setSelectedDate ] = useState(startDate);
-
-  const handleDateClick = async (day) => {
-    await setSelectedDate(day);
-  };
 
   useEffect(() => {
     setStartDate(selectedDate);

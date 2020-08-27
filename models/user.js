@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
   familyID: String,
 
   startDate: Object,
+  endDate: Object,
 
   workhours: [{ type: mongoose.Schema.Types.ObjectId, ref: 'WorkHour' }],
   payments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Payment' }],

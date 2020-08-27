@@ -7,40 +7,35 @@ import moment from 'moment';
 // STYLES
 import styles from './countdown.module.css';
 
-const Countdown = ({ startDate }) => {
-  const [ passed, setPassed ] = useState(daysPassed);
-  const [ left, setLeft ] = useState(daysLeft);
-  const currentDate = moment();
-  const daysPassed = currentDate.diff(startDate, 'days');
-  const weeksPassed = currentDate.diff(startDate, 'weeks');
-  const monthsPassed = currentDate.diff(startDate, 'months');
-  const daysLeft = moment(startDate).diff(currentDate, 'days');
-  const weeksLeft = moment(startDate).diff(currentDate, 'weeks');
-  const monthsLeft = moment(startDate).diff(currentDate, 'months');
+const Countdown = ({ startDate, endDate }) => {
+  const currentDate = new Date();
+  const [ tab, setTab ] = useState('days');
 
   return (
     <div className={styles.container}>
       <div className={styles.tabs}>
         <div
           className={styles.tab}
-          
+          onClick={() => setTab('days')}
         >
           Days
         </div>
         <div
           className={styles.tab}
+          onClick={() => setTab('weeks')}
         >
           Weeks
         </div>
         <div
           className={styles.tab}
+          onClick={() => setTab('months')}
         >
           Months
         </div>
       </div>
       <div className={styles.body}>
-        Passed: {passed}
-        Left: {left}
+        Passed: {moment(currentDate).diff(startDate, `${tab}`)}
+        Left: {moment(endDate).diff(currentDate, `${tab}`)}
       </div>
     </div>
   );
