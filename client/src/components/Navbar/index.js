@@ -3,13 +3,13 @@ import React, { useContext } from 'react';
 import { withRouter } from 'react-router';
 
 // IMAGES
-import logo from '../images/logo.svg';
+import logo from '../../images/logo.svg';
 
 // NPM PACKAGES
 import axios from 'axios';
 
 // CONTEXT
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 
 const Navbar = ({ history }) => {
   const [user] = useContext(UserContext);

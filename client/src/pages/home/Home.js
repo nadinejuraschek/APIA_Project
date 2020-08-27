@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENTS
-import FeatureCard from '../../components/FeatureCard';
+import FeatureCard from '../../components/Features';
 import Countdown from '../../components/Countdown';
 
 // CONTEXTS
@@ -68,8 +68,7 @@ const Home = () => {
   }
 
   return (
-    <main className='wrapper'>
-      <div className={styles.page}>
+    <main>
         <div className={styles.header}>
           <div className={styles.greeting}>
             <h2>{message === '' ? greeting : message}</h2>
@@ -85,35 +84,26 @@ const Home = () => {
           />
         </div>
 
-        <div className='ui three column stackable grid container'>
-          <div className='column centered'>
+        <div className={styles.features}>
             <FeatureCard
               title='notebook'
               header='My Notebook'
               icon={notebookIcon}
               link='/notebook'
             />
-          </div>
-
-          <div className='column centered'>
             <FeatureCard
               title='hostfamily'
               header='My Host Family'
               icon={hostfamilyIcon}
               link='/hostfamily'
             />
-          </div>
-
-          <div className='column centered'>
             <FeatureCard
               title='cluster'
               header='My Cluster'
               icon={clusterIcon}
               link='/cluster'
             />
-          </div>
         </div>
-      </div>
     </main>
   );
 };

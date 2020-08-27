@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import GatedComponent from './components/GatedComponent';
 
-import Dev from './components/Dev';
+import Dev from './pages/Dev';
 // import WrongTurn from './WrongTurn';
 
 import Login from './pages/auth/Login';
