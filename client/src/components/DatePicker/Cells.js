@@ -26,26 +26,29 @@ const Cells = ({ currentDate, selectedDate, handleDateClick }) => {
 
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
-    formattedDate = moment(day).format(dateFormat);
-    days.push(
-      <Cell
-        day={day}
-        formattedDate={formattedDate}
-        monthStart={monthStart}
-        selectedDate={selectedDate}
-        key={day}
-        handleDateClick={handleDateClick}
-      />
-    );
-    day = moment(day).add(1, 'day');
-   }
+      formattedDate = moment(day).format(dateFormat);
+      days.push(
+        <Cell
+          day={day}
+          formattedDate={formattedDate}
+          monthStart={monthStart}
+          selectedDate={selectedDate}
+          key={day}
+          handleDateClick={handleDateClick}
+        />
+      );
+      day = moment(day).add(1, 'day');
+    }
     rows.push(
-       <div className={styles.row} key={day}> {days} </div>
-     );
+      <div className={styles.row} key={day}>
+        {' '}
+        {days}{' '}
+      </div>
+    );
     days = [];
   }
 
-  return <div className={styles.body}>{rows}</div>
+  return <div className={styles.body}>{rows}</div>;
 };
 
 export default Cells;

@@ -1,6 +1,6 @@
 .container {
   background-color: #ffffff;
-  border-radius: .28571429rem;
+  border-radius: 0.28571429rem;
   width: 300px;
 
   position: absolute;
@@ -10,7 +10,11 @@
 
 .month,
 .year {
-  background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #ff9897);
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
   border-bottom: 1px solid lightgray;
   color: #ffffff;
   font-weight: bold;
@@ -49,7 +53,7 @@
 .calendar {
   background: #ffffff;
   border: 1px solid lightgray;
-  border-radius: .28571429rem;
+  border-radius: 0.28571429rem;
 }
 
 .cell {

@@ -19,261 +19,316 @@
  PAGE LAYOUT
 ****************************************************************************/
 body {
-    background-color: #f6f6f6;
-    color: #313131;
+  background-color: #f6f6f6;
+  color: #313131;
 }
 nav {
-    height: 4rem;
+  height: 4rem;
 }
 nav.ui.menu {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 nav a.header.item {
-    font-family: 'grand_hotelregular';
-    font-size: 2rem;
+  font-family: 'grand_hotelregular';
+  font-size: 2rem;
 }
 footer.ui .vertical .segment {
-    padding: 1rem;
+  padding: 1rem;
 }
 .copyright {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
+}
+
+main {
+  min-height: calc(100vh - 110px);
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .wrapper,
-    .wrapper-two,
-        .wrapper-scroll {
-    display: flex;
-    align-items: center; 
-    margin-top: 4rem;
-    margin-bottom: 2rem; 
+.wrapper-two,
+.wrapper-scroll {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 .wrapper-scroll {
-    /* overflow: scroll; */
+  /* overflow: scroll; */
 }
 .block {
-    margin: auto;
-    width: 90%;
+  margin: auto;
+  width: 90%;
 }
 .pageheader {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 3rem 2rem;
-    text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 3rem 2rem;
+  text-align: center;
 }
 .custom-container {
-    margin: 2rem;
-    padding: 1rem;
+  margin: 2rem;
+  padding: 1rem;
 }
 .centered {
-    text-align: center;
+  text-align: center;
 }
 .list-space {
-    display: inline-block;
+  display: inline-block;
 }
 .list-check {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 .auth-container {
-    margin: auto;
-    width: 70%;
+  margin: auto;
+  width: 70%;
 }
 .button-container {
-    margin: 1rem;
+  margin: 1rem;
 }
 .ui .button {
-    background-color: #86ABFA;
-    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
-    color: #ffffff;
+  background-color: #86abfa;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(196, 215, 255),
+    #86abfa
+  );
+  color: #ffffff;
 }
 .ui .button:hover {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-    color: #ffffff;
+  background-color: #ff9897;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
+  color: #ffffff;
 }
 .ui .card.feature-card,
-    .ui .card.note-card,
-        .ui .card.landing-card {
-            border-radius: 2rem;
-            -webkit-box-shadow: 0px 4px 8px 0px #46637350;
-            -moz-box-shadow: 0px 4px 8px 0px #46637350;
-            box-shadow: 0px 4px 8px 0px #46637350;
-            padding: 1rem;
+.ui .card.note-card,
+.ui .card.landing-card {
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 4px 8px 0px #46637350;
+  -moz-box-shadow: 0px 4px 8px 0px #46637350;
+  box-shadow: 0px 4px 8px 0px #46637350;
+  padding: 1rem;
 }
 .ui .card.feature-card {
-    background-color: #86ABFA;
-    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
+  background-color: #86abfa;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(196, 215, 255),
+    #86abfa
+  );
 }
 .ui .card.feature-card:hover {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+  background-color: #ff9897;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
 }
 .ui .card.note-card,
-    .ui .card.goal-card {
-    padding: 2rem;
+.ui .card.goal-card {
+  padding: 2rem;
 }
 .ui .header.feature-header {
-    color: #ffffff;
+  color: #ffffff;
 }
 .feature-icon {
-    margin-top: 1rem;
-    height: 8rem;
+  margin-top: 1rem;
+  height: 8rem;
 }
 .add-container {
-    margin: 3rem auto;
+  margin: 3rem auto;
 }
 .no-style-button {
-    background: transparent;
-    border: none;
-    color: #86ABFA;
+  background: transparent;
+  border: none;
+  color: #86abfa;
 }
 .no-style-button:hover {
-    color: #FF9897;
+  color: #ff9897;
 }
 .ui.button.activity-button {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-    color: #ffffff;
+  background-color: #ff9897;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
+  color: #ffffff;
 }
 .ui.button.activity-button:hover {
-    background-color: #86ABFA;
-    background-image: linear-gradient(to right bottom, rgb(196, 215, 255), #86ABFA);
-    color: #ffffff;
+  background-color: #86abfa;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(196, 215, 255),
+    #86abfa
+  );
+  color: #ffffff;
 }
 .card-button {
-    display: inline-block;
+  display: inline-block;
 }
 .hide {
-    display: none;
+  display: none;
 }
 .light {
-    color: #FF9897;
+  color: #ff9897;
 }
 .dark {
-    color: #86ABFA;
+  color: #86abfa;
 }
 .light-bg {
-    background-color: #FF989725;
+  background-color: #ff989725;
 }
 .edit-goal {
-    margin: 1rem 0 1rem 2rem;
+  margin: 1rem 0 1rem 2rem;
 }
-.footer-link{
-    color: #313131;
+.footer-link {
+  color: #313131;
 }
-.footer-link:hover{
-    color: #FF9897;
+.footer-link:hover {
+  color: #ff9897;
 }
 .ui .message {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 .nav-logo {
-    height: 3rem;
+  height: 3rem;
 }
 .start-button {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    color: #313131;
-    font-size: 1.25rem;
-    padding: 1rem;
-    -webkit-box-shadow: 0px 4px 8px 0px #46637350;
-    -moz-box-shadow: 0px 4px 8px 0px #46637350;
-    box-shadow: 0px 4px 8px 0px #46637350;
-    margin: 2rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  color: #313131;
+  font-size: 1.25rem;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 4px 8px 0px #46637350;
+  -moz-box-shadow: 0px 4px 8px 0px #46637350;
+  box-shadow: 0px 4px 8px 0px #46637350;
+  margin: 2rem;
 }
 .start-button:hover {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-    color: #ffffff;
+  background-color: #ff9897;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
+  color: #ffffff;
 }
 .tagline {
-    color: #ffffff;
+  color: #ffffff;
 }
 .more-padding {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 .negativeText {
-    color: #9F3A38;
+  color: #9f3a38;
 }
 .positiveText {
-    color: #2C662D;
+  color: #2c662d;
 }
 
 /****************************************************************************
  LANDING
 ****************************************************************************/
 .ui.masthead {
-    height: 90vh;
+  height: 90vh;
 }
 .ui.vertical.masthead.segment {
-    background-image: linear-gradient(to right bottom, rgb(196, 215, 255, 0.9), #86ABFA);
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(196, 215, 255, 0.9),
+    #86abfa
+  );
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 .landing-header {
-    font-family: 'grand_hotelregular';
-    font-size: 10rem;
+  font-family: 'grand_hotelregular';
+  font-size: 10rem;
 }
 .landing-col-header {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 .ui .card.landing-card {
-    height: 42vh;
-    padding: 2rem;
+  height: 42vh;
+  padding: 2rem;
 }
 .ui .card.landing-card:hover {
-    background-color: #FF9897;
-    background-image: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-    color: #313131;
+  background-color: #ff9897;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
+  color: #313131;
 }
 .icon-padding {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /****************************************************************************
  CALENDAR
 ****************************************************************************/
 .react-calendar__navigation {
-    display: none;
-
+  display: none;
 }
 .react-calendar__navigation__arrow {
-    background-color: transparent;
-    border: none;
-    font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
 }
 
 .react-calendar__navigation__label {
-    background-color: transparent;
-    border: none;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .react-calendar__tile {
-    height: 6rem;
+  height: 6rem;
 }
 
 .react-calendar__month-view__weekdays__weekday {
-    font-size: 1.5rem;
-    margin: 1rem;
-    text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 .react-calendar__tile--active {
-    background-color: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
-    color: white;
+  background-color: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
+  color: white;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-    background-color: #86ABFA;
-    background-color: linear-gradient(to right bottom, rgb(253, 184, 183), #FF9897);
+  background-color: #86abfa;
+  background-color: linear-gradient(
+    to right bottom,
+    rgb(253, 184, 183),
+    #ff9897
+  );
 }
 
 .react-calendar__tile,
 .react-calendar__month-view__days__day {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /****************************************************************************
@@ -283,9 +338,9 @@ footer.ui .vertical .segment {
 } */
 
 @media screen and (min-width: 768px) {
-    .wrapper {
-        height: 80vh;
-    }
+  .wrapper {
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 640px) {

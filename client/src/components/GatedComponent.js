@@ -1,31 +1,33 @@
 // REACT
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';
 
 // COMPONENTS
-import Register from './pages/auth/Register';
+import Register from '../pages/auth/Register';
+import Loading from '../components/Loading';
 
-class GatedComponent extends Component {
-    state = { user: null };
+const GatedComponent = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    componentDidMount() {
-        // check if user is signed in
-        axios.get('/api/user').then(response => {
-            this.setState({ user: response.data })
-        }).catch(error => {
-            console.log('Error: ' + error.message)
-        });
-    };
-  
-    render() {
-        return (
-            <div>
-                { this.state.user ? <>{this.props.children}</> : <Register /> }
-            </div>
-        );
-    };
-};
+  useEffect(() => {
+    // check if user is signed in
+    axios
+    .get('/api/user')
+    .then(res => {
+      setUser(res.data);
+      setLoading(false);
+    })
+    .catch(error => {
+    console.log('Error: ' + error.message);
+    });
+  }, []);
+
+    return (
+      <div>{loading ? <main><Loading /></main> : user ? <>{children}</> : <Register />}</div>
+    );
+}
 
 export default GatedComponent;

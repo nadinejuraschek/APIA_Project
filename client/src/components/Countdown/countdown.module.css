@@ -1,7 +1,6 @@
 @import '../../css/base.css';
 
 .container {
-
 }
 
 .tabs {
@@ -24,15 +23,20 @@
   width: 80%;
 }
 
+.tab:hover {
+  cursor: pointer;
+}
+
 .active {
   background-color: rgb(253, 184, 183);
   border-radius: 4px;
 }
 
-.body, .message {
-    padding: 1rem;
+.body,
+.message {
+  padding: 1rem;
 }
 
 .message {
-    font-weight: bold;
+  font-weight: bold;
 }
