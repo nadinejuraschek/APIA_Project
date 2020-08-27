@@ -10,7 +10,7 @@ import Month from './Month';
 import Year from './Year';
 
 const DatePicker = ({ startDate, setStartDate }) => {
-  const [ selectedDate, setSelectedDate ] = useState(startDate);
+  const [selectedDate, setSelectedDate] = useState(startDate);
 
   useEffect(() => {
     setStartDate(selectedDate);
@@ -18,21 +18,15 @@ const DatePicker = ({ startDate, setStartDate }) => {
 
   return (
     <div className={styles.container}>
-    <div className={styles.calendar}>
-      <Year
-        currentDate={startDate}
-        handleCurrentDate={setStartDate}
-      />
-      <Month
-        currentDate={startDate}
-        handleCurrentDate={setStartDate}
-      />
-      <Cells
-        currentDate={startDate}
-        selectedDate={selectedDate}
-        handleDateClick={setSelectedDate}
-      />
-    </div>
+      <div className={styles.calendar}>
+        <Year currentDate={startDate} handleCurrentDate={setStartDate} />
+        <Month currentDate={startDate} handleCurrentDate={setStartDate} />
+        <Cells
+          currentDate={startDate}
+          selectedDate={selectedDate}
+          handleDateClick={setSelectedDate}
+        />
+      </div>
     </div>
   );
 };

@@ -4,22 +4,18 @@ import axios from 'axios';
 export const UserContext = createContext();
 
 export const UserProvider = props => {
+  const [user, setUser] = useState([]);
 
-    const [ user, setUser ] = useState([]); 
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      url: '/api/user',
+    }).then(res => {
+      setUser(res.data);
+    });
+  }, []);
 
-    useEffect( () => { 
-        axios({
-            method: 'GET',
-            url: '/api/user'
-        }).then(res => {
-            setUser(res.data);
-        })
-    }, []);
-
-    return (
-        <UserContext.Provider value={[user]}>
-            {props.children}
-        </UserContext.Provider>
-    );
+  return (
+    <UserContext.Provider value={[user]}>{props.children}</UserContext.Provider>
+  );
 };
-

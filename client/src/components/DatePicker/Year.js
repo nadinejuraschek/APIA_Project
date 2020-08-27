@@ -27,13 +27,13 @@ const Year = ({ handleCurrentDate, currentDate }) => {
   return (
     <div className={styles.year}>
       <div className={styles.icon} onClick={prevYear}>
-        <i class="chevron left icon"></i>
+        <i class='chevron left icon'></i>
       </div>
       <div className={styles.monthName}>
-          <span>{displayYear}</span>
+        <span>{displayYear}</span>
       </div>
       <div className={styles.icon} onClick={nextYear}>
-        <i class="chevron right icon"></i>
+        <i class='chevron right icon'></i>
       </div>
     </div>
   );

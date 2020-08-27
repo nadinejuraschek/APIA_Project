@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import './css/style.css';
 import './css/font.css';
 
-import App from './components/App';
+import App from './App';
 
-ReactDOM.render(
-    <App />, 
-    document.querySelector('#root')
-);
+ReactDOM.render(<App />, document.querySelector('#root'));
