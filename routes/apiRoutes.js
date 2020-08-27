@@ -2,6 +2,7 @@ const   express         = require('express'),
         router          = express.Router(),
         db              = require('../models/db');
         bcrypt          = require('bcryptjs'),
+        moment          = require('moment'),
         jwt             = require('jsonwebtoken');
 
 // ==================================================
@@ -43,6 +44,8 @@ router.post('/api/user/register', async function (req, res) {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     country: req.body.country,
+    startDate: req.body.startDate,
+    endDate: moment(req.body.startDate).add(1, 'years'),
     email: req.body.email,
     password: password
   });

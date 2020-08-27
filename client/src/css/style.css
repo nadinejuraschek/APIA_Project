@@ -15,7 +15,6 @@
 
  background-image: linear-gradient(to bottom, #b8edff, #9fa4ff)
 ****************************************************************************/
-
 /****************************************************************************
  PAGE LAYOUT
 ****************************************************************************/
@@ -33,9 +32,6 @@ nav a.header.item {
     font-family: 'grand_hotelregular';
     font-size: 2rem;
 }
-/* .ui.menu .item {
-    color: #272727;
-} */
 footer.ui .vertical .segment {
     padding: 1rem;
 }

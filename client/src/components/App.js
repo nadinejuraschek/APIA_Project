@@ -29,7 +29,7 @@ import Payments from './pages/notebook/payments/Payments';
 import WorkHours from './pages/notebook/workhours/WorkHours';
 
 import EmergencyNumbers from './pages/EmergencyNumbers';
-import Home from './pages/Home';
+import Home from './pages/home/Home';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 
@@ -41,112 +41,112 @@ import { NoteProvider } from '../contexts/NoteContext';
 
 // TOASTIFY CONFIG
 toast.configure({
-    autoClose: 8000,
-    draggable: false
+  autoClose: 8000,
+  draggable: false,
 });
 
 const App = () => {
-    return (
+  return (
+    <div>
+      <BrowserRouter>
         <div>
-            <BrowserRouter>
-                <div>
-                    <UserProvider>
-                        <Navbar />
-                    </UserProvider>
+          <UserProvider>
+            <Navbar />
+          </UserProvider>
 
-                    <ToastContainer transition={Slide} />
+          <ToastContainer transition={Slide} />
 
-                    {/* Landing Page */}
-                    <Route exact path='/' component={ Landing } />
+          {/* Landing Page */}
+          <Route exact path='/' component={Landing} />
 
-                    {/* Authentication */}
-                    <Route exact path='/login' component={ Login } />
-                    <Route exact path='/register' component={ Register } />
+          {/* Authentication */}
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/register' component={Register} />
 
-                    {/* Navbar Links */}
-                    <Route exact path='/profile' >
-                        <GatedComponent>
-                            <UserProvider>
-                                <Profile />
-                            </UserProvider>
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/emergencynumbers' component={ EmergencyNumbers } />
+          {/* Navbar Links */}
+          <Route exact path='/profile'>
+            <GatedComponent>
+              <UserProvider>
+                <Profile />
+              </UserProvider>
+            </GatedComponent>
+          </Route>
+          <Route exact path='/emergencynumbers' component={EmergencyNumbers} />
 
-                    {/* Home */}
-                    <Route exact path='/home' >
-                        <GatedComponent>
-                            <UserProvider>
-                                <Home />
-                            </UserProvider>
-                        </GatedComponent>
-                    </Route>
+          {/* Home */}
+          <Route exact path='/home'>
+            <GatedComponent>
+              <UserProvider>
+                <Home />
+              </UserProvider>
+            </GatedComponent>
+          </Route>
 
-                    {/* Home Sections */}
-                    <Route exact path='/notebook' >
-                        <GatedComponent>
-                            <Notebook />
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/hostfamily' >
-                        <GatedComponent>
-                            <Dev />
-                            {/* <HostFamily /> */}
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/cluster' >
-                        <GatedComponent>
-                            <Dev />
-                            {/* <Cluster /> */}
-                        </GatedComponent>
-                    </Route>
+          {/* Home Sections */}
+          <Route exact path='/notebook'>
+            <GatedComponent>
+              <Notebook />
+            </GatedComponent>
+          </Route>
+          <Route exact path='/hostfamily'>
+            <GatedComponent>
+              <Dev />
+              {/* <HostFamily /> */}
+            </GatedComponent>
+          </Route>
+          <Route exact path='/cluster'>
+            <GatedComponent>
+              <Dev />
+              {/* <Cluster /> */}
+            </GatedComponent>
+          </Route>
 
-                    {/* Notebook Sections */}
-                    <Route exact path='/notebook/workhours' >
-                        <GatedComponent>
-                            <WorkHourProvider>
-                                <WorkHours />
-                            </WorkHourProvider>
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/notebook/payments' >
-                        <GatedComponent>
-                            <PaymentProvider>
-                                <Payments />
-                            </PaymentProvider>
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/notebook/goals' >
-                        <GatedComponent>
-                            <GoalProvider>
-                                <Goals />
-                            </GoalProvider>
-                        </GatedComponent>
-                    </Route>
-                    <Route exact path='/notebook/notes' >
-                        <GatedComponent>
-                            <NoteProvider>
-                                <Notes />
-                            </NoteProvider>
-                        </GatedComponent>
-                    </Route>
+          {/* Notebook Sections */}
+          <Route exact path='/notebook/workhours'>
+            <GatedComponent>
+              <WorkHourProvider>
+                <WorkHours />
+              </WorkHourProvider>
+            </GatedComponent>
+          </Route>
+          <Route exact path='/notebook/payments'>
+            <GatedComponent>
+              <PaymentProvider>
+                <Payments />
+              </PaymentProvider>
+            </GatedComponent>
+          </Route>
+          <Route exact path='/notebook/goals'>
+            <GatedComponent>
+              <GoalProvider>
+                <Goals />
+              </GoalProvider>
+            </GatedComponent>
+          </Route>
+          <Route exact path='/notebook/notes'>
+            <GatedComponent>
+              <NoteProvider>
+                <Notes />
+              </NoteProvider>
+            </GatedComponent>
+          </Route>
 
-                    {/* HostFamily Sections */}
-                    <Route exact path='/hostfamily/calendar' >
-                        <GatedComponent>
-                            {/* <Dev /> */}
-                            <CalendarView />
-                        </GatedComponent>
-                    </Route>
+          {/* HostFamily Sections */}
+          <Route exact path='/hostfamily/calendar'>
+            <GatedComponent>
+              {/* <Dev /> */}
+              <CalendarView />
+            </GatedComponent>
+          </Route>
 
-                    {/* Error Page */}
-                    {/* <Route path='*' component={ WrongTurn } /> */}
+          {/* Error Page */}
+          {/* <Route path='*' component={ WrongTurn } /> */}
 
-                    <Footer />
-                </div>
-            </BrowserRouter>
+          <Footer />
         </div>
-    );
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default App;
