@@ -1,5 +1,5 @@
 // REACT
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 // NPM PACKAGES
 import { toast } from 'react-toastify';
@@ -28,6 +28,9 @@ toast.configure({
 
 const Home = () => {
   const [user, setUser] = useContext(UserContext);
+  const [message, setMessage] = useState('');
+  const time = new Date().getHours();
+  let greeting;
 
   const activities = [
     'Finger paint with shaving cream on colored paper.',
@@ -52,9 +55,6 @@ const Home = () => {
 
   const notify = () => toast(activities[Math.floor(Math.random() * 18 + 1)]);
 
-  const time = new Date().getHours();
-  let greeting;
-
   if (time > 6 && time < 11) {
     greeting = `Good morning, ${user.firstname}!`;
   } else if (time >= 11 && time < 15) {
@@ -72,13 +72,25 @@ const Home = () => {
       <div className={styles.page}>
         <div className={styles.header}>
           <div className={styles.greeting}>
-            <h2>{greeting}</h2>
-            <h3>What Can I Help You With?</h3>
+            <h2>
+              {
+                message === ''
+                ?
+                greeting
+                :
+                message
+              }
+            </h2>
             <button className='ui button activity-button' onClick={notify}>
               Childcare activity, please!
             </button>
           </div>
-          <Countdown startDate={user.startDate} endDate={user.endDate} />
+          <Countdown
+            startDate={user.startDate}
+            endDate={user.endDate}
+            message={message}
+            setMessage={setMessage}
+          />
         </div>
 
         <div className='ui three column stackable grid container'>
