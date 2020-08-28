@@ -5,6 +5,10 @@
   justify-content: space-between;
 }
 
+.hide {
+  display: none;
+}
+
 @media only screen and (min-width: 900px) {
   .nav {
     background-color: #86abfa;
@@ -25,16 +29,25 @@
   .logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    height: 40px;
   }
 
   .logo:hover {
     cursor: pointer;
   }
 
+  .logo p {
+    color: #ffffff;
+    font-family: 'grand_hotelregular';
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
   .navLogo {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 30px;
+    margin-right: 0.5rem;
   }
 
   .navLink {

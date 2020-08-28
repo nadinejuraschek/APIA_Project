@@ -19,8 +19,12 @@
  PAGE LAYOUT
 ****************************************************************************/
 body {
+  font-family: 'Lato', 'Helvetica', 'Helvetica Neue', sans-serif;
   background-color: #f6f6f6;
   color: #313131;
+}
+button {
+  font-family: 'Lato', 'Helvetica', 'Helvetica Neue', sans-serif;
 }
 nav {
   height: 4rem;
@@ -358,5 +362,4 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
-
 }
