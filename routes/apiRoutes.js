@@ -49,7 +49,7 @@ router.post('/api/user/register', async function (req, res) {
     email: req.body.email,
     password: password
   });
-  //create cookie for user 
+  //create cookie for user
   const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
   res.cookie("token", token, {
     httpOnly: true,
@@ -246,50 +246,6 @@ router.put('/api/goals/:goalid', (req, res) => {
 // DELETE GOAL
 router.delete('/api/goals/:goalid', (req, res) => {
   db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
-    res.json(data);
-  });
-});
-
-// ==================================================
-// NOTES
-// ==================================================
-// GET NOTES
-router.get('/user/:id/notes', (req, res) => {
-  db.User.findById(req.user).populate('notes').then(function(data) {
-    res.json(data);
-  })
-});
-// GET NOTE
-router.get('/user/:id/notes/:noteid', (req, res) => {
-  db.Note.findById(req.params.noteid).then(function(data) {
-    res.json(data);
-  });
-});
-// POST NOTE
-router.post('/api/notes', (req, res) => {
-  db.Note.create(req.body).then(function(insertedNote) {
-    // console.log('User is: ' + req.user);
-    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { notes: insertedNote._id } }, function (error, success) {
-      if (error) {
-          console.log('Error: ' + error);
-      } else {
-          // TEST
-          // console.log('Success: ' + success);
-          res.json('Success!');
-      };
-    });
-    // res.json(data);
-  });
-});
-// EDIT NOTE
-router.put('/api/notes/:noteid', (req, res) => {
-  db.Note.findByIdAndUpdate(req.params.noteid, req.body).then(function(data) {
-    res.json(data);
-  })
-});
-// DELETE NOTE
-router.delete('/api/notes/:noteid', (req, res) => {
-  db.Note.findByIdAndRemove(req.params.noteid).then(function(data) {
     res.json(data);
   });
 });
