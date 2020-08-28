@@ -7,9 +7,9 @@ const express = require('express'),
   path = require('path'),
   jwt = require('jsonwebtoken'),
   cookieParser = require('cookie-parser'),
-  methodOverride = require('method-override'),
-  multer = require('multer'),
-  GridFsStorage = require('multer-gridfs-storage'),
+  noteRoutes = require('./routes/noteRoutes'),
+  goalRoutes = require('./routes/goalRoutes'),
+  paymentRoutes = require('./routes/paymentRoutes'),
   userRoutes = require('./routes/userRoutes');
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(morgan('tiny'));
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  findOneAndModify: true,
+  useCreateIndex: true,
 });
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected.');
@@ -59,12 +59,10 @@ app.use((req, res, next) => {
 // ROUTES
 const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
+app.use('/api', noteRoutes);
+app.use('/api', goalRoutes);
+app.use('/api', paymentRoutes);
 app.use('/api/user', userRoutes);
-
-// FILES
-// initialize gridfs storage engine
-// create storage engine
-
 
 // DEPLOYMENT
 if (process.env.NODE_ENV === 'production') {

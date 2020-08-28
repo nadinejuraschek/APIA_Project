@@ -17,7 +17,7 @@ export const PaymentProvider = props => {
 
   const getPayments = () => {
     axios({
-      url: '/user/:id/payments',
+      url: '/api/user/:id/payments',
       method: 'GET',
     }).then(res => {
       // console.log(res.data.payments);
