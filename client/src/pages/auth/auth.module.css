@@ -1,3 +1,16 @@
 .form {
   width: 70%;
 }
+
+.messageItem {
+  display: flex;
+  align-items: center;
+}
+
+.messageItem:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.messageItem p {
+  width: 180px;
+}

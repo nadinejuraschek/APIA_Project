@@ -31,6 +31,22 @@ const Login = ({ history }) => {
       });
   };
 
+  const handleGuest = event => {
+    event.preventDefault();
+    axios({
+      url: '/api/user/login',
+      method: 'POST',
+      data: { email: "tester@mail.com", password: "testing123" },
+    })
+      .then(response => {
+        console.log('Data: ' + response.data);
+        history.push('/home');
+      })
+      .catch(error => {
+        console.log('Error: ' + error.response);
+      });
+  };
+
   return (
     <main>
       <Header header='Login' />
@@ -68,11 +84,19 @@ const Login = ({ history }) => {
             </button>
           </div>
 
-          <div className='ui message centered'>
-            <p>Don't have an account, yet?</p>
-            <a href='/register' className='ui button'>
-              Register
-            </a>
+          <div className='ui message'>
+            <div className={styles.messageItem}>
+              <p>Don't have an account, yet?</p>
+              <a href='/register' className='ui button'>
+                Register
+              </a>
+            </div>
+            <div className={styles.messageItem}>
+              <p>Testing?</p>
+              <a className='ui button' onClick={handleGuest}>
+                Use Guest Account
+              </a>
+            </div>
             {/* <p>Or Log In with</p>
                                 <div className="ui small buttons">
                                     <button className="ui facebook button">
