@@ -1,3 +1,6 @@
+/********************************************
+ LOGIN, REGISTER
+********************************************/
 .form {
   width: 70%;
 }
@@ -13,4 +16,83 @@
 
 .messageItem p {
   width: 180px;
+}
+
+/********************************************
+ PROFILE
+********************************************/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+}
+
+.personal {
+  display: grid;
+  margin-bottom: 3rem;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 40px;
+}
+
+.label {
+  font-weight: 700;
+  width: 95px;
+}
+
+.hide {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content repeat(2, 1fr);
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .details {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .personal {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .hostfamily {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .familyInfo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 4rem;
+    align-self: start;
+  }
 }

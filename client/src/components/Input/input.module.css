@@ -1,0 +1,24 @@
+/********************************************
+ PROFILE
+********************************************/
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 40px;
+}
+
+.label {
+  font-weight: 700;
+  min-width: 95px;
+}
+
+.field p {
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+
+.hide {
+  display: none;
+}

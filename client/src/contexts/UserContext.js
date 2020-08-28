@@ -1,10 +1,17 @@
+// REACT
 import React, { useState, createContext, useEffect } from 'react';
+
+// NPM PACKAGES
 import axios from 'axios';
+
+// COMPONENTS
+import Loading from '../components/Loading';
 
 export const UserContext = createContext();
 
-export const UserProvider = props => {
-  const [user, setUser] = useState([]);
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios({
@@ -12,10 +19,19 @@ export const UserProvider = props => {
       url: '/api/user',
     }).then(res => {
       setUser(res.data);
+      setLoading(false);
     });
   }, []);
 
   return (
-    <UserContext.Provider value={[user]}>{props.children}</UserContext.Provider>
+    <UserContext.Provider value={[user]}>
+      {
+        user
+        ?
+        <>{children}</>
+        :
+        <Loading />
+      }
+    </UserContext.Provider>
   );
 };

@@ -47,9 +47,10 @@ router.post('/api/user/register', async function (req, res) {
     startDate: req.body.startDate,
     endDate: moment(req.body.startDate).add(1, 'years'),
     email: req.body.email,
-    password: password
+    password: password,
+    profileImage: null
   });
-  //create cookie for user 
+  //create cookie for user
   const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
   res.cookie("token", token, {
     httpOnly: true,
@@ -84,6 +85,7 @@ router.post('/api/user/signout', function(req, res) {
   res.clearCookie('token');
   res.json('User is signed out.');
 });
+
 
 // ==================================================
 // WORKHOURS
