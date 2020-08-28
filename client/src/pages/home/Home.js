@@ -6,16 +6,18 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENTS
-import FeatureCard from '../../components/Features';
 import Countdown from '../../components/Countdown';
+import Today from '../../components/TodayView';
+import Reminders from '../../components/ReminderView';
+import Workhours from '../../components/WorkhourView';
 
 // CONTEXTS
 import { UserContext } from '../../contexts/UserContext';
 
 // ICONS
-import notebookIcon from '../../images/book.svg';
-import hostfamilyIcon from '../../images/family.svg';
-import clusterIcon from '../../images/cluster.svg';
+
+// IMAGES
+import blankProfile from '../../images/blankProfile.svg';
 
 // STYLES
 import styles from './home.module.css';
@@ -69,13 +71,35 @@ const Home = () => {
 
   return (
     <main>
+      <div className={styles.grid}>
         <div className={styles.header}>
           <div className={styles.greeting}>
-            <h2>{message === '' ? greeting : message}</h2>
-            <button className='ui button activity-button' onClick={notify}>
-              Childcare activity, please!
-            </button>
+            <img className={styles.profile} src={blankProfile} alt={user.firstname} />
+            <h2>{greeting}</h2>
           </div>
+          <h4>{message === '' ? 'What can I help you with?' : message}</h4>
+          <div className={styles.buttons}>
+            <button>Profile</button>
+            <button>Log Out</button>
+          </div>
+          {/* <button className='ui button activity-button' onClick={notify}>
+              Childcare activity, please!
+            </button> */}
+        </div>
+
+        <div className={styles.hours}>
+          <Workhours />
+        </div>
+
+        <div className={styles.today}>
+          <Today />
+        </div>
+
+        <div className={styles.reminders}>
+          <Reminders />
+        </div>
+
+        <div className={styles.countdown}>
           <Countdown
             startDate={user.startDate}
             endDate={user.endDate}
@@ -84,7 +108,11 @@ const Home = () => {
           />
         </div>
 
-        <div className={styles.features}>
+        <div className={styles.misc}>
+
+        </div>
+
+        {/* <div className={styles.features}>
             <FeatureCard
               title='notebook'
               header='My Notebook'
@@ -103,7 +131,8 @@ const Home = () => {
               icon={clusterIcon}
               link='/cluster'
             />
-        </div>
+        </div> */}
+      </div>
     </main>
   );
 };

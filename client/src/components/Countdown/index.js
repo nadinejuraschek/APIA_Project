@@ -7,28 +7,42 @@ import moment from 'moment';
 // STYLES
 import styles from './countdown.module.css';
 
+// COMPONENTS
+import ProgressRing from '../ProgressRing';
+
 const Countdown = ({ startDate, endDate, setMessage }) => {
   const currentDate = new Date();
   const [tab, setTab] = useState('days');
+  const daysPassed = moment(currentDate).diff(startDate, 'days');
+  const weeksPassed = moment(currentDate).diff(startDate, 'weeks');
+  const monthsPassed = moment(currentDate).diff(startDate, 'months');
   const dayNum = moment(currentDate).diff(startDate, 'days');
 
   useEffect(() => {
     if (dayNum === 1) {
       setMessage('Welcome to the USA!');
     } else if (dayNum === 2) {
-      setMessage('Have you made new friends, yet?')
+      setMessage('Have you made new friends, yet?');
     } else if (dayNum === 3) {
-      setMessage('Are you ready to meet your host family?')
+      setMessage('Are you ready to meet your host family?');
     } else if (dayNum >= 28 && dayNum <= 31) {
-      setMessage('Congratulations! You have already spent a whole month in the US!');
-    } else if (dayNum === 90){
-      setMessage('You have made it through the first quarter of your Au Pair experience!');
+      setMessage(
+        'Congratulations! You have already spent a whole month in the US!'
+      );
+    } else if (dayNum === 90) {
+      setMessage(
+        'You have made it through the first quarter of your Au Pair experience!'
+      );
     } else if (dayNum === 180) {
-      setMessage("Halftime! Review the goals you have set for the year and make sure you make plans for the ones you haven't completed yet!");
+      setMessage(
+        "Halftime! Review the goals you have set for the year and make sure you make plans for the ones you haven't completed yet!"
+      );
     } else if (dayNum >= 270 && dayNum <= 330) {
-      setMessage("Time to think of extension! Add your planned departure date on your profile page.");
+      setMessage(
+        'Time to think of extension! Add your planned departure date on your profile page.'
+      );
     } else if (dayNum >= 351) {
-      setMessage("Make the most of your last few days!")
+      setMessage('Make the most of your last few days!');
     } else {
       setMessage('');
     }
@@ -36,6 +50,34 @@ const Countdown = ({ startDate, endDate, setMessage }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.body}>
+        <ProgressRing
+          radius="60"
+          stroke="4"
+          progress={
+            tab === 'days'
+            ?
+            (100 / 365) * daysPassed
+            :
+            tab === "weeks"
+            ?
+            (100 / 52) * weeksPassed
+            :
+            (100 / 12) * monthsPassed
+          }
+          label={
+            tab === 'days'
+            ?
+            daysPassed
+            :
+            tab === "weeks"
+            ?
+            weeksPassed
+            :
+            monthsPassed
+          }
+        />
+      </div>
       <div className={styles.tabs}>
         <div
           className={`${styles.tab} ${tab === 'days' ? styles.active : null}`}
@@ -56,7 +98,7 @@ const Countdown = ({ startDate, endDate, setMessage }) => {
           Months
         </div>
       </div>
-      <div className={styles.body}>
+      {/* <div className={styles.body}>
         <p>
           {tab.charAt(0).toUpperCase() +
             tab.slice(1) +
@@ -69,7 +111,7 @@ const Countdown = ({ startDate, endDate, setMessage }) => {
             ' left: ' +
             moment(endDate).diff(currentDate, `${tab}`)}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

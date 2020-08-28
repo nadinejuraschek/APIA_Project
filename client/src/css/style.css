@@ -40,7 +40,7 @@ footer.ui .vertical .segment {
 }
 
 main {
-  min-height: calc(100vh - 110px);
+  height: calc(100vh - 110px);
   max-width: 1200px;
   margin: auto;
   padding: 24px;

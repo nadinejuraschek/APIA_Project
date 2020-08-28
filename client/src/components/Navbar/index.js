@@ -37,36 +37,42 @@ const Navbar = ({ history }) => {
         </div>
         On Par
       </a>
-      <a className={styles.navLink}>
+
+      <a className={styles.navLink} href='/messages'>
         <div className={styles.icon}>
           <img alt='Messages' src={notebook} />
         </div>
         <p>Messages</p>
       </a>
-      <a className={styles.navLink}>
+
+      <a className={styles.navLink} href='/notebook'>
         <div className={styles.icon}>
           <img alt='Notebook' src={notebook} />
         </div>
         <p>Notebook</p>
       </a>
-      <a className={styles.navLink}>
+
+      <a className={styles.navLink} href='/hostfamily'>
         <div className={styles.icon}>
           <img alt='Host Family' src={hostfamily} />
         </div>
         <p>Host Family</p>
       </a>
-      <a className={styles.navLink}>
+
+      <a className={styles.navLink} href='/cluster'>
         <div className={styles.icon}>
           <img alt='Cluster' src={cluster} />
         </div>
         <p>Cluster</p>
       </a>
-      <a className={styles.navLink}>
+
+      <a className={styles.navLink} href='/resources'>
         <div className={styles.icon}>
           <img alt='Resources' src={cluster} />
         </div>
         <p>Resources</p>
       </a>
+
       <div className={styles.footer}>
         <p>© {new Date().getFullYear()}</p>
       </div>
