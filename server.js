@@ -6,7 +6,11 @@ const   express         = require('express'),
         morgan          = require('morgan'),
         path            = require('path'),
         jwt             = require('jsonwebtoken'),
-        cookieParser    = require('cookie-parser');
+        cookieParser    = require('cookie-parser'),
+        noteRoutes      = require('./routes/noteRoutes'),
+        goalRoutes      = require('./routes/goalRoutes'),
+        paymentRoutes   = require('./routes/paymentRoutes'),
+        userRoutes      = require('./routes/userRoutes');
 
 const   app             = express();
 
@@ -18,9 +22,9 @@ app.use(morgan('tiny'));
 
 // DATABASE
 mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true ,
-    findOneAndModify: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected.');
@@ -54,6 +58,10 @@ app.use((req, res, next) => {
 // ROUTES
 const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
+app.use('/api', noteRoutes);
+app.use('/api', goalRoutes);
+app.use('/api', paymentRoutes);
+app.use('/api/user', userRoutes);
 
 // DEPLOYMENT
 if (process.env.NODE_ENV === 'production') {

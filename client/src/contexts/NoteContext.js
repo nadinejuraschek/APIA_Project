@@ -17,7 +17,7 @@ export const NoteProvider = props => {
 
   const getNotes = () => {
     axios({
-      url: '/user/:id/notes',
+      url: '/api/user/:id/notes',
       method: 'GET',
     }).then(res => {
       // console.log(res.data.notes);

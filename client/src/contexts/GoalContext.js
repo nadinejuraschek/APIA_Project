@@ -16,7 +16,7 @@ export const GoalProvider = props => {
 
   const getGoals = () => {
     axios({
-      url: '/user/:id/goals',
+      url: '/api/user/:id/goals',
       method: 'GET',
     }).then(res => {
       // console.log(res.data.goals);
