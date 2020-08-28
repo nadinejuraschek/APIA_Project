@@ -12,6 +12,7 @@ import Countdown from '../../components/Countdown';
 import Today from '../../components/TodayView';
 import Reminders from '../../components/ReminderView';
 import Workhours from '../../components/WorkhourView';
+import SecondaryBtn from '../../components/Button/Secondary';
 
 // CONTEXTS
 import { UserContext } from '../../contexts/UserContext';
@@ -90,8 +91,8 @@ const Home = ({ history }) => {
           </div>
           <h4>{message === '' ? 'What can I help you with?' : message}</h4>
           <div className={styles.buttons}>
-            <a href="/profile">Profile</a>
-            <button onClick={handleLogout}>Log Out</button>
+            <SecondaryBtn link="/profile" label="Profile" />
+            <SecondaryBtn label="Log Out" handleClick={handleLogout} />
           </div>
           {/* <button className='ui button activity-button' onClick={notify}>
               Childcare activity, please!

@@ -1,0 +1,12 @@
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 40px;
+}
+
+.label {
+  font-weight: 700;
+  width: 130px;
+}

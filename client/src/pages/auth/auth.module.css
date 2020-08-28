@@ -1,3 +1,6 @@
+/********************************************
+ LOGIN, REGISTER
+********************************************/
 .form {
   width: 70%;
 }
@@ -13,4 +16,139 @@
 
 .messageItem p {
   width: 180px;
+}
+
+/********************************************
+ PROFILE
+********************************************/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+}
+
+.personal {
+  display: grid;
+  margin-bottom: 3rem;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 40px;
+}
+
+.label {
+  font-weight: 700;
+  width: 95px;
+}
+
+.hide {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: 300px repeat(2, 1fr);
+    grid-template-rows: min-content repeat(2, 1fr);
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .imageContainer {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    align-self: center;
+  }
+
+  .image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+  }
+
+  .details {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+    padding: 2rem;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 1rem;
+  }
+
+  .name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .buttons {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .personalHeader {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .info {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .connect {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .personal {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .hostfamily {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+    padding: 2rem;
+
+    width: 100%;
+  }
+
+  .familyInfo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 4rem;
+    align-self: start;
+  }
 }

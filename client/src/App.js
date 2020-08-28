@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENT IMPORTS
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import GatedComponent from './components/GatedComponent';
 
 import Dev from './pages/Dev';
@@ -31,7 +31,7 @@ import WorkHours from './pages/notebook/workhours/WorkHours';
 import EmergencyNumbers from './pages/EmergencyNumbers';
 import Home from './pages/home/Home';
 import Landing from './pages/Landing';
-import Profile from './pages/Profile';
+import Profile from './pages/auth/Profile';
 
 import { UserProvider } from './contexts/UserContext';
 import { WorkHourProvider } from './contexts/WorkHourContext';

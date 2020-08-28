@@ -1,0 +1,39 @@
+/********************************************
+ PROFILE
+********************************************/
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 40px;
+}
+
+.label {
+  font-weight: 700;
+  min-width: 95px;
+}
+
+.field p {
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.profileInput {
+  background-color: #f6f6f6;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  box-shadow: 0 0 0 0 transparent inset;
+  font-size: 1em;
+  line-height: 1.21428571em;
+  padding: .67857143em 1em;
+  transition: color .1s ease,border-color .1s ease;
+}
+
+.profileInput:active, .profileInput:focus {
+  border: 1px solid #86abfa;
+}
