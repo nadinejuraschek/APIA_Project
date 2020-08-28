@@ -2,21 +2,21 @@
 const db = require('../models/db');
 
 // READ
-exports.getNotes = async (req, res) => {
+exports.getGoals = async (req, res) => {
   await db.User.findById(req.user)
-    .populate('notes')
-    .then(notes => {
-      res.status(200).json(notes);
+    .populate('goals').sort({ month: 1 }).sort({ type: 1 })
+    .then(goals => {
+      res.status(200).json(goals);
     })
     .catch(err => {
       res.status(500).json({ error: err.message });
     });
 };
 
-exports.getSingleNote = async (req, res) => {
-  await db.Note.findById(req.params.noteid)
-    .then(note => {
-      res.status(200).json(data);
+exports.getSingleGoal = async (req, res) => {
+  await db.Goal.findById(req.params.goalId)
+    .then(goal => {
+      res.status(200).json(goal);
     })
     .catch(err => {
       res.status(500).json({ error: err.message });
@@ -25,12 +25,12 @@ exports.getSingleNote = async (req, res) => {
 
 // CREATE
 exports.create = async (req, res) => {
-  await db.Note.create(req.body)
-    .then(insertedNote => {
+  await db.Goal.create(req.body)
+    .then(insertedGoal => {
       // console.log('User is: ' + req.user);
       db.User.findByIdAndUpdate(
         { _id: req.user },
-        { $push: { notes: insertedNote._id } },
+        { $push: { goals: insertedGoal._id } },
         (error, success) => {
           if (error) {
             console.log('Error: ' + error);
@@ -49,9 +49,9 @@ exports.create = async (req, res) => {
 
 // UPDATE
 exports.update = async (req, res) => {
-  await db.Note.findByIdAndUpdate(req.params.noteid, req.body)
-    .then(updatedNote => {
-      res.status(200).json(updatedNote);
+  await db.Goal.findByIdAndUpdate(req.params.goalid, req.body)
+    .then(updatedGoal => {
+      res.status(200).json(updatedGoal);
     })
     .catch(err => {
       res.status(500).json({ error: err.message });
@@ -60,11 +60,11 @@ exports.update = async (req, res) => {
 
 // DELETE
 exports.delete = async (req, res) => {
-  await db.Note.findByIdAndRemove(req.params.noteid)
-    .then(deletedNote => {
-      res.status(200).json({ message: "Note has been deleted successfully!"});
+  await db.Goal.findByIdAndRemove(req.params.goalid)
+    .then(deletedGoal => {
+      res.status(200).json({ message: 'Goal has been deleted successfully!' });
     })
     .catch(err => {
       res.status(500).json({ error: err.message });
-    })
+    });
 };

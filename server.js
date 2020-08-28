@@ -7,7 +7,8 @@ const   express         = require('express'),
         path            = require('path'),
         jwt             = require('jsonwebtoken'),
         cookieParser    = require('cookie-parser'),
-        noteRoutes      = require('./routes/noteRoutes');
+        noteRoutes      = require('./routes/noteRoutes'),
+        goalRoutes      = require('./routes/goalRoutes');
 
 const   app             = express();
 
@@ -56,6 +57,7 @@ app.use((req, res, next) => {
 const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
 app.use('/api', noteRoutes);
+app.use('/api', goalRoutes);
 
 // DEPLOYMENT
 if (process.env.NODE_ENV === 'production') {

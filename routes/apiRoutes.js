@@ -206,48 +206,4 @@ router.delete('/api/payments/:paymentid', (req, res) => {
   });
 });
 
-// ==================================================
-// GOALS
-// ==================================================
-// GET GOALS
-router.get('/user/:id/goals', (req, res) => {
-  db.User.findById(req.user).populate('goals').then(function(data) {
-    res.json(data);
-  })
-});
-// GET GOAL
-router.get('/user/:id/goals/:goalid', (req, res) => {
-  db.Goal.findById(req.params.goalId).then(function(data) {
-    res.json(data);
-  })
-});
-// POST GOAL
-router.post('/api/goals', (req, res) => {
-  db.Goal.create(req.body).then(function(insertedGoal) {
-    // console.log('User is: ' + req.user);
-    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { goals: insertedGoal._id } }, function (error, success) {
-      if (error) {
-          console.log('Error: ' + error);
-      } else {
-          // TEST
-          // console.log('Success: ' + success);
-          res.json('Success!');
-      };
-    });
-    // res.json(data);
-  });
-});
-// EDIT GOAL
-router.put('/api/goals/:goalid', (req, res) => {
-  db.Goal.findByIdAndUpdate(req.params.goalid, req.body).then(function(data) {
-    res.json(data);
-  })
-});
-// DELETE GOAL
-router.delete('/api/goals/:goalid', (req, res) => {
-  db.Goal.findByIdAndRemove(req.params.goalid).then(function(data) {
-    res.json(data);
-  });
-});
-
 module.exports = router;
