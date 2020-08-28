@@ -48,7 +48,15 @@ router.post('/api/user/register', async function (req, res) {
     endDate: moment(req.body.startDate).add(1, 'years'),
     email: req.body.email,
     password: password,
-    profileImage: null
+    profileImage: '',
+    birthday: null,
+    location: '',
+    contact: {
+      facebook: '',
+      instagram: '',
+      twitter: '',
+      snapchat: '',
+    },
   });
   //create cookie for user
   const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);

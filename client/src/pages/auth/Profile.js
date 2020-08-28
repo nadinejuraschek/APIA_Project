@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 
 // NPM PACKAGES
+import axios from 'axios';
 import moment from 'moment';
 
 // COMPONENTS
@@ -26,13 +27,13 @@ const Profile = () => {
   const daysNum = moment(new Date()).diff(user.startDate, 'days');
 
   const [email, setEmail] = useState(user.email);
-  const [birthday, setBirthday] = useState(user.birthday || '--');
-  const [location, setLocation] = useState(user.location || '--');
-  const [phone, setPhone] = useState(user.phone || '--');
-  const [facebook, setFacebook] = useState(user.facebook || '--');
-  const [instagram, setInstagram] = useState(user.instagram || '--');
-  const [twitter, setTwitter] = useState(user.twitter || '--');
-  const [snapchat, setSnapchat] = useState(user.snapchat || '--');
+  const [birthday, setBirthday] = useState(user.birthday || '');
+  const [location, setLocation] = useState(user.location || '');
+  const [phone, setPhone] = useState(user.phone || '');
+  const [facebook, setFacebook] = useState(user.facebook || '');
+  const [instagram, setInstagram] = useState(user.instagram || '');
+  const [twitter, setTwitter] = useState(user.twitter || '');
+  const [snapchat, setSnapchat] = useState(user.snapchat || '');
   const [familyID, setFamilyID] = useState(user.familyID);
   const [edit, setEdit] = useState(false);
 
@@ -74,6 +75,29 @@ const Profile = () => {
     },
   ];
 
+  const handleEdit = event => {
+    event.preventDefault();
+    axios.put('/api/user/' + user._id, {
+      email: email,
+      familyID: familyID,
+      birthday: birthday,
+      location: location,
+      phone: phone,
+      contact: {
+        facebook: facebook,
+        instagram: instagram,
+        twitter: twitter,
+        snapchat: snapchat
+      }
+    }).then(updatedUser => {
+      console.log("Updated User in DB: ", updatedUser);
+      setEdit(false);
+    }).catch(err => {
+      console.log("Error: ", err);
+      setEdit(false);
+    });
+  };
+
   return (
     <main>
       <div className={styles.grid}>
@@ -90,7 +114,13 @@ const Profile = () => {
             <Flag country={user.country} />
           </div>
             <div className={styles.buttons}>
-              <Primary label='Edit' handleClick={toggleEdit} />
+              {
+                edit
+                ?
+                <Primary label='Update' handleClick={handleEdit} />
+                :
+                <Primary label='Edit' handleClick={toggleEdit} />
+              }
               <button className='ui disabled button'>Change Password</button>
             </div>
             <h4 className={`ui dividing header ${styles.personalHeader}`}>Personal Info</h4>

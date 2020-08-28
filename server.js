@@ -9,7 +9,8 @@ const express = require('express'),
   cookieParser = require('cookie-parser'),
   methodOverride = require('method-override'),
   multer = require('multer'),
-  GridFsStorage = require('multer-gridfs-storage');
+  GridFsStorage = require('multer-gridfs-storage'),
+  userRoutes = require('./routes/userRoutes');
 
 const app = express();
 
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
 // ROUTES
 const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
+app.use('/api/user', userRoutes);
 
 // FILES
 // initialize gridfs storage engine

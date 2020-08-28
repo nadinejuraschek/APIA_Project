@@ -27,6 +27,28 @@ const userSchema = new mongoose.Schema({
   notes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Note' }],
 
   profileImage: { img: { data: Buffer, contentType: String } },
+
+  contact: {
+    phone: {
+      type: Number
+    },
+    facebook: {
+      type: String
+    },
+    instagram: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
+    snapchat: {
+      type: String
+    }
+  },
+
+  birthday: Object,
+
+  location: String,
 });
 
 module.exports = mongoose.model('User', userSchema);
