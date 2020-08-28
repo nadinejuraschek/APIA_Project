@@ -8,6 +8,9 @@ import axios from 'axios';
 // COMPONENTS
 import Header from '../../components/Header';
 
+// STYLES
+import styles from './auth.module.css';
+
 const Login = ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,50 +32,48 @@ const Login = ({ history }) => {
   };
 
   return (
-    <section className='wrapper'>
-      <div className='block'>
-        <Header header='Login' />
+    <main>
+      <Header header='Login' />
 
-        <div className='custom-container auth-container'>
-          <form className='ui form' onSubmit={handleSubmit}>
-            <div className='field'>
-              <label>E-Mail</label>
-              <div className='ui left icon input'>
-                <i className='mail icon'></i>
-                <input
-                  type='text'
-                  name='email'
-                  placeholder='E-Mail'
-                  onChange={event => setEmail(event.target.value)}
-                />
-              </div>
+        <form className={`ui form ${styles.form}`} onSubmit={handleSubmit}>
+          <div className='field'>
+            <label>E-Mail</label>
+            <div className='ui left icon input'>
+              <i className='mail icon'></i>
+              <input
+                type='text'
+                name='email'
+                placeholder='E-Mail'
+                onChange={event => setEmail(event.target.value)}
+              />
             </div>
+          </div>
 
-            <div className='field'>
-              <label>Password</label>
-              <div className='ui left icon input'>
-                <i className='lock icon'></i>
-                <input
-                  type='password'
-                  name='password'
-                  placeholder='Password'
-                  onChange={event => setPassword(event.target.value)}
-                />
-              </div>
+          <div className='field'>
+            <label>Password</label>
+            <div className='ui left icon input'>
+              <i className='lock icon'></i>
+              <input
+                type='password'
+                name='password'
+                placeholder='Password'
+                onChange={event => setPassword(event.target.value)}
+              />
             </div>
+          </div>
 
-            <div className='centered'>
-              <button className='ui button' type='submit'>
-                Log In
-              </button>
-            </div>
+          <div className='centered'>
+            <button className='ui button' type='submit'>
+              Log In
+            </button>
+          </div>
 
-            <div className='ui message centered'>
-              <p>Don't have an account, yet?</p>
-              <a href='/register' className='ui button'>
-                Register
-              </a>
-              {/* <p>Or Log In with</p>
+          <div className='ui message centered'>
+            <p>Don't have an account, yet?</p>
+            <a href='/register' className='ui button'>
+              Register
+            </a>
+            {/* <p>Or Log In with</p>
                                 <div className="ui small buttons">
                                     <button className="ui facebook button">
                                         <i className="facebook icon"></i>
@@ -84,11 +85,9 @@ const Login = ({ history }) => {
                                         Google
                                     </button>
                                 </div> */}
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+          </div>
+        </form>
+    </main>
   );
 };
 

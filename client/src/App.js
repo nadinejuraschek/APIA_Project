@@ -46,14 +46,14 @@ toast.configure({
 });
 
 const App = () => {
+  // const [active, setActive] = useState('');
   return (
-    <div>
-      <BrowserRouter>
-        <div>
-          <UserProvider>
-            <Navbar />
-          </UserProvider>
-
+    <BrowserRouter>
+      <div className='layout'>
+        <UserProvider>
+          <Navbar />
+        </UserProvider>
+        <div className='page-container'>
           <ToastContainer transition={Slide} />
 
           {/* Landing Page */}
@@ -141,11 +141,10 @@ const App = () => {
 
           {/* Error Page */}
           {/* <Route path='*' component={ WrongTurn } /> */}
-
-          <Footer />
         </div>
-      </BrowserRouter>
-    </div>
+        {/* <Footer /> */}
+      </div>
+    </BrowserRouter>
   );
 };
 

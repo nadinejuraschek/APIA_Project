@@ -63,12 +63,10 @@ const Register = ({ history }) => {
   };
 
   return (
-    <section className='wrapper-two'>
-      <div className='block'>
+    <main>
         <Header header='Register' />
 
-        <div className='custom-container auth-container'>
-          <form className='ui form' onSubmit={handleSubmit}>
+          <form className={`ui form ${styles.form}`} onSubmit={handleSubmit}>
             <div className='field'>
               <label>I am a</label>
               <select
@@ -340,9 +338,7 @@ const Register = ({ history }) => {
               </a>
             </div>
           </form>
-        </div>
-      </div>
-    </section>
+    </main>
   );
 };
 

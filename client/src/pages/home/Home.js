@@ -1,21 +1,25 @@
 // REACT
 import React, { useContext, useState } from 'react';
+import { withRouter } from 'react-router';
 
 // NPM PACKAGES
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 // COMPONENTS
-import FeatureCard from '../../components/Features';
 import Countdown from '../../components/Countdown';
+import Today from '../../components/TodayView';
+import Reminders from '../../components/ReminderView';
+import Workhours from '../../components/WorkhourView';
 
 // CONTEXTS
 import { UserContext } from '../../contexts/UserContext';
 
 // ICONS
-import notebookIcon from '../../images/book.svg';
-import hostfamilyIcon from '../../images/family.svg';
-import clusterIcon from '../../images/cluster.svg';
+
+// IMAGES
+import blankProfile from '../../images/blankProfile.svg';
 
 // STYLES
 import styles from './home.module.css';
@@ -26,11 +30,20 @@ toast.configure({
   draggable: false,
 });
 
-const Home = () => {
+const Home = ({ history }) => {
   const [user] = useContext(UserContext);
   const [message, setMessage] = useState('');
   const time = new Date().getHours();
   let greeting;
+
+  const handleLogout = () => {
+    axios({
+      url: '/api/user/signout',
+      method: 'POST',
+    }).then(res => {
+      history.push('/login');
+    });
+  };
 
   const activities = [
     'Finger paint with shaving cream on colored paper.',
@@ -53,7 +66,7 @@ const Home = () => {
     "Make placemats by covering your host child's artwork with clear contact paper.",
   ];
 
-  const notify = () => toast(activities[Math.floor(Math.random() * 18 + 1)]);
+  // const notify = () => toast(activities[Math.floor(Math.random() * 18 + 1)]);
 
   if (time > 6 && time < 11) {
     greeting = `Good morning, ${user.firstname}!`;
@@ -69,13 +82,35 @@ const Home = () => {
 
   return (
     <main>
+      <div className={styles.grid}>
         <div className={styles.header}>
           <div className={styles.greeting}>
-            <h2>{message === '' ? greeting : message}</h2>
-            <button className='ui button activity-button' onClick={notify}>
-              Childcare activity, please!
-            </button>
+            <img className={styles.profile} src={blankProfile} alt={user.firstname} />
+            <h2>{greeting}</h2>
           </div>
+          <h4>{message === '' ? 'What can I help you with?' : message}</h4>
+          <div className={styles.buttons}>
+            <a href="/profile">Profile</a>
+            <button onClick={handleLogout}>Log Out</button>
+          </div>
+          {/* <button className='ui button activity-button' onClick={notify}>
+              Childcare activity, please!
+            </button> */}
+        </div>
+
+        <div className={styles.hours}>
+          <Workhours />
+        </div>
+
+        <div className={styles.today}>
+          <Today />
+        </div>
+
+        <div className={styles.reminders}>
+          <Reminders />
+        </div>
+
+        <div className={styles.countdown}>
           <Countdown
             startDate={user.startDate}
             endDate={user.endDate}
@@ -84,28 +119,11 @@ const Home = () => {
           />
         </div>
 
-        <div className={styles.features}>
-            <FeatureCard
-              title='notebook'
-              header='My Notebook'
-              icon={notebookIcon}
-              link='/notebook'
-            />
-            <FeatureCard
-              title='hostfamily'
-              header='My Host Family'
-              icon={hostfamilyIcon}
-              link='/hostfamily'
-            />
-            <FeatureCard
-              title='cluster'
-              header='My Cluster'
-              icon={clusterIcon}
-              link='/cluster'
-            />
+        <div className={styles.misc}>
         </div>
+      </div>
     </main>
   );
 };
 
-export default Home;
+export default withRouter(Home);

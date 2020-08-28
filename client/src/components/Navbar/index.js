@@ -1,60 +1,72 @@
 // REACT
-import React, { useContext } from 'react';
-import { withRouter } from 'react-router';
+import React from 'react';
 
-// IMAGES
+// ICONS
 import logo from '../../images/logo.svg';
+import notebook from '../../images/book.svg';
+import hostfamily from '../../images/family.svg';
+import cluster from '../../images/cluster.svg';
 
-// NPM PACKAGES
-import axios from 'axios';
+// COMPONENTS
+import NavLink from './NavLink';
 
-// CONTEXT
-import { UserContext } from '../../contexts/UserContext';
+// STYLES
+import styles from './nav.module.css';
 
-const Navbar = ({ history }) => {
-  const [user] = useContext(UserContext);
-
-  const handleLogout = () => {
-    axios({
-      url: '/api/user/signout',
-      method: 'POST',
-    }).then(response => {
-      history.push('/login');
-    });
-  };
+const Navbar = () => {
+  // const handleLogout = () => {
+  //   axios({
+  //     url: '/api/user/signout',
+  //     method: 'POST',
+  //   }).then(response => {
+  //     history.push('/login');
+  //   });
+  // };
 
   return (
-    <nav className='ui huge top fixed menu'>
-      <a className='header item' href='/home'>
-        <img className='nav-logo' alt='App Logo' src={logo} />
-        On Par
+    <nav className={styles.nav}>
+      <a className={styles.logo} href='/home'>
+        {/* <div className={styles.navLogo}>
+          <img alt='App Logo' src={logo} />
+        </div> */}
+        <p>On Par</p>
       </a>
 
-      <div className='right menu'>
-        {user ? (
-          <div className='ui simple dropdown item'>
-            <i className='user large circle icon'></i>
-            <i className='dropdown icon'></i>
-            <div className='menu'>
-              <a className='item' href='/profile'>
-                Profile
-              </a>
-              <a className='item' href='/emergencynumbers'>
-                Emergency Numbers
-              </a>
-              <button className='item' onClick={handleLogout}>
-                Log Out
-              </button>
-            </div>
-          </div>
-        ) : (
-          <a className='item' href='/login'>
-            Log In
-          </a>
-        )}
+      <NavLink
+        iconSrc={notebook}
+        label='Messages'
+        link='/messages'
+      />
+
+      <NavLink
+        iconSrc={notebook}
+        label='Notebook'
+        link='/notebook'
+      />
+
+      <NavLink
+        iconSrc={hostfamily}
+        label='Host Family'
+        link='/hostfamily'
+      />
+
+      <NavLink
+        iconSrc={cluster}
+        label='Cluster'
+        link='/cluster'
+      />
+
+      <NavLink
+        iconSrc={cluster}
+        label='Resources'
+        link='/resources'
+      />
+
+      <div className={styles.footer}>
+        <p>© {new Date().getFullYear()}</p>
       </div>
     </nav>
   );
 };
 
-export default withRouter(Navbar);
+export default Navbar;

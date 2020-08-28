@@ -1,0 +1,85 @@
+.nav {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .nav {
+    background-color: #86abfa;
+    border-radius: 0 0 40px 0;
+    padding: 24px;
+
+    grid-column: 1 / 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content repeat(5, 1fr) min-content;
+    row-gap: 1rem;
+
+    height: 100vh;
+    width: 150px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
+
+  .logo p {
+    color: #ffffff;
+    font-family: 'grand_hotelregular';
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .navLogo {
+    height: 40px;
+    width: 30px;
+    margin-right: 0.5rem;
+  }
+
+  .navLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    height: 60px;
+    width: 60px;
+  }
+
+  .icon img, .navLogo img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  .navLink p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navLogo {
+    height: 70px;
+    width: 70px;
+  }
+}
