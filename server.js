@@ -8,7 +8,8 @@ const   express         = require('express'),
         jwt             = require('jsonwebtoken'),
         cookieParser    = require('cookie-parser'),
         noteRoutes      = require('./routes/noteRoutes'),
-        goalRoutes      = require('./routes/goalRoutes');
+        goalRoutes      = require('./routes/goalRoutes'),
+        paymentRoutes   = require('./routes/paymentRoutes');
 
 const   app             = express();
 
@@ -58,6 +59,8 @@ const apiRoutes = require('./routes/apiRoutes');
 app.use(apiRoutes);
 app.use('/api', noteRoutes);
 app.use('/api', goalRoutes);
+app.use('/api', paymentRoutes);
+
 
 // DEPLOYMENT
 if (process.env.NODE_ENV === 'production') {

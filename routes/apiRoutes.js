@@ -167,43 +167,4 @@ router.delete('/api/day/:dayid', (req, res) => {
   });
 });
 
-// ==================================================
-// PAYMENTS
-// ==================================================
-// GET PAYMENTS
-router.get('/user/:id/payments', (req, res) => {
-  db.User.findById(req.user).populate('payments').then(function(data) {
-    res.json(data);
-  })
-});
-// POST PAYMENT
-router.post('/api/payments', (req, res) => {
-  db.Payment.create(req.body).then(function(insertedPayment) {
-    // console.log('User is: ' + req.user);
-    db.User.findByIdAndUpdate({ _id: req.user }, { $push: { payments: insertedPayment._id } }, function (error, success) {
-      if (error) {
-          console.log('Error: ' + error);
-      } else {
-          // TEST
-          // console.log('Success: ' + success);
-          res.json('Success!');
-      };
-    });
-    // res.json(data);
-  });
-});
-// EDIT PAYMENT
-router.put('/api/payments/:paymentid', (req, res) => {
-  db.Payment.findByIdAndUpdate(req.params.paymentid, req.body).then(function(data) {
-    res.json(data);
-    console.log(data);
-  })
-});
-// DELETE PAYMENT
-router.delete('/api/payments/:paymentid', (req, res) => {
-  db.Payment.findByIdAndRemove(req.params.paymentid).then(function(data) {
-    res.json(data);
-  });
-});
-
 module.exports = router;
