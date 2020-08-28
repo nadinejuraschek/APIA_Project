@@ -77,110 +77,106 @@ const Profile = () => {
   return (
     <main>
       <div className={styles.grid}>
-        <div className={styles.header}>
-          <h2 className={styles.header}>Your Profile</h2>
-        </div>
-        <div className={styles.image}>
-          <div className='image'>
-            <img src={blankPic} alt='au pair' />
-          </div>
+        <h2 className={styles.header}>Your Profile</h2>
+        <div className={styles.imageContainer}>
+          <img className={styles.image} src={blankPic} alt={user.firstname} />
           {/* <Filer /> */}
         </div>
         <div className={styles.details}>
-          <h2>
-            {user.firstname} {user.lastname}
-          </h2>
-          <Flag country={user.country} />
-          <h4 className='ui dividing header'>Personal Info</h4>
-          <div className={styles.personal}>
-            <div className={styles.info}>
-              <ProfileInput
-                edit={edit}
-                handleChange={setEmail}
-                icon='envelope outline'
-                label='E-Mail'
-                name='email'
-                value={email}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setBirthday}
-                icon='birthday cake'
-                label='Birthday'
-                name='birthday'
-                value={birthday}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setLocation}
-                icon='map marker alternate'
-                label='Location'
-                name='location'
-                value={location}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setPhone}
-                icon='phone alternate'
-                label='Phone'
-                name='phone'
-                value={phone}
-              />
-            </div>
-            <div className={styles.connect}>
-              <ProfileInput
-                edit={edit}
-                handleChange={setFacebook}
-                icon='facebook alternate'
-                label='Facebook'
-                name='facebook'
-                value={facebook}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setInstagram}
-                icon='instagram alternate'
-                label='Instagram'
-                name='instagram'
-                value={instagram}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setTwitter}
-                icon='twitter alternate'
-                label='Twitter'
-                name='twitter'
-                value={twitter}
-              />
-              <ProfileInput
-                edit={edit}
-                handleChange={setSnapchat}
-                icon='snapchat square alternate'
-                label='Snapchat'
-                name='snapchat'
-                value={snapchat}
-              />
-            </div>
+          <div className={styles.name}>
+            <h2>
+              {user.firstname} {user.lastname}
+            </h2>
+            <Flag country={user.country} />
           </div>
-          <div className={styles.buttons}>
-            <Primary label='Edit' handleClick={toggleEdit} />
-            <button className='ui disabled button'>Change Password</button>
-          </div>
+            <div className={styles.buttons}>
+              <Primary label='Edit' handleClick={toggleEdit} />
+              <button className='ui disabled button'>Change Password</button>
+            </div>
+            <h4 className={`ui dividing header ${styles.personalHeader}`}>Personal Info</h4>
+              <div className={styles.info}>
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setEmail}
+                  icon='envelope outline'
+                  label='E-Mail'
+                  name='email'
+                  value={email}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setBirthday}
+                  icon='birthday cake'
+                  label='Birthday'
+                  name='birthday'
+                  value={birthday}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setLocation}
+                  icon='map marker alternate'
+                  label='Location'
+                  name='location'
+                  value={location}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setPhone}
+                  icon='phone alternate'
+                  label='Phone'
+                  name='phone'
+                  value={phone}
+                />
+              </div>
+              <div className={styles.connect}>
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setFacebook}
+                  icon='facebook alternate'
+                  label='Facebook'
+                  name='facebook'
+                  value={facebook}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setInstagram}
+                  icon='instagram alternate'
+                  label='Instagram'
+                  name='instagram'
+                  value={instagram}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setTwitter}
+                  icon='twitter alternate'
+                  label='Twitter'
+                  name='twitter'
+                  value={twitter}
+                />
+                <ProfileInput
+                  edit={edit}
+                  handleChange={setSnapchat}
+                  icon='snapchat square alternate'
+                  label='Snapchat'
+                  name='snapchat'
+                  value={snapchat}
+                />
+            </div>
         </div>
 
         <div className={styles.hostfamily}>
           <h4 className='ui dividing header'>Host Family Info</h4>
           <div className={styles.familyInfo}>
             <div>
-            <ProfileInput
-              edit={edit}
-              handleChange={setFamilyID}
-              icon='id card outline'
-              label='Host Family ID'
-              name='familyID'
-              value={familyID}
-            />
-            <PeopleList data={hostparents} label='Host Parents' />
+              <ProfileInput
+                edit={edit}
+                handleChange={setFamilyID}
+                icon='id card outline'
+                label='Host Family ID'
+                name='familyID'
+                value={familyID}
+              />
+              <PeopleList data={hostparents} label='Host Parents' />
             </div>
             <PeopleList data={hostchildren} label='Host Children' />
           </div>

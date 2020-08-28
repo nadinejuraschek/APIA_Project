@@ -13,7 +13,7 @@ const ProfileInput = ({ name, value, handleChange, edit, icon, label }) => {
       </label>
       <p className={edit === true ? styles.hide : ''}>{value}</p>
       <input
-        className={edit === true ? '' : styles.hide}
+        className={edit === true ? styles.profileInput : styles.hide}
         type='text'
         name={name}
         placeholder={value}

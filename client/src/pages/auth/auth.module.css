@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 900px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 300px repeat(2, 1fr);
     grid-template-rows: min-content repeat(2, 1fr);
     height: 100%;
     width: 100%;
@@ -69,14 +69,63 @@
     grid-row: 1 / 2;
   }
 
-  .image {
+  .imageContainer {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+
+    align-self: center;
+  }
+
+  .image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
   }
 
   .details {
     grid-column: 2 / -1;
     grid-row: 2 / 3;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+    padding: 2rem;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 1rem;
+  }
+
+  .name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .buttons {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .personalHeader {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .info {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .connect {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
   }
 
   .personal {
@@ -87,6 +136,13 @@
   .hostfamily {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+    padding: 2rem;
+
+    width: 100%;
   }
 
   .familyInfo {
