@@ -34,7 +34,6 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(methodOverride('_method'));
 
 // AUTHENTICATION
 //decode the jwt token
