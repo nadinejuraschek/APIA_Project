@@ -1,5 +1,5 @@
 const   User        = require('./user'),
-        WorkHour    = require('./workHour'),
+        Workhour    = require('./workhour'),
         Day         = require('./day'),
         Payment     = require('./payment'),
         Goal        = require('./goal'),
@@ -8,7 +8,7 @@ const   User        = require('./user'),
 
 const db = {
     User,
-    WorkHour,
+    Workhour,
     Day,
     Payment,
     Goal,

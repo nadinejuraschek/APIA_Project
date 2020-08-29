@@ -1,0 +1,37 @@
+.weeklyGrid {
+  display: grid;
+}
+
+.chooseDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.chooseDisplay h5 {
+  margin: 0 2rem;
+  width: 100px;
+}
+
+.weeklyList {
+  display: grid;
+}
+
+@media only screen and (min-width: 900px) {
+  .weeklyGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content repeat(7, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .chooseDisplay {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .weeklyItem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+}

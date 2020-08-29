@@ -1,0 +1,66 @@
+.layout {
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+  .layout {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: max-content max-content repeat(3, 1fr) max-content;
+    column-gap: 1rem;
+    row-gap: 2rem;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .tabs {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tab {
+  }
+
+  .tab:first-child {
+    margin-right: 2rem;
+  }
+
+  .tab:hover {
+    cursor: pointer;
+  }
+
+  .tracker {
+    grid-column: 1 / 5;
+    grid-row: 3 / 6;
+  }
+
+  .addContainer {
+    grid-column: 5 / 7;
+    grid-row: 4 / 6;
+  }
+
+  .timer {
+    grid-column: 5 / 7;
+    grid-row: 3 / 4;
+  }
+
+  .reminder {
+    grid-column: 1 / -1;
+    grid-row: 6 / 6;
+  }
+
+  .tracker, .addContainer, .timer, .reminder {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px #46637310;
+    padding: 2rem;
+  }
+}

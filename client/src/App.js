@@ -26,7 +26,7 @@ import Notebook from './pages/notebook/Notebook';
 import Goals from './pages/notebook/goals/Goals';
 import Notes from './pages/notebook/notes/Notes';
 import Payments from './pages/notebook/payments/Payments';
-import WorkHours from './pages/notebook/workhours/WorkHours';
+import Workhours from './pages/notebook/workhours/Workhours';
 
 import EmergencyNumbers from './pages/EmergencyNumbers';
 import Home from './pages/home/Home';
@@ -83,6 +83,11 @@ const App = () => {
           </Route>
 
           {/* Home Sections */}
+          <Route exact path='/messages'>
+            <GatedComponent>
+              <Dev />
+            </GatedComponent>
+          </Route>
           <Route exact path='/notebook'>
             <GatedComponent>
               <Notebook />
@@ -100,12 +105,17 @@ const App = () => {
               {/* <Cluster /> */}
             </GatedComponent>
           </Route>
+          <Route exact path='/resources'>
+            <GatedComponent>
+              <Dev />
+            </GatedComponent>
+          </Route>
 
           {/* Notebook Sections */}
           <Route exact path='/notebook/workhours'>
             <GatedComponent>
               <WorkHourProvider>
-                <WorkHours />
+                <Workhours />
               </WorkHourProvider>
             </GatedComponent>
           </Route>

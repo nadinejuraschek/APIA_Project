@@ -6,12 +6,11 @@ import axios from 'axios';
 import moment from 'moment';
 
 // COMPONENTS
-import Header from '../../components/Header';
 // import Filer from '../../components/Filer';
 import Flag from '../../components/Flag';
 import ProfileInput from '../../components/Input/Profile';
 import Primary from '../../components/Button/Primary';
-import PeopleList from '../../components/List/People';
+import PeopleList from '../../components/List/People/People';
 
 // IMAGES
 import blankPic from '../../images/blankProfile.svg';
