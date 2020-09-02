@@ -34,7 +34,7 @@ import Landing from './pages/Landing';
 import Profile from './pages/auth/Profile';
 
 import { UserProvider } from './contexts/UserContext';
-import { WorkHourProvider } from './contexts/WorkHourContext';
+import { WorkhourProvider } from './contexts/WorkhourContext';
 import { PaymentProvider } from './contexts/PaymentContext';
 import { GoalProvider } from './contexts/GoalContext';
 import { NoteProvider } from './contexts/NoteContext';
@@ -114,9 +114,9 @@ const App = () => {
           {/* Notebook Sections */}
           <Route exact path='/notebook/workhours'>
             <GatedComponent>
-              <WorkHourProvider>
+              <WorkhourProvider>
                 <Workhours />
-              </WorkHourProvider>
+              </WorkhourProvider>
             </GatedComponent>
           </Route>
           <Route exact path='/notebook/payments'>

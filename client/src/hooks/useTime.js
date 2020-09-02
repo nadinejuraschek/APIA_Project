@@ -32,3 +32,8 @@ export const minToH = time => {
   const roundedMin = ('0' + Math.round(min)).slice(-2);
   return `${roundedH}:${roundedMin}`;
 }
+
+export const duration = (start, end) => {
+  const timeDifference = minToH(moment(start).diff(end, "minutes"));
+  return timeDifference;
+}

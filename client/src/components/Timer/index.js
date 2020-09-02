@@ -16,7 +16,7 @@ const Timer = ({ time }) => {
 
   return (
     <div className={styles.container}>
-      <ProgressRing radius={60} stroke={4} progress={progress} label={hours} />
+      <ProgressRing radius={65} stroke={4} progress={progress} label={hours} />
     </div>
   );
 };

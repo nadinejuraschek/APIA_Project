@@ -5,11 +5,10 @@ import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 
 // CONTEXT
-export const WorkHourContext = createContext();
+export const WorkhourContext = createContext();
 
-export const WorkHourProvider = props => {
+export const WorkhourProvider = props => {
   const [workhours, setWorkhours] = useState([]);
-  const [week, setWeek] = useState({});
 
   useEffect(() => {
     getWorkhours();
@@ -25,16 +24,6 @@ export const WorkHourProvider = props => {
     });
   };
 
-  const getWeek = workhourid => {
-    axios({
-      url: '/api/workhours/' + workhourid,
-      method: 'GET',
-    }).then(res => {
-      // console.log(res.data.workhours);
-      setWeek(res.data);
-    });
-  };
-
   const deleteWorkhours = workhourid => {
     axios.delete('/api/workhours/' + workhourid).then(res => {
       console.log(res);
@@ -43,10 +32,10 @@ export const WorkHourProvider = props => {
   };
 
   return (
-    <WorkHourContext.Provider
-      value={{ workhours, getWorkhours, getWeek, deleteWorkhours }}
+    <WorkhourContext.Provider
+      value={{ workhours, getWorkhours, deleteWorkhours }}
     >
       {props.children}
-    </WorkHourContext.Provider>
+    </WorkhourContext.Provider>
   );
 };
