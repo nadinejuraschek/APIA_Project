@@ -1,6 +1,12 @@
 // NPM PACKAGES
 import moment from 'moment';
 
+moment.updateLocale('en', {
+  week: {
+    dow : 1, // Monday is the first day of the week.
+  }
+});
+
 export const getAge = date => {
   const currentDate = moment(new Date());
   let age;
