@@ -14,7 +14,7 @@ import Time from 'components/Input/Time';
 import styles from '../workhours.module.css';
 
 // HOOKS
-import { duration } from 'hooks/useTime';
+import { duration } from '../../../../hooks/useTime';
 
 // CONTEXTS
 // import { WorkhourContext } from 'contexts/WorkhourContext';
@@ -27,50 +27,56 @@ const AddHours = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const hours = [];
-    const days = [];
-    if (days.find(date) != undefined) {
-      days.push({ date: date, hours: null, total: 0 });
-      hours.push({ start: start, end: end, duration: duration(start, end), id: date });
-    } else {
-      hours.push({ start: start, end: end, duration: duration(start, end), id: date });
-    }
-    // const newHours = {
-    //   date: date,
-    //   hours: [{
-    //     start: start,
-    //     end: end,
-    //     duration: duration(start, end)
-    //   }],
-    //   total: ,
-    // };
-    // axios.post('/api/workhours', newHours).then(workhours => {
-    //   console.log("Hours have been added successfully!", workhours);
-    // }).catch(err => {
-    //   console.log("Error: ", err);
-    // });
+
+    const setTime = (time) => {
+      const hours = time.split(':')[0];
+      const minutes = time.split(':')[1];
+      const newTime = moment(date).set("hour", hours).set("minute", minutes);
+      return newTime;
+    };
+
+    const startTime = setTime(start);
+    const endTime = setTime(end);
+    const duration = moment(endTime).diff(startTime, "minutes");
+
+    const newHours = {
+      date: date,
+      hours: [{
+        start: startTime,
+        end: endTime,
+        duration: duration,
+      }],
+    };
+    // console.log(newHours);
+    axios.post('/api/workhours', newHours).then(workhours => {
+      console.log("Hours have been added successfully!", workhours);
+    }).catch(err => {
+      console.log("Error: ", err);
+    });
   };
 
   return (
     <>
-      <div className={styles.addHeader}>
-        <h3>Add Hours</h3>
+      <h3>Add Hours</h3>
+      <div className={styles.addForm}>
+        <Date
+          date={date}
+          name='date'
+          label='Date'
+          value={date}
+          icon='calendar alternate outline'
+          handleChange={setDate}
+        />
+        <Time
+          start={start}
+          handleStart={setStart}
+          end={end}
+          handleEnd={setEnd}
+        />
+      </div>
+      <div className={styles.btnWrapper}>
         <Add handleClick={handleSubmit} />
       </div>
-      <Date
-        date={date}
-        name='date'
-        label='Date'
-        value={date}
-        icon='calendar alternate outline'
-        handleChange={setDate}
-      />
-      <Time
-        start={start}
-        handleStart={setStart}
-        end={end}
-        handleEnd={setEnd}
-      />
     </>
   );
 };

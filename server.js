@@ -10,12 +10,13 @@ const express = require('express'),
   noteRoutes = require('./routes/noteRoutes'),
   goalRoutes = require('./routes/goalRoutes'),
   paymentRoutes = require('./routes/paymentRoutes'),
+  workhourRoutes = require('./routes/workhourRoutes'),
   userRoutes = require('./routes/userRoutes');
 
 const app = express();
 
 // IMPORT MODELS
-const db = require('./models/db');
+// const db = require('./models/db');
 
 // MORGAN - HTTP REQUEST LOGGER
 app.use(morgan('tiny'));
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: true,
 });
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected.');
@@ -57,10 +59,11 @@ app.use((req, res, next) => {
 
 // ROUTES
 const apiRoutes = require('./routes/apiRoutes');
-app.use(apiRoutes);
+// app.use(apiRoutes);
 app.use('/api', noteRoutes);
 app.use('/api', goalRoutes);
 app.use('/api', paymentRoutes);
+app.use('/api', workhourRoutes);
 app.use('/api/user', userRoutes);
 
 // DEPLOYMENT
