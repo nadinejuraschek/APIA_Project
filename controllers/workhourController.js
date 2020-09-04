@@ -1,6 +1,5 @@
 // DATABASE
-const db = require('../models/db'),
-  moment = require('moment');
+const db = require('../models/db');
 
 // READ
 exports.getHours = async (req, res) => {
@@ -33,7 +32,7 @@ exports.create = async (req, res) => {
               console.log('Error: ' + error);
             } else {
               // TEST
-              console.log('Success: ' + success);
+              // console.log('Success: ' + success);
               res.json('Success!');
             }
           }

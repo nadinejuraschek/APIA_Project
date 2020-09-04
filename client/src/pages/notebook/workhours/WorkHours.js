@@ -18,52 +18,7 @@ import styles from './workhours.module.css';
 
 const Workhours = () => {
   const [tab, setTab] = useState('weekly');
-  const hours = [
-    {
-      date: moment(Date.now()),
-      hours: [
-        {
-          start: 1598644800,
-          end: 1598652000,
-          duration: moment(1598652000).diff(1598644800, "minutes"),
-        }
-      ],
-      total: 360
-    },
-    {
-      date: moment(Date.now()).subtract(1, "days"),
-      hours: [
-        {
-            start: 1598544000,
-            end: 1598565600,
-            duration: moment(1598565600).diff(1598544000, "minutes"),
-        }
-      ],
-      total: 360
-    },
-    {
-      date: moment(Date.now()).subtract(2, "days"),
-      hours: [
-        {
-          start: 1598457600,
-          end: 1598479200,
-          duration: moment(1598479200).diff(1598457600, "minutes"),
-        }
-      ],
-      total: 360
-    },
-    {
-      date: moment(Date.now()).subtract(3, "days"),
-      hours: [
-        {
-          start: 1598371200,
-          end: 1598392800,
-          duration: moment(1598392800).diff(1598371200, "minutes"),
-        }
-      ],
-      total: 360
-    }
-  ];
+  const { workhours, getWorkhours } = useContext(WorkhourContext);
 
   return (
     <main>
@@ -84,7 +39,7 @@ const Workhours = () => {
           </div>
         </div>
         <div className={styles.tracker}>
-          <WeeklyList data={hours} />
+          <WeeklyList data={workhours} />
         </div>
         <div className={styles.timer}>
           <Timer time={423} />

@@ -13,12 +13,6 @@ import Time from 'components/Input/Time';
 // STYLES
 import styles from '../workhours.module.css';
 
-// HOOKS
-import { duration } from '../../../../hooks/useTime';
-
-// CONTEXTS
-// import { WorkhourContext } from 'contexts/WorkhourContext';
-
 const AddHours = () => {
   const today = moment();
   const [start, setStart] = useState();

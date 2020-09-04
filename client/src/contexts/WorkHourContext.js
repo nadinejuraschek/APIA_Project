@@ -16,7 +16,7 @@ export const WorkhourProvider = props => {
 
   const getWorkhours = () => {
     axios({
-      url: '/user/:id/workhours',
+      url: '/api/user/:id/workhours',
       method: 'GET',
     }).then(res => {
       // console.log(res.data.workhours);
