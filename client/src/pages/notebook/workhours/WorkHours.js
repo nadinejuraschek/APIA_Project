@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 
 // NPM PACKAGES
-import axios from 'axios';
+// import axios from 'axios';
 import moment from 'moment';
 
 // COMPONENTS

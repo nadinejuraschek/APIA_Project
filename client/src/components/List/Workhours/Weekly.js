@@ -36,27 +36,16 @@ const WeeklyHours = ({ data }) => {
   return (
     <div className={styles.weeklyGrid}>
       <div className={styles.chooseDisplay}>
-        <i class="chevron left icon"></i>
+        <div>
+          <i class="chevron left icon"></i>
+        </div>
         <h5>{`${moment(startWeek).format("MMM DD")} - ${moment(endWeek).format("MMM DD")}`}</h5>
-        <i class="chevron right icon"></i>
+        <div>
+          <i class="chevron right icon"></i>
+        </div>
       </div>
       <ul className={styles.weeklyList}>
         {week}
-        {/* {
-          hours.map((day, index) => (
-            <li className={styles.weeklyItem} key={index}>
-              <div className={styles.date}>{moment(day.date).format('YYYY-MM-DD')}</div>
-              <div className={styles.date}>{moment(day.hours[0].start).format()}</div>
-              {
-                moment(day.date).format("YY-MM-DD") === moment(new Date()).format("YY-MM-DD")
-                ?
-                <Primary label="Start" />
-                :
-                null
-              }
-            </li>
-          ))
-        } */}
       </ul>
     </div>
   );
