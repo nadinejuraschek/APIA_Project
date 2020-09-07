@@ -49,7 +49,8 @@ const Workhours = () => {
           <AddHours updateWorkhours={getWorkhours} />
         </div>
         <div className={styles.reminder}>
-          Reminder: 10 hours / day, 45 hours / week, and 1.5 days off every week!
+          <strong>Reminder:</strong><br />
+          You can work a maximum of 10 hours a day and 45 hours per week.
         </div>
       </div>
     </main>
