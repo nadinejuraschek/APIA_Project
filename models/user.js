@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   startDate: Object,
   endDate: Object,
 
-  workhours: [{ type: mongoose.Schema.Types.ObjectId, ref: 'WorkHour' }],
+  workhours: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Workhour' }],
   payments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Payment' }],
   goals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Goal' }],
   notes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Note' }],

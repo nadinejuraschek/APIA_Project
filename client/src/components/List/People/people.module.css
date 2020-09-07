@@ -1,7 +1,4 @@
-/********************************************
- PEOPLE
-********************************************/
-.container {
+.people {
   display: flex;
   flex-direction: column;
 }

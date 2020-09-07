@@ -98,20 +98,6 @@ const Countdown = ({ startDate, endDate, setMessage }) => {
           Months
         </div>
       </div>
-      {/* <div className={styles.body}>
-        <p>
-          {tab.charAt(0).toUpperCase() +
-            tab.slice(1) +
-            ' since arrival: ' +
-            moment(currentDate).diff(startDate, `${tab}`)}
-        </p>
-        <p>
-          {tab.charAt(0).toUpperCase() +
-            tab.slice(1) +
-            ' left: ' +
-            moment(endDate).diff(currentDate, `${tab}`)}
-        </p>
-      </div> */}
     </div>
   );
 };

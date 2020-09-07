@@ -1,97 +1,18 @@
 // NPM PACKAGES
-const   mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // SCHEMA SETUP
 const workSchema = new mongoose.Schema({
-    number: { 
-        type: Number,
-        unique: true
+  date: Object,
+  dateFormat: String,
+  hours: [
+    {
+      start: Object,
+      end: Object,
+      duration: Number,
     },
-    mon: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    tue: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    wed: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    thu: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    fri: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    }, 
-    sat: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    sun: {
-        date: String,
-        // time: [
-        //     {
-        //         start: String,
-        //         end: String,
-        //         totalHours: Number
-        //     }
-        // ],
-        dailyHours: Number,
-        dayOff: Boolean
-    },
-    weeklyHours: Number
+  ],
+  total: Number,
 });
 
-module.exports = mongoose.model('WorkHour', workSchema);
+module.exports = mongoose.model('Workhour', workSchema);

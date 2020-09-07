@@ -17,7 +17,6 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
         stroke='#f1f1f1'
         fill='transparent'
         strokeWidth={stroke}
-        stroke-width={stroke}
         r={normalizedRadius}
         cx={radius}
         cy={radius}
@@ -29,7 +28,6 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
         strokeWidth={stroke}
         strokeDasharray={circumference + ' ' + circumference}
         style={{ strokeDashoffset }}
-        stroke-width={stroke}
         r={normalizedRadius}
         cx={radius}
         cy={radius}

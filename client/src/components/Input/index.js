@@ -4,9 +4,9 @@ import React from 'react';
 // STYLES
 import styles from './input.module.css';
 
-const ProfileInput = ({ name, value, handleChange, edit, icon, label }) => {
+const Input = ({ name, value, handleChange, icon, label }) => {
   return (
-    <div className={styles.field}>
+    <div className={`${styles.field} ${styles.stacked}`}>
       <label className={styles.label} htmlFor={name}>
         {
           icon
@@ -17,9 +17,8 @@ const ProfileInput = ({ name, value, handleChange, edit, icon, label }) => {
         }
         {label}:
       </label>
-      <p className={edit === true ? styles.hide : ''}>{value}</p>
       <input
-        className={edit === true ? styles.profileInput : styles.hide}
+        className={styles.input}
         type='text'
         name={name}
         placeholder={value}
@@ -30,4 +29,4 @@ const ProfileInput = ({ name, value, handleChange, edit, icon, label }) => {
   );
 };
 
-export default ProfileInput;
+export default Input;

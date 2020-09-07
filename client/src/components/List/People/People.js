@@ -2,14 +2,14 @@
 import React from 'react';
 
 // STYLES
-import styles from './list.module.css';
+import styles from './people.module.css';
 
 // COMPONENTS
 import PeopleItem from './PeopleItem';
 
 const PeopleList = ({ data, label }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.people}>
       <label className={styles.label}>
         {label}:
       </label>

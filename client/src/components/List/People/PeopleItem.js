@@ -2,13 +2,13 @@
 import React from 'react';
 
 // STYLES
-import styles from './list.module.css';
+import styles from './people.module.css';
 
 // HOOKS
-import { getAge } from '../../hooks/useTime';
+import { getAge } from '../../../hooks/useTime';
 
 // IMAGES
-import blankProfile from '../../images/blankProfile.svg';
+import blankProfile from '../../../images/blankProfile.svg';
 
 const PeopleItem = ({ person }) => {
   let age;
