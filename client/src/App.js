@@ -30,7 +30,7 @@ import Workhours from './pages/notebook/workhours/Workhours';
 
 import EmergencyNumbers from './pages/EmergencyNumbers';
 import Home from './pages/home/Home';
-import Landing from './pages/Landing';
+// import Landing from './pages/Landing';
 import Profile from './pages/auth/Profile';
 
 import { UserProvider } from './contexts/UserContext';
@@ -50,14 +50,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='layout'>
-        <UserProvider>
-          <Navbar />
-        </UserProvider>
+        <Navbar />
         <div className='page-container'>
           <ToastContainer transition={Slide} />
 
           {/* Landing Page */}
-          <Route exact path='/' component={Landing} />
+          <Route exact path='/' component={Login} />
 
           {/* Authentication */}
           <Route exact path='/login' component={Login} />
