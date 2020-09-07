@@ -1,5 +1,6 @@
 // DATABASE
-const db = require('../models/db');
+const db = require('../models/db'),
+  moment = require('moment');
 
 // READ
 exports.getHours = async (req, res) => {
@@ -21,7 +22,12 @@ exports.create = async (req, res) => {
   const workitem = await db.Workhour.findOne({ date: req.body.date});
 
   if (!workitem) {
-    await db.Workhour.create(req.body)
+    await db.Workhour.create({
+      date: date,
+      dateFormat: moment(date).format('YY-MM-DD'),
+      hours: hours,
+      total: hours[0].duration,
+    })
       .then(insertedWorkhour => {
         // console.log('User is: ' + req.user);
         db.User.findByIdAndUpdate(
@@ -42,9 +48,12 @@ exports.create = async (req, res) => {
         res.status(500).json({ error: err.message });
       });
   } else {
+    const newTotal = workitem.total + hours[0].duration;
+    // TEST
+    // console.log(newTotal);
     await db.Workhour.findOneAndUpdate(
       { date: date },
-      { $push: { hours: hours } }
+      { total: newTotal, $push: { hours: hours } },
       )
       .then(updatedWorkhour => {
         res.status(200).json(updatedWorkhour);
@@ -52,6 +61,7 @@ exports.create = async (req, res) => {
       .catch(err => {
         res.status(500).json({ error: err.message });
       });
+    await db.Workhour.findOneAndUpdate
   };
 };
 

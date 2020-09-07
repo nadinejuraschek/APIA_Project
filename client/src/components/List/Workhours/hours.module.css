@@ -1,5 +1,8 @@
 .weeklyGrid {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content;
+  grid-gap: 2rem;
 }
 
 .chooseDisplay {
@@ -14,6 +17,21 @@
 
 .weeklyList {
   display: grid;
+  row-gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.weeklyItem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  align-items: center;
+}
+
+.weeklyItem div {
+  padding: 0.2rem;
 }
 
 .date {
@@ -24,22 +42,17 @@
   width: 3rem;
 }
 
-@media only screen and (min-width: 900px) {
-  .weeklyGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content repeat(7, 1fr);
-    grid-gap: 1rem;
-    padding: 1rem 0;
-  }
+.red {
+  background-color: #9f3a3820;
+}
 
+.green {
+  color: #2c662d;
+}
+
+@media only screen and (min-width: 900px) {
   .chooseDisplay {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-  }
-
-  .weeklyItem {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
   }
 }

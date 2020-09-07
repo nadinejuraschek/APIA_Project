@@ -39,6 +39,14 @@ export const minToH = time => {
   return `${roundedH}:${roundedMin}`;
 }
 
+export const minToHandMin = time => {
+  const h = (time / 60);
+  const roundedH = Math.floor(h);
+  const min = (h - roundedH) * 60;
+  const roundedMin = ('0' + Math.round(min)).slice(-2);
+  return `${roundedH}h ${roundedMin}min`;
+}
+
 export const duration = (start, end) => {
   const timeDifference = minToH(moment(start).diff(end, "minutes"));
   return timeDifference;

@@ -1,8 +1,7 @@
 // REACT
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 // NPM PACKAGES
-// import axios from 'axios';
 import moment from 'moment';
 
 // COMPONENTS
@@ -18,19 +17,21 @@ import styles from './workhours.module.css';
 
 const Workhours = () => {
   const [tab, setTab] = useState('weekly');
-  const { workhours, getWorkhours } = useContext(WorkhourContext);
+  const { workhours, getWorkhours, todayHours } = useContext(WorkhourContext);
+
+  console.log(todayHours);
 
   return (
     <main>
       <div className={styles.layout}>
         <h2 className={styles.header}>Your Workhours</h2>
         <div className={styles.tabs}>
-          <div
+          {/* <div
             className={`${styles.tab} ${tab === 'daily' ? styles.active : null}`}
             onClick={() => setTab('daily')}
           >
             Daily
-          </div>
+          </div> */}
           <div
             className={`${styles.tab} ${tab === 'weekly' ? styles.active : null}`}
             onClick={() => setTab('weekly')}
@@ -42,10 +43,10 @@ const Workhours = () => {
           <WeeklyList data={workhours} />
         </div>
         <div className={styles.timer}>
-          <Timer time={423} />
+          <Timer time={todayHours} />
         </div>
         <div className={styles.addContainer}>
-          <AddHours />
+          <AddHours updateWorkhours={getWorkhours} />
         </div>
         <div className={styles.reminder}>
           Reminder: 10 hours / day, 45 hours / week, and 1.5 days off every week!

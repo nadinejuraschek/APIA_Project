@@ -8,22 +8,21 @@ import moment from 'moment';
 import styles from './hours.module.css';
 
 // COMPONENTS
-import Primary from '../../Button/Primary';
+import Disabled from '../../Button/Disabled';
+
+// HOOKS
+import { minToH } from '../../../hooks/useTime';
 
 const WeeklyItem = ({ day, hours }) => {
-  const [displayHours, setDisplayHours] = useState([]);
+  const [ displayHours, setDisplayHours ] = useState(0);
 
   useEffect(() => {
     hours.map(item => {
-      moment(item.date).format('YY-MM-DD') === moment(day).format('YY-MM-DD')
-      ?
-      setDisplayHours(item.hours)
-      :
-      console.log("no match")
-    })
+      if (moment(item.date).format('YY-MM-DD') === moment(day).format('YY-MM-DD')) {
+        setDisplayHours(item.total);
+      };
+    });
   }, [hours]);
-
-  console.log(displayHours);
 
   return (
     <li className={styles.weeklyItem}>
@@ -31,14 +30,12 @@ const WeeklyItem = ({ day, hours }) => {
         <div className={styles.weekday}>{moment(day).format('ddd')}</div>
         <div>{moment(day).format('DD')}</div>
       </div>
-      <div className={styles.date}>
-        {
-          displayHours.map((item, index) => <div key={index}>{item.duration}</div>)
-        }
+      <div className={`${styles.date} ${displayHours > 600 ? styles.red : styles.green}`}>
+        {minToH(displayHours)}
       </div>
       {moment(day).format('YY-MM-DD') ===
       moment(new Date()).format('YY-MM-DD') ? (
-        <Primary label='Start' />
+        <Disabled label='Start' />
       ) : null}
     </li>
   );

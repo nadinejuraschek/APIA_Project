@@ -3,15 +3,18 @@ import React, { useState, useEffect, createContext } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';
+import moment from 'moment';
 
 // CONTEXT
 export const WorkhourContext = createContext();
 
 export const WorkhourProvider = props => {
   const [workhours, setWorkhours] = useState([]);
+  const [todayHours, setTodayHours] = useState(0);
 
   useEffect(() => {
     getWorkhours();
+    getTodayHours();
   }, []);
 
   const getWorkhours = () => {
@@ -24,6 +27,20 @@ export const WorkhourProvider = props => {
     });
   };
 
+  const getTodayHours = today => {
+    axios({
+      url: '/api/user/:id/workhours',
+      method: 'GET',
+    }).then(res => {
+      const hours = res.data.workhours;
+      hours.map(hour => {
+        if (hour.dateFormat === moment(new Date()).format('YY-MM-DD')) {
+          setTodayHours(hour.total);
+        };
+      });
+    });
+  };
+
   const deleteWorkhours = workhourid => {
     axios.delete('/api/workhours/' + workhourid).then(res => {
       console.log(res);
@@ -33,7 +50,7 @@ export const WorkhourProvider = props => {
 
   return (
     <WorkhourContext.Provider
-      value={{ workhours, getWorkhours, deleteWorkhours }}
+      value={{ workhours, getWorkhours, todayHours, deleteWorkhours }}
     >
       {props.children}
     </WorkhourContext.Provider>

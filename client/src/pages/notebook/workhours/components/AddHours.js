@@ -13,7 +13,7 @@ import Time from 'components/Input/Time';
 // STYLES
 import styles from '../workhours.module.css';
 
-const AddHours = () => {
+const AddHours = ({updateWorkhours}) => {
   const today = moment();
   const [start, setStart] = useState();
   const [end, setEnd] = useState();
@@ -44,6 +44,7 @@ const AddHours = () => {
     // console.log(newHours);
     axios.post('/api/workhours', newHours).then(workhours => {
       console.log("Hours have been added successfully!", workhours);
+      updateWorkhours();
     }).catch(err => {
       console.log("Error: ", err);
     });
