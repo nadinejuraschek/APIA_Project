@@ -3,9 +3,11 @@ import React from 'react';
 
 // ICONS
 // import logo from '../../images/logo.svg';
+import chat from '../../images/chat.svg';
 import notebook from '../../images/book.svg';
 import hostfamily from '../../images/family.svg';
 import cluster from '../../images/cluster.svg';
+import resources from '../../images/mom.svg';
 
 // COMPONENTS
 import NavLink from './NavLink';
@@ -28,7 +30,7 @@ const Navbar = () => {
 
       <UserProvider>
         <NavLink
-          iconSrc={notebook}
+          iconSrc={chat}
           label='Messages'
           link='/messages'
         />
@@ -52,7 +54,7 @@ const Navbar = () => {
         />
 
         <NavLink
-          iconSrc={cluster}
+          iconSrc={resources}
           label='Resources'
           link='/resources'
         />
