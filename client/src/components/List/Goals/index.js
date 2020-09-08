@@ -17,7 +17,7 @@ import Close from 'components/Button/Close';
 import AddGoal from './AddGoal';
 
 const Goal = ({ data, month }) => {
-  const { getGoals, deleteGoal } = useContext(GoalContext);
+  const { getGoals, checkGoal, deleteGoal } = useContext(GoalContext);
   const [type, setType] = useState('');
   const [text, setText] = useState('');
   const education = data.filter(item => item.type === 'education');
@@ -43,17 +43,6 @@ const Goal = ({ data, month }) => {
         setText('');
         setType('');
         setOpenAddGoal(false);
-        getGoals();
-      })
-      .catch(error => {
-        console.log('Error: ' + error);
-      });
-  };
-
-  const handleCheck = goalid => {
-    axios.put('/api/goals/' + goalid, { checked: true })
-      .then(response => {
-        // console.log('Goal in DB: ' + response.data);
         getGoals();
       })
       .catch(error => {
@@ -92,21 +81,21 @@ const Goal = ({ data, month }) => {
             <GoalItem
               item={item}
               key={index}
-              handleCheck={handleCheck}
+              handleCheck={checkGoal}
             />
           ))}
           {personal.map((item, index) => (
             <GoalItem
               item={item}
               key={index}
-              handleCheck={handleCheck}
+              handleCheck={checkGoal}
             />
           ))}
           {travel.map((item, index) => (
             <GoalItem
               item={item}
               key={index}
-              handleCheck={handleCheck}
+              handleCheck={checkGoal}
             />
           ))}
         </ul>

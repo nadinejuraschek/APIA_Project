@@ -33,6 +33,17 @@ export const GoalProvider = props => {
     });
   };
 
+  const checkGoal = goalid => {
+    axios.put('/api/goals/' + goalid, { checked: true })
+      .then(response => {
+        // console.log('Goal in DB: ' + response.data);
+        getGoals();
+      })
+      .catch(error => {
+        console.log('Error: ' + error);
+      });
+  };
+
   const deleteGoal = goalid => {
     axios.delete('/api/goals/' + goalid).then(res => {
       console.log(res);
@@ -41,7 +52,7 @@ export const GoalProvider = props => {
   };
 
   return (
-    <GoalContext.Provider value={{ threeMonths, sixMonths, nineMonths, twelveMonths, getGoals, deleteGoal }}>
+    <GoalContext.Provider value={{ threeMonths, sixMonths, nineMonths, twelveMonths, getGoals, checkGoal, deleteGoal }}>
       {props.children}
     </GoalContext.Provider>
   );
