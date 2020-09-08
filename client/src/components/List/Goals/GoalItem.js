@@ -9,9 +9,10 @@ import education from 'images/education.svg';
 import personal from 'images/personal.svg';
 import travel from 'images/travel.svg';
 
-const GoalItem = ({ text, type }) => {
+const GoalItem = ({ item, handleCheck }) => {
+  const { type, text, _id, checked } = item;
   return (
-    <li className={styles.item}>
+    <li className={styles.item} onClick={() => handleCheck(_id)}>
       <div className={styles.icon}>
         {
           type === "education"
@@ -25,7 +26,9 @@ const GoalItem = ({ text, type }) => {
           <img src={personal} alt={text} />
         }
       </div>
-      <div>{text}</div>
+      <div className={`${checked ? styles.checked : ''}`}>
+        {text}
+      </div>
     </li>
   );
 };

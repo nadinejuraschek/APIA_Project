@@ -25,7 +25,7 @@ const Goal = ({ data, month }) => {
   const travel = data.filter(item => item.type === 'travel');
   const [openAddGoal, setOpenAddGoal] = useState(false);
 
-  const handleCreate = (event) => {
+  const handleCreate = event => {
     event.preventDefault();
 
     axios({
@@ -40,9 +40,20 @@ const Goal = ({ data, month }) => {
     })
       .then(response => {
         // console.log('Goal in DB: ' + response.data);
-        setText("");
-        setType("");
+        setText('');
+        setType('');
         setOpenAddGoal(false);
+        getGoals();
+      })
+      .catch(error => {
+        console.log('Error: ' + error);
+      });
+  };
+
+  const handleCheck = goalid => {
+    axios.put('/api/goals/' + goalid, { checked: true })
+      .then(response => {
+        // console.log('Goal in DB: ' + response.data);
         getGoals();
       })
       .catch(error => {
@@ -60,10 +71,12 @@ const Goal = ({ data, month }) => {
         <div className={styles.btnContainer}>
           {openAddGoal ? (
             <>
-            <Close handleClick={() => setOpenAddGoal(false)} />
-            <Add handleClick={handleCreate} />
+              <Close handleClick={() => setOpenAddGoal(false)} />
+              <Add handleClick={handleCreate} />
             </>
-          ) : (<Add handleClick={setOpenAddGoal} />)}
+          ) : (
+            <Add handleClick={setOpenAddGoal} />
+          )}
         </div>
       </div>
       {openAddGoal ? (
@@ -76,13 +89,25 @@ const Goal = ({ data, month }) => {
       ) : (
         <ul className={styles.list}>
           {education.map((item, index) => (
-            <GoalItem type={item.type} text={item.text} key={index} />
+            <GoalItem
+              item={item}
+              key={index}
+              handleCheck={handleCheck}
+            />
           ))}
           {personal.map((item, index) => (
-            <GoalItem type={item.type} text={item.text} key={index} />
+            <GoalItem
+              item={item}
+              key={index}
+              handleCheck={handleCheck}
+            />
           ))}
           {travel.map((item, index) => (
-            <GoalItem type={item.type} text={item.text} key={index} />
+            <GoalItem
+              item={item}
+              key={index}
+              handleCheck={handleCheck}
+            />
           ))}
         </ul>
       )}

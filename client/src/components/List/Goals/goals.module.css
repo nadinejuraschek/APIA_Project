@@ -91,3 +91,7 @@
 .input {
   width: 100%;
 }
+
+.checked {
+  text-decoration: line-through;
+}
