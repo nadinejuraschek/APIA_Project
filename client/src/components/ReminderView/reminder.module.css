@@ -1,0 +1,18 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 250px;
+  width: 100%;
+}
+
+.clock {
+  height: 100px;
+  width: 100px;
+}

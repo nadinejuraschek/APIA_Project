@@ -39,7 +39,7 @@
   font-size: 1em;
   line-height: 1.21428571em;
   padding: .67857143em 1em;
-  transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease, border-color .1s ease;
 }
 
 .iconInput:active, .iconInput:focus, .input:active, .input:focus, .profileInput:active, .profileInput:focus {
@@ -47,6 +47,8 @@
 }
 
 .profileInput {
+  font-size: 12px;
+  width: 125px;
 }
 
 .dateInput {
