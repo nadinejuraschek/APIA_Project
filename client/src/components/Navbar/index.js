@@ -10,6 +10,7 @@ import cluster from '../../images/cluster.svg';
 import resources from '../../images/mom.svg';
 import dashboard from '../../images/dashboard.svg';
 import menu from '../../images/menu.svg';
+import close from '../../images/close.svg';
 
 // COMPONENTS
 import NavLink from './NavLink';
@@ -33,9 +34,17 @@ const Navbar = () => {
       <a className={styles.logo} href='/home'>
         <p>On Par</p>
       </a>
-      <div className={styles.menuIcon} onClick={toggleSidenav}>
-        <img src={menu} alt="Menu" />
-      </div>
+      {
+        openSidenav
+        ?
+        <div className={styles.menuIcon} onClick={toggleSidenav}>
+          <img src={close} alt="Close Menu" />
+        </div>
+        :
+        <div className={styles.menuIcon} onClick={toggleSidenav}>
+          <img src={menu} alt="Open Menu" />
+        </div>
+      }
     </nav>
     {
       openSidenav
