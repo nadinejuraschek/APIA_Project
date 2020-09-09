@@ -49,7 +49,7 @@ const Login = ({ history }) => {
 
   return (
     <main>
-      <Header header='Login' />
+      <h2>Log In</h2>
 
         <form className={`ui form ${styles.form}`} onSubmit={handleSubmit}>
           <div className='field'>

@@ -52,10 +52,11 @@ footer.ui .vertical .segment {
 .page-container {
   grid-column: 1 / -1;
   grid-row: 2 / 3;
+
+  overflow: auto;
 }
 
 main {
-  height: calc(100vh - 70px);
   max-width: 1200px;
   padding: 24px;
 
@@ -363,7 +364,7 @@ img {
 
 @media screen and (min-width: 900px) {
   main {
-    min-height: 100vh;
+    height: 100vh;
     padding: 40px;
   }
 

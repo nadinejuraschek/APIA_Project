@@ -10,7 +10,7 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <>
+    <div className={styles.container}>
     <svg height={radius * 2} width={radius * 2} className={styles.ring}>
       <circle
         className={styles.ring}
@@ -36,7 +36,7 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
     <div className={styles.label}>
         {label}
     </div>
-    </>
+    </div>
   );
 };
 
