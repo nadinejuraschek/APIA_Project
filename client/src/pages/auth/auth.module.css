@@ -2,12 +2,14 @@
  LOGIN, REGISTER
 ********************************************/
 .form {
-  width: 70%;
+  width: 100%;
 }
 
 .messageItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .messageItem:not(:last-child) {
@@ -16,6 +18,23 @@
 
 .messageItem p {
   width: 180px;
+}
+
+@media only screen and (min-width: 600px) {
+  .form {
+    width: 80%;
+  }
+
+  .messageItem {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .form {
+    width: 70%;
+  }
 }
 
 /********************************************

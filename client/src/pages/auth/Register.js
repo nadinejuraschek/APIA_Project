@@ -29,8 +29,8 @@ const Register = ({ history }) => {
     event.preventDefault();
 
     const newUser = {
-      role: role,
-      familyID: familyID,
+      role: "Au Pair",
+      familyID: "00000",
       firstname: firstname,
       lastname: lastname,
       country: country,
@@ -80,10 +80,10 @@ const Register = ({ history }) => {
 
   return (
     <main>
-      <Header header='Register' />
+      <h2>Register</h2>
 
       <form className={`ui form ${styles.form}`} onSubmit={handleSubmit}>
-        <div className='field'>
+        {/* <div className='field'>
           <label>I am a</label>
           <select
             name='role'
@@ -97,11 +97,11 @@ const Register = ({ history }) => {
             <option value='Host Family'>Host Family Member</option>
             <option value='Community Counselor'>Community Counselor</option>
           </select>
-        </div>
+        </div> */}
 
-        <div className='field'>
-          <div className='two fields'>
-            <div className='field'>
+        {/* <div className='field'>
+          <div className='two fields'> */}
+            {/* <div className='field'>
               <label>Your Host Family's ID</label>
               <div className='ui left icon input'>
                 <i className='users icon'></i>
@@ -112,7 +112,7 @@ const Register = ({ history }) => {
                   onChange={event => setFamilyID(event.target.value)}
                 />
               </div>
-            </div>
+            </div> */}
             <div className='field'>
               <label>Arrival Date</label>
               <div className='ui left icon input' onClick={toggleDatePicker}>
@@ -129,8 +129,8 @@ const Register = ({ history }) => {
                 <DatePicker startDate={startDate} setStartDate={setStartDate} />
               ) : null}
             </div>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
 
         <div className='field'>
           <label>Your Name</label>

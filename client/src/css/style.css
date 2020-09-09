@@ -43,8 +43,19 @@ footer.ui .vertical .segment {
   font-size: 0.9rem;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px calc(100vh - 70px);
+}
+
+.page-container {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
 main {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 70px);
   max-width: 1200px;
   padding: 24px;
 
@@ -77,12 +88,14 @@ img {
   margin: auto;
   width: 90%;
 }
+
 .pageheader {
   font-size: 2.5rem;
   font-weight: 800;
   margin: 3rem 2rem;
   text-align: center;
 }
+
 .custom-container {
   margin: 2rem;
   padding: 1rem;
@@ -364,6 +377,7 @@ img {
     background-color: #f6f6f6;
     border-radius: 40px 0 0 0;
     grid-column: 2 / 3;
+    grid-row: 1 / -1;
     width: calc(100vw - 150px);
   }
 }
