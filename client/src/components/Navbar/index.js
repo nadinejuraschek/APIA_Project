@@ -8,6 +8,7 @@ import notebook from '../../images/book.svg';
 import hostfamily from '../../images/family.svg';
 import cluster from '../../images/cluster.svg';
 import resources from '../../images/mom.svg';
+import dashboard from '../../images/dashboard.svg';
 
 // COMPONENTS
 import NavLink from './NavLink';
@@ -29,6 +30,12 @@ const Navbar = () => {
       </a>
 
       <UserProvider>
+        <NavLink
+          iconSrc={dashboard}
+          label='Dashboard'
+          link='/home'
+        />
+
         <NavLink
           iconSrc={chat}
           label='Messages'

@@ -1,6 +1,10 @@
 .container {
   height: 100%;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .soon {
@@ -10,4 +14,13 @@
 
   height: 200px;
   width: 100%;
+}
+
+.developmentNotice {
+  color: #31313180;
+  margin-bottom: 0;
+}
+
+.featureNotice {
+  margin: 2rem 0;
 }
