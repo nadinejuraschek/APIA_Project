@@ -1,6 +1,7 @@
 // REACT
 import React, { useContext, useState } from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 
 // NPM PACKAGES
 import { toast } from 'react-toastify';
@@ -18,6 +19,7 @@ import SecondaryBtn from '../../components/Button/Secondary';
 import { UserContext } from '../../contexts/UserContext';
 
 // ICONS
+import emergencyphone from '../../images/emergency-call.svg';
 
 // IMAGES
 import blankProfile from '../../images/blankProfile.svg';
@@ -121,6 +123,12 @@ const Home = ({ history }) => {
         </div>
 
         <div className={styles.misc}>
+          <Link to="/emergencynumbers" className={styles.emergency}>
+            <div className={styles.helpIcon}>
+              <img src={emergencyphone} alt="Emergency Numbers" />
+            </div>
+            Emergency Numbers
+          </Link>
         </div>
       </div>
     </main>

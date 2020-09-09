@@ -2,8 +2,7 @@ import React from 'react';
 
 const Dev = () => {
   return (
-    <section className='wrapper'>
-      <div className='block'>
+    <main>
         <div className='custom-container'>
           <h2>This feature is currently in development.</h2>
           <h4>Check back soon!</h4>
@@ -14,8 +13,7 @@ const Dev = () => {
             </a>
           </p>
         </div>
-      </div>
-    </section>
+    </main>
   );
 };
 

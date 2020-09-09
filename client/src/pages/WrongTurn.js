@@ -2,8 +2,7 @@ import React from 'react';
 
 const WrongTurn = () => {
   return (
-    <section className='wrapper'>
-      <div className='block'>
+    <main>
         <h2>You took a wrong turn!</h2>
         <p>
           <a href='/home'>
@@ -11,8 +10,7 @@ const WrongTurn = () => {
             Go Back
           </a>
         </p>
-      </div>
-    </section>
+    </main>
   );
 };
 

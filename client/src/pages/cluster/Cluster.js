@@ -5,8 +5,7 @@ import AuPairInfo from './AuPairInfo';
 
 const Cluster = () => {
   return (
-    <section className='wrapper'>
-      <div className='block'>
+    <main>
         <div className='ui vertical center aligned segment nav-push middle-aligned'>
           <h2>My Cluster</h2>
           <div className='ui stackable grid'>
@@ -83,8 +82,7 @@ const Cluster = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </main>
   );
 };
 

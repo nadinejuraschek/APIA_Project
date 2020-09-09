@@ -4,8 +4,7 @@ import Header from '../components/Header';
 
 const EmergencyNumbers = () => {
   return (
-    <section className='wrapper'>
-      <div className='block'>
+    <main>
         <Header header='Emergency Numbers' />
 
         <div className='costum-container'>
@@ -66,8 +65,7 @@ const EmergencyNumbers = () => {
             </tbody>
           </table>
         </div>
-      </div>
-    </section>
+    </main>
   );
 };
 

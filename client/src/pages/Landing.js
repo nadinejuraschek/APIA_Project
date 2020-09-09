@@ -11,8 +11,7 @@ const Landing = () => {
   return (
     <>
       <div className='ui vertical masthead center aligned segment'>
-        <div className='wrapper'>
-          <div className='block'>
+        <main>
             <h1 className='landing-header'>On Par</h1>
             <h1 className='ui header'>The Au Pair's Assistant</h1>
             <h2 className='tagline'>
@@ -24,8 +23,7 @@ const Landing = () => {
                 <i className='right arrow icon'></i>
               </a>
             </div>
-          </div>
-        </div>
+        </main>
       </div>
 
       {/* <div className="custom-container landing-container">

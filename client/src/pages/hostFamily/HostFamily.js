@@ -2,8 +2,7 @@ import React from 'react';
 
 const HostFamily = () => {
   return (
-    <section className='wrapper'>
-      <div className='block'>
+    <main>
         <div className='ui vertical center aligned segment nav-push middle-aligned'>
           <div className='ui container'>
             <h2 className='ui header'>My Host Family</h2>
@@ -55,8 +54,7 @@ const HostFamily = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </main>
   );
 };
 

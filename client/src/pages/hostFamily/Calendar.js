@@ -13,8 +13,7 @@ class CalendarView extends Component {
 
   render() {
     return (
-      <section className='wrapper'>
-        <div className='block'>
+      <main>
           <div>
             <Calendar
               showWeekNumbers
@@ -23,8 +22,7 @@ class CalendarView extends Component {
             />
             {console.log(this.state.date)}
           </div>
-        </div>
-      </section>
+      </main>
     );
   }
 }
