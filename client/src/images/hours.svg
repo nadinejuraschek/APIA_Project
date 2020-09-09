@@ -2,26 +2,26 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard" transform="translate(-94.000000, -471.000000)">
             <g id="clock-copy-3" transform="translate(94.000000, 471.000000)">
-                <line x1="50.6078015" y1="11" x2="51" y2="18" id="Path-4" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.000000, 14.500000) scale(-1, 1) translate(-51.000000, -14.500000) "></line>
-                <g id="Group-8" transform="translate(9.000000, 18.000000)" stroke="#FFFFFF" stroke-width="4">
+                <line x1="50.6078015" y1="11" x2="51" y2="18" id="Path-4" stroke="#313131" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.000000, 14.500000) scale(-1, 1) translate(-51.000000, -14.500000) "></line>
+                <g id="Group-8" transform="translate(9.000000, 18.000000)" stroke="#313131" stroke-width="4">
                     <circle id="Oval" cx="41.5" cy="41.5" r="39.5"></circle>
                 </g>
-                <line x1="51.6078015" y1="32" x2="51.3921985" y2="60" id="Path-4" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.500000, 46.000000) scale(-1, 1) translate(-51.500000, -46.000000) "></line>
-                <g id="Group-12" transform="translate(63.000000, 0.000000)" stroke="#FFFFFF" stroke-width="4">
+                <line x1="51.6078015" y1="32" x2="51.3921985" y2="60" id="Path-4" stroke="#313131" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.500000, 46.000000) scale(-1, 1) translate(-51.500000, -46.000000) "></line>
+                <g id="Group-12" transform="translate(63.000000, 0.000000)" stroke="#313131" stroke-width="4">
                     <path d="M3.65585064,10.6234386 L31.7817101,31.7830401 C37.7757738,22.4657628 36.8211006,11.0508613 29.5271749,5.56350686 C22.2324036,0.0755161825 10.9764419,2.30493096 3.65585064,10.6234386 Z" id="Path-Copy-2"></path>
                     <line x1="12.1937638" y1="21.0692612" x2="16.4579779" y2="26.216023" id="Path-4" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.325871, 23.642642) scale(-1, 1) translate(-14.325871, -23.642642) "></line>
                 </g>
-                <line x1="71" y1="75" x2="52" y2="60" id="Path-4" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
-                <g id="Group-12-Copy" transform="translate(19.000000, 17.500000) scale(-1, 1) translate(-19.000000, -17.500000) " stroke="#FFFFFF" stroke-width="4">
+                <line x1="71" y1="75" x2="52" y2="60" id="Path-4" stroke="#313131" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <g id="Group-12-Copy" transform="translate(19.000000, 17.500000) scale(-1, 1) translate(-19.000000, -17.500000) " stroke="#313131" stroke-width="4">
                     <path d="M3.65585064,10.6234386 L31.7817101,31.7830401 C37.7757738,22.4657628 36.8211006,11.0508613 29.5271749,5.56350686 C22.2324036,0.0755161825 10.9764419,2.30493096 3.65585064,10.6234386 Z" id="Path-Copy-2"></path>
                     <line x1="12.1937638" y1="21.0692612" x2="16.4579779" y2="26.216023" id="Path-4" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.325871, 23.642642) scale(-1, 1) translate(-14.325871, -23.642642) "></line>
                 </g>
-                <circle id="Oval" fill="#FFFFFF" cx="51.5" cy="60.5" r="7.5"></circle>
-                <g id="Group-11" transform="translate(0.000000, 78.000000)" stroke="#FFFFFF" stroke-width="4">
+                <circle id="Oval" fill="#313131" cx="51.5" cy="60.5" r="7.5"></circle>
+                <g id="Group-11" transform="translate(0.000000, 78.000000)" stroke="#313131" stroke-width="4">
                     <path d="M95.7878474,4.08175644 L95.7878474,4.08175644 L95.7857308,14.7713072 C95.7841656,19.6961411 91.7906709,23.7272908 86.8656063,23.7752342 C86.8374314,23.7753743 86.809256,23.7756549 86.7810813,23.7756549 C81.7956036,23.7767301 77.779906,19.7610325 77.7810813,14.7755545 L77.7835464,4.32222802 L77.7835464,4.32222802" id="Path" transform="translate(86.784464, 13.928706) scale(-1, 1) rotate(-315.000000) translate(-86.784464, -13.928706) "></path>
                     <path d="M22.6671067,4.95889156 L22.6671067,4.95889156 L22.665181,14.8386559 C22.6636158,19.7634898 18.6701211,23.7946395 13.7450565,23.8425828 C13.7168816,23.842723 13.6887062,23.8430036 13.6605315,23.8430036 C8.6750538,23.8440788 4.65935625,19.8283812 4.66053154,14.8429032 L4.66316187,3.68875865 L4.66316187,3.68875865" id="Path" transform="translate(13.663819, 13.765881) rotate(-315.000000) translate(-13.663819, -13.765881) "></path>
                 </g>
-                <line x1="46" y1="9.5" x2="57" y2="9.5" id="Line-5" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"></line>
+                <line x1="46" y1="9.5" x2="57" y2="9.5" id="Line-5" stroke="#313131" stroke-width="4" stroke-linecap="round"></line>
             </g>
         </g>
     </g>

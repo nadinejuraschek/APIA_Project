@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
+// STYLES
+import styles from './notes.module.css';
+
 const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
   const [updatedNote, setUpdatedNote] = useState({});
   const [show, setShow] = useState(false);
@@ -35,7 +38,7 @@ const NoteCard = ({ noteid, date, text, deleteNote, getNotes }) => {
   };
 
   return (
-    <div className='ui fluid card note-card'>
+    <div className={styles.note}>
       <div className={show === true ? 'hide' : ''}>
         <div className='ui dividing header'>{date}</div>
         <div>{text}</div>

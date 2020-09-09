@@ -1,18 +1,21 @@
-.features {
+.layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5rem;
+  height: 100%;
   width: 100%;
 }
 
 @media screen and (min-width: 600px) {
-  .features {
-    grid-gap: 2rem;
-  }
 }
 
 @media screen and (min-width: 900px) {
-  .features {
-    grid-template-columns: repeat(4, 1fr);
+  .layout {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
   }
 }

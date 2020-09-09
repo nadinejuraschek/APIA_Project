@@ -55,6 +55,8 @@
   .reminder {
     grid-column: 1 / 6;
     grid-row: 8 / 8;
+
+    line-height: 1.5;
   }
 
   .tracker,

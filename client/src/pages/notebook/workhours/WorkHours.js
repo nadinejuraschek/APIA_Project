@@ -50,7 +50,7 @@ const Workhours = () => {
         </div>
         <div className={styles.reminder}>
           <strong>Reminder:</strong><br />
-          You can work a maximum of 10 hours a day and 45 hours per week.
+          You should be working a maximum of <strong>10h a day</strong> and <strong>45h per week</strong>.
         </div>
       </div>
     </main>

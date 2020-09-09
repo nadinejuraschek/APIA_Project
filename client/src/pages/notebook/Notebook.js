@@ -17,33 +17,37 @@ import styles from './notebook.module.css';
 const Notebook = () => {
   return (
     <main>
-      <Header header='My Notebook' />
+      <div className={styles.layout}>
+        <h2 className={styles.header}>Notebook</h2>
 
-      <div className={styles.features}>
         <FeatureCard
           title='workhours'
           header='Work Hours'
           icon={hoursIcon}
           link='/notebook/workhours'
         />
+        
         <FeatureCard
           title='payment'
           header='Payments'
           icon={paymentIcon}
           link='/notebook/payments'
         />
+
         <FeatureCard
           title='goals'
           header='Goals'
           icon={goalIcon}
           link='/notebook/goals'
         />
+      
         <FeatureCard
           title='notes'
           header='Notes'
           icon={notesIcon}
           link='/notebook/notes'
         />
+
       </div>
     </main>
   );
