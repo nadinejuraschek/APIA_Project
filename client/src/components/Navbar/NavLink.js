@@ -6,7 +6,10 @@ import { withRouter } from 'react-router';
 import styles from './nav.module.css';
 
 const NavLink = ({ label, iconSrc, link, location } ) => {
-    console.log("Pathname: ", location.pathname);
+  const paths = location.pathname.split('/');
+  // TEST
+  // console.log(paths[1]);
+
   return (
     <a
       className={styles.navLink}
@@ -15,7 +18,7 @@ const NavLink = ({ label, iconSrc, link, location } ) => {
       <div className={styles.icon}>
         <img alt={label} src={iconSrc} />
       </div>
-      <p className={link === location.pathname ? '' : styles.hide}>{label}</p>
+      <p className={link === `/${paths[1]}` ? '' : styles.hide}>{label}</p>
     </a>
   );
 };
