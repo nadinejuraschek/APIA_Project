@@ -120,7 +120,7 @@ const Profile = () => {
                 :
                 <Primary label='Edit' handleClick={toggleEdit} />
               }
-              <button className='ui disabled button'>Change Password</button>
+              <button className='ui disabled button' id={styles.passwordBtn}>Change Password</button>
             </div>
             <h4 className={`ui dividing header ${styles.personalHeader}`}>Personal Info</h4>
               <div className={styles.info}>
