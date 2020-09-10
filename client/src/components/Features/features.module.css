@@ -7,9 +7,8 @@
   text-align: center;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .container:hover {
@@ -19,6 +18,7 @@
 
 .icon {
   height: 4rem;
+  width: 4rem;
 }
 
 .icon img {
@@ -28,19 +28,30 @@
 }
 
 .title {
+  color: #313131;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 2rem;
 }
 
 @media screen and (min-width: 600px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
   .icon {
     height: 6rem;
+    width: 6rem;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-top: 2rem;
   }
 }
 
 @media screen and (min-width: 900px) {
   .icon {
     height: 8rem;
+    width: 8rem;
   }
 }
