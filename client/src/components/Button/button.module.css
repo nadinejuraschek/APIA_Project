@@ -1,11 +1,12 @@
-.primary, .secondary, .disabled {
+.primary,
+.secondary,
+.disabled {
   border-radius: 4px;
   box-shadow: 0px 1px 6px #46637340;
   color: #313131;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  min-width: 8rem;
 
   display: flex;
   align-items: center;
@@ -15,8 +16,12 @@
 
 .disabled {
   background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(0,0,0, 0.25);
+  color: rgba(0, 0, 0, 0.25);
   border: none;
+}
+
+.primary, .secondary {
+  min-width: 8rem;
 }
 
 /********************************************
@@ -32,7 +37,8 @@
   color: #ffffff;
 }
 
-.primary:active, .primary:focus {
+.primary:active,
+.primary:focus {
   border: 1px solid #5f7fc4;
 }
 
@@ -49,8 +55,9 @@
   box-shadow: 0 3px 6px #46637340;
 }
 
-.secondary:active, .secondary:focus {
-    border: 1px solid #86abfa;
-    box-shadow: 0 3px 6px #46637340;
-    color: #86abfa;
+.secondary:active,
+.secondary:focus {
+  border: 1px solid #86abfa;
+  box-shadow: 0 3px 6px #46637340;
+  color: #86abfa;
 }

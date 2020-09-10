@@ -35,7 +35,7 @@ const WeeklyItem = ({ day, hours }) => {
       </div>
       {moment(day).format('YY-MM-DD') ===
       moment(new Date()).format('YY-MM-DD') ? (
-        <Disabled label='Start' />
+        <Disabled label='Start' width="5rem" />
       ) : null}
     </li>
   );

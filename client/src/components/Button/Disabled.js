@@ -3,10 +3,10 @@ import React from 'react';
 // STYLES
 import styles from './button.module.css';
 
-const Disabled = ({ label }) => {
+const Disabled = ({ label, width }) => {
   return (
-    <button className={styles.disabled}>
-        {label}
+    <button className={styles.disabled} style={{width: width}}>
+      {label}
     </button>
   );
 };

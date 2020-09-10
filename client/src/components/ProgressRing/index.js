@@ -8,6 +8,7 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (progress / 100) * circumference;
+  const labelSize = radius * 2;
 
   return (
     <div className={styles.container}>
@@ -33,7 +34,7 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
         cy={radius}
       />
     </svg>
-    <div className={styles.label}>
+    <div className={styles.label} style={{height: labelSize, width: labelSize}}>
         {label}
     </div>
     </div>

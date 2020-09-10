@@ -1,8 +1,11 @@
 .weeklyGrid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: min-content auto;
   grid-gap: 2rem;
+
+  height: 100%;
+  width: 100%;
 }
 
 .chooseDisplay {
@@ -20,6 +23,8 @@
   row-gap: 1rem;
   margin: 0;
   padding: 0;
+
+  height: 100%;
 }
 
 .weeklyItem {
@@ -43,7 +48,8 @@
 }
 
 .red {
-  background-color: #9f3a3820;
+  color: #e63946;
+  font-weight: bold;
 }
 
 .green {
