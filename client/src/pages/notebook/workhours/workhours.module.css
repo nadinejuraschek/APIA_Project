@@ -33,6 +33,10 @@
   grid-row: 2 / 3;
 }
 
+.reminder strong {
+  color: #e6394680;
+}
+
 .tabs, .timer {
   display: none;
 }

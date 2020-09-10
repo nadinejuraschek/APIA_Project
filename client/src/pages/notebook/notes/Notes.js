@@ -4,8 +4,10 @@ import React, { useState, useContext } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
+// STYLES
+import styles from './notes.module.css';
+
 // COMPONENTS
-import Header from '../../../components/Header';
 import NoteCard from './NoteCard';
 
 // CONTEXTS
@@ -46,11 +48,10 @@ const Notes = props => {
   };
 
   return (
-    <section className='wrapper-scroll'>
-      <div className='block'>
-        <Header header='My Notes' />
-        <div className='ui stackable grid'>
-          <div className='four wide column'>
+    <main>
+      <div className={styles.grid}>
+        <h2 className={styles.header}>Notes</h2>
+        <div className={styles.ideas}>
             <h4>A Space for You to Write Down Your Thoughts</h4>
             <div>
               Ideas:
@@ -64,10 +65,10 @@ const Notes = props => {
                 </div>
               </div>
             </div>
-            <div className='ui divider'></div>
-            <div className='add-container'>
-              <h4>New Note</h4>
-              <form className='ui form' onSubmit={handleSubmit}>
+        </div>
+        <div className={styles.addNote}>
+          <h4>New Note</h4>
+          <form className='ui form' onSubmit={handleSubmit}>
                 <div className='field'>
                   <input
                     name='date'
@@ -79,6 +80,7 @@ const Notes = props => {
                 </div>
                 <div className='field'>
                   <textarea
+                    className={styles.textarea}
                     name='text'
                     onChange={handleChange}
                     rows='3'
@@ -94,8 +96,7 @@ const Notes = props => {
                 </div>
               </form>
             </div>
-          </div>
-          <div className='twelve wide column'>
+          <div className={styles.list}>
             {notes.map(note => (
               <NoteCard
                 key={note._id}
@@ -107,10 +108,9 @@ const Notes = props => {
                 getNotes={getNotes}
               />
             ))}
-          </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

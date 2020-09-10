@@ -1,4 +1,9 @@
 .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto;
+  grid-gap: 2rem;
+
   height: 100%;
   width: 100%;
 }
@@ -8,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  height: 250px;
+  height: 100%;
   width: 100%;
 }
 

@@ -1,6 +1,69 @@
-.note {
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  margin-bottom: 0;
+}
+
+.ideas {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.addNote {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+
+.list {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+}
+
+.note, .addNote {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 1px 6px #46637310;
   padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  height: 120px;
+}
+
+@media only screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, min-content);
+  }
+
+  .ideas {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .addNote {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .list {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+  }
+
+  .textarea {
+    height: 250px;
+  }
 }

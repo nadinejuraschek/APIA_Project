@@ -1,11 +1,16 @@
 import React, { useState, useContext } from 'react';
 
+// NPM PACKAGES
 import axios from 'axios';
 
+// STYLES
+import styles from './payments.module.css';
+
+// CONTEXTS
 import { PaymentContext } from '../../../contexts/PaymentContext';
 
 const AddPayment = () => {
-  const { getPayments, payments } = useContext(PaymentContext);
+  const { getPayments } = useContext(PaymentContext);
   const [newPayment, setNewPayment] = useState({
     week: 0,
     paid: false,
@@ -38,8 +43,7 @@ const AddPayment = () => {
   };
 
   return (
-    <>
-      <div className='ui divider'></div>
+    <div className={styles.form}>
       <form className='ui form' onSubmit={handleSubmit}>
         <div className='four fields'>
           <div className='field'>
@@ -97,7 +101,7 @@ const AddPayment = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 // NPM PACKAGES
 import axios from 'axios';
 
+// STYLES
+import styles from './payments.module.css';
+
 const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
   const [show, setShow] = useState(false);
   const [updatedPayment, setUpdatedPayment] = useState({});
@@ -35,48 +38,45 @@ const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
 
   return (
     <>
-      <tr>
-        <td>
-          <form className='ui form'>
-            <button
-              type='button'
-              className='no-style-button'
-              onClick={() => showEdit()}
-            >
-              <i className='edit outline icon'></i>
-            </button>
-            <button
-              type='button'
-              className='no-style-button'
-              onClick={() => deletePayment(paymentid)}
-            >
-              <i className='close icon'></i>
-            </button>
-          </form>
-        </td>
-        <td>{payment.week}</td>
-        <td>
-          {payment.paid ? (
+      <div className={styles.listItem}>
+        <div className={styles.itemWeek}>{payment.week}</div>
+        <div
+          className={`${styles.itemDate} ${
+            payment.late ? styles.paidLate : ''
+          }`}
+        >
+          {payment.date}
+        </div>
+        <div className={styles.itemDue}>
+          {payment.late ? (
             <i className='icon light checkmark'></i>
           ) : (
             <i className='icon dark close'></i>
           )}
-        </td>
-        <td className={payment.late ? 'light-bg' : ''}>{payment.date}</td>
-      </tr>
+        </div>
+        <div className={styles.actions}>
+          {/* <button
+            type='button'
+            className='no-style-button'
+            onClick={() => showEdit()}
+          >
+            <i className='edit outline icon'></i>
+          </button> */}
+          <button
+            type='button'
+            className='no-style-button'
+            onClick={() => deletePayment(paymentid)}
+          >
+            <i class='trash alternate outline icon'></i>
+          </button>
+        </div>
+      </div>
 
-      <tr className={show === true ? '' : 'hide'}>
+
+      {/* <tr className={show === true ? '' : 'hide'}>
         <td colSpan='4'>
-          <form className='ui mini form' onSubmit={handleEdit}>
-            {/* <div className="field">
-                        <label>Week</label>
-                        <input 
-                            type='number'
-                            name='week'
-                            placeholder={'#' + payment.week}
-                        />
-                    </div> */}
-            <div className='field'>
+          <form className='ui mini form' onSubmit={handleEdit}> */}
+      {/* <div className='field'>
               <label>Paid?</label>
               <select
                 name='paid'
@@ -114,9 +114,7 @@ const PaymentEntry = ({ paymentid, payment, deletePayment, getPayments }) => {
             <div className='field centered'>
               <button className='ui button'>Edit</button>
             </div>
-          </form>
-        </td>
-      </tr>
+          </form> */}
     </>
   );
 };

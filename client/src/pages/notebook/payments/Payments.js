@@ -6,17 +6,18 @@ import Header from '../../../components/Header';
 import AddPayment from './AddPayment';
 import PaymentTable from './PaymentTable';
 
+// STYLES
+import styles from './payments.module.css';
+
 const Payments = () => {
   return (
-    <section className='wrapper-scroll'>
-      <div className='block'>
-        <Header header='Payments' />
-        <div className='custom-container'>
+    <main>
+      <div className={styles.grid}>
+        <h2 className={styles.header}>Payments</h2>
           <PaymentTable />
           <AddPayment />
-        </div>
       </div>
-    </section>
+    </main>
   );
 };
 

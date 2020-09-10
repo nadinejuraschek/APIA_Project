@@ -31,7 +31,13 @@ const WeeklyItem = ({ day, hours }) => {
         <div>{moment(day).format('DD')}</div>
       </div>
       <div className={`${styles.date} ${displayHours > 600 ? styles.red : styles.green}`}>
-        {minToH(displayHours)}
+        {
+          displayHours === 0
+          ?
+          null
+          :
+          minToH(displayHours)
+        }
       </div>
       {moment(day).format('YY-MM-DD') ===
       moment(new Date()).format('YY-MM-DD') ? (

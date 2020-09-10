@@ -17,11 +17,12 @@ exports.getHours = async (req, res) => {
 // CREATE
 exports.create = async (req, res) => {
   console.log("Req body: ", req.body);
-  const { date, hours } = req.body;
+  const { date, dateFormat, hours } = req.body;
 
-  const workitem = await db.Workhour.findOne({ date: req.body.date});
+  const workitem = await db.Workhour.findOne({ dateFormat: dateFormat});
+  console.log(workitem);
 
-  if (!workitem) {
+  if (workitem === null) {
     await db.Workhour.create({
       date: date,
       dateFormat: moment(date).format('YY-MM-DD'),
