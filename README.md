@@ -1,7 +1,7 @@
 # On Par
 ## Au Pair Application
 ### UC Davis Coding Bootcamp - Project 3
-#### https://au-pair-application.herokuapp.com/
+#### https://on-par-web.herokuapp.com/
 
 #### Test Login
 * E-Mail: tester@mail.com
@@ -21,35 +21,40 @@ As a former Au Pair in America myself, I personally experienced the need for an 
 #### Authentication
 Users can Register and Log In as an Au Pair. (Host Family and Community Counselor Log In coming soon!)
 
-![Login Preview](readme-gifs/login.gif)
+![Login Preview](readme-gifs/Login_Register.gif)
 
-#### Chilcare Activity Suggestion
-A quick suggestion for a fun activity to do with the kids.
+#### Dashboard / Home
+Gives a quick overview about how many days/weeks/months have been spent in the US, the hours that were tracked in the current week, and upcoming events and reminders. A link to emergency numbers is also included.
 
-![Activity Button Preview](readme-gifs/activity.gif)
+![Dashboard Preview](readme-gifs/Dashboard.gif)
 
-### My Notebook
+#### Profile
+The user's profile page. Personal information, such as a phone number and social media accounts can be added and edited.
+
+![Profile Preview](readme-gifs/Profile.gif)
+
+### Notebook
 A personal tracker. Logs and saves...
 
-#### Workhours 
+#### Workhours
 These can be added weekly. A daily total needs to be entered and the app will then calculate a weekly total. If the hours exceed the 10 hours daily or 45 hours weekly maximum, the text or table cell will turn red.
 
-![Workhour Preview](readme-gifs/workhours.gif)
+![Workhour Preview](readme-gifs/Workhours.gif)
 
 #### Payments
 Late or unpaid payments will be displayed in red.
 
-![Payment Preview](readme-gifs/payments.gif)
+![Payment Preview](readme-gifs/Payments.gif)
 
 #### Goals
 Personal goals can be set for 3, 6, 9 or 12 months and can be categorized in personal, travel or educational goals.
 
-![Goal Preview](readme-gifs/goals.gif)
+![Goal Preview](readme-gifs/Goals.gif)
 
 #### Notes
 A note section for reminders or comments.
 
-![Note Preview](readme-gifs/notes.gif)
+![Note Preview](readme-gifs/Notes.gif)
 
 ## Technologies
 
@@ -67,7 +72,6 @@ A note section for reminders or comments.
     * dotenv
     * jsonwebtoken
     * morgan
-    * react-toastify
     * react-calendar
 * MongoDB + mongoose
 
@@ -112,4 +116,7 @@ A note section for reminders or comments.
 * host family house and car rules
 
 #### Au Pair Goals
-* list of things to accomplish within 3 - 6 - 9 - 12 months
+* suggestions of things to accomplish within 3 - 6 - 9 - 12 months
+
+#### Chilcare Activity Suggestion
+* quick suggestion for a fun activity to do with the kids
