@@ -11,6 +11,15 @@
 .header {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
+
+  margin-bottom: 0;
+}
+
+.info {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 900px) {
