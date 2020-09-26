@@ -58,8 +58,6 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
-const apiRoutes = require('./routes/apiRoutes');
-// app.use(apiRoutes);
 app.use('/api', noteRoutes);
 app.use('/api', goalRoutes);
 app.use('/api', paymentRoutes);
