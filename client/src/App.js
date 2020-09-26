@@ -28,6 +28,9 @@ import Notes from './pages/notebook/notes/Notes';
 import Payments from './pages/notebook/payments/Payments';
 import Workhours from './pages/notebook/workhours/Workhours';
 
+import Resources from './pages/resources/Resources';
+import Tax from './pages/resources/tax/Tax';
+
 import EmergencyNumbers from './pages/EmergencyNumbers';
 import Home from './pages/home/Home';
 // import Landing from './pages/Landing';
@@ -105,7 +108,7 @@ const App = () => {
           </Route>
           <Route exact path='/resources'>
             <GatedComponent>
-              <Dev />
+              <Resources />
             </GatedComponent>
           </Route>
 
@@ -136,6 +139,13 @@ const App = () => {
               <NoteProvider>
                 <Notes />
               </NoteProvider>
+            </GatedComponent>
+          </Route>
+
+          {/* Resources Sections */}
+          <Route exact path='/resources/tax'>
+            <GatedComponent>
+              <Tax />
             </GatedComponent>
           </Route>
 
