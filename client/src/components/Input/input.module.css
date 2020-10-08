@@ -32,7 +32,7 @@
 }
 
 .input, .profileInput, .dateInput {
-  background-color: #f6f6f6;
+  background-color: var(--neutral__10);
   border: 1px solid rgba(34,36,38,.15);
   border-radius: .28571429rem;
   box-shadow: 0 0 0 0 transparent inset;
@@ -43,7 +43,7 @@
 }
 
 .iconInput:active, .iconInput:focus, .input:active, .input:focus, .profileInput:active, .profileInput:focus {
-  border: 1px solid #86abfa;
+  border: 1px solid var(--primary__medium);
 }
 
 .profileInput {

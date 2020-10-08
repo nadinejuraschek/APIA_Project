@@ -24,7 +24,7 @@
   height: 100%;
   width: 100%;
 
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
   border-radius: 20px;
   box-shadow: 0 1px 6px #46637310;
   padding: 2rem;
@@ -79,7 +79,7 @@
 }
 
 .paidLate {
-  border: 4px solid #e63946;
+  border: 4px solid var(--text__error__light);
   height: 100%;
   width: 100%;
 }

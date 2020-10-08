@@ -48,12 +48,12 @@
 }
 
 .red {
-  color: #e63946;
+  color: var(--text__error__light);
   font-weight: bold;
 }
 
 .green {
-  color: #2c662d;
+  color: var(--text__success);
 }
 
 @media only screen and (min-width: 900px) {

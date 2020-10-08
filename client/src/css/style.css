@@ -1,3 +1,4 @@
+@import './base.css';
 /****************************************************************************
  COLORS
  #75c0fa
@@ -20,8 +21,8 @@
 ****************************************************************************/
 body {
   font-family: 'Lato', 'Helvetica', 'Helvetica Neue', sans-serif;
-  background-color: #f6f6f6;
-  color: #313131;
+  background-color: var(--neutral__10);
+  color: var(--text__dark);
 }
 button {
   font-family: 'Lato', 'Helvetica', 'Helvetica Neue', sans-serif;
@@ -30,7 +31,7 @@ nav {
   height: 4rem;
 }
 nav.ui.menu {
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
 }
 nav a.header.item {
   font-family: 'grand_hotelregular';
@@ -114,22 +115,14 @@ img {
   margin: 1rem;
 }
 .ui .button {
-  background-color: #86abfa;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(196, 215, 255),
-    #86abfa
-  );
-  color: #ffffff;
+  background-color: var(--primary__medium);
+  background-image: var(--primary__gradient);
+  color: var(--neutral__0);
 }
 .ui .button:hover {
-  background-color: #ff9897;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
-  color: #ffffff;
+  background-color: var(--secondary__medium);
+  background-image: var(--secondary__gradient);
+  color: var(--neutral__0);
 }
 .ui .card.feature-card,
 .ui .card.note-card,
@@ -141,27 +134,19 @@ img {
   padding: 1rem;
 }
 .ui .card.feature-card {
-  background-color: #86abfa;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(196, 215, 255),
-    #86abfa
-  );
+  background-color: var(--primary__medium);
+  background-image: var(--primary__gradient);
 }
 .ui .card.feature-card:hover {
-  background-color: #ff9897;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
+  background-color: var(--secondary__medium);
+  background-image: var(--secondary__gradient);
 }
 .ui .card.note-card,
 .ui .card.goal-card {
   padding: 2rem;
 }
 .ui .header.feature-header {
-  color: #ffffff;
+  color: var(--neutral__0);
 }
 .feature-icon {
   margin-top: 1rem;
@@ -173,28 +158,20 @@ img {
 .no-style-button {
   background: transparent;
   border: none;
-  color: #86abfa;
+  color: var(--primary__medium);
 }
 .no-style-button:hover {
-  color: #ff9897;
+  color: var(--secondary__medium);
 }
 .ui.button.activity-button {
-  background-color: #ff9897;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
-  color: #ffffff;
+  background-color: var(--secondary__medium);
+  background-image: var(--secondary__gradient);
+  color: var(--neutral__0);
 }
 .ui.button.activity-button:hover {
-  background-color: #86abfa;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(196, 215, 255),
-    #86abfa
-  );
-  color: #ffffff;
+  background-color: var(--primary__medium);
+  background-image: var(--primary__gradient);
+  color: var(--neutral__0);
 }
 .card-button {
   display: inline-block;
@@ -203,10 +180,10 @@ img {
   display: none;
 }
 .light {
-  color: #ff9897;
+  color: var(--secondary__medium);
 }
 .dark {
-  color: #86abfa;
+  color: var(--primary__medium);
 }
 .light-bg {
   background-color: #ff989725;
@@ -215,22 +192,22 @@ img {
   margin: 1rem 0 1rem 2rem;
 }
 .footer-link {
-  color: #313131;
+  color: var(--text__dark);
 }
 .footer-link:hover {
-  color: #ff9897;
+  color: var(--secondary__medium);
 }
 .ui .message {
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
 }
 .nav-logo {
   height: 3rem;
 }
 .start-button {
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
   border: none;
   border-radius: 10px;
-  color: #313131;
+  color: var(--text__dark);
   font-size: 1.25rem;
   padding: 1rem;
   -webkit-box-shadow: 0px 4px 8px 0px #46637350;
@@ -239,25 +216,21 @@ img {
   margin: 2rem;
 }
 .start-button:hover {
-  background-color: #ff9897;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
-  color: #ffffff;
+  background-color: var(--secondary__medium);
+  background-image: var(--secondary__gradient);
+  color: var(--neutral__0);
 }
 .tagline {
-  color: #ffffff;
+  color: var(--neutral__0);
 }
 .more-padding {
   margin-top: 4rem;
 }
 .negativeText {
-  color: #9f3a38;
+  color: var(--text__error);
 }
 .positiveText {
-  color: #2c662d;
+  color: var(--text__success);
 }
 
 /****************************************************************************
@@ -267,11 +240,7 @@ img {
   height: 90vh;
 }
 .ui.vertical.masthead.segment {
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(196, 215, 255, 0.9),
-    #86abfa
-  );
+  background-image: var(--primary__gradient);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -288,13 +257,9 @@ img {
   padding: 2rem;
 }
 .ui .card.landing-card:hover {
-  background-color: #ff9897;
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
-  color: #313131;
+  background-color: var(--secondary__medium);
+  background-image: var(--secondary__gradient);
+  color: var(--text__dark);
 }
 .icon-padding {
   margin-bottom: 2rem;
@@ -330,22 +295,14 @@ img {
 }
 
 .react-calendar__tile--active {
-  background-color: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
-  color: white;
+  background-color: var(--secondary__gradient);
+  color: var(--neutral__0);
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background-color: #86abfa;
-  background-color: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
+  background-color: var(--primary__medium);
+  background-color: var(--secondary__gradient);
 }
 
 .react-calendar__tile,
@@ -369,13 +326,13 @@ img {
   }
 
   .layout {
-    background-image: linear-gradient(to bottom, #86abfa 0%, #f6f6f6 100%);
+    background-image: linear-gradient(to bottom, var(--primary__medium) 0%, var(--neutral__10) 100%);
     display: grid;
     grid-template-columns: 150px auto;
   }
 
   .page-container {
-    background-color: #f6f6f6;
+    background-color: var(--neutral__10);
     border-radius: 40px 0 0 0;
     grid-column: 2 / 3;
     grid-row: 1 / -1;

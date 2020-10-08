@@ -24,7 +24,7 @@ const ProgressRing = ({ radius, stroke, progress, label }) => {
       />
       <circle
         className={styles.progress}
-        stroke='#86abfa'
+        stroke='var(--primary__medium)'
         fill='transparent'
         strokeWidth={stroke}
         strokeDasharray={circumference + ' ' + circumference}

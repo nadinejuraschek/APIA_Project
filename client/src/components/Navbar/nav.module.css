@@ -1,5 +1,5 @@
 .navMobile {
-  background-color: #86abfa;
+  background-color: var(--primary__medium);
   box-shadow: 2px 0 4px #46637320;
   height: 70px;
   padding: 0 24px;
@@ -25,7 +25,7 @@
 }
 
 .logo p {
-  color: #ffffff;
+  color: var(--neutral__0);
   font-family: 'grand_hotelregular';
   font-size: 2rem;
   line-height: 40px;
@@ -41,13 +41,13 @@
 }
 
 .footer {
-  color: #ffffff;
+  color: var(--neutral__0);
   font-size: 12px;
   text-align: center;
 }
 
 .sideMobile {
-  background-color: #86abfa;
+  background-color: var(--primary__medium);
   padding: 24px;
 
   height: calc(100vh - 70px);
@@ -88,7 +88,7 @@
 }
 
 .navLink p {
-  color: #ffffff;
+  color: var(--neutral__0);
   font-size: 30px;
   margin-left: 1rem;
   text-transform: uppercase;
@@ -104,7 +104,7 @@
   }
 
   .navDesktop {
-    background-color: #86abfa;
+    background-color: var(--primary__medium);
     border-radius: 0 0 40px 0;
     padding: 24px;
 

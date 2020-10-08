@@ -31,7 +31,7 @@
 }
 
 .note, .addNote {
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
   border-radius: 20px;
   box-shadow: 0 1px 6px #46637310;
   padding: 2rem;

@@ -3,7 +3,7 @@
 .disabled {
   border-radius: 4px;
   box-shadow: 0px 1px 6px #46637340;
-  color: #313131;
+  color: var(--text__dark);
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
@@ -28,36 +28,36 @@
  PRIMARY
 ********************************************/
 .primary {
-  background-color: #86abfa;
-  border: 1px solid #86abfa;
+  background-color: var(--primary__medium);
+  border: 1px solid var(--primary__medium);
 }
 
 .primary:hover {
   box-shadow: 0 3px 6px #46637340;
-  color: #ffffff;
+  color: var(--neutral__0);
 }
 
 .primary:active,
 .primary:focus {
-  border: 1px solid #5f7fc4;
+  border: 1px solid var(--primary__dark);
 }
 
 /********************************************
  SECONDARY
 ********************************************/
 .secondary {
-  background-color: #f6f6f6;
-  border: 1px solid #f6f6f6;
+  background-color: var(--neutral__10);
+  border: 1px solid var(--neutral__10);
 }
 
 .secondary:hover {
-  border: 1px solid #86abfa;
+  border: 1px solid var(--primary__medium);
   box-shadow: 0 3px 6px #46637340;
 }
 
 .secondary:active,
 .secondary:focus {
-  border: 1px solid #86abfa;
+  border: 1px solid var(--primary__medium);
   box-shadow: 0 3px 6px #46637340;
-  color: #86abfa;
+  color: var(--primary__medium);
 }

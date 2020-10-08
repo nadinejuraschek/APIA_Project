@@ -1,5 +1,5 @@
 .container {
-  background-color: #ffffff;
+  background-color: var(--neutral__0);
   border-radius: 0.28571429rem;
   width: 300px;
 
@@ -10,13 +10,9 @@
 
 .month,
 .year {
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(253, 184, 183),
-    #ff9897
-  );
+  background-image: var(--secondary__gradient);
   border-bottom: 1px solid lightgray;
-  color: #ffffff;
+  color: var(--neutral__0);
   font-weight: bold;
   text-transform: uppercase;
   height: 2.5em;
@@ -51,7 +47,7 @@
 
 /* Calendar */
 .calendar {
-  background: #ffffff;
+  background: var(--neutral__0);
   border: 1px solid lightgray;
   border-radius: 0.28571429rem;
 }
@@ -75,7 +71,7 @@
 }
 
 .disabled {
-  background-color: #f6f6f6;
+  background-color: var(--neutral__10);
   color: transparent;
   pointer-events: none;
 }

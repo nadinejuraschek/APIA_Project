@@ -24,7 +24,7 @@
 }
 
 .active {
-  background-color: rgb(253, 184, 183);
+  background-color: var(--secondary__light);
   border-radius: 4px;
 }
 
