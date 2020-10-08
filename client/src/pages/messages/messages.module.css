@@ -7,27 +7,38 @@
   width: 100%;
 }
 
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
 .tab {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid lightgrey;
   border-radius: 3px 3px 0 0;
-  font-weight: bold;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 40px;
+  width: 50%;
 }
 
 .tab:hover {
+  background-color: #ff989715;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .activeTab {
-  border-top: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;;
-  border-bottom: none;
+  border-bottom: 3px solid #ff9897;
+  color: #ff9897;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 900px) {
@@ -54,15 +65,8 @@
   }
 
   .tabs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
   }
 
   .tab {
-    height: 30px;
-    width: 50%;
   }
 }
