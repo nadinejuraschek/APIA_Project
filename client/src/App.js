@@ -17,6 +17,8 @@ import Dev from './pages/Dev';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
+import Messages from './pages/messages/Messages';
+
 // import Cluster from './pages/cluster/Cluster';
 
 // import HostFamily from './pages/hostFamily/HostFamily';
@@ -86,7 +88,7 @@ const App = () => {
           {/* Home Sections */}
           <Route exact path='/messages'>
             <GatedComponent>
-              <Dev />
+              <Messages />
             </GatedComponent>
           </Route>
           <Route exact path='/notebook'>

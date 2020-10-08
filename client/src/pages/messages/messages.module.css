@@ -1,0 +1,68 @@
+.layout {
+  display: grid;
+
+  padding: 24px;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.tab {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  border-radius: 3px 3px 0 0;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+.activeTab {
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;;
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .layout {
+    grid-template-columns: 35% 65%;
+  }
+
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+
+    height: 100%;
+    padding: 40px 0;
+
+    background-color: var(--neutral__10);
+    border-right: 1px solid lightgrey;
+  }
+
+  .chat {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+
+    background-color: var(--neutral__0);
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  .tab {
+    height: 30px;
+    width: 50%;
+  }
+}
