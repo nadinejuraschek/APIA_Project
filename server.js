@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const express = require('express'),
   mongoose = require('mongoose'),
+  mongoSanitize = require('express-mongo-sanitize'),
   morgan = require('morgan'),
   path = require('path'),
   jwt = require('jsonwebtoken'),
@@ -36,6 +37,9 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+// SECURITY
+app.use(mongoSanitize());
 
 // AUTHENTICATION
 //decode the jwt token
