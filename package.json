@@ -26,22 +26,21 @@
   },
   "homepage": "https://github.com/nadinejuraschek/APIA_Project#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-mongo-sanitize": "^2.0.0",
+    "express-mongo-sanitize": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
-    "moment": "^2.27.0",
-    "mongoose": "^5.10.3",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "multer-gridfs-storage": "^4.2.0",
-    "react-toastify": "^5.5.0"
+    "multer-gridfs-storage": "^4.2.0"
   },
   "devDependencies": {
     "lodash": "4.17.19"

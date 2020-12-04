@@ -4,8 +4,8 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 // NPM PACKAGES
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 // COMPONENTS
@@ -28,10 +28,10 @@ import blankProfile from '../../images/blankProfile.svg';
 import styles from './home.module.css';
 
 // TOASTIFY CONFIG & STYLE
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-});
+// toast.configure({
+//   autoClose: 8000,
+//   draggable: false,
+// });
 
 const Home = ({ history }) => {
   const [user] = useContext(UserContext);

@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // NPM PACKAGES
-import { ToastContainer, toast, Slide } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast, Slide } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENT IMPORTS
 import Navbar from './components/Navbar';
@@ -16,6 +16,7 @@ import Dev from './pages/Dev';
 
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import NewRegister from './pages/auth/register/index';
 
 // import Cluster from './pages/cluster/Cluster';
 
@@ -43,10 +44,10 @@ import { GoalProvider } from './contexts/GoalContext';
 import { NoteProvider } from './contexts/NoteContext';
 
 // TOASTIFY CONFIG
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-});
+// toast.configure({
+//   autoClose: 8000,
+//   draggable: false,
+// });
 
 const App = () => {
   // const [active, setActive] = useState('');
@@ -55,7 +56,7 @@ const App = () => {
       <div className='layout'>
         <Navbar />
         <div className='page-container'>
-          <ToastContainer transition={Slide} />
+          {/* <ToastContainer transition={Slide} /> */}
 
           {/* Landing Page */}
           <Route exact path='/' component={Login} />
@@ -63,6 +64,7 @@ const App = () => {
           {/* Authentication */}
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/new-register' component={NewRegister} />
 
           {/* Navbar Links */}
           <Route exact path='/profile'>
