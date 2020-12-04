@@ -1,23 +1,15 @@
-// REACT
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-
-// DEPENDENCIES
-import { useForm } from 'react-hook-form';
-
-const Step1 = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const history = useHistory();
-
-  const onSubmit = data => {
-    history.push('/step2');
-  };
-
+const Step1 = ({ formRef }) => {
   return (
-    <form>
-      <label></label>
-      <input name='firstname' type='text' placeholder='First Name' />
-    </form>
+    <>
+      <div>
+        <label>First Name</label>
+        <input name='firstname' type='text' placeholder='First Name' ref={formRef}/>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input name='lastname' type='text' placeholder='Last Name' ref={formRef} />
+      </div>
+    </>
   );
 };
 

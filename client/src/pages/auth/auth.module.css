@@ -20,6 +20,13 @@
   width: 180px;
 }
 
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 @media only screen and (min-width: 600px) {
   .form {
     width: 80%;

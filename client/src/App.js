@@ -1,10 +1,6 @@
-// REACT IMPORTS
+// REACT
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
-// NPM PACKAGES
-// import { ToastContainer, toast, Slide } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 // COMPONENT IMPORTS
 import Navbar from './components/Navbar';
@@ -43,12 +39,6 @@ import { PaymentProvider } from './contexts/PaymentContext';
 import { GoalProvider } from './contexts/GoalContext';
 import { NoteProvider } from './contexts/NoteContext';
 
-// TOASTIFY CONFIG
-// toast.configure({
-//   autoClose: 8000,
-//   draggable: false,
-// });
-
 const App = () => {
   // const [active, setActive] = useState('');
   return (
@@ -56,7 +46,6 @@ const App = () => {
       <div className='layout'>
         <Navbar />
         <div className='page-container'>
-          {/* <ToastContainer transition={Slide} /> */}
 
           {/* Landing Page */}
           <Route exact path='/' component={Login} />
