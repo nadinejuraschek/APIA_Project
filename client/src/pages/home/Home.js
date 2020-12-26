@@ -1,5 +1,5 @@
 // REACT
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -7,18 +7,18 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 // COMPONENTS
-import Countdown from '../../components/Countdown';
+import Countdown from 'components/Countdown';
 import Greeting from 'components/Greeting';
-import Today from '../../components/TodayView';
-import Reminders from '../../components/ReminderView';
-import Workhours from '../../components/WorkhourView';
-import SecondaryBtn from '../../components/Button/Secondary';
+import Today from 'components/TodayView';
+import Reminders from 'components/ReminderView';
+import Workhours from 'components/WorkhourView';
+import SecondaryBtn from 'components/Button/Secondary';
 
 // CONTEXTS
-import { UserContext } from '../../contexts/UserContext';
+import { UserContext } from 'contexts/UserContext';
 
 // ICONS
-import emergencyphone from '../../images/emergency-call.svg';
+import emergencyphone from 'images/emergency-call.svg';
 
 // STYLES
 import styles from './home.module.css';

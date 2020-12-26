@@ -1,5 +1,5 @@
 // REACT
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';
@@ -7,16 +7,16 @@ import moment from 'moment';
 
 // COMPONENTS
 // import Filer from '../../components/Filer';
-import Flag from '../../components/Flag';
-import ProfileInput from '../../components/Input/Profile';
-import Primary from '../../components/Button/Primary';
-import PeopleList from '../../components/List/People/People';
+import Flag from 'components/Flag';
+import ProfileInput from 'components/Input/Profile';
+import Primary from 'components/Button/Primary';
+import PeopleList from 'components/List/People/People';
 
 // IMAGES
-import blankPic from '../../images/blankProfile.svg';
+import blankPic from 'images/blankProfile.svg';
 
 // CONTEXTS
-import { UserContext } from '../../contexts/UserContext';
+import { UserContext } from 'contexts/UserContext';
 
 // STYLES
 import styles from './auth.module.css';

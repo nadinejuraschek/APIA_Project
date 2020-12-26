@@ -1,5 +1,5 @@
 // REACT
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { withRouter } from 'react-router';
 
 // NPM PACKAGES
@@ -7,8 +7,7 @@ import axios from 'axios';
 import moment from 'moment';
 
 // COMPONENTS
-import Header from '../../components/Header';
-import DatePicker from '../../components/DatePicker';
+import DatePicker from 'components/DatePicker';
 
 // STYLES
 import styles from './auth.module.css';

@@ -1,12 +1,9 @@
 // REACT
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { withRouter } from 'react-router';
 
 // NPM PACKAGES
 import axios from 'axios';
-
-// COMPONENTS
-import Header from '../../components/Header';
 
 // STYLES
 import styles from './auth.module.css';

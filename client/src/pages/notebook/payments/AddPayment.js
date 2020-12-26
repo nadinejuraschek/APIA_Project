@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+// REACT
+import { useState, useContext } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';

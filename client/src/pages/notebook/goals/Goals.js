@@ -1,8 +1,8 @@
 // REACT
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // COMPONENTS
-import Goal from '../../../components/List/Goals';
+import Goal from 'components/List/Goals';
 
 // CONTEXTS
 import { GoalContext } from 'contexts/GoalContext';

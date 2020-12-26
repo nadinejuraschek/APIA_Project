@@ -1,6 +1,3 @@
-// REACT
-import React from 'react';
-
 // ICONS
 // import note from '../../images/edit.svg';
 // import find from '../../images/find.svg';

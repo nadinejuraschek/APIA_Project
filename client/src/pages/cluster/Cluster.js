@@ -1,5 +1,3 @@
-import React from 'react';
-
 import CounselorInfo from './CounselorInfo';
 import AuPairInfo from './AuPairInfo';
 

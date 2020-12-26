@@ -1,5 +1,5 @@
 // REACT
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 // NPM PACKAGES
 import Calendar from 'react-calendar';

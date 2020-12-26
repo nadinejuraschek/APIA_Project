@@ -1,8 +1,5 @@
 // REACT
-import React, { useContext, useState } from 'react';
-
-// NPM PACKAGES
-import moment from 'moment';
+import { useContext, useState } from 'react';
 
 // COMPONENTS
 import WeeklyList from 'components/List/Workhours/Weekly';

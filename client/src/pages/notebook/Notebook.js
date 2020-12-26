@@ -1,9 +1,5 @@
-// REACT
-import React from 'react';
-
 // COMPONENTS
-import Header from '../../components/Header';
-import FeatureCard from '../../components/Features';
+import FeatureCard from 'components/Features';
 
 // ICONS
 import hoursIcon from '../../images/hours.svg';
@@ -26,7 +22,7 @@ const Notebook = () => {
           icon={hoursIcon}
           link='/notebook/workhours'
         />
-        
+
         <FeatureCard
           title='payment'
           header='Payments'
@@ -40,7 +36,7 @@ const Notebook = () => {
           icon={goalIcon}
           link='/notebook/goals'
         />
-      
+
         <FeatureCard
           title='notes'
           header='Notes'

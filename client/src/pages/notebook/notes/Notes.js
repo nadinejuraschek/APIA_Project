@@ -1,5 +1,5 @@
 // REACT
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 
 // NPM PACKAGES
 import axios from 'axios';
@@ -11,7 +11,7 @@ import styles from './notes.module.css';
 import NoteCard from './NoteCard';
 
 // CONTEXTS
-import { NoteContext } from '../../../contexts/NoteContext';
+import { NoteContext } from 'contexts/NoteContext';
 
 const Notes = props => {
   const { getNotes, editNote, deleteNote, notes } = useContext(NoteContext);

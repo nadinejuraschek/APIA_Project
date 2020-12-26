@@ -1,8 +1,4 @@
-// REACT
-import React from 'react';
-
 // COMPONENTS
-import Header from '../../../components/Header';
 import AddPayment from './AddPayment';
 import PaymentTable from './PaymentTable';
 

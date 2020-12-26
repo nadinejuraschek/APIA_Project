@@ -1,6 +1,4 @@
-import React from 'react';
-
-import blankPic from '../../../images/blankProfile.svg';
+import blankPic from 'images/blankProfile.svg';
 
 const AuPairInfo = () => {
   return (

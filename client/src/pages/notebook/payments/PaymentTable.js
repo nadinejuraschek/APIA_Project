@@ -1,5 +1,5 @@
 // REACT
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // STYLES
 import styles from './payments.module.css';
@@ -8,7 +8,7 @@ import styles from './payments.module.css';
 import PaymentEntry from './PaymentEntry';
 
 // CONTEXT
-import { PaymentContext } from '../../../contexts/PaymentContext';
+import { PaymentContext } from 'contexts/PaymentContext';
 
 const PaymentTable = props => {
   const { getPayments, deletePayment, payments } = useContext(PaymentContext);
