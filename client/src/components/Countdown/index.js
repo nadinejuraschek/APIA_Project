@@ -44,7 +44,7 @@ const Countdown = ({ startDate, endDate, setMessage }) => {
     } else if (dayNum >= 351) {
       setMessage('Make the most of your last few days!');
     } else {
-      setMessage('');
+      setMessage('What can I help you with?');
     }
   }, [dayNum]);
 

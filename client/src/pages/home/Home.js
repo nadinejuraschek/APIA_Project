@@ -4,12 +4,11 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 // NPM PACKAGES
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 // COMPONENTS
 import Countdown from '../../components/Countdown';
+import Greeting from 'components/Greeting';
 import Today from '../../components/TodayView';
 import Reminders from '../../components/ReminderView';
 import Workhours from '../../components/WorkhourView';
@@ -21,23 +20,12 @@ import { UserContext } from '../../contexts/UserContext';
 // ICONS
 import emergencyphone from '../../images/emergency-call.svg';
 
-// IMAGES
-import blankProfile from '../../images/blankProfile.svg';
-
 // STYLES
 import styles from './home.module.css';
-
-// TOASTIFY CONFIG & STYLE
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-});
 
 const Home = ({ history }) => {
   const [user] = useContext(UserContext);
   const [message, setMessage] = useState('');
-  const time = new Date().getHours();
-  let greeting;
 
   const handleLogout = () => {
     axios({
@@ -69,36 +57,15 @@ const Home = ({ history }) => {
     "Make placemats by covering your host child's artwork with clear contact paper.",
   ];
 
-  // const notify = () => toast(activities[Math.floor(Math.random() * 18 + 1)]);
-
-  if (time > 6 && time < 11) {
-    greeting = `Good morning, ${user.firstname}!`;
-  } else if (time >= 11 && time < 15) {
-    greeting = `It's lunchtime, ${user.firstname}!`;
-  } else if (time >= 15 && time < 18) {
-    greeting = `Good afternoon, ${user.firstname}!`;
-  } else if (time >= 18 && time < 23) {
-    greeting = `Good evening, ${user.firstname}!`;
-  } else {
-    greeting = `Up so late, ${user.firstname}?`;
-  }
-
   return (
     <main>
       <div className={styles.grid}>
         <div className={styles.header}>
-          <div className={styles.greeting}>
-            <img className={styles.profile} src={blankProfile} alt={user.firstname} />
-            <h2>{greeting}</h2>
-          </div>
-          <h4>{message === '' ? 'What can I help you with?' : message}</h4>
+          <Greeting message={message} name={user.firstname} />
           <div className={styles.buttons}>
             <SecondaryBtn link="/profile" label="Profile" />
             <SecondaryBtn label="Log Out" handleClick={handleLogout} />
           </div>
-          {/* <button className='ui button activity-button' onClick={notify}>
-              Childcare activity, please!
-            </button> */}
         </div>
 
         <div className={styles.hours}>
