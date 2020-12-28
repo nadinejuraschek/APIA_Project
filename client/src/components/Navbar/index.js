@@ -1,16 +1,16 @@
 // REACT
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // ICONS
-// import logo from '../../images/logo.svg';
-import chat from '../../images/chat.svg';
-import notebook from '../../images/book.svg';
-import hostfamily from '../../images/family.svg';
-import cluster from '../../images/cluster.svg';
-import resources from '../../images/mom.svg';
-import dashboard from '../../images/dashboard.svg';
-import menu from '../../images/menu.svg';
-import close from '../../images/close.svg';
+// import logo from 'images/logo.svg';
+import chat from 'images/chat.svg';
+import notebook from 'images/book.svg';
+import hostfamily from 'images/family.svg';
+import cluster from 'images/cluster.svg';
+import resources from 'images/mom.svg';
+import dashboard from 'images/dashboard.svg';
+import menu from 'images/menu.svg';
+import close from 'images/close.svg';
 
 // COMPONENTS
 import NavLink from './NavLink';

@@ -1,6 +1,3 @@
-// REACT
-import React, { useState } from 'react';
-
 // STYLES
 import styles from './goals.module.css';
 
